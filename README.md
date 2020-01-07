@@ -35,5 +35,5 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 
 <code> sudo rm -r /var/www/html/admin</code><br>
 <code> sudo rm /var/www/html/pihole/index.php</code><br>
-<code> sudo mv /var/www/html/admin/admin.sicherung.vom.XXX /var/www/html/admin</code><br>
+<code> sudo mv /var/www/html/admin.sicherung.vom.XXX /var/www/html/admin</code><br>
 <code> sudo mv /var/www/html/pihole/index.php.sicherung.vom.XXX /var/www/html/pihole/index.php</code>
