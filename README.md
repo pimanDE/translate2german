@@ -33,6 +33,7 @@ Bevor die Übersetzung beginnt, wird das Verzeichnis
 
 Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 
+<code> sudo apt install rpl</code><br>
 <code> sudo rm -r /var/www/html/admin</code><br>
 <code> sudo rm /var/www/html/pihole/index.php</code><br>
 <code> sudo mv /var/www/html/admin.sicherung.vom.XXX /var/www/html/admin</code><br>
