@@ -24,10 +24,20 @@ Bevor die Übersetzung beginnt, wird das Verzeichnis
 
 **Hinweise:**
 
+- getestet unter Pi-hole Version v4.3.2 Web Interface Version v4.3.2 FTL Version v4.3.1
 - Die Übersetzung umfasst auch das Speedtestmodul.
-
 (https://github.com/arevindh/pihole-speedtest/wiki/Installing-Speedtest-Mod)
 - ...
+- ...
+<br>
+<br>
+
+**Screenshot:**
+<br>
+
+![img](https://raw.githubusercontent.com/pimanDE/translate2german/master/pihole-weboberfl%C3%A4che-auf-deutsch.png)
+<br>
+<br>
 <br>
 
 **Rückgängig machen:**
