@@ -148,6 +148,7 @@ sudo rpl 'sources_blocked[client] + "</td> <td> <div class=\"progress progress-s
 # Anfragen Protokoll
 sudo rpl 'Recent Queries' 'Letzte Anfragen' /var/www/html/admin/queries.php
 sudo rpl '$showing = "showing";' '$showing = "zeige";' /var/www/html/admin/queries.php
+sudo rpl 'queries for client' 'Abfragen für Gerät' /var/www/html/admin/queries.php
 sudo rpl 'up to 100 queries' 'bis zu 100 Anfragen' /var/www/html/admin/queries.php
 sudo rpl '<a href=\"?all\">show all</a>' ' oder <a href=\"?all\">zeige alle Anfragen</a>' /var/www/html/admin/queries.php
 sudo rpl '"Search:"' '"Suche:"' /var/www/html/admin/scripts/vendor/jquery.dataTables.min.js
