@@ -647,6 +647,40 @@ sudo rpl 'Shows the currently installed Pi-hole and Web Interface version. If an
 
 
 
+# Blockseite
+sudo rpl 'Website Blocked' 'Webseite gesperrt' /var/www/html/pihole/blockingpage.css
+sudo rpl 'Why am I here?' 'Warum bin ich hier?' /var/www/html/pihole/blockingpage.css
+sudo rpl 'About Pi-hole' 'Über Pi-hole' /var/www/html/pihole/blockingpage.css
+sudo rpl 'Contact Admin' 'Kontakt Admin' /var/www/html/pihole/blockingpage.css
+sudo rpl 'The domain is being whitelisted...' 'Die Domain wird in die Whitelist aufgenommen ...' /var/www/html/pihole/blockingpage.css
+sudo rpl '"Error"' '"Fehler"' /var/www/html/pihole/blockingpage.css
+sudo rpl 'An unhandled exception occured. This may happen when your browser is unable to load jQuery, or when the webserver is denying access to the Pi-hole API.' 'Eine nicht behandelte Ausnahme ist aufgetreten. Dies kann vorkommen, wenn Ihr Browser jQuery nicht laden kann oder wenn der Webserver den Zugriff auf die Pi-Hole-API verweigert.' /var/www/html/pihole/blockingpage.css
+sudo rpl '"Success"' '"Erfolgreich"' /var/www/html/pihole/blockingpage.css
+sudo rpl 'Website has been whitelisted! You may need to flush your DNS cache' 'Website wurde auf die Whitelist gesetzt! Möglicherweise müssen Sie Ihren DNS-Cache leeren.' /var/www/html/pihole/blockingpage.css
+sudo rpl 'This site has been whitelisted. Please flush your DNS cache and/or restart your browser.' 'Diese Seite wurde auf die Whitelist gesetzt. Bitte leeren Sie Ihren DNS-Cache und/oder starten Sie Ihren Browser neu.' /var/www/html/pihole/blockingpage.css
+sudo rpl "This website is not found in any of Pi-hole's blacklists. The reason you have arrived here is unknown." 'Diese Website wurde in keiner der Blacklists von Pi-hole gefunden. Der Grund, warum Sie hier angekommen sind, ist unbekannt.' /var/www/html/pihole/blockingpage.css
+sudo rpl 'This site is an alias for ' 'Diese Seite ist ein Alias für ' /var/www/html/pihole/blockingpage.css
+sudo rpl 'which may be blocked by Pi-hole.' 'das kann durch Pi-hole blockiert werden.' /var/www/html/pihole/blockingpage.css
+# die zwei nachfolgenden Zeilen dürfen in der Reihenfolge nicht getauscht werden
+sudo rpl 'Manually Blacklisted by Wildcard' 'Manuell durch Wildcard auf die Blacklist gesetzt.' /var/www/html/pihole/blockingpage.css
+sudo rpl 'Manually Blacklisted' 'Manuell auf die Blacklist gesetzt.' /var/www/html/pihole/blockingpage.css
+#
+sudo rpl 'Not found on any Blacklist' 'Auf keiner Blacklist gefunden.' /var/www/html/pihole/blockingpage.css
+sudo rpl 'Access to the following website has been denied:' 'Der Zugriff auf die folgende Website wurde verweigert:' /var/www/html/pihole/blockingpage.css
+sudo rpl 'This is primarily due to being flagged as:' 'Dies ist in erster Linie darauf zurückzuführen, dass sie folgendermaßen gekennzeichnet ist:' /var/www/html/pihole/blockingpage.css
+sudo rpl 'If you have an ongoing use for this website, please ' 'Wenn Sie diese Website nutzen möchten, dann fragen ' /var/www/html/pihole/blockingpage.css
+sudo rpl 'ask the administrator' 'Sie bitte den Administrator' /var/www/html/pihole/blockingpage.css
+sudo rpl ' of the Pi-hole on this network to have it whitelisted' " des Pi-hole's in diesem Netzwerk, damit er die Website auf die Whitelist setzt." /var/www/html/pihole/blockingpage.css
+sudo rpl 'Back to safety' 'Zurück zur Sicherheit' /var/www/html/pihole/blockingpage.css
+sudo rpl 'Technical Info' 'Technische Information' /var/www/html/pihole/blockingpage.css
+sudo rpl 'This site is found in ' 'Diese Seite befindet sich in ' /var/www/html/pihole/blockingpage.css
+sudo rpl '" of "' '" von "' /var/www/html/pihole/blockingpage.css
+sudo rpl '" lists:"' '" Listen:"' /var/www/html/pihole/blockingpage.css
+sudo rpl '"Whitelist"' '"auf die Whitelist setzen"' /var/www/html/pihole/blockingpage.css
+sudo rpl 'Page generated on ' 'Seite generiert am ' /var/www/html/pihole/blockingpage.css
+
+
+
 # Nicht zugeordnet
 sudo rpl 'No password set' 'Kein Passwort festgelegt.' /var/www/html/admin/scripts/pi-hole/php/api_token.php
 sudo rpl 'Not authorized!' 'Nicht erlaubt!' /var/www/html/admin/scripts/pi-hole/php/api_token.php
