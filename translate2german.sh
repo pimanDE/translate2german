@@ -40,7 +40,7 @@ echo
 
 cp -r /var/www/html/admin /var/www/html/admin.sicherung.vom.$date                                           # Sicherung des Verzeichnisses
 sudo cp /var/www/html/pihole/index.php /var/www/html/pihole/index.php.sicherung.vom.$date                   # Sicherung der index.php
-sudo cp /var/www/html/pihole/blockingpage.css /var/www/html/pihole/blockingpage.css.sicherung.vom.$date			# Sicherung der blockingpage.css
+sudo cp /var/www/html/pihole/blockingpage.css /var/www/html/pihole/blockingpage.css.sicherung.vom.$date     # Sicherung der blockingpage.css
 
 
 # Startseite
