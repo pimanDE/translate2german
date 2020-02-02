@@ -44,6 +44,9 @@ sudo cp /var/www/html/pihole/blockingpage.css /var/www/html/pihole/blockingpage.
 
 
 # Startseite
+sudo rpl '<h1>Javascript Is Disabled</h1><p>Javascript seems to be disabled. This will break some site features.</p>' '<h1>Javascript ist deaktiviert.</h1><p>Javascript scheint deaktiviert zu sein. Dadurch werden einige Funktionen der Website beeinträchtigt.</p>' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl '<p>To enable Javascript click <a href="http://www.enable-javascript.com/" target="_blank">here</a></p><label for="js-hide">Close</label></div>' '<p>Um Javascript zu aktivieren, klicken Sie <a href="http://www.enable-javascript.com/" target="_blank">hier.</a></p><label for="js-hide">Schließen</label></div>' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl 'Designed For' 'Entwickelt für den' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Your black hole for Internet advertisements' 'Ihr schwarzes Loch für Internetwerbung.' /var/www/html/pihole/index.php
 sudo rpl 'Did you mean to go to the admin panel' 'Möchten Sie zum Administrationsbereich' /var/www/html/pihole/index.php
 sudo rpl '<span>Login</span>' '<span>Anmelden</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
