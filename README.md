@@ -6,9 +6,8 @@ Mit diesem Script wird die Weboberfläche des pi-hole auf deutsch übersetzt.
 
 Bevor die Übersetzung beginnt, wird das Verzeichnis
 
-/var/www/html/admin und die Dateien
-
-/var/www/html/pihole/index.php
+/var/www/html/admin und die Dateien <br>
+/var/www/html/pihole/index.php <br>
 /var/www/html/pihole/blockingpage.css gesichert.
 <br>
 <br>
