@@ -176,7 +176,7 @@ sudo rpl '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Reply</th>' '<th>Wiederholung</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/queries.php
 sudo rpl '"Click to show only " + this.innerHTML + " queries"' '"Klicken Sie hier, um nur " + this.innerHTML + " Anfragen anzuzeigen."' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl '"Click to show only queries with domain" + this.innerHTML;' '"Klicken Sie hier, um nur Anfragen mit der Domain " + this.innerHTML + " anzuzeigen."; ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl '"Click to show only queries with domain " + this.innerHTML;' '"Klicken Sie hier, um nur Anfragen mit der Domain " + this.innerHTML + " anzuzeigen."; ' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '"Click to show only queries made by " + this.innerHTML;' '"Klicken Sie hier, um nur Anfragen anzuzeigen, die von " + this.innerHTML + " angefragt wurden.";' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'Showing _START_ to _END_ of _TOTAL_ entries' 'Zeige _START_ bis _END_ von _TOTAL_ Einträgen' /var/www/html/admin/scripts/vendor/jquery.dataTables.min.js
 sudo rpl 'Apply filtering on click on Type, Domain, and Clients' 'Wenden Sie die Filterung an, indem Sie auf Typ, Domain oder Gerät klicken.' /var/www/html/admin/queries.php
