@@ -16,7 +16,7 @@ Bevor die Übersetzung beginnt, wird das Verzeichnis
 
 Wer schnell und bequem loslegen möchte, kann die Übersetzung mit folgendem Befehl starten:
 
-<code> sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh | bash</code><br>
+<code> sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh | bash</code><br><br>
 
 Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
 
