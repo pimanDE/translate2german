@@ -32,13 +32,25 @@ exec 2> /tmp/error-translate.log
 
 clear
 
+if dpkg-query -s rpl 2>/dev/null|grep -q installed; then
+    echo "rpl schon ist installiert ....." >> /dev/null
+else
+    echo
+    echo -e "${blaufett}   rpl muss installiert werden ...${standard}"
+    echo
+    echo
+    sudo apt install -y rpl
+fi
+
+clear
+
 echo
 echo -e "${blaufett}   Übersetze die Pi-hole Weboberfläche auf deutsch ...${standard}"
 echo
 echo -e "${blaufett}   Dies kann einige Minuten dauern ...${standard}"
 echo
 
-cp -r /var/www/html/admin /var/www/html/admin.sicherung.vom.$date                                           # Sicherung des Verzeichnisses
+sudo cp -r /var/www/html/admin /var/www/html/admin.sicherung.vom.$date                                      # Sicherung des Verzeichnisses
 sudo cp /var/www/html/pihole/index.php /var/www/html/pihole/index.php.sicherung.vom.$date                   # Sicherung der index.php
 sudo cp /var/www/html/pihole/blockingpage.css /var/www/html/pihole/blockingpage.css.sicherung.vom.$date     # Sicherung der blockingpage.css
 
