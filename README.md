@@ -14,9 +14,13 @@ Bevor die Übersetzung beginnt, wird das Verzeichnis
 
 **Installationsanleitung:**
 
-<code> sudo apt install rpl</code><br>
-<code>git clone https://github.com/pimanDE/translate2german/</code><br>
-<code>cd translate2german</code><br>
+Wer schnell und bequem loslegen möchte, kann die Übersetzung mit folgendem Befehl starten:
+
+<code> sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh | bash</code><br>
+
+Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
+
+<code>wget https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh</code><br>
 <code>chmod 775 translate2german.sh</code><br>
 <code>sudo ./translate2german.sh</code><br>
 <br>
@@ -24,7 +28,7 @@ Bevor die Übersetzung beginnt, wird das Verzeichnis
 
 **Hinweise:**
 
-- getestet unter Pi-hole Version v4.3.2 Web Interface Version v4.3.2 FTL Version v4.3.1
+- getestet unter Pi-hole Version v4.3.2 Web Interface Version v4.3.3 FTL Version v4.3.1
 - Die Übersetzung umfasst auch das Speedtestmodul.
 (https://github.com/arevindh/pihole-speedtest/wiki/Installing-Speedtest-Mod)
 - ...
