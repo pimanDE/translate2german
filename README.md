@@ -29,9 +29,9 @@ Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
 **Hinweise:**
 
 - getestet unter Pi-hole Version v4.3.2 Web Interface Version v4.3.3 FTL Version v4.3.1
+- vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe unten)
 - Die Übersetzung umfasst auch das Speedtestmodul.
 (https://github.com/arevindh/pihole-speedtest/wiki/Installing-Speedtest-Mod)
-- vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe unten) 
 - ...
 <br>
 <br>
