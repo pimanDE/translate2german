@@ -12,6 +12,15 @@ Bevor die Übersetzung beginnt, wird das Verzeichnis
 <br>
 <br>
 
+**Bevor Sie mit der Übersetzung beginnen:**
+
+- haben Sie ein Backup von Ihrem System gemacht.
+- haben Sie sich vom Quellcode überzeugt.
+- wissen Sie, dass Sie alles auf eigene Gefahr tun.
+- ...
+<br>
+<br>
+
 **Installationsanleitung:**
 
 Wer schnell und bequem loslegen möchte, kann die Übersetzung mit folgendem Befehl starten:
@@ -51,6 +60,7 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 <code> sudo rm -r /var/www/html/admin</code><br>
 <code> sudo rm /var/www/html/pihole/index.php</code><br>
 <code> sudo rm /var/www/html/pihole/blockingpage.css</code><br>
+
 <code> sudo mv /var/www/html/admin.sicherung.vom.XXX /var/www/html/admin</code><br>
 <code> sudo mv /var/www/html/pihole/index.php.sicherung.vom.XXX /var/www/html/pihole/index.php</code><br>
 <code> sudo mv /var/www/html/pihole/blockingpage.css.sicherung.vom.XXX /var/www/html/pihole/blockingpage.css</code>
