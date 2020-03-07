@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Version Pi-hole Version v4.3.2 Web Interface Version v4.3.2 FTL Version v4.3.1
+# getestet auf Version Pi-hole Version v4.4 Web Interface Version v4.3.3 FTL Version v4.3.1
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -25,6 +25,7 @@ fehler="[${rotfett}✗${standard}]"
 haken="[${gruenfett}✓${standard}]"
 done="${gruenfett} done!${standard}"
 
+touch /tmp/error-translate.log
 exec 2> /tmp/error-translate.log
 
 ####################################################################################################################
@@ -181,7 +182,7 @@ sudo rpl '"Click to show only queries made by " + this.innerHTML;' '"Klicken Sie
 sudo rpl 'Showing _START_ to _END_ of _TOTAL_ entries' 'Zeige _START_ bis _END_ von _TOTAL_ Einträgen' /var/www/html/admin/scripts/vendor/jquery.dataTables.min.js
 sudo rpl 'Apply filtering on click on Type, Domain, and Clients' 'Wenden Sie die Filterung an, indem Sie auf Typ, Domain oder Gerät klicken.' /var/www/html/admin/queries.php
 sudo rpl '<div class="alProcessing">Adding <span id="alDomain"></span> to the <span id="alList"></span>...</div>' '<div class="alProcessing">Hinzufügen zur <span id="alDomain"></span> to the <span id="alList"></span>...</div>' /var/www/html/admin/queries.php
-sudo rpl 'successfully added to the' 'erolgreich hinzugefügt zur' /var/www/html/admin/queries.php
+sudo rpl 'successfully added to the' 'erfolgreich hinzugefügt zur' /var/www/html/admin/queries.php
 sudo rpl 'Timeout or Network Connection Error!' 'Zeitüberschreitung der Netzwerkfehler!' /var/www/html/admin/queries.php
 sudo rpl 'Clear Filters' 'Filter löschen' /var/www/html/admin/queries.php
 
@@ -297,7 +298,7 @@ sudo rpl '<th>Requests</th>' '<th>Anfragen</th>' /var/www/html/admin/db_lists.ph
 # Whitelist
 sudo rpl 'echo "Invalid list parameter"' 'echo "Ungültiger Listenparameter"' /var/www/html/admin/list.php
 sudo rpl 'echo "Whitelist"' 'echo "Erlaubte Adressen"' /var/www/html/admin/list.php
-sudo rpl 'Add a domain (example.com or sub.example.com)' 'Webseite hinzufügen (z.B. beispiel.com oder mobile.beispiel.com)' /var/www/html/admin/list.php
+sudo rpl 'Add a domain (example.com or sub.example.com)' 'Webseite hinzufügen (z.B. beispiel.com oder mobil.beispiel.com)' /var/www/html/admin/list.php
 sudo rpl '<button id="btnAdd" class="btn btn-default" type="button">Add</button>' '<button id="btnAdd" class="btn btn-default" type="button">Hinzufügen</button>' /var/www/html/admin/list.php
 
 
@@ -395,15 +396,31 @@ sudo rpl '<span title="Number of cache insertions">DNS cache insertions:</span>'
 sudo rpl '<span title="Number of cache entries that had to be removed although they are not expired (increase cache size to reduce this number)">DNS cache evictions:</span>' '<span title="Anzahl der Cache Einträge, die entfernt werden mussten, obwohl sie nicht abgelaufen sind (erhöhen Sie die Cache Größe, um diese Anzahl zu verringern).">DNS Cache Entfernungen:</span>' /var/www/html/admin/settings.php
 sudo rpl 'See also our <a href="https://docs.pi-hole.net/ftldns/dns-cache/" target="_blank">DNS cache documentation</a>.' 'Siehe auch unsere <a href="https://docs.pi-hole.net/ftldns/dns-cache/" target="_blank">DNS Cache Dokumentation</a>.' /var/www/html/admin/settings.php
 sudo rpl '<h3 class="box-title">Danger Zone!</h3><br/>' '<center><h3 class="box-title"><font color="red"><strong>Gefahrenzone!</strong></font></h3><br/></center>' /var/www/html/admin/settings.php
-sudo rpl '<button type="button" class="btn btn-warning confirm-disablelogging-noflush form-control">Disable query logging</button>' '<button type="button" class="btn btn-warning confirm-disablelogging-noflush form-control">Deaktiviere Anfrageprotokollierung</button>' /var/www/html/admin/settings.php
-sudo rpl 'Enable query logging' 'Aktivieren der Abfrageprotokollierung' /var/www/html/admin/settings.php
-sudo rpl '<button type="button" class="btn btn-danger confirm-flushlogs form-control">Flush logs</button>' '<button type="button" class="btn btn-danger confirm-flushlogs form-control">Protokolleinträge löschen</button>' /var/www/html/admin/settings.php
-sudo rpl '<button type="button" class="btn btn-danger confirm-disablelogging form-control">Disable query logging and flush logs</button>' '<button type="button" class="btn btn-danger confirm-disablelogging form-control">Deakt. Anfrageprotokoll und Einträge löschen</button>' /var/www/html/admin/settings.php
-sudo rpl '<button type="button" class="btn btn-danger confirm-poweroff form-control">Power off system</button>' '<button type="button" class="btn btn-danger confirm-poweroff form-control">System ausschalten' /var/www/html/admin/settings.php
-sudo rpl 'The system will poweroff in 5 seconds...' 'Das System schaltet sich in 5 Sekunden aus ...' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl '<button type="button" class="btn btn-warning confirm-restartdns form-control">Restart DNS resolver</button>' '<button type="button" class="btn btn-warning confirm-restartdns form-control">DNS-Auflösung neustarten</button>' /var/www/html/admin/settings.php
-sudo rpl 'The Pi-hole log file has been flushed' 'Die Pi-hole Protokolldatei wurde geleert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl '<button type="button" class="btn btn-danger confirm-reboot form-control">Restart system</button>' '<button type="button" class="btn btn-danger confirm-reboot form-control">System neustarten</button>' /var/www/html/admin/settings.php
+sudo rpl 'Disable query logging</button>' 'Deaktiviere Anfrageprotokollierung</button>' /var/www/html/admin/settings.php
+sudo rpl 'Confirmation required' 'Bestätigung erforderlich!' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Are you sure you want to disable logging?' 'Möchten Sie die Anfrageprotokollierung wirklich deaktivieren?' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl '"Yes, disable logs"' '"Ja, Anfrageprotokollierung deaktivieren"' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'No, go back' 'Nein, zurück' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Logging has been disabled, your logs have <strong>not</strong> been flushed' 'Die Anfrageprotokollierung wurde deaktiviert, Ihre Protokolle wurden <strong>nicht</strong> gelöscht.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+sudo rpl 'Enable query logging' 'Aktiviere Anfrageprotokollierung' /var/www/html/admin/settings.php
+sudo rpl '>Flush logs</button>' '>Protokolle löschen</button>' /var/www/html/admin/settings.php
+sudo rpl 'Are you sure you want to flush your logs?' 'Sind Sie sicher, dass Sie Ihre Protokolle löschen möchten?' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Yes, flush logs' 'Ja, Protokolle löschen' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'The Pi-hole log file has been flushed' 'Die Pi-hole Protokolle wurden gelöscht.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+sudo rpl 'Disable query logging and flush logs</button>' 'Deakt. Anfrageprotokoll und Einträge löschen</button>' /var/www/html/admin/settings.php
+sudo rpl 'Are you sure you want to disable logging and flush your Pi-hole logs?' 'Möchten Sie die Anfrageprotokollierung wirklich deaktivieren und Ihre Pi-hole Protokolle löschen?' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Yes, disable logs and flush my logs' 'Ja, deaktiviere die Anfrageprotollierung und lösche die Einträge' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Logging has been disabled and logs have been flushed' 'Die Anfrageprotokollierung wurde daktiviert und die Einträge gelöscht.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+sudo rpl 'Power off system</button>' 'System ausschalten</button>' /var/www/html/admin/settings.php
+sudo rpl 'Are you sure you want to send a poweroff command to your Pi-Hole?' 'Möchten Sie den Computer ausschalten?' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Yes, poweroff' 'Ja, Computer ausschalten' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'The system will poweroff in 5 seconds...' 'Der Computer schaltet sich in 5 Sekunden aus ...' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+sudo rpl '>Restart DNS resolver</button>' '>DNS-Server neu starten</button>' /var/www/html/admin/settings.php
+sudo rpl 'Are you sure you want to send a restart command to your DNS server?' 'Möchten Sie wirklich den DNS-Server neu starten?' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Yes, restart DNS' 'Ja, DNS-Server neu starten' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl '>Restart system</button>' '>System neu starten</button>' /var/www/html/admin/settings.php
+sudo rpl 'Are you sure you want to send a reboot command to your Pi-Hole?' 'Möchten Sie wirklich das System neu starten?' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Yes, reboot' 'Ja, neu starten' /var/www/html/admin/scripts/pi-hole/js/settings.js
 sudo rpl 'The system will reboot in 5 seconds...' 'Das System startet in 5 Sekunden neu ...' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 
   # Blocklist
@@ -545,6 +562,8 @@ sudo rpl 'Query Log' 'Anfrageprotokoll' /var/www/html/admin/settings.php
 sudo rpl 'Show permitted domain entries' 'Zulässige Domain-Einträge anzeigen' /var/www/html/admin/settings.php
 sudo rpl 'Show blocked domain entries' 'Geblockte Domain-Einträge anzeigen' /var/www/html/admin/settings.php
 sudo rpl 'Show API token' 'API-Token anzeigen' /var/www/html/admin/settings.php
+sudo rpl 'Make sure that nobody else can scan this code around you. They will have full access to the API without having to know the password. Note that the generation of the QR code will take some time.' 'Stellen Sie sicher, dass niemand diesen Code um Sie herum scannen kann. Sie haben vollen Zugriff auf die API, ohne das Kennwort kennen zu müssen. Beachten Sie, dass die Generierung des QR-Codes einige Zeit dauern wird.' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl 'Yes, show API token' 'Ja, zeige API-Token' /var/www/html/admin/scripts/pi-hole/js/settings.js
 sudo rpl 'The API settings have been updated' 'Die API-Einstellungen wurden aktualisiert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'All entries will be shown in Query Log' 'Alle Einträge werden im Anfrageprotokoll angezeigt.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Only blocked entries will be shown in Query Log' 'Im Anfrageprotokoll werden nur gesperrte Einträge angezeigt.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
