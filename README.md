@@ -3,7 +3,8 @@
 
 
 Mit diesem Script wird die Weboberfläche des Pi-hole auf deutsch übersetzt.
-
+<br>
+<br>
 Bevor die Übersetzung beginnt, wird das Verzeichnis
 
 /var/www/html/admin und die Dateien <br>
