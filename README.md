@@ -1,8 +1,8 @@
 # translate2german
-**Übersetzung der pi-hole Weboberfläche auf deutsch**
+**Übersetzung der Pi-hole Weboberfläche auf deutsch**
 
 
-Mit diesem Script wird die Weboberfläche des pi-hole auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche des Pi-hole auf deutsch übersetzt.
 
 Bevor die Übersetzung beginnt, wird das Verzeichnis
 
