@@ -76,7 +76,7 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 
 <code>sudo mv /var/www/html/admin.sicherung.vom.XXX /var/www/html/admin</code><br>
 <code>sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole</code><br>
-<code>sudo mv /opt/pihole/gravity.sh.sicherung.vom.XXX /opt/pihole/gravity</code><br>
+<code>sudo mv /opt/pihole/gravity.sh.sicherung.vom.XXX /opt/pihole/gravity.sh</code><br>
 <code>sudo mv /etc/.pihole/gravity.sh.sicherung.vom.XXX /etc/.pihole/gravity.sh</code><br>
 <code>sudo mv /var/www/html/pihole/index.php.sicherung.vom.XXX /var/www/html/pihole/index.php</code><br>
 <code>sudo mv /var/www/html/pihole/blockingpage.css.sicherung.vom.XXX /var/www/html/pihole/blockingpage.css</code><br>
