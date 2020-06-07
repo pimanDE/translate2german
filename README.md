@@ -1,6 +1,4 @@
-**translate2german**
-<br>
-<br>
+# translate2german
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
