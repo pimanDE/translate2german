@@ -1,4 +1,4 @@
-# translate2german
+# translate2german - BETA!!
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
