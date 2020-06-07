@@ -1,4 +1,4 @@
-# translate2german
+# translate2german - BETA!
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
@@ -66,7 +66,7 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 
 <code> sudo rm -r /var/www/html/admin</code><br>
 <code> sudo rm -r /usr/local/bin/pihole</code><br>
-<code> sudo rm -r /opt/pihole/gravity.sh</code><br>
+<code> sudo rm -r /opt/pihole/gravity</code><br>
 <code> sudo rm -r /etc/.pihole/gravity.sh</code><br>
 <code> sudo rm -r /var/www/html/pihole/index.php</code><br>
 <code> sudo rm -r /var/www/html/pihole/blockingpage.css</code><br>
