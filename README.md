@@ -1,6 +1,7 @@
-#**translate2german**
-#### **Übersetzung der pi-hole Weboberfläche auf deutsch**
-
+**translate2german**
+<br>
+<br>
+**Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
 Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.0 auf deutsch übersetzt.
@@ -71,6 +72,9 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 <code> sudo rm -r /etc/.pihole/gravity.sh</code><br>
 <code> sudo rm -r /var/www/html/pihole/index.php</code><br>
 <code> sudo rm -r /var/www/html/pihole/blockingpage.css</code><br>
+<br>
+<br>
+<code>XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'</code>
 
 <code>sudo mv /var/www/html/admin/admin.sicherung.vom.XXX /var/www/html/admin</code><br>
 <code>sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole</code><br>
