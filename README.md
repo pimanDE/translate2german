@@ -1,4 +1,4 @@
-# translate2german - BETA!!
+# translate2german
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
@@ -74,7 +74,7 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 <br>
 <code>XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'</code>
 
-<code>sudo mv /var/www/html/admin/admin.sicherung.vom.XXX /var/www/html/admin</code><br>
+<code>sudo mv /var/www/html/admin.sicherung.vom.XXX /var/www/html/admin</code><br>
 <code>sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole</code><br>
 <code>sudo mv /opt/pihole/gravity.sh.sicherung.vom.XXX /opt/pihole/gravity</code><br>
 <code>sudo mv /etc/.pihole/gravity.sh.sicherung.vom.XXX /etc/.pihole/gravity.sh</code><br>
