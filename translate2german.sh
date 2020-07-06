@@ -75,7 +75,8 @@ sudo rpl 'After installing Pi-hole for the first time, a password is generated a
 sudo rpl 'password cannot be retrieved later on, but it is possible to set a new password (or explicitly disable' 'Das Passwort kann später nicht mehr abgerufen werden. Es ist jedoch möglich, ein neues Passwort festzulegen' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
 sudo rpl 'the password by setting an empty password) using the command' '(oder das Passwort explizit zu deaktivieren, indem Sie ein leeres Passwort festlegen). Verwenden Sie hierzu:' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
 sudo rpl 'Password' 'Passwort' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
-sudo rpl '<li><kbd>Ctrl</kbd>+<kbd>Return</kbd> &rarr; Log in and go to Settings page</li>' '<li><kbd>Ctrl</kbd>+<kbd>Return</kbd> &rarr; Anmelden und zur Einstellungsseite gehen</li>' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
+sudo rpl '<li><kbd>Return</kbd> &rarr; Log in and go to requested page (<?php echo $scriptname; ?>)</li>' '<li><kbd>Enter</kbd> &rarr; Anmelden (<?php echo $scriptname; ?>)</li>' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
+sudo rpl '<li><kbd>Ctrl</kbd>+<kbd>Return</kbd> &rarr; Log in and go to Settings page</li>' '<li><kbd>Strg</kbd>+<kbd>Enter</kbd> &rarr; Anmelden und zur Einstellungsseite gehen</li>' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
 sudo rpl 'Remember me for 7 days' '7 Tage merken' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
 sudo rpl 'Log in</button>' 'Anmelden</button' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
 sudo rpl 'Forgot password' 'Passwort vergessen' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
