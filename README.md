@@ -70,7 +70,7 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 <br>
 <code>XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'</code>
 
-<code>sudo mv /var/www/html.sicherung.vom.XXX /var/www/html/admin</code><br>
+<code>sudo mv /var/www/html.sicherung.vom.XXX /var/www/html/</code><br>
 <code>sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole</code><br>
 <code>sudo mv /opt/pihole/gravity.sh.sicherung.vom.XXX /opt/pihole/gravity.sh</code><br>
 <code>sudo mv /etc/.pihole/gravity.sh.sicherung.vom.XXX /etc/.pihole/gravity.sh</code><br>
