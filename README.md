@@ -2,7 +2,7 @@
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.1.1 auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.2.1 auf deutsch übersetzt.
 <br>
 <br>
 Bevor die Übersetzung beginnt, wird
@@ -13,7 +13,6 @@ das Verzeichnis<br>
 und die Dateien<br>
 `/usr/local/bin/pihole`<br>
 `/opt/pihole/gravity.sh`<br>
-`/etc/.pihole/gravity.sh`<br>
 
 gesichert.
 <br>
@@ -45,7 +44,7 @@ Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
 
 **Hinweise:**
 
-* getestet unter Pi-hole Version v5.1 Web Interface Version v5.1 FTL Version v5.1
+* getestet unter Pi-hole Version v5.2.1 Web Interface Version v5.2.1 FTL Version v5.3.2
 * vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe unten)
 * ...
 <br>
@@ -65,7 +64,6 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 <code> sudo rm -r /var/www/html/</code><br>
 <code> sudo rm -r /usr/local/bin/pihole</code><br>
 <code> sudo rm -r /opt/pihole/gravity.sh</code><br>
-<code> sudo rm -r /etc/.pihole/gravity.sh</code><br>
 <br>
 <br>
 <code>XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'</code>
@@ -73,4 +71,3 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 <code>sudo mv /var/www/html.sicherung.vom.XXX /var/www/html/</code><br>
 <code>sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole</code><br>
 <code>sudo mv /opt/pihole/gravity.sh.sicherung.vom.XXX /opt/pihole/gravity.sh</code><br>
-<code>sudo mv /etc/.pihole/gravity.sh.sicherung.vom.XXX /etc/.pihole/gravity.sh</code><br>
