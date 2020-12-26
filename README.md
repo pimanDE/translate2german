@@ -44,7 +44,7 @@ Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
 
 **Hinweise:**
 
-* getestet unter Pi-hole Version v5.2.1 Web Interface Version v5.2.1 FTL Version v5.3.2
+* getestet unter Pi-hole Version v5.2.2 Web Interface Version v5.2.2 FTL Version v5.3.4
 * vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe unten)
 * ...
 <br>
