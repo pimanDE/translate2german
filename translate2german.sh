@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Version Pi-hole Version v5.2.1 Web Interface Version v5.2.1 FTL Version v5.3.2
+# getestet auf Version Pi-hole Version v5.2.2 Web Interface Version v5.2.2 FTL Version v5.3.4
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -52,8 +52,8 @@ echo -e "${blaufett}   Dies kann einige Minuten dauern ...${standard}"
 echo
 
 sudo cp -ra /var/www/html/ /var/www/html.sicherung.vom.$date					# Sicherung des Verzeichnisses
-sudo cp -a /opt/pihole/gravity.sh /opt/pihole/gravity.sh.sicherung.vom.$date			# Sicherung der gravity.sh
-sudo cp -a /usr/local/bin/pihole /usr/local/bin/pihole.sicherung.vom.$date			# Sicherung der pihole
+sudo cp -a /opt/pihole/gravity.sh /opt/pihole/gravity.sh.sicherung.vom.$date	# Sicherung der gravity.sh
+sudo cp -a /usr/local/bin/pihole /usr/local/bin/pihole.sicherung.vom.$date		# Sicherung der pihole
 
 
 
@@ -287,7 +287,9 @@ sudo rpl 'Query status' 'Status Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl 'Permitted:' 'Zulässig:' /var/www/html/admin/db_queries.php
 sudo rpl 'forwarded</label>' 'weitergeleitet</label>' /var/www/html/admin/db_queries.php
 sudo rpl 'cached</label>' 'zwischengespeichert</label>' /var/www/html/admin/db_queries.php
+sudo rpl 'Retried</label' 'wiederholt</label>' /var/www/html/admin/db_queries.php
 sudo rpl 'Blocked:' 'Geblockt:' /var/www/html/admin/db_queries.php
+sudo rpl 'gravity</label' 'Anfragedatenbank</label' /var/www/html/admin/db_queries.php
 sudo rpl 'external</label>' 'extern</label>' /var/www/html/admin/db_queries.php
 sudo rpl 'exact blacklist' 'exakt lt. Blacklist' /var/www/html/admin/db_queries.php
 sudo rpl 'regex blacklist' 'RegEx der Blacklist' /var/www/html/admin/db_queries.php
@@ -665,6 +667,7 @@ sudo rpl '<th>Last Query</th>' '<th>Letzte Anfrage</th>' /var/www/html/admin/net
 sudo rpl '<th>Number of queries</th>' '<th>Anzahl der Anfragen</th>' /var/www/html/admin/network.php
 sudo rpl '<th>Uses Pi-hole</th>' '<th>Verwendet Pi-hole</th>' /var/www/html/admin/network.php
 sudo rpl '<em>unknown</em>' '<em>unbekannt</em>' /var/www/html/admin/scripts/pi-hole/js/network.js
+sudo rpl '("Never")' '("bisher keine")' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl '<label>Background color: Last query from this device seen ...</label>' '<label>Hintergrundfarbe: Letzte Anfrage von diesem Gerät gesehen ...</label>' /var/www/html/admin/network.php
 sudo rpl '>just now<' '>Im Moment<' /var/www/html/admin/network.php
 sudo rpl '... to ...' '... zu ...' /var/www/html/admin/network.php
@@ -801,7 +804,7 @@ sudo rpl 'Setting up IPv6 ranges is exactly similar to setting up IPv4 here and 
 sudo rpl 'Feel free to reach out to us on our' 'von IPv4 hier und wird vollständig unterstützt. Sie können sich gerne in unserem ' /var/www/html/admin/settings.php
 sudo rpl 'Discourse forum' '<a href="https://discourse.pi-hole.net" target="_blank">Diskussionsforum</a> an uns wenden, ' /var/www/html/admin/settings.php
 sudo rpl 'in case you need any assistance setting up local host name resolution for your particular system.' 'falls Sie Hilfe beim Einrichten der lokalen Hostnamenauflösung für Ihr bestimmtes System benötigen.' /var/www/html/admin/settings.php
-sudo rpl 'You can also specify a local domain name (like <code>fritz.box</code>) to ensure queries to' 'Sie können auch einen lokalen Domänennamen (wie <code>fritz.box</code>) angeben, um sicherzustellen, ' /var/www/html/admin/settings.php
+sudo rpl 'You can also specify a local domain name (like <code>fritz.box</code>) to ensure queries to' 'Sie können auch einen lokalen Domänennamen (wie z.B. <code>fritz.box</code>) angeben, um sicherzustellen, ' /var/www/html/admin/settings.php
 sudo rpl 'devices ending in your local domain name will not leave your network, however, this is optional.' 'dass Abfragen an Geräte, die mit Ihrem lokalen Domänennamen enden, Ihr Netzwerk nicht verlassen. ' /var/www/html/admin/settings.php
 sudo rpl 'The local domain name must match the domain name specified' 'Dies ist jedoch optional. Der lokale Domänenname muss mit dem auf Ihrem DHCP-Server angegebenen ' /var/www/html/admin/settings.php
 sudo rpl 'in your DHCP server for this to work. You can likely find it within the DHCP settings.' 'Domänennamen übereinstimmen, damit dies funktioniert. Sie finden es wahrscheinlich in den DHCP-Einstellungen.' /var/www/html/admin/settings.php
@@ -1017,7 +1020,7 @@ sudo rpl 'Page generated on ' 'Seite generiert am ' /var/www/html/pihole/blockin
 
 
 # Fußleiste
-sudo rpl '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href="" <i class="fa fa-edit"></a></i>Übersetzt von <a href="https://github.com/pimanDE"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/pi-hole/php/footer.php
+sudo rpl '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href=""</a> <i class="fa fa-edit"></a></i>Übersetzt von <a href="https://github.com/pimanDE"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/pi-hole/php/footer.php
 sudo rpl 'Update available' 'Aktualisierung vorhanden' /var/www/html/admin/scripts/pi-hole/php/footer.php
 
 
