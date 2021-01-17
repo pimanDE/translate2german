@@ -71,7 +71,9 @@ sudo ./translate2german.sh
 Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 
 ```bash
-sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/restore2translate.sh | bash
+sudo wget https://raw.githubusercontent.com/pimanDE/translate2german/master/restore2translate.sh
+chmod +x restore2translate.sh
+sudo ./restore2translate.sh
 ```
 <br>
 Alternativ kann die Übersetzung auch folgendermaßen rückgängig gemacht werden:
