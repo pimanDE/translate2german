@@ -81,7 +81,9 @@ sudo rm -r /var/www/html/
 sudo rm -r /usr/local/bin/pihole
 sudo rm -r /opt/pihole/gravity.sh
 ```
+
 XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'
+
 ```bash
 sudo mv /var/www/html.sicherung.vom.XXX /var/www/html/
 sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole
