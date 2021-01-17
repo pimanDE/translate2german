@@ -62,7 +62,7 @@ sudo rpl '<h1>JavaScript Is Disabled</h1><p>JavaScript is required for the site 
 sudo rpl 'To learn how to enable JavaScript click' 'Um zu erfahren, wie Sie JavaScript aktivieren, klicken Sie auf ' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Session is valid for ' 'Die Sitzung ist gültig für ' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Your black hole for Internet advertisements' 'Ihr schwarzes Loch für Internetwerbung.' /var/www/html/pihole/index.php
-sudo rpl 'Did you mean to go to the admin panel' 'Möchten Sie zum Administrationsbereich' /var/www/html/pihole/index.php
+sudo rpl 'Did you mean to go to the admin panel?' 'Möchten Sie zum Administrationsbereich?' /var/www/html/pihole/index.php
 sudo rpl '<span>Login</span>' '<span>Anmelden</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Sign in to start your session' 'Melden Sie sich an, um Ihre Sitzung zu starten.' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
 sudo rpl 'Verify that cookies are allowed for' 'Überprüfen Sie, ob Cookies zugelassen sind für' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
