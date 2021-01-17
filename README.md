@@ -14,7 +14,7 @@ das Verzeichnis<br>
 
 und die Dateien<br>
 
-```
+```bash
 /usr/local/bin/pihole
 /opt/pihole/gravity.sh
 ```
