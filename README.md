@@ -72,7 +72,7 @@ Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 
 ```bash
 sudo wget https://raw.githubusercontent.com/pimanDE/translate2german/master/restore2translate.sh
-chmod +x restore2translate.sh
+sudo chmod +x restore2translate.sh
 sudo ./restore2translate.sh
 ```
 <br>
