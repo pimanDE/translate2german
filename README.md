@@ -76,6 +76,7 @@ sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master
 <br>
 Alternativ kann die Übersetzung auch folgendermaßen rückgängig gemacht werden:
 <br>
+
 ```bash
 sudo rm -r /var/www/html/
 sudo rm -r /usr/local/bin/pihole
