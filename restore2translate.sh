@@ -108,7 +108,7 @@ read input
 
 	else
 		echo
-		echo -e "${rotfett}$input Diese Sicherung ist nicht vorhanden.${standard}"
+		echo -e "${rotfett}$input Diese Sicherung ist nicht vorhanden!${standard}"
 		echo
 		exit;
 	fi
