@@ -2,20 +2,24 @@
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.2.2 auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.3 auf deutsch übersetzt.
 <br>
 <br>
 Bevor die Übersetzung beginnt, wird
 
 das Verzeichnis<br>
-`/var/www/html/`<br>
+```bash
+/var/www/html/
+```
 
 und die Dateien<br>
-`/usr/local/bin/pihole`<br>
-`/opt/pihole/gravity.sh`<br>
+
+```
+/usr/local/bin/pihole
+/opt/pihole/gravity.sh
+```
 
 gesichert.
-<br>
 <br>
 <br>
 
@@ -32,20 +36,25 @@ gesichert.
 
 Wer schnell und bequem loslegen möchte, kann die Übersetzung mit folgendem Befehl starten:
 
-<code>sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh | bash</code><br><br>
+```bash
+sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh | bash
+```
+<br><br>
 
 Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
 
-<code>wget https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh</code><br>
-<code>chmod 775 translate2german.sh</code><br>
-<code>sudo ./translate2german.sh</code><br>
+```bash
+wget https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh
+chmod 775 translate2german.sh
+sudo ./translate2german.sh
+```
 <br>
 <br>
 
 **Hinweise:**
 
-* getestet unter Pi-hole Version v5.2.2 Web Interface Version v5.2.2 FTL Version v5.3.4
-* vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe unten)
+* getestet unter Pi-hole Version v5.2.3 Web Interface Version v5.3 FTL Version v5.4
+* vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe weiter unten)
 * ...
 <br>
 <br>
@@ -61,13 +70,20 @@ Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
 
 Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 
-<code> sudo rm -r /var/www/html/</code><br>
-<code> sudo rm -r /usr/local/bin/pihole</code><br>
-<code> sudo rm -r /opt/pihole/gravity.sh</code><br>
+```bash
+sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/restore2translate.sh | bash
+```
 <br>
+Alternativ kann die Übersetzung auch folgendermaßen rückgängig gemacht werden:
 <br>
-<code>XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'</code>
-
-<code>sudo mv /var/www/html.sicherung.vom.XXX /var/www/html/</code><br>
-<code>sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole</code><br>
-<code>sudo mv /opt/pihole/gravity.sh.sicherung.vom.XXX /opt/pihole/gravity.sh</code><br>
+```bash
+sudo rm -r /var/www/html/
+sudo rm -r /usr/local/bin/pihole
+sudo rm -r /opt/pihole/gravity.sh
+```
+XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'
+```bash
+sudo mv /var/www/html.sicherung.vom.XXX /var/www/html/
+sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole
+sudo mv /opt/pihole/gravity.sh.sicherung.vom.XXX /opt/pihole/gravity.sh
+```

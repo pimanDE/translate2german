@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Version Pi-hole Version v5.2.2 Web Interface Version v5.2.2 FTL Version v5.3.4
+# getestet auf Pi-hole Version v5.2.3 Web Interface Version v5.3 FTL Version v5.4
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -207,6 +207,8 @@ sudo rpl '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Reply</th>' '<th>Wiederholung</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/queries.php
 sudo rpl 'No data available in table' 'Keine Daten in der Tabelle vorhanden.' /var/www/html/admin/scripts/vendor/datatables.min.js
+sudo rpl 'Click to add ' 'Klicken Sie hier, um den Typ ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'to filter.' 'zu filtern.' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '<li>Click a value in a column to add/remove that value to/from the filter</li>' '<li>Klicken Sie auf einen Wert in einer Spalte, um diesen Wert zum Filter hinzuzufügen oder zu entfernen.</li>' /var/www/html/admin/queries.php
 sudo rpl '<li>On a computer: Hold down <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, or <kbd>&#8984;</kbd> to allow highlighting for copying to clipboard</li>' '<li>Auf einem Computer: Halten Sie die Taste <kbd>Strg</kbd>, <kbd>Alt</kbd>, oder <kbd>&#8984;</kbd> fest, um mehrere Einträge in die Zwischenablage kopieren zu können.</li>' /var/www/html/admin/queries.php
 sudo rpl '<li>On a mobile: Long press to highlight the text and enable copying to clipboard' '<li>Auf einem Handy: Länger drücken, um mehrere Einträge in die Zwischenablage kopieren zu können.' /var/www/html/admin/queries.php
@@ -408,7 +410,7 @@ sudo rpl 'Target Domain:</label>' 'Zieldomain:</label>' /var/www/html/admin/cnam
 sudo rpl 'Associated Target Domain' 'Zugehörige Zieldomain' /var/www/html/admin/cname_records.php
 sudo rpl '>Add</button>' '>Hinzufügen</button>' /var/www/html/admin/cname_records.php
 sudo rpl '<strong>Note:</strong>' '<strong>Hinweis:</strong>' /var/www/html/admin/cname_records.php
-sudo rpl '<p>The target of a <code>CNAME</code> must be a domain that the Pi-hole already has in its cache or is authoritative for. This is an universal limitation of <code>CNAME</code> records.</p>' '<p>Das Ziel eines <code>CNAME</code> muss eine Domäne sein, die der Pi-hole bereits in seinem Cache hat oder für die es maßgeblich ist. Dies ist eine universelle Einschränkung von <code>CNAME</code> Datensätzen.</p>' /var/www/html/admin/cname_records.php
+sudo rpl '<p>The target of a <code>CNAME</code> must be a domain that the Pi-hole already has in its cache or is authoritative for. This is a universal limitation of <code>CNAME</code> records.</p>' '<p>Das Ziel eines <code>CNAME</code> muss eine Domäne sein, die der Pi-hole bereits in seinem Cache hat oder für die es maßgeblich ist. Dies ist eine universelle Einschränkung von <code>CNAME</code> Datensätzen.</p>' /var/www/html/admin/cname_records.php
 sudo rpl "<p>The reason for this is that Pi-hole will not send additional queries upstream when serving <code>CNAME</code> replies. As consequence, if you set a target that isn't already known, the reply" '<p>Der Grund dafür ist, dass Pi-hole keine zusätzlichen Anfragen stromaufwärts sendet, wenn <code>CNAME</code> -Antworten zugestellt werden. Wenn Sie ein Ziel festlegen, das noch nicht bekannt ist, ist die' /var/www/html/admin/cname_records.php
 sudo rpl 'to the client may be incomplete. Pi-hole just returns the information it knows at the time of the query. This results in certain limitations for <code>CNAME</code> targets,' 'Antwort an das Gerät möglicherweise unvollständig. Pi-hole gibt nur die Informationen zurück, die es zum Zeitpunkt der Abfrage kennt. Dies führt zu bestimmten Einschränkungen für <code>CNAME</code> Ziele.' /var/www/html/admin/cname_records.php
 sudo rpl "for instance, only <i>active</i> DHCP leases work as targets - mere DHCP <i>leases</i> aren't sufficient as they aren't (yet) valid DNS records.</p>" 'Beispielsweise fungieren nur <i>aktive </i> DHCP-Leases als Ziele - bloße DHCP <i>-Leases</i> sind nicht ausreichend, da sie (noch) keine gültigen DNS-Einträge sind.</p>' /var/www/html/admin/cname_records.php
@@ -819,6 +821,7 @@ sudo rpl '<strong>Use Conditional Forwarding</strong' '<strong>Verwende Bedingte
 sudo rpl 'Local network in ' 'Lokales Netzwerk in ' /var/www/html/admin/settings.php
 sudo rpl 'CIDR notation' 'CIDR Notation'  /var/www/html/admin/settings.php
 sudo rpl 'IP address of your DHCP server (router)' 'IP Adresse des DHCP Servers (Router)' /var/www/html/admin/settings.php
+sudo rpl 'https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing' 'https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing' /var/www/html/admin/settings.php
 sudo rpl 'Local domain name (optional)' 'Lokaler Domänenname (optional)' /var/www/html/admin/settings.php
 sudo rpl '>Save</button>' '>Speichern</button>' /var/www/html/admin/settings.php
 sudo rpl 'The DNS settings have been updated (using ".$DNSservercount." DNS servers)' 'Die DNS Einstellungen wurden aktualisiert (es wird/werden ".$DNSservercount." DNS Server benutzt).' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
@@ -1027,7 +1030,7 @@ sudo rpl 'Page generated on ' 'Seite generiert am ' /var/www/html/pihole/blockin
 
 
 # Fußleiste
-sudo rpl '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href=""</a> <i class="fa fa-edit"></a></i>Übersetzt von <a href="https://github.com/pimanDE"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/pi-hole/php/footer.php
+sudo rpl '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href=""</a> <i class="fa fa-edit"></a></i> Übersetzt von <a href="https://github.com/pimanDE"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/pi-hole/php/footer.php
 sudo rpl 'Update available' 'Aktualisierung vorhanden' /var/www/html/admin/scripts/pi-hole/php/footer.php
 
 
