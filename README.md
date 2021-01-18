@@ -39,8 +39,7 @@ Wer schnell und bequem loslegen möchte, kann die Übersetzung mit folgendem Bef
 ```bash
 sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh | bash
 ```
-<br><br>
-
+<br>
 Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
 
 ```bash
