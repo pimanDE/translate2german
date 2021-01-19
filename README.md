@@ -2,7 +2,7 @@
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.3 auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.3.1 auf deutsch übersetzt.
 <br>
 <br>
 Bevor die Übersetzung beginnt, wird
