@@ -33,13 +33,6 @@ exec 2> /tmp/error-translate.log
 
 clear
 
-standard="\033[0m"
-rotfett="\033[1;31m"
-blaufett="\033[1;34m"
-gruenfett="\033[1;32m"
-
-clear
-
 echo
 echo
 echo -e "${blaufett}Wiederherstellen der Sicherung vor der Übersetzung durch translate2german.sh ...${standard}"
