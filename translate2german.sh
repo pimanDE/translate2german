@@ -207,6 +207,7 @@ sudo rpl '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Reply</th>' '<th>Wiederholung</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/queries.php
 sudo rpl 'No data available in table' 'Keine Daten in der Tabelle vorhanden.' /var/www/html/admin/scripts/vendor/datatables.min.js
+sudo rpl 'No matching records found' 'Keine passenden Datensätze gefunden.' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'Click to add ' 'Klicken Sie hier, um den Typ ' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'to filter.' 'zu filtern.' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '<li>Click a value in a column to add/remove that value to/from the filter</li>' '<li>Klicken Sie auf einen Wert in einer Spalte, um diesen Wert zum Filter hinzuzufügen oder zu entfernen.</li>' /var/www/html/admin/queries.php
