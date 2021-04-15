@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.2.4 Web Interface Version v5.3.1 FTL Version v5.5.1
+# getestet auf Pi-hole Version v5.3.1 Web Interface Version v5.5 FTL Version v5.8
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -529,6 +529,7 @@ sudo rpl 'Adlist description (optional)' 'Beschreibung der Blockliste (optional)
 sudo rpl 'Hints' 'Hinweise' /var/www/html/admin/groups-adlists.php
 sudo rpl '<li>Please run <code>pihole -g</code> or update your gravity list <a href="gravity.php">online</a> after modifying your adlists.</li>' '<li>Bitte führen Sie <code>pihole -g</code> aus oder aktualisieren Sie Ihre Gravity Liste <a href="gravity.php">online</a> nachdem Sie Ihre Blockliste geändert haben.</li>' /var/www/html/admin/groups-adlists.php
 sudo rpl '<li>Multiple adlists can be added by separating each <i>unique</i> URL with a space</li>' '<li>Mehrere Adlists können hinzugefügt werden, indem jede <i>eindeutige</i> URL durch ein Leerzeichen getrennt wird.</li>' /var/www/html/admin/groups-adlists.php
+sudo rpl '<li>Click on the icon in the first column to get additional information about your lists. The icons correspond to the health of the list.</li>' '<li>Klicken Sie auf das Symbol in der ersten Spalte, um zusätzliche Informationen über Ihre Listen zu erhalten. Die Symbole entsprechen dem Zustand der Liste.</li>' /var/www/html/admin/groups-adlists.php
 sudo rpl 'Add</button>' 'Hinzufügen</button>' /var/www/html/admin/groups-adlists.php
 sudo rpl 'utils.showAlert("warning", "", "Warning", "Please specify an adlist address")' 'utils.showAlert("warning", "", "Achtung!", "Bitte geben Sie eine Adresse der Blockliste an!")' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'Adding adlist...' 'Füge Blockliste hinzu ...' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
@@ -539,10 +540,40 @@ sudo rpl '<th>Address</th>' '<th>Addresse</th>' /var/www/html/admin/groups-adlis
 sudo rpl '<th>Comment</th>' '<th>Kommentar</th>' /var/www/html/admin/groups-adlists.php
 sudo rpl '<th>Group assignment</th>' '<th>Gruppenzuordnung</th>' /var/www/html/admin/groups-adlists.php
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/groups-adlists.php
-sudo rpl 'Added:' 'Hinzugefügt am:' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl 'nLast modified (database entry): ' 'nZuletzt bearbeitet (Datenbankeintrag): ' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl 'nLast updated (list content): ' 'nLetzte Aktualisierung (Liste ist aktuell): ' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl 'nDatabase ID:' 'nDatabase ID:' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'Click for details about this list' 'Klicken Sie hier für detailierte Informationen.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl '<td>Health status of this list:</td>' '<td>Status der Liste:</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List download was successful' 'Herunterladen der Liste war erfolgreich.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'var statusText = "Unknown";' 'var statusText = "Unbekannt";' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List is disabled and not checked' 'Liste ist deaktiviert und nicht geprüft.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List was not downloaded so far' 'Liste wurde bisher nicht heruntergeladen.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List unchanged upstream, Pi-hole used a local copy' 'Liste unverändert, Pi-Loch verwendet eine lokale Kopie.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List unavailable, Pi-hole used a local copy' 'Diese Liste ist nicht vorhanden, Pi-hole verwendet eine lokale Kopie.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List unavailable, there is no local copy of this list available on your Pi-hole (<span class="list-status-4">replace list</span>)' 'Liste ist nicht verfügbar, es ist auch keine lokale Kopie auf dem Pi-hole vorhanden. (<span class="list-status-4">Liste ersetzen!</span>)' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'Unknown (<span class="list-status-0"' 'Unbekannt (<span class="list-status-0"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl '<td>This list was added to Pi-hole&nbsp;&nbsp;</td>' '<td>Diese Liste wurde zum Pi-hole hinzugefügt:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+
+# Noch nicht freigegeben
+# sudo rpl 'ago' 'zuvor' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl ' months' ' Monate' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl ' minutes' ' Minuten' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'a few seconds' 'ein paar Sekunden' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'd seconds' 'Sekunden' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'a minute' '1 Minute' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'd minutes' 'd Minuten' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'an hour' '1 Stunde' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'd hours' 'd Stunden' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'a day' '1 Tag' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'd days' 'd Tage' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'a month' '1 Monat' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'd months' 'd Monate' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'a year' '1 Jahr' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'd years' 'd Jahre' /var/www/html/admin/scripts/vendor/moment.min.js
+
+sudo rpl '<td>Database entry was last modified&nbsp;&nbsp;</td>' '<td>Datenbankeintrag wurde zuletzt geändert:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl '<td>The list contents were last updated&nbsp;&nbsp;</td>' '<td>Letzte Aktualisierung des Listeninhalts:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl '<td>Number of valid domains on this list:&nbsp;&nbsp;</td>' '<td>Anzahl der gültigen Domains in dieser Liste:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl '<td>Number of invalid domains on this list:&nbsp;&nbsp;</td>' '<td>Anzahl der ungültigen Domains in dieser Liste:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl '<td>Database ID of this list:</td>' '<td>Datenbank-ID der Liste:</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'on: "Enabled"' 'on: "Aktiviert"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'off: "Disabled"' 'off: "Deaktiviert"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'Editing adlist...' 'Bearbeite die Blockliste ...' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
@@ -584,13 +615,13 @@ sudo rpl 'Neutrino emissions detected${COL_NC}...' 'Neutrino emissions erkannt${
 sudo rpl 'Pulling blocklist source list into range' 'Heranziehen der Blocklisten Quelle' /opt/pihole/gravity.sh
 sudo rpl 'Preparing new gravity database' 'Aufbereitung einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
 sudo rpl 'Using libz compression\n' 'Verwenden der libz-Komprimierung\n' /opt/pihole/gravity.sh
-sudo rpl 'Target:' 'Ziel:' /opt/pihole/gravity.sh
+sudo rpl 'Target:' 'Quelle:' /opt/pihole/gravity.sh
 sudo rpl 'str="Status:"' 'str="Ergebnis:"' /opt/pihole/gravity.sh
 sudo rpl 'Retrieval successful"' 'Abruf erfolgreich"' /opt/pihole/gravity.sh
 sudo rpl 'No changes detected"' 'Keine Änderungen erkannt"' /opt/pihole/gravity.sh
 sudo rpl 'Connection Refused"' 'Verbindung abgelehnt"' /opt/pihole/gravity.sh
 sudo rpl 'Forbidden"' 'Verboten"' /opt/pihole/gravity.sh
-sudo rpl 'Not found"' 'Nicht gefunden"' /opt/pihole/gravity.sh
+sudo rpl 'Not found"' 'Die Liste wurde nicht gefunden"' /opt/pihole/gravity.sh
 sudo rpl 'Time-out"' 'Zeitüberschreitung"' /opt/pihole/gravity.sh
 sudo rpl 'Unavailable For Legal Reasons"' 'Aus rechtlichen Gründen nicht verfügbar"' /opt/pihole/gravity.sh
 sudo rpl 'Internal Server Error"' 'Interner Server Fehler"' /opt/pihole/gravity.sh
@@ -598,21 +629,38 @@ sudo rpl 'Connection Timed Out (Gateway)"' 'Zeitüberschreitung der Verbindung (
 sudo rpl 'Web Server Is Down (Cloudflare)"' 'Webserver ist ausgefallen (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl 'Connection Timed Out (Cloudflare)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
 
-# Nachfolgenden zwei Zeilen dürfen nicht getauscht werden
-sudo rpl '${INFO} Received ${num_lines} domains, ${num_invalid} domains invalid!' '${INFO} ${num_lines} Domains empfangen, davon sind ${num_invalid} Domains ungültig!' /opt/pihole/gravity.sh
-sudo rpl '${INFO} Received ${num_lines} domains' '${INFO} ${num_lines} Domains empfangen' /opt/pihole/gravity.sh
+# Diese zwei Zeilen dürfen nicht vertauscht werden
+sudo rpl '${INFO} Analyzed ${num_lines} domains, ${num_invalid} domains invalid!' '${INFO} Es wurden ${num_lines} Domains überprüft, davon sind ${num_invalid} Domains ungültig!' /opt/pihole/gravity.sh
+sudo rpl '${INFO} Analyzed ${num_lines} domains' '${INFO} Es wurden ${num_lines} Domains überprüft.' /opt/pihole/gravity.sh
 
+sudo rpl '${INFO} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert' /opt/pihole/gravity.sh
+sudo rpl '${INFO} List has been updated' '${INFO} Die Liste wurde aktualisiert' /opt/pihole/gravity.sh
+sudo rpl '${CROSS} List download failed: ${COL_LIGHT_GREEN}using previously cached list' '${CROSS} Herunterladen der List nicht möglich: ${COL_LIGHT_GREEN}benutze zwischengespeicherte Liste' /opt/pihole/gravity.sh
+sudo rpl '${CROSS} List download failed: ${COL_LIGHT_RED}no cached list available' '${CROSS} Herunterladen der Liste nicht möglich: ${COL_LIGHT_RED}keine zwischengespeicherte Liste vorhanden' /opt/pihole/gravity.sh
 sudo rpl 'Sample of invalid domains:' 'Beispiel für ungültige Domains:' /opt/pihole/gravity.sh
 sudo rpl 'Storing downloaded domains in new gravity database' 'Speichern der heruntergeladenen Domains in einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
 sudo rpl 'Building tree' 'Datenbaum wurde aufgebaut' /opt/pihole/gravity.sh
+sudo rpl '${CROSS} Unable to build gravity tree in' '${CROSS} Unable to build gravity tree in' /opt/pihole/gravity.sh
 sudo rpl 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
+sudo rpl '${CROSS} Unable to copy data from ${gravityDBfile} to ${gravityTEMPfile}\\n  ${output}"' '${CROSS} Daten konnten nicht kopiert werden von ${gravityDBfile} bis ${gravityTEMPfile}\\n  ${output}"' /opt/pihole/gravity.sh
+sudo rpl '${CROSS} Unable to update gravity timestamp in database' '${CROSS} Zeitstempel der Gravity kann nicht in der Datenbank aktualisiert werden' /opt/pihole/gravity.sh
 sudo rpl 'Number of ${str}:' 'Anzahl der ${str}:' /opt/pihole/gravity.sh
 sudo rpl '"gravity domains"' '"Gravity Domains"' /opt/pihole/gravity.sh
-sudo rpl 'unique domains' 'einzelne Domains'  /opt/pihole/gravity.sh
+sudo rpl 'unique domains' 'einzelne Domains' /opt/pihole/gravity.sh
 sudo rpl '"exact blacklisted domains"' '"exakt blockierten Domains"' /opt/pihole/gravity.sh
 sudo rpl '"regex blacklist filters"' '"RegEx blockierten Domains"' /opt/pihole/gravity.sh
 sudo rpl '"exact whitelisted domains"' '"exakt erlaubten Domains"' /opt/pihole/gravity.sh
 sudo rpl '"regex whitelist filters"' '"RegEx erlaubten Domains"' /opt/pihole/gravity.sh
+sudo rpl '${CROSS} Unable to determine fully qualified domain name of host"' '${CROSS} Vollständig qualifizierter Domänenname des Hosts kann nicht ermittelt werden"' /opt/pihole/gravity.sh
+sudo rpl '${INFO} ${COL_LIGHT_RED}User-abort detected${COL_NC}"; gravity_Cleanup "error"' '${INFO} ${COL_LIGHT_RED}Abbruch durch Benutzer festgestellt${COL_NC}"; gravity_Cleanup "Fehler"' /opt/pihole/gravity.sh
+sudo rpl '${CROSS} Failed to remove' '${CROSS} Nicht entfernt' /opt/pihole/gravity.sh
+sudo rpl 'Usage: pihole -g' 'Verwende: pihole -g' /opt/pihole/gravity.sh
+sudo rpl 'Update domains from blocklists specified in adlists.list' 'Domains aus den in adlists.list angegebenen Blocklisten aktualisieren' /opt/pihole/gravity.sh
+sudo rpl 'Options:' 'Optionen:' /opt/pihole/gravity.sh
+sudo rpl 'Force the download of all specified blocklists' 'Erzwingt den Download aller angegebenen Blocklisten' /opt/pihole/gravity.sh
+sudo rpl 'Show this help dialog' 'Zeigt die Hilfe an' /opt/pihole/gravity.sh
+sudo rpl 'Restoring from migration backup' 'Wiederherstellen der Sicherung' /opt/pihole/gravity.sh
+sudo rpl 'Deleting existing list cache' 'Löschen des bestehenden List-Caches' /opt/pihole/gravity.sh
 sudo rpl '"Cleaning up stray matter"' '"Aufräumen"' /opt/pihole/gravity.sh
 sudo rpl '"  ${TICK} DNS service is listening"' '"  ${TICK} DNS-Dienst läuft"' /usr/local/bin/pihole
 sudo rpl '"  ${CROSS} DNS service is NOT listening"' '"  ${CROSS} DNS-Dienst läuft NICHT!"' /usr/local/bin/pihole
@@ -830,7 +878,6 @@ sudo rpl 'MAC address (".htmlspecialchars($mac).") is invalid!<br>' 'Die MAC Adr
 sudo rpl 'IP address (".htmlspecialchars($ip).") is invalid!<br>' 'Die IP Addresse (".htmlspecialchars($ip).") ist ungültig!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Host name (".htmlspecialchars($hostname).") is invalid!<br>' 'Der Hostname (".htmlspecialchars($hostname).") ist ungültig!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'You can not omit both the IP address and the host name!<br>' 'Sie können sowohl die IP-Adresse als auch den Hostnamen nicht weglassen!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl 'Static release for MAC address (".htmlspecialchars($mac).") already defined!<br>' 'Die statische MAC Addresse (".htmlspecialchars($mac).") ist bereits definiert!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Static lease for IP address (".htmlspecialchars($ip).") already defined!' 'Die statische IP Adresse (".htmlspecialchars($ip).") ist bereits definiert!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Static lease for hostname (".htmlspecialchars($hostname).") already defined!<br>' 'Die statische Vergabe des Hostnamens (".htmlspecialchars($hostname).") ist bereits definiert!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'A new static address has been added' 'Eine neue statische Adresse wurde hinzugefügt.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
@@ -876,10 +923,6 @@ sudo rpl 'To IP (".htmlspecialchars($to).") is invalid!' 'Bis IP (".htmlspecialc
 sudo rpl 'Router IP (".htmlspecialchars($router).") is invalid!' 'Die IP des Routers (".htmlspecialchars($router).") ist ungültig!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Domain name ".htmlspecialchars($domain)." is invalid!' 'Der Domian Name ".htmlspecialchars($domain)." ist ungültig!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Lease time ".htmlspecialchars($leasetime)." is invalid!' 'Die Lease Zeit ".htmlspecialchars($leasetime)." ist ungültig!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl 'The privacy level has been decreased and the DNS resolver has been restarted' 'Die Datenschutzstufe wurde gesenkt und der DNS-Resolver wurde neu gestartet.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl 'The privacy level has been increased' 'Die Datenschutzstufe wurde erhöht.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl 'The privacy level has been not been changed' 'Die Datenschutzstufe wurde nicht geändert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl 'Invalid privacy level (".$level.")!' 'Ungültige Datenschutzstufe (".$level.")!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'There was a problem applying your settings.<br>Debugging information:<br>PHP error' 'Es gab ein Problem bei der Anwendung Ihrer Einstellungen.<br>Informationen zur Fehlersuche:<br>PHP Fehler' /var/www/html/admin/settings.php
 sudo rpl '<p>Specifying the MAC address is mandatory and only one entry per MAC' '<p>Die Angabe der MAC-Adresse ist obligatorisch und nur ein Eintrag' /var/www/html/admin/settings.php
 sudo rpl 'address is allowed. If the IP address is omitted and a host name is' 'pro MAC-Adresse ist erlaubt. Wenn die IP-Adresse weggelassen wird' /var/www/html/admin/settings.php
@@ -935,7 +978,6 @@ sudo rpl 'DNS resolver privacy level' 'DNS-Resolver Datenschutzstufe' /var/www/h
 sudo rpl 'Specify if DNS queries should be anonymized, available options are:' 'Geben Sie an, ob DNS-Anfragen anonymisiert werden sollen. Folgende Optionen sind verfügbar:' /var/www/html/admin/settings.php
 sudo rpl 'Show everything and record everything' 'Alles anzeigen und alles aufzeichnen' /var/www/html/admin/settings.php
 sudo rpl 'Gives maximum amount of statistics' 'Gibt die maximale Anzahl von Statistiken aus.' /var/www/html/admin/settings.php
-
 sudo rpl 'Hide domains: Display and store all domains as "hidden"' 'Domains verbergen: Alle Domains werden als "versteckt" angezeigt und gespeichert' /var/www/html/admin/settings.php
 sudo rpl 'This disables the Top Domains and Top Ads tables on the dashboard' 'Dadurch werden die Tabellen Top Domains und Top Ads auf dem Dashboard deaktiviert' /var/www/html/admin/settings.php
 sudo rpl 'Hide domains and clients: Display and store all domains as "hidden" and all clients as "0.0.0.0"' 'Domains und Clients ausblenden: Alle Domains werden als "versteckt" und alle Clients als "0.0.0.0" angezeigt und gespeichert' /var/www/html/admin/settings.php
@@ -946,6 +988,10 @@ sudo rpl 'The privacy level may be increased at any time without having to resta
 sudo rpl 'This restarting is automatically done when saving.' 'Dieser Neustart erfolgt beim Speichern automatisch.' /var/www/html/admin/settings.php
 sudo rpl "Warning: Pi-hole's query logging is activated. Although the dashboard will hide the requested details, all queries are still fully logged to the pihole.log file." 'Warnung: Die Abfrageprotokollierung von Pi-hole ist aktiviert. Obwohl das Dashboard die angeforderten Details ausblendet, werden alle Abfragen weiterhin vollständig in der Datei pihole.log protokolliert' /var/www/html/admin/settings.php
 sudo rpl 'Apply</button>' 'Anwenden</button>' /var/www/html/admin/settings.php
+sudo rpl 'The privacy level has been decreased and the DNS resolver has been restarted' 'Die Datenschutzstufe wurde gesenkt und der DNS-Resolver wurde neu gestartet.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+sudo rpl 'The privacy level has been increased' 'Die Datenschutzstufe wurde erhöht.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+sudo rpl 'The privacy level has not been changed' 'Die Datenschutzstufe wurde nicht geändert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+sudo rpl 'Invalid privacy level (".$level.")!' 'Ungültige Datenschutzstufe (".$level.")!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 
 
 
@@ -956,7 +1002,6 @@ sudo rpl 'Backup your Pi-hole configuration (settings &amp; lists) as a download
 sudo rpl 'Backup</button>' 'Sicherung</button>' /var/www/html/admin/settings.php
 sudo rpl 'Restore</h3>' 'Wiederherstellen</h3>' /var/www/html/admin/settings.php
 sudo rpl 'Restore...</label>' 'Wiederherstellen ...</label>' /var/www/html/admin/settings.php
-
 sudo rpl '(exact)</label>' '(exakt)</label>' /var/www/html/admin/settings.php
 sudo rpl '(regex/wildcard)</label>' '(RegEx/Wildcard)</label>' /var/www/html/admin/settings.php
 sudo rpl 'Adlists</label>' 'Blocklisten</label>' /var/www/html/admin/settings.php
@@ -1031,8 +1076,9 @@ sudo rpl 'Page generated on ' 'Seite generiert am ' /var/www/html/pihole/blockin
 
 
 # Fußleiste
-sudo rpl '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href=""</a> <i class="fa fa-edit"></a></i> Übersetzt von <a href="https://github.com/pimanDE"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/pi-hole/php/footer.php
+sudo rpl '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href="http://www.github.com/pimanDE/translate2german" rel="noopener" target="_blank"</a> <i class="fa fa-edit"></a></i> Übersetzt von <a href="https://github.com/pimanDE" rel="noopener" target="_blank"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/pi-hole/php/footer.php
 sudo rpl 'Update available' 'Aktualisierung vorhanden' /var/www/html/admin/scripts/pi-hole/php/footer.php
+sudo rpl '<p>To install updates, run <a  href="https://docs.pi-hole.net/main/update/">pihole -up</a>.</p>' '<p>Zum Installieren der Update führen Sie bitte <a  href="https://docs.pi-hole.net/main/update/">pihole -up</a> aus.</p>' /var/www/html/admin/scripts/pi-hole/php/footer.php
 
 
 
