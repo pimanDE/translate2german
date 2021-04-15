@@ -2,7 +2,7 @@
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.3.1 auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche des Pi-hole Version 5.5 auf deutsch übersetzt.
 <br>
 <br>
 Bevor die Übersetzung beginnt, wird
@@ -52,7 +52,7 @@ sudo ./translate2german.sh
 
 **Hinweise:**
 
-* getestet unter Pi-hole Version v5.2.3 Web Interface Version v5.3 FTL Version v5.4
+* getestet unter Pi-hole Version v5.3.1 Web Interface Version v5.5 FTL Version v5.8
 * vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe weiter unten)
 * ...
 <br>
@@ -70,9 +70,7 @@ sudo ./translate2german.sh
 Wenn Sie die Übersetzung wieder rückgängig machen wollen:
 
 ```bash
-sudo wget https://raw.githubusercontent.com/pimanDE/translate2german/master/restore2translate.sh
-sudo chmod +x restore2translate.sh
-sudo ./restore2translate.sh
+bash -c "$(curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master/restore2translate.sh)"
 ```
 <br>
 Alternativ kann die Übersetzung auch folgendermaßen rückgängig gemacht werden:
