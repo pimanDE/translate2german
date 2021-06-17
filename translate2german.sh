@@ -147,9 +147,9 @@ sudo rpl 'only A + AAAA queries (" + data.dns_queries_all_types + " in total)' '
 sudo rpl '<p>Queries Blocked</p>' '<p>Geblockte Anfragen</p>' /var/www/html/admin/index.php
 sudo rpl '<p>Percent Blocked</p>' '<p>Geblockt in Prozent</p>' /var/www/html/admin/index.php
 sudo rpl 'Domains on Blocklist' 'Domains in den Blocklisten' /var/www/html/admin/index.php
-sudo rpl 'Blocking list updated %H:%I (hh:mm) ago' 'Blockliste vor %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
-sudo rpl 'Blocking list updated one day, %H:%I (hh:mm) ago' 'Blockliste vor 1 Tag, %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
-sudo rpl 'Blocking list updated %a days, %H:%I (hh:mm) ago' 'Blockliste vor %a Tagen, %H Stunden und :%I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
+sudo rpl 'Blocking list updated %H:%I (hh:mm) ago' 'Die Blockliste wurde vor %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
+sudo rpl 'Blocking list updated one day, %H:%I (hh:mm) ago' 'Die Blockliste wurde vor 1 Tag, %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
+sudo rpl 'Blocking list updated %a days, %H:%I (hh:mm) ago' 'Die Blockliste wurde vor %a Tagen, %H Stunden und :%I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
 sudo rpl 'data.dns_queries_today = "Lost"' 'data.dns_queries_today = "Keine"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'data.ads_blocked_today = "connection"' 'data.ads_blocked_today = "Verbindung"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'data.ads_percentage_today = "to"' 'data.ads_percentage_today = "zur"' /var/www/html/admin/scripts/pi-hole/js/index.js
@@ -184,6 +184,9 @@ sudo rpl 'Top Clients (blocked only)' 'Top Geräte (nur geblockt)' /var/www/html
 
 
 # Anfragen Protokoll
+sudo rpl 'The server took too long to send the data.' 'Der Server hat zu lange gebraucht, um die Daten zu senden.' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'An error occured while loading the data: Connection refused. Is FTL running?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung abgelehnt. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'An unknown error occured while loading the data.' 'Beim Laden der Daten ist ein unbekannter Fehler aufgetreten.' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'Processing...' 'wird bearbeitet ...' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'sLoadingRecords:"Loading..."' 'sLoadingRecords:"Lade ..."' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'Recent Queries' 'Letzte Anfragen' /var/www/html/admin/queries.php
@@ -206,18 +209,40 @@ sudo rpl '<th>Type</th>' '<th>Typ</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Reply</th>' '<th>Wiederholung</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/queries.php
+
+# Noch nicht freigegeben
+# sudo rpl 'Blocked (gravity)' 'Geblockt (Gravity)' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'forwarded to ' 'weitergeleitet an: ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl '(cached)' '(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'Blocked <br' 'Geblockt <br' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl '(exact blacklist)' '(exakte Blacklist)' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'external, IP' 'extern, IP' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'external, NULL' 'extern, NULL' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'external, NXRA' 'extern, NXRA' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'gravity, CNAME' 'Gravity, CNAME' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'regex blacklist, CNAME' 'RegEx Blacklist, CNAME' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'exact blacklist, CNAME' 'Exakte Blacklist, CNAME' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'Retried' 'Wiederholt' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'ignored' 'Ignoriert' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl 'already forwarded' 'bereits weitergeleitet' /var/www/html/admin/scripts/pi-hole/js/queries.js
+# sudo rpl '"Unknown ' '"Unbekannt ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+
 sudo rpl 'No data available in table' 'Keine Daten in der Tabelle vorhanden.' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'No matching records found' 'Keine passenden Datensätze gefunden.' /var/www/html/admin/scripts/vendor/datatables.min.js
-sudo rpl 'Click to add ' 'Klicken Sie hier, um den Typ ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'Click to add ' 'Klicken Sie hier, um nach ' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'to filter.' 'zu filtern.' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'Click to remove ' 'Klicken Sie hier, um den Filter ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl ' from filter.' ' zu entfernen.' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'Added from Query Log' 'Vom Anfragen Protokoll hinzugefügt' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl '<li>Click a value in a column to add/remove that value to/from the filter</li>' '<li>Klicken Sie auf einen Wert in einer Spalte, um diesen Wert zum Filter hinzuzufügen oder zu entfernen.</li>' /var/www/html/admin/queries.php
 sudo rpl '<li>On a computer: Hold down <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, or <kbd>&#8984;</kbd> to allow highlighting for copying to clipboard</li>' '<li>Auf einem Computer: Halten Sie die Taste <kbd>Strg</kbd>, <kbd>Alt</kbd>, oder <kbd>&#8984;</kbd> fest, um mehrere Einträge in die Zwischenablage kopieren zu können.</li>' /var/www/html/admin/queries.php
 sudo rpl '<li>On a mobile: Long press to highlight the text and enable copying to clipboard' '<li>Auf einem Handy: Länger drücken, um mehrere Einträge in die Zwischenablage kopieren zu können.' /var/www/html/admin/queries.php
 sudo rpl 'Showing 0 to 0 of 0 entries' 'Zeige 0 bis 0 von 0 Einträgen' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'Filtering options:' 'Filter Optionen:' /var/www/html/admin/queries.php
 sudo rpl 'Showing _START_ to _END_ of _TOTAL_ entries' 'Zeige _START_ bis _END_ von _TOTAL_ Einträgen' /var/www/html/admin/scripts/vendor/datatables.min.js
-sudo rpl '<div class="alProcessing">Adding <span id="alDomain"></span> to the <span id="alList"></span>...</div>' '<div class="alProcessing">Hinzufügen zur <span id="alDomain"></span> to the <span id="alList"></span>...</div>' /var/www/html/admin/queries.php
-sudo rpl 'successfully added to the' 'erfolgreich hinzugefügt zur' /var/www/html/admin/queries.php
+sudo rpl '<div class="alProcessing">Adding <span id="alDomain"></span> to the <span id="alList"></span>...</div>' '<div class="alProcessing">Hinzufügen von <span id="alDomain"></span> zur <span id="alList"></span> ...</div>' /var/www/html/admin/queries.php
+sudo rpl 'successfully added to the <span id="alList"></span></div>' 'Erfolgreich zur <span id="alList"></span> hinzugefügt.</div>' /var/www/html/admin/queries.php
+sudo rpl 'Close</button>' 'Schließen</button>' /var/www/html/admin/queries.php
 sudo rpl 'Timeout or Network Connection Error!' 'Zeitüberschreitung der Netzwerkfehler!' /var/www/html/admin/queries.php
 sudo rpl 'filtered from _MAX_ total entries' 'gefiltert aus insgesamt _MAX_ Einträgen.' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'Clear filters' 'Filter löschen' /var/www/html/admin/queries.php
@@ -290,7 +315,7 @@ sudo rpl 'Query status' 'Status Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl 'Permitted:' 'Zulässig:' /var/www/html/admin/db_queries.php
 sudo rpl 'forwarded</label>' 'weitergeleitet</label>' /var/www/html/admin/db_queries.php
 sudo rpl 'cached</label>' 'zwischengespeichert</label>' /var/www/html/admin/db_queries.php
-sudo rpl 'Retried</label' 'wiederholt</label>' /var/www/html/admin/db_queries.php
+sudo rpl 'Retried</label>' 'wiederholt</label>' /var/www/html/admin/db_queries.php
 sudo rpl 'Blocked:' 'Geblockt:' /var/www/html/admin/db_queries.php
 sudo rpl 'gravity</label' 'Anfragedatenbank</label' /var/www/html/admin/db_queries.php
 sudo rpl 'external</label>' 'extern</label>' /var/www/html/admin/db_queries.php
@@ -306,6 +331,7 @@ sudo rpl '<th>Time</th>' '<th>Zeitpunkt</th>' /var/www/html/admin/db_queries.php
 sudo rpl '<th>Type</th>' '<th>Typ</th>' /var/www/html/admin/db_queries.php
 sudo rpl '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/db_queries.php
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/db_queries.php
+sudo rpl 'Close</button>' 'Schließen</button>' /var/www/html/admin/db_queries.php
 
 
 
@@ -358,7 +384,17 @@ sudo rpl 'utils.showAlert("warning", "", "Warning", "Please specify a " + domain
 sudo rpl 'utils.showAlert("info", "", "Adding " + domainRegex + "...", domain);' 'utils.showAlert("info", "", "Füge die Domain hinzu ...", domain);' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl 'utils.showAlert("success", "fas fa-plus", "Success!", response.message);' 'utils.showAlert("success", "fas fa-plus", "Domain erfolgreich hinzugefügt!", response.message);' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl '"Not adding ". htmlentities(utf8_encode($domain)) . " as it is already on the list"' '"Nicht hinzugefügt, da der Eintrag ". htmlentities(utf8_encode($domain)) . " bereits in der Liste enthalten ist."' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl '<strong>Error, something went wrong!</strong>' '<strong>Fehler, etwas ist schief gelaufen!</strong>' /var/www/html/admin/scripts/pi-hole/js/utils.js
+sudo rpl ' is not a valid domain.' ' ist keine gültige Domain.' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl '"Added " . htmlentities(utf8_encode($domain));' '"Hinzugefügt: " . htmlentities(utf8_encode($domain));' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl "'Added ' ." "'Hinzugefügt: ' ." /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl '"Added "' '"Hinzugefügt: "' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl '<br>Added' '<br>Hinzugefügt:' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl ' out of ' ' von ' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl '" domains' '" Domains' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl '" groups' '" Gruppen' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl '" clients' '" Geräte' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl 'While executing' 'Beim Ausführen:' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl 'RegEx to be added' 'RegEx hinzufügen' /var/www/html/admin/groups-domains.php
 sudo rpl '<strong>Hint:</strong> Need help to write a proper RegEx rule?' '<strong>Hinweis:</strong> Benötigen Sie Hilfe beim Schreiben einer richtigen RegEx-Regel?' /var/www/html/admin/groups-domains.php
 sudo rpl 'Have a look at our online' 'Werfen Sie einen Blick auf unsere' /var/www/html/admin/groups-domains.php
@@ -371,6 +407,8 @@ sudo rpl '">Exact whitelist</option>' '">Exakte Whitelist</option>' /var/www/htm
 sudo rpl '>Regex whitelist</option>' '>RegEx Whitelist</option>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl 'utils.showAlert("info", "", "Editing " + domainRegex + "...", name' 'utils.showAlert("info", "", "Bearbeite die Domain ..." , name' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl '"Successfully " + done + " " + domainRegex' '"Domain erfolgreich bearbeitet! "' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl 'Added from Query Log' 'Hinzugefügt vom Anfragen Protokoll' /var/www/html/admin/scripts/pi-hole/js/utils.js
+sudo rpl 'Session expired! Please re-login on the Pi-hole dashboard.' 'Die Sitzung ist abgelaufen! Bitte melden Sie sich erneut auf dem Dashboard des Pi-hole an.' /var/www/html/admin/scripts/pi-hole/php/auth.php
 
 
 
@@ -465,7 +503,7 @@ sudo rpl 'Reset sorting</button>' 'Sortierung zurücksetzen</button>' /var/www/h
 #  Geräte
 sudo rpl '<h1>Client group management</h1>' '<h1>Gerätegruppenverwaltung</h1>' /var/www/html/admin/groups-clients.php
 sudo rpl 'Add a new client' 'Neues Gerät hinzufügen' /var/www/html/admin/groups-clients.php
-sudo rpl 'Known clients:' 'Bekannt Geräte:' /var/www/html/admin/groups-clients.php
+sudo rpl 'Known clients:' 'Bekannte Geräte:' /var/www/html/admin/groups-clients.php
 sudo rpl 'Select client...' 'Gerät auswählen ...' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl 'Comment:' 'Kommentar:' /var/www/html/admin/groups-clients.php
 sudo rpl 'Client description (optional)' 'Geräte Beschreibung (optional)' /var/www/html/admin/groups-clients.php
@@ -491,6 +529,7 @@ sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/groups-clients.
 sudo rpl 'Added:' 'Hinzugefügt am:' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl 'nLast modified:' 'nZuletzt bearbeitet am:' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl 'nDatabase ID:' 'nDatenbank ID:' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
+sudo rpl 'none selected' 'Es wird nichts geblockt!' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl 'Editing client...' 'Gerät wird bearbeitet ...' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl '"Successfully " + done + " client"' '"Gerät erfolgreich bearbeitet!"' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl '>Apply</button>' '>Anwenden</button>' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
@@ -512,6 +551,7 @@ sudo rpl 'on: "Enabled"' 'on: "Aktiviert"' /var/www/html/admin/scripts/pi-hole/j
 sudo rpl 'off: "Disabled"' 'off: "Deaktiviert"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl 'Apply</button>' 'Anwenden</button>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl 'return "All selected (" + num + ")";' 'return "Alle ausgewählt (" + num + ")";' /var/www/html/admin/scripts/pi-hole/js/utils.js
+sudo rpl 'return num + " selected"' 'return num + " ausgewählt"' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl 'utils.showAlert("info", "", "Deleting " + domainRegex + "...", domain)' 'utils.showAlert("info", "", "Lösche die Domain ...", domain)' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl '"Successfully deleted " + domainRegex,' '"Domain erfolgreich gelöscht!" ,' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl 'Reset sorting</button>' 'Sortierung zurücksetzen</button>' /var/www/html/admin/groups-domains.php
@@ -546,7 +586,7 @@ sudo rpl 'List download was successful' 'Herunterladen der Liste war erfolgreich
 sudo rpl 'var statusText = "Unknown";' 'var statusText = "Unbekannt";' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'List is disabled and not checked' 'Liste ist deaktiviert und nicht geprüft.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'List was not downloaded so far' 'Liste wurde bisher nicht heruntergeladen.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl 'List unchanged upstream, Pi-hole used a local copy' 'Liste unverändert, Pi-Loch verwendet eine lokale Kopie.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List unchanged upstream, Pi-hole used a local copy' 'Liste unverändert, Pi-hole verwendet eine lokale Kopie.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'List unavailable, Pi-hole used a local copy' 'Diese Liste ist nicht vorhanden, Pi-hole verwendet eine lokale Kopie.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'List unavailable, there is no local copy of this list available on your Pi-hole (<span class="list-status-4">replace list</span>)' 'Liste ist nicht verfügbar, es ist auch keine lokale Kopie auf dem Pi-hole vorhanden. (<span class="list-status-4">Liste ersetzen!</span>)' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'Unknown (<span class="list-status-0"' 'Unbekannt (<span class="list-status-0"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
@@ -554,17 +594,15 @@ sudo rpl '<td>This list was added to Pi-hole&nbsp;&nbsp;</td>' '<td>Diese Liste 
 
 # Noch nicht freigegeben
 # sudo rpl 'ago' 'zuvor' /var/www/html/admin/scripts/vendor/moment.min.js
-# sudo rpl ' months' ' Monate' /var/www/html/admin/scripts/vendor/moment.min.js
-# sudo rpl ' minutes' ' Minuten' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'a month' '1 Monat' /var/www/html/admin/scripts/vendor/moment.min.js
+# sudo rpl 'd minutes' 'd Minuten' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'a few seconds' 'ein paar Sekunden' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'd seconds' 'Sekunden' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'a minute' '1 Minute' /var/www/html/admin/scripts/vendor/moment.min.js
-# sudo rpl 'd minutes' 'd Minuten' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'an hour' '1 Stunde' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'd hours' 'd Stunden' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'a day' '1 Tag' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'd days' 'd Tage' /var/www/html/admin/scripts/vendor/moment.min.js
-# sudo rpl 'a month' '1 Monat' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'd months' 'd Monate' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'a year' '1 Jahr' /var/www/html/admin/scripts/vendor/moment.min.js
 # sudo rpl 'd years' 'd Jahre' /var/www/html/admin/scripts/vendor/moment.min.js
@@ -688,6 +726,7 @@ sudo rpl 'Blocked queries' 'Geblockte Anfragen' /var/www/html/admin/auditlog.php
 sudo rpl '<th>Hits</th>' '<th>Treffer</th>' /var/www/html/admin/auditlog.php
 sudo rpl '<th>Actions</th>' '<th>Aktionen</th>' /var/www/html/admin/auditlog.php
 sudo rpl 'Audit</button>' 'Prüfung</button>' /var/www/html/admin/scripts/pi-hole/js/auditlog.js
+sudo rpl 'Added from Audit Log' 'Vom Audit Protokoll hinzugefügt' /var/www/html/admin/scripts/pi-hole/js/auditlog.js
 
 
 
@@ -823,7 +862,7 @@ sudo rpl 'properly firewalled.</p>' 'Pi-hole ordnungsgemäß mit einer Firewall 
 sudo rpl '<p>ECS (Extended Client Subnet) defines a mechanism for recursive resolvers to send partial client IP address information to authoritative DNS name servers. Content Delivery Networks (CDNs) and latency-sensitive services use this to give geo-located responses when responding to name lookups coming through public DNS resolvers. <em>Note that ECS may result in reduced privacy.</em></p>' '<p>ECS (Extended Client Subnet) definiert einen Mechanismus für rekursive Resolver, um teilweise IP-Adressinformationen des Clients an autorisierende DNS-Nameserver zu senden. Content Delivery Networks (CDNs) und latenzempfindliche Dienste verwenden diese Option, um geografische Antworten auf Namenssuchen zu geben, die über öffentliche DNS-Resolver eingehen. <em>Beachten Sie, dass ECS die Privatsphäre beeinträchtigen kann.</em></p>' /var/www/html/admin/settings.php
 sudo rpl '<h3 class="box-title">Advanced DNS settings</h3>' '<h3 class="box-title">Erweiterte DNS-Einstellungen</h3>' /var/www/html/admin/settings.php
 sudo rpl '<strong>Never forward non-FQDNs</strong>' '<strong>Niemals Nicht-FQDNs weiterleiten</strong>' /var/www/html/admin/settings.php
-sudo rpl '<p>When there is a Pi-hole domain set and this box is' '<p>Wenn es eine Pi-Loch-Domain gibt und dieses Kästchen angekreuzt ist, ' /var/www/html/admin/settings.php
+sudo rpl '<p>When there is a Pi-hole domain set and this box is' '<p>Wenn es eine Pi-hole-Domain gibt und dieses Kästchen angekreuzt ist, ' /var/www/html/admin/settings.php
 sudo rpl 'ticked, this asks FTL that this domain is purely' 'wird die FTL gefragt, ob diese Domain rein lokal ist. Die FTL kann Anfragen ' /var/www/html/admin/settings.php
 sudo rpl 'local and FTL may answer queries from <code>/etc/hosts</code> or DHCP leases' 'von <code>/etc/hosts</code> oder DHCP-Leases beantworten, sollte aber ' /var/www/html/admin/settings.php
 sudo rpl 'but should never forward queries on that domain to any upstream servers.</p>' 'niemals Anfragen zu dieser Domain an irgendwelche Upstream-Server weiterleiten.</p>' /var/www/html/admin/settings.php
@@ -911,7 +950,7 @@ sudo rpl 'DHCP lease time' 'DHCP Leasingzeit' /var/www/html/admin/settings.php
 sudo rpl 'Lease time in hours' 'Leasingzeit in Stunden' /var/www/html/admin/settings.php
 sudo rpl 'Hint: 0 = infinite, 24 = one day, 168 = one week, 744 = one month, 8760 = one year' 'Hinweis: 0 = unendlich, 24 = ein Tag, 168 = eine Woche, 744 = ein Monat, 8760 = ein Jahr' /var/www/html/admin/settings.php
 sudo rpl 'Enable IPv6 support (SLAAC + RA)' 'Aktiviere IPv6 Unterstützung (SLAAC + RA)' /var/www/html/admin/settings.php
-sudo rpl '<strong>Enable DHCPv4 rapid commit (fast address assignment)</strong' '<strong>Aktiviere DHCPv4 Schnellübertragung (schnelle Adresszuweisung)</strong>' /var/www/html/admin/settings.php
+sudo rpl '<strong>Enable DHCPv4 rapid commit (fast address assignment)</strong>' '<strong>Aktiviere DHCPv4 Schnellübertragung (schnelle Adresszuweisung)</strong>' /var/www/html/admin/settings.php
 sudo rpl '<h3 class="box-title">DHCP leases</h3>' '<h3 class="box-title">DHCP Leases</h3>' /var/www/html/admin/settings.php
 sudo rpl '<label>Currently active DHCP leases</label>' '<label>Derzeit aktive DHCP-Leases</label>' /var/www/html/admin/settings.php
 sudo rpl '<th>MAC address</th>' '<th>MAC Addresse</th>' /var/www/html/admin/settings.php
@@ -946,8 +985,9 @@ sudo rpl 'Enter one domain per line' 'Geben Sie eine Domain pro Zeile ein' /var/
 sudo rpl 'Enter one IP address or host name per line' 'Geben Sie eine IP Adresse oder einen Hostnamen pro Zeile ein' /var/www/html/admin/settings.php
 sudo rpl 'Web interface settings' 'Einstellungen für die Weboberfläche' /var/www/html/admin/settings.php
 sudo rpl 'Interface appearance' 'Erscheinungsbild der Weboberfläche' /var/www/html/admin/settings.php
-sudo rpl 'Pi-hole default theme (light, default)' 'Pi-hole Standard Theme (hell, standard)' /var/www/html/admin/scripts/pi-hole/php/theme.php
+sudo rpl 'Pi-hole default theme (light, default)' 'Pi-hole Standard Theme (hell, Standard)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl 'Pi-hole midnight theme (dark)' 'Pi-hole Nacht Theme (dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
+sudo rpl 'Pi-hole deep-midnight theme (dark)' 'Pi-hole Mitternacht Theme (sehr dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl 'Use boxed layout (for large screens)' 'Boxed Layout verwenden (für große Bildschirme)' /var/www/html/admin/settings.php
 sudo rpl 'Administrator Email Address' 'E-Mail Adresse des Administrators:' /var/www/html/admin/settings.php
 sudo rpl 'Query Log' 'Anfrageprotokoll' /var/www/html/admin/settings.php
@@ -1010,10 +1050,34 @@ sudo rpl 'Group</label>' 'Gruppen</label>' /var/www/html/admin/settings.php
 sudo rpl 'Audit log</label>' 'Prüfprotokoll</label>' /var/www/html/admin/settings.php
 sudo rpl 'Static DHCP Leases</label>' 'Statische DHCP-Leases</label>' /var/www/html/admin/settings.php
 sudo rpl 'Local DNS Records</label>' 'Lokale DNS-Einträge</label>' /var/www/html/admin/settings.php
+sudo rpl 'Local CNAME Records</label>' 'Lokale CNAME Einträge</label>' /var/www/html/admin/settings.php
 sudo rpl 'File input</label>' 'Dateieingabe</label>' /var/www/html/admin/settings.php
 sudo rpl 'Upload only Pi-hole backup files.</p>' 'Nur Pi-hole Sicherungsdateien hochladen</p>' /var/www/html/admin/settings.php
 sudo rpl 'Clear existing data</label>' 'Vorhandene Daten löschen</label>' /var/www/html/admin/settings.php
 sudo rpl 'Restore</button>' 'Wiederherstellen</button>' /var/www/html/admin/settings.php
+sudo rpl 'The file you are trying to upload is not a .tar.gz file (filename: ' 'Die Datei, die Sie versuchen hochzuladen, ist keine .tar.gz Datei (Dateiname: ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'type: ".htmlentities($type)."). Please try again.' 'Dateityp: ".htmlentities($type)."). Bitte versuchen Sie es nochmal.' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed blacklist (exact)' 'echo "Verarbeitete Blacklist (genau)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl '".$num." entries)<br>' '".$num." Einträge)<br>' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed whitelist (exact)' 'echo "Verarbeitete Whitelist (genau)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed blacklist (regex)' 'echo "Verarbeitete Blacklist (RegEx)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed blacklist (regex, wildcard style)' 'echo "Verarbeitete Blacklist (RegEx, Wildcard Style)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed audit log' 'echo "Verarbeitete Audit Log' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed adlists' 'echo "Verarbeitete Sperrlisten' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed whitelist (regex)' 'echo "Verarbeitete Whitelist (RegEx)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed adlist group assignments' 'echo "Verarbeitete Sperrlisten Gruppen Zuordnungen' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed adlist ' 'echo "Verarbeitete Sperrlisten ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed domain_audit' 'echo "Verarbeitete Domain Prüfungen' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed group' 'echo "Verarbeitete Gruppen' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed client group assignments' 'echo "Verarbeitete Geräte Gruppen Zuweisungen' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed client' 'echo "Verarbeitete Geräte' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed black-/whitelist group assignments' 'echo "Verarbeitete Black-/Whitelist Gruppen Zuordnungen' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed static DHCP leases' 'echo "Verarbeitete statische DHCP Vergabe' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed local DNS records' 'echo "Verarbeitete lokale DNS Einträge' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'echo "Processed local CNAME records' 'echo "Verarbeitete lokale CNAME Einträge' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'No file transmitted or parameter error.' 'Keine Datei übertragen oder Parameter Fehler.' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'cannot open/create ' 'kann nicht geöffnet oder erstellt werden ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'nPHP user: ' 'nPHP Benutzer: ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 
 
 
