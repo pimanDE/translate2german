@@ -407,7 +407,6 @@ sudo rpl '">Exact whitelist</option>' '">Exakte Whitelist</option>' /var/www/htm
 sudo rpl '>Regex whitelist</option>' '>RegEx Whitelist</option>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl 'utils.showAlert("info", "", "Editing " + domainRegex + "...", name' 'utils.showAlert("info", "", "Bearbeite die Domain ..." , name' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl '"Successfully " + done + " " + domainRegex' '"Domain erfolgreich bearbeitet! "' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
-sudo rpl 'Added from Query Log' 'Hinzugefügt vom Anfragen Protokoll' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl 'Session expired! Please re-login on the Pi-hole dashboard.' 'Die Sitzung ist abgelaufen! Bitte melden Sie sich erneut auf dem Dashboard des Pi-hole an.' /var/www/html/admin/scripts/pi-hole/php/auth.php
 
 
@@ -1058,7 +1057,7 @@ sudo rpl 'Restore</button>' 'Wiederherstellen</button>' /var/www/html/admin/sett
 sudo rpl 'The file you are trying to upload is not a .tar.gz file (filename: ' 'Die Datei, die Sie versuchen hochzuladen, ist keine .tar.gz Datei (Dateiname: ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'type: ".htmlentities($type)."). Please try again.' 'Dateityp: ".htmlentities($type)."). Bitte versuchen Sie es nochmal.' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'echo "Processed blacklist (exact)' 'echo "Verarbeitete Blacklist (genau)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
-sudo rpl '".$num." entries)<br>' '".$num." Einträge)<br>' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl ' entries' ' Einträge' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'echo "Processed whitelist (exact)' 'echo "Verarbeitete Whitelist (genau)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'echo "Processed blacklist (regex)' 'echo "Verarbeitete Blacklist (RegEx)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'echo "Processed blacklist (regex, wildcard style)' 'echo "Verarbeitete Blacklist (RegEx, Wildcard Style)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
