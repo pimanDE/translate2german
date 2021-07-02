@@ -25,7 +25,8 @@ fehler="[${rotfett}✗${standard}]"
 haken="[${gruenfett}✓${standard}]"
 done="${gruenfett} done!${standard}"
 
-touch /tmp/error-translate.log
+sudo touch /tmp/error-translate.log
+sudo chmod 775 /tmp/error-translate.log
 exec 2> /tmp/error-translate.log
 
 ####################################################################################################################
