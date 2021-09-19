@@ -93,6 +93,9 @@ read input
 				sudo rm -r /usr/local/bin/pihole
 				sudo mv /usr/local/bin/pihole.sicherung.vom.$file /usr/local/bin/pihole
 
+				echo
+				echo
+
 				echo -e "${blaufett}Erledigt!${standard}"
 				echo
 				exit;
