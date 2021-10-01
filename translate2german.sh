@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.4 Web Interface Version v5.6 FTL Version v5.9
+# getestet auf Pi-hole Version v5.5 FTL Version v5.10.2 Web Interface Version v5.7
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -185,8 +185,8 @@ sudo rpl 'Top Clients (blocked only)' 'Top Geräte (nur geblockt)' /var/www/html
 
 # Anfragen Protokoll
 sudo rpl 'The server took too long to send the data.' 'Der Server hat zu lange gebraucht, um die Daten zu senden.' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl 'An error occured while loading the data: Connection refused. Is FTL running?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung abgelehnt. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl 'An unknown error occured while loading the data.' 'Beim Laden der Daten ist ein unbekannter Fehler aufgetreten.' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'An error occurred while loading the data: Connection refused. Is FTL running?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung abgelehnt. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'An unknown error occurred while loading the data.' 'Beim Laden der Daten ist ein unbekannter Fehler aufgetreten.' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'Processing...' 'wird bearbeitet ...' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'sLoadingRecords:"Loading..."' 'sLoadingRecords:"Lade ..."' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'Recent Queries' 'Letzte Anfragen' /var/www/html/admin/queries.php
@@ -212,7 +212,7 @@ sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/queries.php
 
 sudo rpl 'Blocked (gravity)' 'Geblockt (Gravity)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'forwarded to ' 'weitergeleitet an: ' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-sudo rpl '(cached)' '(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl '>(cache)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl 'Blocked <br' 'Geblockt <br' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '(exact blacklist)' '(exakte Blacklist)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'external, IP' 'extern, IP' /var/www/html/admin/scripts/pi-hole/js/queries.js
@@ -421,65 +421,6 @@ sudo rpl '">Regex blacklist</option>' '">RegEx Blacklist</option>' /var/www/html
 
 
 
-# Lokale DNS Einträge
-#  DNS Einträge
-sudo rpl 'On this page, you can add domain/IP associations' 'Auf dieser Seite können Sie Domänen- bzw. IP-Zuordnungen hinzufügen.' /var/www/html/admin/dns_records.php
-sudo rpl 'Add a new domain/IP combination' 'Fügen Sie eine neue Domain/IP Kombination hinzu' /var/www/html/admin/dns_records.php
-sudo rpl 'Add a domain (example.com or sub.example.com)' 'Domain hinzufügen (beispiel.com oder mobil.example.com)' /var/www/html/admin/dns_records.php
-sudo rpl '<label for="ip">IP Address:</label>' '<label for="ip">IP Adresse:</label>' /var/www/html/admin/dns_records.php
-sudo rpl 'placeholder="Associated IP address"' 'placeholder="Zugehörige IP Adresse"' /var/www/html/admin/dns_records.php
-sudo rpl 'Add</button>' 'Hinzufügen</button>' /var/www/html/admin/dns_records.php
-sudo rpl 'Updating the custom DNS entries...' 'Aktualisieren der benutzerdefinierten DNS-Einträge ...' /var/www/html/admin/dns_records.php
-sudo rpl 'Success! The list will refresh.' 'Erfolgreich! Die Liste wurde aktualisiert.' /var/www/html/admin/dns_records.php
-sudo rpl 'Failure! Something went wrong, see output below' 'Fehler! Irgendwas hat nicht funktioniert, siehe weiter unten' /var/www/html/admin/dns_records.php
-sudo rpl '"Domain must be valid"' '"Die Domain muss gültig sein."' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'List of local DNS domains' 'Liste der lokalen DNS-Domains' /var/www/html/admin/dns_records.php
-sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/customdns.js
-sudo rpl '<th>IP</th>' '<th>IP Adresse</th>' /var/www/html/admin/dns_records.php
-sudo rpl 'Error while adding this custom DNS entry' 'Fehler beim Hinzufügen dieses benutzerdefinierten DNS-Eintrags.' /var/www/html/admin/scripts/pi-hole/js/customdns.js
-sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/dns_records.php
-
-
-
-# Lokale DNS Einträge
-#  CNAME Einträge
-sudo rpl '<h1>Local CNAME Records</h1>' '<h1>Lokale CNAME Einträge</h1>' /var/www/html/admin/cname_records.php
-sudo rpl '<small>On this page, you can add CNAME records.</small>' '<small>Auf dieser Seite können Sie CNAME Einträge hinzufügen.</small>' /var/www/html/admin/cname_records.php
-sudo rpl 'Add a new CNAME record' 'Neuen CNAME Eintrag hinzufügen' /var/www/html/admin/cname_records.php
-sudo rpl 'Add a domain (example.com or sub.example.com)' 'Domain hinzufügen (beispiel.com oder mobil.example.com)' /var/www/html/admin/cname_records.php
-sudo rpl 'Target Domain:</label>' 'Zieldomain:</label>' /var/www/html/admin/cname_records.php
-sudo rpl 'Associated Target Domain' 'Zugehörige Zieldomain' /var/www/html/admin/cname_records.php
-sudo rpl '>Add</button>' '>Hinzufügen</button>' /var/www/html/admin/cname_records.php
-sudo rpl '<strong>Note:</strong>' '<strong>Hinweis:</strong>' /var/www/html/admin/cname_records.php
-sudo rpl '<p>The target of a <code>CNAME</code> must be a domain that the Pi-hole already has in its cache or is authoritative for. This is a universal limitation of <code>CNAME</code> records.</p>' '<p>Das Ziel eines <code>CNAME</code> muss eine Domäne sein, die der Pi-hole bereits in seinem Cache hat oder für die es maßgeblich ist. Dies ist eine universelle Einschränkung von <code>CNAME</code> Datensätzen.</p>' /var/www/html/admin/cname_records.php
-sudo rpl "<p>The reason for this is that Pi-hole will not send additional queries upstream when serving <code>CNAME</code> replies. As consequence, if you set a target that isn't already known, the reply" '<p>Der Grund dafür ist, dass Pi-hole keine zusätzlichen Anfragen stromaufwärts sendet, wenn <code>CNAME</code> -Antworten zugestellt werden. Wenn Sie ein Ziel festlegen, das noch nicht bekannt ist, ist die' /var/www/html/admin/cname_records.php
-sudo rpl 'to the client may be incomplete. Pi-hole just returns the information it knows at the time of the query. This results in certain limitations for <code>CNAME</code> targets,' 'Antwort an das Gerät möglicherweise unvollständig. Pi-hole gibt nur die Informationen zurück, die es zum Zeitpunkt der Abfrage kennt. Dies führt zu bestimmten Einschränkungen für <code>CNAME</code> Ziele.' /var/www/html/admin/cname_records.php
-sudo rpl "for instance, only <i>active</i> DHCP leases work as targets - mere DHCP <i>leases</i> aren't sufficient as they aren't (yet) valid DNS records.</p>" 'Beispielsweise fungieren nur <i>aktive </i> DHCP-Leases als Ziele - bloße DHCP <i>-Leases</i> sind nicht ausreichend, da sie (noch) keine gültigen DNS-Einträge sind.</p>' /var/www/html/admin/cname_records.php
-sudo rpl "<p>Additionally, you can't <code>CNAME</code> external domains (<code>bing.com</code> to <code>google.com</code>) successfully as this could result in invalid SSL certificate errors when the" '<p>Darüber hinaus können externe Domänen (<code>bing.com</code> bis <code>google.com</code>) nicht erfolgreich <code>CNAME</code> verwenden, da dies zu ungültigem SSL führen kann, wenn der Zielserver' /var/www/html/admin/cname_records.php
-sudo rpl 'target server does not serve content for the requested domain.</p>' 'keinen Inhalt für die angeforderte Domain bereitstellt.</p>' /var/www/html/admin/cname_records.php
-sudo rpl 'Updating CNAME records...' 'Aktualisiere die CNAME Einträge ...' /var/www/html/admin/cname_records.php
-sudo rpl 'Success! The list will refresh.' 'Erfolgreich! Die Liste wurde aktualisiert.' /var/www/html/admin/cname_records.php
-sudo rpl 'Failure! Something went wrong, see output below:' 'Fehler! Etwas ist schief gelaufen, siehe Ausgabe unten:' /var/www/html/admin/cname_records.php
-sudo rpl 'it contains invalid characters' 'sie ungültige Zeichen enthält' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'its length is invalid' 'ihre Länge ungültig ist' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'at least one label is of invalid length' 'mindestens ein Kennzeichen eine ungültige Länge hat' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'IP must be set' 'IP muss eingestellt sein' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'IP must be valid' 'IP muss gültig sein' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'Domain must be set' 'Domain muss eingetragen sein' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'This domain/ip association does not exist' 'Diese Domäne/IP-Zuordnung existiert nicht' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'This domain already has a custom DNS entry for an IPv' 'Diese Domäne hat bereits einen benutzerdefinierten DNS-Eintrag für eine IPv' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl '' '' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'Target must be valid' 'Ziel muss gültig sein' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'is not valid' 'ist nicht gültig' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'There is already a CNAME record for' 'Es gibt bereits einen CNAME-Eintrag für' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'List of local CNAME records' 'Liste der lokalen CNAME Einträge' /var/www/html/admin/cname_records.php
-sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/customcname.js
-sudo rpl '<th>Target</th>' '<th>Ziel</th>' /var/www/html/admin/cname_records.php
-sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/cname_records.php
-sudo rpl '>Clear Filters</button>' '>Filter löschen</button>' /var/www/html/admin/cname_records.php
-
-
-
 # Gruppenmanagement
 #  Gruppen
 sudo rpl '<h1>Group management</h1>' '<h1>Gruppen Verwaltung</h1>' /var/www/html/admin/groups.php
@@ -524,7 +465,7 @@ sudo rpl '<p>Clients may be described either by their IP addresses (IPv4 and IPv
 sudo rpl 'IP subnets (CIDR notation, like <code>192.168.2.0/24</code>),' '(CIDR-Notation, like <code>192.168.2.0/24</code>), ihre MAC-Adressen (wie <code>12:34:56:78:9A:BC</code>), ' /var/www/html/admin/groups-clients.php
 sudo rpl 'their MAC addresses (like <code>12:34:56:78:9A:BC</code>),' 'durch ihre Hostnamen (wie <code>localhost</code>) oder durch die Schnittstelle, mit der sie verbunden ' /var/www/html/admin/groups-clients.php
 sudo rpl 'by their hostnames (like <code>localhost</code>), or by the interface they are connected to (prefaced with a colon, like <code>:eth0</code>).</p>' 'sind (mit einem Doppelpunkt vorangestellt, (z. B. <code>:eth0</code>)) beschrieben werden.</p>' /var/www/html/admin/groups-clients.php
-sudo rpl '<p>Note that client recognition by IP addresses (incl. subnet ranges) are prefered over MAC address, host name or interface recognition as' '<p>Beachten Sie, dass die Geräte-Erkennung anhand von IP-Adressen (inkl. Subnetzbereiche), der MAC-Adresse, dem Hostnamen oder ' /var/www/html/admin/groups-clients.php
+sudo rpl '<p>Note that client recognition by IP addresses (incl. subnet ranges) are preferred over MAC address, host name or interface recognition as' '<p>Beachten Sie, dass die Geräte-Erkennung anhand von IP-Adressen (inkl. Subnetzbereiche), der MAC-Adresse, dem Hostnamen oder ' /var/www/html/admin/groups-clients.php
 sudo rpl 'the two latter will only be available after some time.' 'der Schnittstellenerkennung vorgezogen wird, da die beiden letzteren erst nach einiger Zeit verfügbar sind. Außerdem ' /var/www/html/admin/groups-clients.php
 sudo rpl 'Furthermore, MAC address recognition only works for devices at most one networking hop away from your Pi-hole.</p>' 'funktioniert die MAC-Adressenerkennung nur für Geräte, die höchstens einen Netzwerksprung von Ihrem Pi-hole entfernt sind.</p>' /var/www/html/admin/groups-clients.php
 sudo rpl '>Client</th>' '>Gerät</th>' /var/www/html/admin/groups-clients.php
@@ -691,6 +632,7 @@ sudo rpl 'Storing downloaded domains in new gravity database' 'Speichern der her
 sudo rpl 'Building tree' 'Datenbaum wurde aufgebaut' /opt/pihole/gravity.sh
 sudo rpl '${CROSS} Unable to build gravity tree in' '${CROSS} Unable to build gravity tree in' /opt/pihole/gravity.sh
 sudo rpl 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
+sudo rpl 'The old database remains available' 'Die alte Datenbank ist weiterhin verfügbar' /opt/pihole/gravity.sh
 sudo rpl '${CROSS} Unable to copy data from ${gravityDBfile} to ${gravityTEMPfile}\\n  ${output}"' '${CROSS} Daten konnten nicht kopiert werden von ${gravityDBfile} bis ${gravityTEMPfile}\\n  ${output}"' /opt/pihole/gravity.sh
 sudo rpl '${CROSS} Unable to update gravity timestamp in database' '${CROSS} Zeitstempel der Gravity kann nicht in der Datenbank aktualisiert werden' /opt/pihole/gravity.sh
 sudo rpl 'Number of ${str}:' 'Anzahl der ${str}:' /opt/pihole/gravity.sh
@@ -837,15 +779,6 @@ sudo rpl 'The system will reboot in 5 seconds...' 'Das System startet in 5 Sekun
 
 
 # Einstellungen
-#  Blocklisten
-
-sudo rpl '>Adlists</a>' '>Blocklisten</a>' /var/www/html/admin/settings.php
-sudo rpl "Adlists used to generate Pi-hole's Gravity" "Blocklisten zur Erstellung der Pi-hole Gravity-Datenbank" /var/www/html/admin/settings.php
-sudo rpl '<p>Please use the <a href="groups-adlists.php">group management pages</a> to edit the adlists used by Pi-hole.</p>' '<p>Bitte verwenden Sie die Seite <a href="groups-adlists.php">Gruppen-Management</a>, um die von Pi-hole verwendeten Blocklisten zu bearbeiten.</p>' /var/www/html/admin/settings.php
-
-
-
-# Einstellungen
 # DNS
 sudo rpl '<h1 class="box-title">Upstream DNS Servers</h1>' '<h1 class="box-title">Upstream DNS-Server</h1>' /var/www/html/admin/settings.php
 sudo rpl '<strong>Custom 1 (IPv4)</strong>' '<strong>Benutzerdefiniert 1 (IPv4)</strong>' /var/www/html/admin/settings.php
@@ -865,13 +798,13 @@ sudo rpl 'virtually all other cases you have to make sure that your Pi-hole is' 
 sudo rpl 'properly firewalled.</p>' 'Pi-hole ordnungsgemäß mit einer Firewall versehen ist.</p>' /var/www/html/admin/settings.php
 sudo rpl '<p>ECS (Extended Client Subnet) defines a mechanism for recursive resolvers to send partial client IP address information to authoritative DNS name servers. Content Delivery Networks (CDNs) and latency-sensitive services use this to give geo-located responses when responding to name lookups coming through public DNS resolvers. <em>Note that ECS may result in reduced privacy.</em></p>' '<p>ECS (Extended Client Subnet) definiert einen Mechanismus für rekursive Resolver, um teilweise IP-Adressinformationen des Clients an autorisierende DNS-Nameserver zu senden. Content Delivery Networks (CDNs) und latenzempfindliche Dienste verwenden diese Option, um geografische Antworten auf Namenssuchen zu geben, die über öffentliche DNS-Resolver eingehen. <em>Beachten Sie, dass ECS die Privatsphäre beeinträchtigen kann.</em></p>' /var/www/html/admin/settings.php
 sudo rpl '<h3 class="box-title">Advanced DNS settings</h3>' '<h3 class="box-title">Erweiterte DNS-Einstellungen</h3>' /var/www/html/admin/settings.php
-sudo rpl '<strong>Never forward non-FQDNs</strong>' '<strong>Niemals Nicht-FQDNs weiterleiten</strong>' /var/www/html/admin/settings.php
+sudo rpl '<strong>Never forward non-FQDN <code>' '<strong>Niemals Nicht-FQDN weiterleiten<code>' /var/www/html/admin/settings.php
 sudo rpl '<p>When there is a Pi-hole domain set and this box is' '<p>Wenn es eine Pi-hole-Domain gibt und dieses Kästchen angekreuzt ist, ' /var/www/html/admin/settings.php
 sudo rpl 'ticked, this asks FTL that this domain is purely' 'wird die FTL gefragt, ob diese Domain rein lokal ist. Die FTL kann Anfragen ' /var/www/html/admin/settings.php
 sudo rpl 'local and FTL may answer queries from <code>/etc/hosts</code> or DHCP leases' 'von <code>/etc/hosts</code> oder DHCP-Leases beantworten, sollte aber ' /var/www/html/admin/settings.php
 sudo rpl 'but should never forward queries on that domain to any upstream servers.' 'niemals Anfragen zu dieser Domain an irgendwelche Upstream-Server weiterleiten.' /var/www/html/admin/settings.php
 sudo rpl '<strong>Never forward reverse lookups for private IP ranges</strong>' '<strong>Niemals Reverse-Lookups für private IP-Bereiche weiterleiten</strong>' /var/www/html/admin/settings.php
-sudo rpl 'If Conditional Fowarding is enabled, unticking this box may cause a partial' 'Wenn Conditional Forwarding aktiviert ist, kann das Deaktivieren dieses Kästchens unter bestimmten ' /var/www/html/admin/settings.php
+sudo rpl 'If Conditional Forwarding is enabled, unticking this box may cause a partial' 'Wenn Conditional Forwarding aktiviert ist, kann das Deaktivieren dieses Kästchens unter bestimmten ' /var/www/html/admin/settings.php
 sudo rpl 'DNS loop under certain circumstances (e.g. if a client would send TLD DNSSEC queries).' 'Umständen zu einer teilweisen DNS-Schleife führen (z. B. wenn ein Client TLD-DNSSEC-Anfragen senden würde).' /var/www/html/admin/settings.php
 sudo rpl '<p>All reverse lookups for private IP ranges (i.e., <code>192.168.0.x/24</code>, etc.)' '<p>Alle Reverse-Lookups für private IP-Bereiche (d.h. 192.168.0.x/24 usw.), ' /var/www/html/admin/settings.php
 sudo rpl 'which are not found in <code>/etc/hosts</code> or the DHCP leases are answered' 'die nicht in <code>/etc/hosts</code> oder den DHCP-Leases gefunden werden, werden mit ' /var/www/html/admin/settings.php
@@ -890,7 +823,7 @@ sudo rpl 'the size of your log might increase significantly' 'wenn Sie DNSSEC ak
 sudo rpl 'when enabling DNSSEC. A DNSSEC resolver test can be found' 'von DNSSEC möglicherweise erheblich zunimmt. Ein DNSSEC-Resolver-Test finden Sie ' /var/www/html/admin/settings.php
 sudo rpl '>here</a>.</p>' '>hier</a>.</p>' /var/www/html/admin/settings.php
 sudo rpl '<h4>Conditional forwarding</h4>' '<h4>Bedingte Weiterleitung</h4>' /var/www/html/admin/settings.php
-sudo rpl "<p>If not configured as your DHCP server, Pi-hole  typically won't be able to" '<p>Wenn Pi-hole nicht als DHCP-Server konfiguriert ist, kann' /var/www/html/admin/settings.php
+sudo rpl "<p>If not configured as your DHCP server, Pi-hole typically won't be able to" '<p>Wenn Pi-hole nicht als DHCP-Server konfiguriert ist, kann' /var/www/html/admin/settings.php
 sudo rpl 'determine the names of devices on your local network.  As a' 'es die Namen der Geräte in Ihrem lokalen Netzwerk nicht ermitteln. Daher' /var/www/html/admin/settings.php
 sudo rpl 'result, tables such as Top Clients will only show IP addresses.</p>' 'werden in den Tabellen der Top Geräte nur die IP-Adressen angezeigt.</p>' /var/www/html/admin/settings.php
 sudo rpl '<p>One solution for this is to configure Pi-hole to forward these' '<p>Eine Lösung hierfür besteht darin, Pi-hole so zu konfigurieren, dass die Anfragen' /var/www/html/admin/settings.php
@@ -911,6 +844,7 @@ sudo rpl 'You can also specify a local domain name (like <code>fritz.box</code>)
 sudo rpl 'devices ending in your local domain name will not leave your network, however, this is optional.' 'dass Abfragen an Geräte, die mit Ihrem lokalen Domänennamen enden, Ihr Netzwerk nicht verlassen. ' /var/www/html/admin/settings.php
 sudo rpl 'The local domain name must match the domain name specified' 'Dies ist jedoch optional. Der lokale Domänenname muss mit dem auf Ihrem DHCP-Server angegebenen ' /var/www/html/admin/settings.php
 sudo rpl 'in your DHCP server for this to work. You can likely find it within the DHCP settings.' 'Domänennamen übereinstimmen, damit dies funktioniert. Sie finden es wahrscheinlich in den DHCP-Einstellungen.' /var/www/html/admin/settings.php
+sudo rpl 'Enabling Conditional Forwarding will also forward all hostnames (i.e., non-FQDNs) to the router' 'Wenn Sie Conditional Forwarding aktivieren, werden auch alle Hostnamen (d. h. Nicht-FQDNs) an den Router weitergeleitet.' /var/www/html/admin/settings.php
 sudo rpl '<strong>Use Conditional Forwarding</strong' '<strong>Verwende Bedingte Weiterleitung</strong' /var/www/html/admin/settings.php
 sudo rpl 'Local network in ' 'Lokales Netzwerk in ' /var/www/html/admin/settings.php
 sudo rpl 'CIDR notation' 'CIDR Notation'  /var/www/html/admin/settings.php
@@ -931,7 +865,6 @@ sudo rpl 'Port (".htmlspecialchars($port).") is invalid!<br>' 'Der Port (".htmls
 sudo rpl 'No DNS server has been selected.<br>' 'Es wurde kein DNS Server ausgewählt.<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Conditional forwarding subnet (\"".htmlspecialchars($cidr)."\") is invalid!<br>' 'Das Subnetz (\"".htmlspecialchars($cidr)."\") für die bedingte Weiterleitung ist ungültig!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'This field requires CIDR notation for local subnets (e.g., 192.168.0.0/16).<br>' 'Dieses Feld erfordert eine CIDR Notation für das lokale Subnetz (z.B. 192.168.0.0/16).<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl 'Please use only subnets /8, /16, /24, and /32.<br>' 'Bitte benutzen Sie nur die Subnetze /8, /16, /24 oder /32.<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Conditional forwarding domain name (\"".htmlspecialchars($domain)."\") is invalid!<br>' 'Der Domainname (\"".htmlspecialchars($domain)."\") für die bedingte Weiterleitung ist ungültig!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'Conditional forwarding target IP (\"".htmlspecialchars($target)."\") is invalid!<br>' 'Die Ziel-IP (\"".htmlspecialchars($target)."\") für die bedingte Weiterleitung ist ungültig!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl 'The settings have been reset to their previous values' 'Die Einstellungen wurden auf ihre vorherigen Werte zurückgesetzt.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
@@ -1111,6 +1044,72 @@ sudo rpl 'nPHP user: ' 'nPHP Benutzer: ' /var/www/html/admin/scripts/pi-hole/php
 
 
 
+# Lokale DNS Einträge
+#  DNS Einträge
+sudo rpl '<h1>Local DNS Records</h1>' '<h1>Lokale DNS Einträge</h1>' /var/www/html/admin/dns_records.php
+sudo rpl 'On this page, you can add domain/IP associations' 'Auf dieser Seite können Sie Domänen- bzw. IP-Zuordnungen hinzufügen.' /var/www/html/admin/dns_records.php
+sudo rpl 'Add a new domain/IP combination' 'Fügen Sie eine neue Domain/IP Kombination hinzu' /var/www/html/admin/dns_records.php
+sudo rpl 'Add a domain (example.com or sub.example.com)' 'Domain hinzufügen (beispiel.com oder mobil.example.com)' /var/www/html/admin/dns_records.php
+sudo rpl '<label for="ip">IP Address:</label>' '<label for="ip">IP Adresse:</label>' /var/www/html/admin/dns_records.php
+sudo rpl 'placeholder="Associated IP address"' 'placeholder="Zugehörige IP Adresse"' /var/www/html/admin/dns_records.php
+sudo rpl '<strong>Note:</strong>' '<strong>Hinweis:</strong>' /var/www/html/admin/dns_records.php
+sudo rpl 'The order of locally defined DNS records is:' 'Die Reihenfolge der lokal definierten DNS-Einträge ist:' /var/www/html/admin/dns_records.php
+sudo rpl "The device's host name and " 'Der Hostname des Geräts und ' /var/www/html/admin/dns_records.php
+sudo rpl 'Configured in a config file in ' 'Konfiguriert in einer Konfigurationsdatei in ' /var/www/html/admin/dns_records.php
+sudo rpl 'Read from <code>' 'Gelesen aus der <code>' /var/www/html/admin/dns_records.php
+sudo rpl 'Read from the "Local (custom) DNS" list (stored in' 'Gelesen aus der lokalen (benutzerdefinierten) DNS-Liste (gespeichert in' /var/www/html/admin/dns_records.php
+sudo rpl 'Only the first record will trigger an address-to-name association.' 'Nur der erste Datensatz löst eine Adresse-zu-Name-Zuordnung aus.' /var/www/html/admin/dns_records.php
+sudo rpl 'Add</button>' 'Hinzufügen</button>' /var/www/html/admin/dns_records.php
+sudo rpl 'Updating the custom DNS entries...' 'Aktualisieren der benutzerdefinierten DNS-Einträge ...' /var/www/html/admin/dns_records.php
+sudo rpl 'Success! The list will refresh.' 'Erfolgreich! Die Liste wurde aktualisiert.' /var/www/html/admin/dns_records.php
+sudo rpl 'Failure! Something went wrong, see output below' 'Fehler! Irgendwas hat nicht funktioniert, siehe weiter unten' /var/www/html/admin/dns_records.php
+sudo rpl '"Domain must be valid"' '"Die Domain muss gültig sein."' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'List of local DNS domains' 'Liste der lokalen DNS-Domains' /var/www/html/admin/dns_records.php
+sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/customdns.js
+sudo rpl '<th>IP</th>' '<th>IP Adresse</th>' /var/www/html/admin/dns_records.php
+sudo rpl 'Error while adding this custom DNS entry' 'Fehler beim Hinzufügen dieses benutzerdefinierten DNS-Eintrags.' /var/www/html/admin/scripts/pi-hole/js/customdns.js
+sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/dns_records.php
+
+
+
+# Lokale DNS Einträge
+#  CNAME Einträge
+sudo rpl '<h1>Local CNAME Records</h1>' '<h1>Lokale CNAME Einträge</h1>' /var/www/html/admin/cname_records.php
+sudo rpl '<small>On this page, you can add CNAME records.</small>' '<small>Auf dieser Seite können Sie CNAME Einträge hinzufügen.</small>' /var/www/html/admin/cname_records.php
+sudo rpl 'Add a new CNAME record' 'Neuen CNAME Eintrag hinzufügen' /var/www/html/admin/cname_records.php
+sudo rpl 'Add a domain (example.com or sub.example.com)' 'Domain hinzufügen (beispiel.com oder mobil.example.com)' /var/www/html/admin/cname_records.php
+sudo rpl 'Target Domain:</label>' 'Zieldomain:</label>' /var/www/html/admin/cname_records.php
+sudo rpl 'Associated Target Domain' 'Zugehörige Zieldomain' /var/www/html/admin/cname_records.php
+sudo rpl '>Add</button>' '>Hinzufügen</button>' /var/www/html/admin/cname_records.php
+sudo rpl '<strong>Note:</strong>' '<strong>Hinweis:</strong>' /var/www/html/admin/cname_records.php
+sudo rpl '<p>The target of a <code>CNAME</code> must be a domain that the Pi-hole already has in its cache or is authoritative for. This is a universal limitation of <code>CNAME</code> records.</p>' '<p>Das Ziel eines <code>CNAME</code> muss eine Domäne sein, die der Pi-hole bereits in seinem Cache hat oder für die es maßgeblich ist. Dies ist eine universelle Einschränkung von <code>CNAME</code> Datensätzen.</p>' /var/www/html/admin/cname_records.php
+sudo rpl "<p>The reason for this is that Pi-hole will not send additional queries upstream when serving <code>CNAME</code> replies. As consequence, if you set a target that isn't already known, the reply" '<p>Der Grund dafür ist, dass Pi-hole keine zusätzlichen Anfragen stromaufwärts sendet, wenn <code>CNAME</code> -Antworten zugestellt werden. Wenn Sie ein Ziel festlegen, das noch nicht bekannt ist, ist die' /var/www/html/admin/cname_records.php
+sudo rpl 'to the client may be incomplete. Pi-hole just returns the information it knows at the time of the query. This results in certain limitations for <code>CNAME</code> targets,' 'Antwort an das Gerät möglicherweise unvollständig. Pi-hole gibt nur die Informationen zurück, die es zum Zeitpunkt der Abfrage kennt. Dies führt zu bestimmten Einschränkungen für <code>CNAME</code> Ziele.' /var/www/html/admin/cname_records.php
+sudo rpl "for instance, only <i>active</i> DHCP leases work as targets - mere DHCP <i>leases</i> aren't sufficient as they aren't (yet) valid DNS records.</p>" 'Beispielsweise fungieren nur <i>aktive </i> DHCP-Leases als Ziele - bloße DHCP <i>-Leases</i> sind nicht ausreichend, da sie (noch) keine gültigen DNS-Einträge sind.</p>' /var/www/html/admin/cname_records.php
+sudo rpl "<p>Additionally, you can't <code>CNAME</code> external domains (<code>bing.com</code> to <code>google.com</code>) successfully as this could result in invalid SSL certificate errors when the" '<p>Darüber hinaus können externe Domänen (<code>bing.com</code> bis <code>google.com</code>) nicht erfolgreich <code>CNAME</code> verwenden, da dies zu ungültigem SSL führen kann, wenn der Zielserver' /var/www/html/admin/cname_records.php
+sudo rpl 'target server does not serve content for the requested domain.</p>' 'keinen Inhalt für die angeforderte Domain bereitstellt.</p>' /var/www/html/admin/cname_records.php
+sudo rpl 'Updating CNAME records...' 'Aktualisiere die CNAME Einträge ...' /var/www/html/admin/cname_records.php
+sudo rpl 'Success! The list will refresh.' 'Erfolgreich! Die Liste wurde aktualisiert.' /var/www/html/admin/cname_records.php
+sudo rpl 'Failure! Something went wrong, see output below:' 'Fehler! Etwas ist schief gelaufen, siehe Ausgabe unten:' /var/www/html/admin/cname_records.php
+sudo rpl 'it contains invalid characters' 'sie ungültige Zeichen enthält' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'its length is invalid' 'ihre Länge ungültig ist' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'at least one label is of invalid length' 'mindestens ein Kennzeichen eine ungültige Länge hat' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'IP must be set' 'IP muss eingestellt sein' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'IP must be valid' 'IP muss gültig sein' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'Domain must be set' 'Domain muss eingetragen sein' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'This domain/ip association does not exist' 'Diese Domäne/IP-Zuordnung existiert nicht' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'This domain already has a custom DNS entry for an IPv' 'Diese Domäne hat bereits einen benutzerdefinierten DNS-Eintrag für eine IPv' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'Target must be valid' 'Ziel muss gültig sein' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'is not valid' 'ist nicht gültig' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'There is already a CNAME record for' 'Es gibt bereits einen CNAME-Eintrag für' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'List of local CNAME records' 'Liste der lokalen CNAME Einträge' /var/www/html/admin/cname_records.php
+sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/customcname.js
+sudo rpl '<th>Target</th>' '<th>Ziel</th>' /var/www/html/admin/cname_records.php
+sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/cname_records.php
+sudo rpl '>Clear Filters</button>' '>Filter löschen</button>' /var/www/html/admin/cname_records.php
+
+
+
 # Blockseite
 sudo rpl 'Website Blocked' 'Webseite gesperrt' /var/www/html/pihole/blockingpage.css
 sudo rpl 'Why am I here?' 'Warum bin ich hier?' /var/www/html/pihole/blockingpage.css
@@ -1149,7 +1148,7 @@ sudo rpl 'Page generated on ' 'Seite generiert am ' /var/www/html/pihole/blockin
 # Fußleiste
 sudo rpl '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href="http://www.github.com/pimanDE/translate2german" rel="noopener" target="_blank"</a> <i class="fa fa-edit"></a></i> Übersetzt von <a href="https://github.com/pimanDE" rel="noopener" target="_blank"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/pi-hole/php/footer.php
 sudo rpl 'Update available' 'Aktualisierung vorhanden' /var/www/html/admin/scripts/pi-hole/php/footer.php
-sudo rpl 'To install updates, run <code><a href="https://docs.pi-hole.net/main/update/">pihole -up</a></code>.</p>' 'Zum Installieren der Updates führen Sie bitte <code><a href="https://docs.pi-hole.net/main/update/">pihole -up</a> aus</code>.</p>' /var/www/html/admin/scripts/pi-hole/php/footer.php
+sudo rpl '<p>To install updates, run <code><a href="https://docs.pi-hole.net/main/update/" rel="noopener" target="_blank">pihole -up</a></code>.</p' '<p>Zum Installieren der Updates führen Sie bitte <code><a href="https://docs.pi-hole.net/main/update/" rel="noopener" target="_blank">pihole -up</a></code> aus.</p' /var/www/html/admin/scripts/pi-hole/php/footer.php
 
 
 
