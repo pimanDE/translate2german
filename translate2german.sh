@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.5 FTL Version v5.10.2 Web Interface Version v5.7
+# getestet auf Pi-hole Version v5.5 - FTL Version v5.11 - Web Interface Version v5.8
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -209,11 +209,26 @@ sudo rpl '<th>Type</th>' '<th>Typ</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Reply</th>' '<th>Wiederholung</th>' /var/www/html/admin/queries.php
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/queries.php
-
 sudo rpl 'Blocked (gravity)' 'Geblockt (Gravity)' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl '</span>, sent to ' '</span>, gesendet an ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl '</span>, answered by ' '</span>, beantwortet von ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'Blocked (gravity)' 'Geblockt (Gravity)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl 'forwarded to ' 'weitergeleitet an: ' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(regex blacklist)" "Geblockt <br class='hidden-lg'>(RegEx Blacklist)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(exact blacklist)" "Geblockt <br class='hidden-lg'>(exakte Blacklist)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(external, IP)" "Geblockt <br class='hidden-lg'>(extern, IP)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(external, NULL)" "Geblockt <br class='hidden-lg'>(extern, NULL)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(external, NXRA)" "Geblockt <br class='hidden-lg'>(extern, NXRA)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl 'Blocked (gravity, CNAME)' 'Geblockt (gravity, CNAME)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(regex blacklist, CNAME)" "Geblockt <br class='hidden-lg'>(RegEx Blacklist, CNAME)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(exact blacklist, CNAME)" "Geblockt <br class='hidden-lg'>(exakte Blacklist, CNAME)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl 'Retried</span>' 'Erneut versucht</span>' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl '(ignored)' '(ignoriert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl '(already forwarded)' '(bereits weitergeleitet)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl '(database is busy)' '(Datenbank ist beschäftigt)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl '(database is busy)' '(Datenbank ist beschäftigt)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '>(cache)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-sudo rpl 'Blocked <br' 'Geblockt <br' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl '>(cache)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '(exact blacklist)' '(exakte Blacklist)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'external, IP' 'extern, IP' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'external, NULL' 'extern, NULL' /var/www/html/admin/scripts/pi-hole/js/queries.js
@@ -233,11 +248,12 @@ sudo rpl 'to filter.' 'zu filtern.' /var/www/html/admin/scripts/pi-hole/js/queri
 sudo rpl 'Click to remove ' 'Klicken Sie hier, um den Filter ' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl ' from filter.' ' zu entfernen.' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'Added from Query Log' 'Vom Anfragen Protokoll hinzugefügt' /var/www/html/admin/scripts/pi-hole/js/utils.js
+sudo rpl 'Filtering options:' 'Filter Optionen:' /var/www/html/admin/queries.php
+sudo rpl '<p>Note: Queries for <code>pi.hole</code> and the hostname are never logged.</p>' '<p>Hinweis: Abfragen für <code>pi.hole</code> und dem Hostnamen werden nicht protokolliert.</p>' /var/www/html/admin/queries.php
 sudo rpl '<li>Click a value in a column to add/remove that value to/from the filter</li>' '<li>Klicken Sie auf einen Wert in einer Spalte, um diesen Wert zum Filter hinzuzufügen oder zu entfernen.</li>' /var/www/html/admin/queries.php
-sudo rpl '<li>On a computer: Hold down <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, or <kbd>&#8984;</kbd> to allow highlighting for copying to clipboard</li>' '<li>Auf einem Computer: Halten Sie die Taste <kbd>Strg</kbd>, <kbd>Alt</kbd>, oder <kbd>&#8984;</kbd> fest, um mehrere Einträge in die Zwischenablage kopieren zu können.</li>' /var/www/html/admin/queries.php
+sudo rpl '<li>On a computer: Hold down <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, or <kbd>&#8984;</kbd> to allow highlighting for copying to clipboard</li>' '<li>Auf einem Computer: Halten Sie die Taste <kbd>Strg</kbd>, <kbd>Alt</kbd> oder <kbd>&#8984;</kbd> fest, um mehrere Einträge in die Zwischenablage kopieren zu können.</li>' /var/www/html/admin/queries.php
 sudo rpl '<li>On a mobile: Long press to highlight the text and enable copying to clipboard' '<li>Auf einem Handy: Länger drücken, um mehrere Einträge in die Zwischenablage kopieren zu können.' /var/www/html/admin/queries.php
 sudo rpl 'Showing 0 to 0 of 0 entries' 'Zeige 0 bis 0 von 0 Einträgen' /var/www/html/admin/scripts/vendor/datatables.min.js
-sudo rpl 'Filtering options:' 'Filter Optionen:' /var/www/html/admin/queries.php
 sudo rpl 'Showing _START_ to _END_ of _TOTAL_ entries' 'Zeige _START_ bis _END_ von _TOTAL_ Einträgen' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl '<div class="alProcessing">Adding <span id="alDomain"></span> to the <span id="alList"></span>...</div>' '<div class="alProcessing">Hinzufügen von <span id="alDomain"></span> zur <span id="alList"></span> ...</div>' /var/www/html/admin/queries.php
 sudo rpl 'successfully added to the <span id="alList"></span></div>' 'Erfolgreich zur <span id="alList"></span> hinzugefügt.</div>' /var/www/html/admin/queries.php
@@ -321,11 +337,14 @@ sudo rpl 'external</label>' 'extern</label>' /var/www/html/admin/db_queries.php
 sudo rpl 'database busy</label>' 'Datenbank ist beschäftigt</label>' /var/www/html/admin/db_queries.php
 sudo rpl 'exact blacklist' 'exakt lt. Blacklist' /var/www/html/admin/db_queries.php
 sudo rpl 'regex blacklist' 'RegEx der Blacklist' /var/www/html/admin/db_queries.php
+sudo rpl 'The server took too long to send the data.' 'Der Server hat zu lange gebraucht, um die Daten zu senden.' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl 'An error occurred while loading the data: Connection refused. Is FTL running?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung verweigert. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl 'An unknown error occurred while loading the data.' 'Beim Laden der Daten ist folgender Fehler aufgetreten:' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Check the server's log files (/var/log/lighttpd/error.log when you're using the default Pi-hole web server) for details. You may need to increase the memory available for Pi-hole in case you requested a lot of data." "Überprüfen Sie die Protokolldateien des Servers (/var/log/lighttpd/error.log, wenn Sie den standardmäßigen Pi-hole-Webserver verwenden) auf Einzelheiten. Möglicherweise müssen Sie den für Pi-hole verfügbaren Speicherplatz erhöhen, falls Sie viele Daten angefordert haben." /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl 'Error. Selector types specified using an invalid format.' 'Es wurde keine Auswahl einer Status Anfrage getroffen.' /var/www/html/admin/api_db.php
 sudo rpl 'Queries Blocked' 'Geblockte Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl 'Adding <span id="alDomain"></span> to the' 'Hinzufügen <span id="alDomain"></span> zur' /var/www/html/admin/db_queries.php
-sudo rpl 'successfully added to the' 'Erfolgreich hinzugefüt zur' /var/www/html/admin/db_queries.php
+sudo rpl 'successfully added to the' 'Erfolgreich hinzugefügt zur' /var/www/html/admin/db_queries.php
 sudo rpl 'Timeout or Network Connection Error!' 'Zeitüberschreitung oder Netzwerkverbindungsfehler!' /var/www/html/admin/db_queries.php
 sudo rpl 'Queries Total' 'Alle Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl 'Recent Queries' 'Letzte Anfragen' /var/www/html/admin/db_queries.php
@@ -599,7 +618,7 @@ sudo rpl 'No issues found.' 'Keine Probleme gefunden.' /var/www/html/admin/scrip
 #  Aktualisierung Gravity Liste
 sudo rpl 'Update Gravity (list of blocked domains)' 'Aktualisieren der Gravity Liste (Liste der geblockten Domains)' /var/www/html/admin/gravity.php
 sudo rpl '>Update<' '>Aktualisieren<' /var/www/html/admin/gravity.php
-sudo rpl 'Updating... this may take a while. <strong>Please do not navigate away from or close this page.</strong>' 'Aktualisiere... dies kann eine Weile dauern. <strong>Bitte verlassen oder schließen Sie diese Seite nicht.</strong>' /var/www/html/admin/gravity.php
+sudo rpl 'Updating... this may take a while. <strong>Please do not navigate away from or close this page.</strong>' 'Aktualisiere ... dies kann eine Weile dauern. <strong>Bitte verlassen oder schließen Sie diese Seite nicht.</strong>' /var/www/html/admin/gravity.php
 sudo rpl 'Success!' 'Erfolgreich aktualisiert!' /var/www/html/admin/gravity.php
 sudo rpl 'Neutrino emissions detected${COL_NC}...' 'Neutrino emissions erkannt${COL_NC} ...' /opt/pihole/gravity.sh
 sudo rpl 'Pulling blocklist source list into range' 'Heranziehen der Blocklisten Quelle' /opt/pihole/gravity.sh
@@ -994,7 +1013,7 @@ sudo rpl 'Local CNAME Records</label>' 'Lokale CNAME Einträge</label>' /var/www
 sudo rpl 'File input</label>' 'Dateieingabe</label>' /var/www/html/admin/settings.php
 sudo rpl 'Upload only Pi-hole backup files.</p>' 'Nur Pi-hole Sicherungsdateien hochladen</p>' /var/www/html/admin/settings.php
 sudo rpl 'Clear existing data</label>' 'Vorhandene Daten löschen</label>' /var/www/html/admin/settings.php
-sudo rpl 'Restore</button>' 'Wiederherstellen</button>' /var/www/html/admin/settings.php
+sudo rpl '>Restore' '>Wiederherstellen' /var/www/html/admin/settings.php
 sudo rpl 'The file you are trying to upload is not a .tar.gz file (filename: ' 'Die Datei, die Sie versuchen hochzuladen, ist keine .tar.gz Datei (Dateiname: ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'type: ".htmlentities($type)."). Please try again.' 'Dateityp: ".htmlentities($type)."). Bitte versuchen Sie es nochmal.' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'echo "Processed blacklist (exact)' 'echo "Verarbeitete Blacklist (genau)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
