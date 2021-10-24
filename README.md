@@ -52,7 +52,7 @@ sudo ./translate2german.sh
 
 **Hinweise:**
 
-* getestet unter Pi-hole Version v5.6 FTL Version 5.11 und Web Interface Version v5.5
+* getestet unter Pi-hole Version v5.6 FTL Version 5.11 und Web Interface Version v5.8
 * **vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe weiter unten)**
 * ...
 <br>
