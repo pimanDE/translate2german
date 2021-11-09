@@ -948,7 +948,7 @@ sudo rpl 'Pi-hole midnight theme (dark)' 'Pi-hole Nacht Theme (dunkel)' /var/www
 sudo rpl 'Pi-hole deep-midnight theme (dark)' 'Pi-hole Mitternacht Theme (sehr dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl 'Use boxed layout (for large screens)' 'Boxed Layout verwenden (für große Bildschirme)' /var/www/html/admin/settings.php
 sudo rpl 'Administrator Email Address' 'E-Mail Adresse des Administrators:' /var/www/html/admin/settings.php
-sudo rpl 'Query Log' 'Anfrageprotokoll' /var/www/html/admin/settings.php
+sudo rpl '<h4>Query Log</h4' '<h4>Anfrageprotokoll</h4' /var/www/html/admin/settings.php
 sudo rpl 'Show permitted domain entries' 'Zulässige Domain-Einträge anzeigen' /var/www/html/admin/settings.php
 sudo rpl 'Show blocked domain entries' 'Geblockte Domain-Einträge anzeigen' /var/www/html/admin/settings.php
 sudo rpl 'Show API token' 'API-Token anzeigen' /var/www/html/admin/settings.php
@@ -965,6 +965,7 @@ sudo rpl 'Checkbox and radio buttons' 'Kontrollkästchen und Optionsfelder' /var
 sudo rpl '<option>default</option>' '<option>standard</option>' /var/www/html/admin/settings.php
 sudo rpl 'CPU Temperature Unit' 'Einheit für die CPU Temperaturanzeige' /var/www/html/admin/settings.php
 sudo rpl 'Use new Bar charts on dashboard' 'Verwenden Sie die neuen Balkendiagramme im Dashboard' /var/www/html/admin/settings.php
+sudo rpl '<strong>Colorful Query Log</strong>' '<strong>Buntes Abfageprotokoll</strong>' /var/www/html/admin/settings.php
 sudo rpl 'The webUI settings have been updated' 'Die Einstellungen der Weboberfläche wurden aktualisiert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 
 
