@@ -5,6 +5,9 @@
 Mit diesem Script wird die Weboberfläche Version 5.11 des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
+**Achtung! Dieses Script funktioniert (zur Zeit) nur unter Raspberry Pi OS Buster vom 07.05.2021**
+Download unter: [https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/2021-05-07-raspios-buster-armhf-lite.zip](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/2021-05-07-raspios-buster-armhf-lite.zip) 
+<br>
 Bevor die Übersetzung beginnt, wird
 
 das Verzeichnis<br>
