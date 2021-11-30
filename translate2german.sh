@@ -229,23 +229,27 @@ sudo rpl '(database is busy)' '(Datenbank ist beschäftigt)' /var/www/html/admin
 sudo rpl '(database is busy)' '(Datenbank ist beschäftigt)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '>(cache)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl '>(cache)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl '(exact blacklist)' '(exakte Blacklist)' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl 'external, IP' 'extern, IP' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl 'external, NULL' 'extern, NULL' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl 'external, NXRA' 'extern, NXRA' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl 'gravity, CNAME' 'Gravity, CNAME' /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl 'regex blacklist, CNAME' 'RegEx Blacklist, CNAME' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(regex blacklist)" "Geblockt <br class='hidden-lg'>(RegEx Blacklist)" /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(external, IP)" "Geblockt <br class='hidden-lg'>(extern, IP)" /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(external, NULL)" "Geblockt <br class='hidden-lg'>(extern, NULL)" /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(external, NXRA)" "Blocked <br class='hidden-lg'>(extern, NXRA)" /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'Blocked (gravity, CNAME)' 'Geblockt (Gravity, CNAME)' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl "Blocked <br class='hidden-lg'>(regex blacklist, CNAME)</span>" "Geblockt <br class='hidden-lg'>(RegEx Blacklist, CNAME)</span>" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'exact blacklist, CNAME' 'Exakte Blacklist, CNAME' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'Retried' 'Wiederholt' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'ignored' 'Ignoriert' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'already forwarded' 'bereits weitergeleitet' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '"Unknown ' '"Unbekannt ' /var/www/html/admin/scripts/pi-hole/js/queries.js
-
 sudo rpl 'No data available in table' 'Keine Daten in der Tabelle vorhanden.' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'No matching records found' 'Keine passenden Datensätze gefunden.' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl 'Click to add ' 'Klicken Sie hier, um nach ' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'to filter.' 'zu filtern.' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'Click to remove ' 'Klicken Sie hier, um den Filter ' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'class="text-green">SECURE' 'class="text-green">SICHER' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'class="text-orange">INSECURE' 'class="text-orange">UNSICHER' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'class="text-red">BOGUS' 'class="text-red">GEFÄLSCHT' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'class="text-red">ABANDONED' 'class="text-red">VERWAIST' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl 'class="text-orange">UNKNOWN' 'class="text-orange">UNBEKANNT' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl ' from filter.' ' zu entfernen.' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl 'Added from Query Log' 'Vom Anfragen Protokoll hinzugefügt' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl 'Filtering options:' 'Filter Optionen:' /var/www/html/admin/queries.php
@@ -554,12 +558,12 @@ sudo rpl '<th>Group assignment</th>' '<th>Gruppenzuordnung</th>' /var/www/html/a
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/groups-adlists.php
 sudo rpl 'Click for details about this list' 'Klicken Sie hier für detailierte Informationen.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl '<td>Health status of this list:</td>' '<td>Status der Liste:</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl 'List download was successful' 'Herunterladen der Liste war erfolgreich.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'var statusText = "Unknown";' 'var statusText = "Unbekannt";' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'List is disabled and not checked' 'Liste ist deaktiviert und nicht geprüft.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'List was not downloaded so far' 'Liste wurde bisher nicht heruntergeladen.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl 'List unchanged upstream, Pi-hole used a local copy' 'Liste unverändert, Pi-hole verwendet eine lokale Kopie.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl 'List unavailable, Pi-hole used a local copy' 'Diese Liste ist nicht vorhanden, Pi-hole verwendet eine lokale Kopie.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List download was successful (<span class="list-status-1">OK</span>)' 'Herunterladen der Liste war erfolgreich. (<span class="list-status-1">OK</span>)' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List unchanged upstream, Pi-hole used a local copy (<span class="list-status-2">OK</span>)' 'Liste unverändert, Pi-hole verwendet eine lokale Kopie. (<span class="list-status-2">OK</span>)' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl 'List unavailable, Pi-hole used a local copy (<span class="list-status-3">check list</span>)' 'Diese Liste ist nicht vorhanden, Pi-hole verwendet eine lokale Kopie. (<span class="list-status-3">Kontrollliste</span>)' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'List unavailable, there is no local copy of this list available on your Pi-hole (<span class="list-status-4">replace list</span>)' 'Liste ist nicht verfügbar, es ist auch keine lokale Kopie auf dem Pi-hole vorhanden. (<span class="list-status-4">Liste ersetzen!</span>)' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'Unknown (<span class="list-status-0"' 'Unbekannt (<span class="list-status-0"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl '<td>This list was added to Pi-hole&nbsp;&nbsp;</td>' '<td>Diese Liste wurde zum Pi-hole hinzugefügt:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
@@ -606,11 +610,12 @@ sudo rpl 'Submit</button>' 'Absenden</button>' /var/www/html/admin/scripts/pi-ho
 # Werkzeuge
 #  Pi-hole Diagnose
 sudo rpl '<h1>Pi-hole diagnosis</h1>' '<h1>Pi-hole Diagnose</h1>' /var/www/html/admin/messages.php
-sudo rpl 'On this page, you can see messages from your Pi-hole concerning possible issues.' 'Auf dieser Seite können Sie Nachrichten von pi-hole bezüglich möglicher Probleme sehen.' /var/www/html/admin/messages.php
+sudo rpl 'On this page, you can see messages from your Pi-hole concerning possible issues.' 'Auf dieser Seite können Sie Nachrichten von Pi-hole bezüglich möglicher Probleme sehen.' /var/www/html/admin/messages.php
 sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl '<th>Time</th>' '<th>Zeit</th>' /var/www/html/admin/messages.php
 sudo rpl '<th>Type</th>' '<th>Typ</th>' /var/www/html/admin/messages.php
 sudo rpl '<th>Message</th>' '<th>Nachricht</th>' /var/www/html/admin/messages.php
+sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/messages.php
 sudo rpl 'No issues found.' 'Keine Probleme gefunden.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 
 
@@ -640,7 +645,7 @@ sudo rpl 'Connection Timed Out (Cloudflare)"' 'Zeitüberschreitung der Verbindun
 
 # Diese zwei Zeilen dürfen nicht vertauscht werden
 sudo rpl '${INFO} Analyzed ${num_lines} domains, ${num_invalid} domains invalid!' '${INFO} Es wurden ${num_lines} Domains überprüft, davon sind ${num_invalid} Domains ungültig!' /opt/pihole/gravity.sh
-sudo rpl '${INFO} Analyzed ${num_lines} domains' '${INFO} Es wurden ${num_lines} Domains überprüft.' /opt/pihole/gravity.sh
+sudo rpl '${INFO} Analyzed ${num_lines} domains' '${INFO} Es wurden ${num_lines} Domains überprüft' /opt/pihole/gravity.sh
 
 sudo rpl '${INFO} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert' /opt/pihole/gravity.sh
 sudo rpl '${INFO} List has been updated' '${INFO} Die Liste wurde aktualisiert' /opt/pihole/gravity.sh
@@ -733,6 +738,7 @@ sudo rpl '<th>First seen</th>' '<th>Zum ersten Mal gesehen</th>' /var/www/html/a
 sudo rpl '<th>Last Query</th>' '<th>Letzte Anfrage</th>' /var/www/html/admin/network.php
 sudo rpl '<th>Number of queries</th>' '<th>Anzahl der Anfragen</th>' /var/www/html/admin/network.php
 sudo rpl '<th>Uses Pi-hole</th>' '<th>Verwendet Pi-hole</th>' /var/www/html/admin/network.php
+sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/network.php
 sudo rpl '<em>unknown</em>' '<em>unbekannt</em>' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl '("Never")' '("bisher keine")' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl '<label>Background color: Last query from this device seen ...</label>' '<label>Hintergrundfarbe: Letzte Anfrage von diesem Gerät gesehen ...</label>' /var/www/html/admin/network.php
@@ -1074,7 +1080,7 @@ sudo rpl '<label for="ip">IP Address:</label>' '<label for="ip">IP Adresse:</lab
 sudo rpl 'placeholder="Associated IP address"' 'placeholder="Zugehörige IP Adresse"' /var/www/html/admin/dns_records.php
 sudo rpl '<strong>Note:</strong>' '<strong>Hinweis:</strong>' /var/www/html/admin/dns_records.php
 sudo rpl 'The order of locally defined DNS records is:' 'Die Reihenfolge der lokal definierten DNS-Einträge ist:' /var/www/html/admin/dns_records.php
-sudo rpl "The device's host name and " 'Der Hostname des Geräts und ' /var/www/html/admin/dns_records.php
+sudo rpl "The device's host name and " 'Der Hostname des Gerätes und ' /var/www/html/admin/dns_records.php
 sudo rpl 'Configured in a config file in ' 'Konfiguriert in einer Konfigurationsdatei in ' /var/www/html/admin/dns_records.php
 sudo rpl 'Read from <code>' 'Gelesen aus der <code>' /var/www/html/admin/dns_records.php
 sudo rpl 'Read from the "Local (custom) DNS" list (stored in' 'Gelesen aus der lokalen (benutzerdefinierten) DNS-Liste (gespeichert in' /var/www/html/admin/dns_records.php
@@ -1087,7 +1093,8 @@ sudo rpl '"Domain must be valid"' '"Die Domain muss gültig sein."' /var/www/htm
 sudo rpl 'List of local DNS domains' 'Liste der lokalen DNS-Domains' /var/www/html/admin/dns_records.php
 sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/customdns.js
 sudo rpl '<th>IP</th>' '<th>IP Adresse</th>' /var/www/html/admin/dns_records.php
-sudo rpl 'Error while adding this custom DNS entry' 'Fehler beim Hinzufügen dieses benutzerdefinierten DNS-Eintrags.' /var/www/html/admin/scripts/pi-hole/js/customdns.js
+sudo rpl 'Error while adding this custom DNS entry' 'Fehler beim Hinzufügen dieses benutzerdefinierten DNS-Eintrags!' /var/www/html/admin/scripts/pi-hole/js/customdns.js
+sudo rpl 'Error while deleting this custom DNS entry' 'Fehler beim Löschen dieses benutzerdefinierten DNS-Eintrags!' /var/www/html/admin/scripts/pi-hole/js/customdns.js
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/dns_records.php
 
 
@@ -1114,12 +1121,12 @@ sudo rpl 'Failure! Something went wrong, see output below:' 'Fehler! Etwas ist s
 sudo rpl 'it contains invalid characters' 'sie ungültige Zeichen enthält' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl 'its length is invalid' 'ihre Länge ungültig ist' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl 'at least one label is of invalid length' 'mindestens ein Kennzeichen eine ungültige Länge hat' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'IP must be set' 'IP muss eingestellt sein' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'IP must be valid' 'IP muss gültig sein' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'Domain must be set' 'Domain muss eingetragen sein' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'This domain/ip association does not exist' 'Diese Domäne/IP-Zuordnung existiert nicht' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'IP must be set' 'IP muss eingestellt sein!' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'IP must be valid' 'IP muss gültig sein!' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'Domain must be set' 'Domain muss eingetragen sein!' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'This domain/ip association does not exist' 'Diese Domäne/IP-Zuordnung existiert nicht!' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl 'This domain already has a custom DNS entry for an IPv' 'Diese Domäne hat bereits einen benutzerdefinierten DNS-Eintrag für eine IPv' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl 'Target must be valid' 'Ziel muss gültig sein' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl 'Target must be valid' 'Ziel muss gültig sein!' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl 'is not valid' 'ist nicht gültig' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl 'There is already a CNAME record for' 'Es gibt bereits einen CNAME-Eintrag für' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl 'List of local CNAME records' 'Liste der lokalen CNAME Einträge' /var/www/html/admin/cname_records.php
@@ -1175,6 +1182,7 @@ sudo rpl '<p>To install updates, run <code><a href="https://docs.pi-hole.net/mai
 # Nicht zugeordnet
 sudo rpl 'No password set' 'Kein Passwort festgelegt.' /var/www/html/admin/scripts/pi-hole/php/api_token.php
 sudo rpl 'Not authorized!' 'Nicht erlaubt!' /var/www/html/admin/scripts/pi-hole/php/api_token.php
+sudo rpl 'Not allowed (login session invalid or expired, please relogin on the Pi-hole dashboard)!' 'Nicht erlaubt (Die Login-Sitzung ist ungültig oder abgelaufen. Bitte melden Sie sich im Hauptmenü des Pi-hole neu an)!' /var/www/html/admin/scripts/pi-hole/php/customdns.php
 
 
 
