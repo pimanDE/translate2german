@@ -2,7 +2,7 @@
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche Version 5.11 des Pi-hole auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche Version 5.9 des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
 **Achtung! Dieses Script funktioniert (zur Zeit) nur unter Raspberry Pi OS Buster vom 07.05.2021**

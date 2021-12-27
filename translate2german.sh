@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.5 - FTL Version v5.11 - Web Interface Version v5.8
+# getestet auf Pi-hole Version v5.7 - FTL Version v5.12.1 - Web Interface Version v5.9
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -173,8 +173,6 @@ sudo rpl 'Top Permitted Domains' 'Am meisten zugelassene Domains' /var/www/html/
 sudo rpl '<th>Hits</th>' '<th>Treffer</th>' /var/www/html/admin/index.php
 sudo rpl '<th>Frequency</th>' '<th>Häufigkeit</th>' /var/www/html/admin/index.php
 sudo rpl '% of' '% von insgesamt' /var/www/html/admin/scripts/pi-hole/js/index.js
-sudo rpl 'data.dns_queries_today +' 'data.dns_queries_today + " Anfragen" +' /var/www/html/admin/scripts/pi-hole/js/index.js
-sudo rpl 'data.ads_blocked_today +' 'data.ads_blocked_today + " geblockten Domains" +' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'Top Blocked Domains' 'Am meisten geblockte Domains' /var/www/html/admin/index.php
 sudo rpl 'Top Clients (total)' 'Top Geräte (insgesamt)' /var/www/html/admin/index.php
 sudo rpl '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/index.php
@@ -197,7 +195,6 @@ sudo rpl 'queries for client' 'Anfragen für Gerät' /var/www/html/admin/queries
 sudo rpl 'queries for domain' 'Anfragen für die Domain' /var/www/html/admin/queries.php
 sudo rpl 'queries within specified time interval' 'Abfragen innerhalb des angegebenen Zeitintervalls' /var/www/html/admin/queries.php
 sudo rpl 'up to 100 queries' 'bis zu 100 Anfragen' /var/www/html/admin/queries.php
-sudo rpl 'privacy mode enabled' 'Privatmodus aktiviert' /var/www/html/admin/queries.php
 sudo rpl '<a href=\"?all\">show all</a>' ' oder <a href=\"?all\">zeige alle Anfragen</a>' /var/www/html/admin/queries.php
 sudo rpl 'Type / Domain / Client' 'Typ / Domain / Gerät' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl '"Search:"' '"Suche:"' /var/www/html/admin/scripts/vendor/datatables.min.js
@@ -299,18 +296,18 @@ sudo rpl 'This Year": ' 'Dieses Jahr": ' /var/www/html/admin/scripts/pi-hole/js/
 sudo rpl 'All Time": ' 'Gesamter Zeitraum": ' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl 'Custom Range' 'Benutzerdefiniert' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
 sudo rpl 'Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.' 'Je nachdem, wie groß der von Ihnen angegebene Bereich ist, tritt möglicherweise eine Zeitüberschreitung auf, während Pi-hole versucht, alle Daten abzurufen.' /var/www/html/admin/db_graph.php
-sudo rpl '"Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec"' '"Jan_Feb_Mar_Apr_Mai_Jun_Jul_Aug_Sep_Okt_Nov_Dez"' /var/www/html/admin/scripts/vendor/moment.min.js
+#sudo rpl '"Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec"' '"Jan_Feb_Mar_Apr_Mai_Jun_Jul_Aug_Sep_Okt_Nov_Dez"' /var/www/html/admin/scripts/vendor/moment.min.js
 sudo rpl 'Su_Mo_Tu_We_Th_Fr_Sa' 'So_Mo_Di_Mi_Do_Fr_Sa' /var/www/html/admin/scripts/vendor/moment.min.js
 sudo rpl '"January_February_March_April_May_June_July_August_September_October_November_December"' '"Januar_Februar_Marz_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember"' /var/www/html/admin/scripts/vendor/moment.min.js
 sudo rpl 'cancelLabel:"Cancel"' 'cancelLabel:"Abbrechen"' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
 sudo rpl 'applyLabel:"Apply"' 'applyLabel:"Anwenden"' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
 sudo rpl 'Queries over the selected time period' 'Anfragen über den ausgewählten Zeitraum' /var/www/html/admin/db_graph.php
-sudo rpl 'Queries from " + fromTime + " to " + untilTime + " on " + fromDate).split' 'tmp1' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
+
+# die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden
+sudo rpl 'Queries from " + fromTime + " to " + untilTime + " on " + fromDate' 'Anfragen von " + fromTime + " bis " + untilTime + " am " + fromDate' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl '"Queries from " +' '"Anfragen von " +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
-sudo rpl '" to " + picker' 'to-picker' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
+
 sudo rpl '" to " +' '" bis " +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
-sudo rpl 'to-picker' '" to " + picker' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
-sudo rpl 'tmp1' 'Anfragen von " + fromTime + " bis " + untilTime + " am " + fromDate).split' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl '"Permitted DNS Queries' '"Erlaubte DNS Anfragen' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl '"Blocked DNS Queries' '"Geblockte DNS Anfragen' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 
@@ -366,7 +363,7 @@ sudo rpl 'Close</button>' 'Schließen</button>' /var/www/html/admin/db_queries.p
 sudo rpl 'Compute Top Lists from the Pi-hole query database' 'Top Listen aus der Pi-hole-Anfragedatenbank berechnen' /var/www/html/admin/db_lists.php
 sudo rpl 'Select date and time range' 'Datums- und Zeitbereich auswählen' /var/www/html/admin/db_lists.php
 sudo rpl 'Click to select date and time range' 'Klicken Sie zum Auswählen des Datums- und Zeitbereichs' /var/www/html/admin/db_lists.php
-sudo rpl 'Today: [moment().startOf("day"' 'Heute: [moment().startOf("day"' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
+sudo rpl 'Today: [' 'Heute: [' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
 sudo rpl 'Yesterday: [' 'Gestern: [' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
 sudo rpl 'Last 7 Days": ' 'Letzten 7 Tage": ' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
 sudo rpl 'Last 30 Days": ' 'Letzten 30 Tage": ' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
@@ -379,17 +376,6 @@ sudo rpl 'Top Blocked Domains' 'Top geblockte Domains' /var/www/html/admin/db_li
 sudo rpl 'Top Clients' 'Top Geräte' /var/www/html/admin/db_lists.php
 sudo rpl '<th>Hits</th>' '<th>Treffer</th>' /var/www/html/admin/db_lists.php
 sudo rpl 'Frequency' 'Häufigkeit' /var/www/html/admin/db_lists.php
-sudo rpl "'</td> <td> <div class=\"progress progress-sm\" title=\"' +" " " /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'percentage.toFixed(1) +' " " /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'sum += data.top_domains[domain];' 'sum plus= data.top_domains[domain];' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'sum += data.top_ads[ad];' 'sum plus= data.top_ads[ad];' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'sum += data.top_sources[client];' 'sum plus= data.top_sources[client];' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'data.top_domains[domain] +' "data.top_domains[domain] + '</td> <td> <div class=\"progress progress-sm\" title=\"' + percentage.toFixed(1) + \"% von insgesamt \" + sum plus \" Treffern\" +" /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'data.top_ads[ad] +' "data.top_ads[ad] + '</td> <td> <div class=\"progress progress-sm\" title=\"' + percentage.toFixed(1) + \"% von insgesamt \" + sum plus \" Treffern\" +" /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'data.top_sources[client] +' "data.top_sources[client] + '</td> <td> <div class=\"progress progress-sm\" title=\"' + percentage.toFixed(1) + \"% von insgesamt \" + sum plus \" Anfragen\" +" /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'sum +' " " /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl 'sum plus' 'sum +' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
-sudo rpl '"% of " +' " " /var/www/html/admin/scripts/pi-hole/js/db_lists.js
 sudo rpl '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/db_lists.php
 sudo rpl '<th>Requests</th>' '<th>Anfragen</th>' /var/www/html/admin/db_lists.php
 
@@ -584,7 +570,7 @@ sudo rpl 'd years' 'd Jahre' /var/www/html/admin/scripts/vendor/moment.min.js
 
 sudo rpl '<td>Database entry was last modified&nbsp;&nbsp;</td>' '<td>Datenbankeintrag wurde zuletzt geändert:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl '<td>The list contents were last updated&nbsp;&nbsp;</td>' '<td>Letzte Aktualisierung des Listeninhalts:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl '<td>Number of valid domains on this list:&nbsp;&nbsp;</td>' '<td>Anzahl der gültigen Domains in dieser Liste:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl '<td>Number of domains on this list:&nbsp;&nbsp;</td>' '<td>Anzahl der Domains in dieser Liste:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl '<td>Number of invalid domains on this list:&nbsp;&nbsp;</td>' '<td>Anzahl der ungültigen Domains in dieser Liste:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl '<td>Database ID of this list:</td>' '<td>Datenbank-ID der Liste:</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'on: "Enabled"' 'on: "Aktiviert"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
@@ -616,7 +602,25 @@ sudo rpl '<th>Time</th>' '<th>Zeit</th>' /var/www/html/admin/messages.php
 sudo rpl '<th>Type</th>' '<th>Typ</th>' /var/www/html/admin/messages.php
 sudo rpl '<th>Message</th>' '<th>Nachricht</th>' /var/www/html/admin/messages.php
 sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/messages.php
+
+sudo rpl 'Encountered an error when processing <a href=' 'Fehler bei der Verarbeitung <a href' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '" regex filter with ID "' '" RegEx Filter mit der ID "' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '</pre>Error message: <pre>' '</pre>Fehlermeldung: <pre>' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl 'Client <code' 'Gerät <code' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '</code> is managed by' '</code> wird verwaltet von' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl 'FTL chose the most recent entry <pre>' 'FTL wählte den letzten Eintrag <pre>' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '</pre> to get the group configuration for this client.' '</pre> um die Gruppenkonfiguration für dieses Gerät zu erhalten.' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl 'Hostname contains invalid character <code>' 'Hostname enthält ungültiges Zeichen <code>' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '"FTL failed to start due to "' '"FTL konnte nicht starten wegen "' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '" has been rate-limited (current config allows up to "' '" wurde eine Geschwindigkeitsbegrenzung eingeführt (die aktuelle Konfiguration erlaubt bis zu "' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '" queries in "' '" Abfragen in "' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '" seconds)"' '" Sekunden)"' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl 'Unknown message type<pre>' 'Unbekannte Mitteilung type<pre>' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '"Deleting message with ID "' '"Gelöschte Mitteilung mit der  "' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '"Successfully deleted message # "' '"Mitteilung erfolgreich gelöscht # "' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '"Error while deleting message with ID "' '"Fehler beim Löschen der Mitteilung mit der ID "' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl 'No issues found.' 'Keine Probleme gefunden.' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl '<p>Note: If errors are shown, you can <a href="debug.php">generate a debug log</a>, which will do a thorough Pi-hole evaluation.</p>' '<p>Hinweis: Wenn Fehler angezeigt werden, können Sie ein <a href="debug.php">Debug-Protokoll erstellen</a>, das eine gründliche Pi-hole Auswertung vornimmt.</p>' /var/www/html/admin/messages.php
 
 
 
@@ -644,8 +648,8 @@ sudo rpl 'Web Server Is Down (Cloudflare)"' 'Webserver ist ausgefallen (Cloudfla
 sudo rpl 'Connection Timed Out (Cloudflare)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
 
 # Diese zwei Zeilen dürfen nicht vertauscht werden
-sudo rpl '${INFO} Analyzed ${num_lines} domains, ${num_invalid} domains invalid!' '${INFO} Es wurden ${num_lines} Domains überprüft, davon sind ${num_invalid} Domains ungültig!' /opt/pihole/gravity.sh
-sudo rpl '${INFO} Analyzed ${num_lines} domains' '${INFO} Es wurden ${num_lines} Domains überprüft' /opt/pihole/gravity.sh
+sudo rpl '${INFO} Analyzed ${num_source_lines} domains, ${num_invalid} domains invalid!' '${INFO} Es wurden ${num_source_lines} Domains überprüft, davon sind ${num_invalid} Domains ungültig!' /opt/pihole/gravity.sh
+sudo rpl '${INFO} Analyzed ${num_source_lines} domains' '${INFO} Es wurden ${num_source_lines} Domains überprüft' /opt/pihole/gravity.sh
 
 sudo rpl '${INFO} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert' /opt/pihole/gravity.sh
 sudo rpl '${INFO} List has been updated' '${INFO} Die Liste wurde aktualisiert' /opt/pihole/gravity.sh
@@ -656,7 +660,7 @@ sudo rpl 'Storing downloaded domains in new gravity database' 'Speichern der her
 sudo rpl 'Building tree' 'Datenbaum wurde aufgebaut' /opt/pihole/gravity.sh
 sudo rpl '${CROSS} Unable to build gravity tree in' '${CROSS} Unable to build gravity tree in' /opt/pihole/gravity.sh
 sudo rpl 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
-sudo rpl 'The old database remains available' 'Die alte Datenbank ist weiterhin verfügbar' /opt/pihole/gravity.sh
+sudo rpl 'The old database remains available.' 'Die alte Datenbank ist weiterhin verfügbar' /opt/pihole/gravity.sh
 sudo rpl '${CROSS} Unable to copy data from ${gravityDBfile} to ${gravityTEMPfile}\\n  ${output}"' '${CROSS} Daten konnten nicht kopiert werden von ${gravityDBfile} bis ${gravityTEMPfile}\\n  ${output}"' /opt/pihole/gravity.sh
 sudo rpl '${CROSS} Unable to update gravity timestamp in database' '${CROSS} Zeitstempel der Gravity kann nicht in der Datenbank aktualisiert werden' /opt/pihole/gravity.sh
 sudo rpl 'Number of ${str}:' 'Anzahl der ${str}:' /opt/pihole/gravity.sh
@@ -673,7 +677,6 @@ sudo rpl 'Update domains from blocklists specified in adlists.list' 'Domains aus
 sudo rpl 'Options:' 'Optionen:' /opt/pihole/gravity.sh
 sudo rpl 'Force the download of all specified blocklists' 'Erzwingt den Download aller angegebenen Blocklisten' /opt/pihole/gravity.sh
 sudo rpl 'Show this help dialog' 'Zeigt die Hilfe an' /opt/pihole/gravity.sh
-sudo rpl 'Restoring from migration backup' 'Wiederherstellen der Sicherung' /opt/pihole/gravity.sh
 sudo rpl 'Deleting existing list cache' 'Löschen des bestehenden List-Caches' /opt/pihole/gravity.sh
 sudo rpl '"Cleaning up stray matter"' '"Aufräumen"' /opt/pihole/gravity.sh
 sudo rpl '"  ${TICK} DNS service is listening"' '"  ${TICK} DNS-Dienst läuft"' /usr/local/bin/pihole
@@ -810,17 +813,20 @@ sudo rpl '<strong>Custom 1 (IPv4)</strong>' '<strong>Benutzerdefiniert 1 (IPv4)<
 sudo rpl '<strong>Custom 2 (IPv4)</strong>' '<strong>Benutzerdefiniert 2 (IPv4)</strong>' /var/www/html/admin/settings.php
 sudo rpl '<strong>Custom 3 (IPv6)</strong>' '<strong>Benutzerdefiniert 3 (IPv6)</strong>' /var/www/html/admin/settings.php
 sudo rpl '<strong>Custom 4 (IPv6)</strong>' '<strong>Benutzerdefiniert 4 (IPv6)</strong>' /var/www/html/admin/settings.php
-sudo rpl '<h1 class="box-title">Interface listening behavior</h1>' '<h1 class="box-title">Abhörverhalten der Schnittstelle</h1>' /var/www/html/admin/settings.php
-sudo rpl '<br>Allows only queries from devices that are at most one hop away (local devices)</label>' '<br>Ermöglicht nur Anfragen von Geräten, die höchstens einen Sprung entfernt sind (lokale Geräte).</label>' /var/www/html/admin/settings.php
-sudo rpl '<strong>Listen on all interfaces</strong>' '<strong>Höre an allen Schnittstellen</strong>' /var/www/html/admin/settings.php
-sudo rpl '<strong>Listen only on interface <?php echo htmlentities($piHoleInterface); ?></strong>' '<strong>Höre nur an Schnittstelle: <?php echo htmlentities($piHoleInterface); ?></strong>' /var/www/html/admin/settings.php
-sudo rpl '<strong>Listen on all interfaces, permit all origins</strong>' '<strong>Höre auf allen Schnittstellen, lasse alle Quellen zu.</strong>' /var/www/html/admin/settings.php
-sudo rpl '<p>Note that the last option should not be used on devices which are' '<p>Beachten Sie, dass die letzte Option nicht auf Geräten verwendet werden' /var/www/html/admin/settings.php
-sudo rpl 'directly connected to the Internet. This option is safe if your' 'sollte, die direkt mit dem Internet verbunden sind. Diese Option ist sicher,' /var/www/html/admin/settings.php
-sudo rpl 'Pi-hole is located within your local network, i.e. protected behind' 'wenn sich Ihr Pi-hole in Ihrem lokalen Netzwerk befindet, d.h. hinter Ihrem' /var/www/html/admin/settings.php
-sudo rpl 'your router, and you have not forwarded port 53 to this device. In' 'Router geschützt ist und Sie den Port 53 nicht an dieses Gerät weitergeleitet' /var/www/html/admin/settings.php
-sudo rpl 'virtually all other cases you have to make sure that your Pi-hole is' 'haben. In praktisch allen anderen Fällen müssen Sie sicherstellen, dass Ihr' /var/www/html/admin/settings.php
-sudo rpl 'properly firewalled.</p>' 'Pi-hole ordnungsgemäß mit einer Firewall versehen ist.</p>' /var/www/html/admin/settings.php
+sudo rpl '<h1 class="box-title">Interface settings</h1>' '<h1 class="box-title">Einstellungen der Schnittstelle</h1>' /var/www/html/admin/settings.php
+sudo rpl '<h4>Recommended setting</h4>' '<h4>Empfohlene Einstellung</h4>' /var/www/html/admin/settings.php
+sudo rpl '<strong>Allow only local requests</strong>' '<strong>Nur lokale Anfragen zulassen</strong>' /var/www/html/admin/settings.php
+sudo rpl '<h4>Potentially dangerous options</h4>' '<h4>Potenziell gefährliche Optionen</h4>' /var/www/html/admin/settings.php
+sudo rpl 'Make sure your Pi-hole is properly firewalled!' 'Stellen Sie sicher, dass Ihr Pi-hole ordnungsgemäß mit einer Firewall ausgestattet ist!' /var/www/html/admin/settings.php
+sudo rpl '<strong>Respond only on interface' '<strong>Reagiere nur an Schnittstelle' /var/www/html/admin/settings.php
+sudo rpl '<strong>Bind only to interface' '<strong>Binde nur an Schnittstelle' /var/www/html/admin/settings.php
+sudo rpl '<strong>Permit all origins</strong>' '<strong>Reagiere auf jede Quelle</strong>' /var/www/html/admin/settings.php
+sudo rpl '<p>These options are dangerous on devices' 'Diese Optionen sind gefährlich für Geräte, die direkt mit dem Internet verbunden' /var/www/html/admin/settings.php
+sudo rpl 'directly connected to the Internet such as cloud instances and are only safe if your' 'sind, wie z. B. Cloud-Instanzen und sind nur sicher, wenn Ihr Pi-hole über eine' /var/www/html/admin/settings.php
+sudo rpl 'Pi-hole is properly firewalled. In a typical at-home setup where your Pi-hole is' 'ordnungsgemäße Firewall verfügt. In einem typischen Heim-Setup, bei der sich Ihr' /var/www/html/admin/settings.php
+sudo rpl 'located within your local network (and you have <strong>not</strong> forwarded port 53' 'Pi-hole in Ihrem lokalen Netzwerk befindet (und Sie Port 53 in Ihrem Router <strong>nicht</strong>' /var/www/html/admin/settings.php
+sudo rpl 'in your router!) they are safe to use.</p>' 'weitergeleitet haben!), können sie sicher verwendet werden.</p>' /var/www/html/admin/settings.php
+sudo rpl '<p>See <a href="https://docs.pi-hole.net/ftldns/interfaces/" target="_blank">our documentation</a> for further technical details.</p>' '<p>Siehe auch <a href="https://docs.pi-hole.net/ftldns/interfaces/" target="_blank">unsere Dokumentation</a> für weitere technische Details.</p>' /var/www/html/admin/settings.php
 sudo rpl '<p>ECS (Extended Client Subnet) defines a mechanism for recursive resolvers to send partial client IP address information to authoritative DNS name servers. Content Delivery Networks (CDNs) and latency-sensitive services use this to give geo-located responses when responding to name lookups coming through public DNS resolvers. <em>Note that ECS may result in reduced privacy.</em></p>' '<p>ECS (Extended Client Subnet) definiert einen Mechanismus für rekursive Resolver, um teilweise IP-Adressinformationen des Clients an autorisierende DNS-Nameserver zu senden. Content Delivery Networks (CDNs) und latenzempfindliche Dienste verwenden diese Option, um geografische Antworten auf Namenssuchen zu geben, die über öffentliche DNS-Resolver eingehen. <em>Beachten Sie, dass ECS die Privatsphäre beeinträchtigen kann.</em></p>' /var/www/html/admin/settings.php
 sudo rpl '<h3 class="box-title">Advanced DNS settings</h3>' '<h3 class="box-title">Erweiterte DNS-Einstellungen</h3>' /var/www/html/admin/settings.php
 sudo rpl '<strong>Never forward non-FQDN <code>' '<strong>Niemals Nicht-FQDN weiterleiten<code>' /var/www/html/admin/settings.php
@@ -1004,7 +1010,7 @@ sudo rpl 'Invalid privacy level (".$level.")!' 'Ungültige Datenschutzstufe (".$
 # Einstellungen
 #  Teleporter
 sudo rpl 'Backup</h3>' 'Sicherung</h3>' /var/www/html/admin/settings.php
-sudo rpl 'Backup your Pi-hole configuration (settings &amp; lists) as a downloadable archive' 'Sicherung Ihrer Pi-hole Konfiguration (Einstellungen &amp; Listen) als herunterladbares Archiv' /var/www/html/admin/settings.php
+sudo rpl 'Backup your Pi-hole configuration (settings &amp; lists) as a downloadable archive' 'Sicherung Ihrer Pi-hole Konfiguration (Einstellungen &amp; Listen) als herunterladbares Archiv:' /var/www/html/admin/settings.php
 sudo rpl 'Backup</button>' 'Sicherung</button>' /var/www/html/admin/settings.php
 sudo rpl 'Restore</h3>' 'Wiederherstellen</h3>' /var/www/html/admin/settings.php
 sudo rpl 'Restore...</label>' 'Wiederherstellen ...</label>' /var/www/html/admin/settings.php
@@ -1017,7 +1023,9 @@ sudo rpl 'Audit log</label>' 'Prüfprotokoll</label>' /var/www/html/admin/settin
 sudo rpl 'Static DHCP Leases</label>' 'Statische DHCP-Leases</label>' /var/www/html/admin/settings.php
 sudo rpl 'Local DNS Records</label>' 'Lokale DNS-Einträge</label>' /var/www/html/admin/settings.php
 sudo rpl 'Local CNAME Records</label>' 'Lokale CNAME Einträge</label>' /var/www/html/admin/settings.php
-sudo rpl 'File input</label>' 'Dateieingabe</label>' /var/www/html/admin/settings.php
+sudo rpl 'File input</label>' 'Dateieingabe:</label>' /var/www/html/admin/settings.php
+sudo rpl '>Browse...' '>Durchsuchen ...' /var/www/html/admin/settings.php
+sudo rpl 'placeholder="no file selected"' 'placeholder="keine Datei ausgewählt"' /var/www/html/admin/settings.php
 sudo rpl 'Upload only Pi-hole backup files.</p>' 'Nur Pi-hole Sicherungsdateien hochladen</p>' /var/www/html/admin/settings.php
 sudo rpl 'Clear existing data</label>' 'Vorhandene Daten löschen</label>' /var/www/html/admin/settings.php
 sudo rpl '>Restore' '>Wiederherstellen' /var/www/html/admin/settings.php
@@ -1041,6 +1049,7 @@ sudo rpl 'echo "Processed black-/whitelist group assignments' 'echo "Verarbeitet
 sudo rpl 'echo "Processed static DHCP leases' 'echo "Verarbeitete statische DHCP Vergabe' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'echo "Processed local DNS records' 'echo "Verarbeitete lokale DNS Einträge' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'echo "Processed local CNAME records' 'echo "Verarbeitete lokale CNAME Einträge' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl '<label class="control-label">Output:</label>' '<label class="control-label">Ausgabe:</label>' /var/www/html/admin/settings.php
 sudo rpl 'No file transmitted or parameter error.' 'Keine Datei übertragen oder Parameter Fehler.' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'cannot open/create ' 'kann nicht geöffnet oder erstellt werden ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'nPHP user: ' 'nPHP Benutzer: ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
