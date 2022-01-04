@@ -59,10 +59,19 @@ sudo cp -a /usr/local/bin/pihole /usr/local/bin/pihole.sicherung.vom.$date		# Si
 
 # Startseite
 sudo rpl '<h1>JavaScript Is Disabled</h1><p>JavaScript is required for the site to function.</p>' '<h1>JavaScript ist deaktiviert. </h1><p>JavaScript ist für das Funktionieren der Website erforderlich.</p>' /var/www/html/admin/scripts/pi-hole/php/header.php
-sudo rpl 'To learn how to enable JavaScript click' 'Um zu erfahren, wie Sie JavaScript aktivieren, klicken Sie auf ' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl 'To learn how to enable JavaScript click' 'Um zu erfahren, wie Sie JavaScript aktivieren, klicken Sie  ' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl 'here</a>' 'hier</a>' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl 'Close</label>' 'Schließen</label>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Session is valid for ' 'Die Sitzung ist gültig für ' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl 'A black hole for Internet advertisements.' 'Ein schwarzes Loch für Internetwerbung.' /var/www/html/pihole/index.php
 sudo rpl 'Your black hole for Internet advertisements' 'Ihr schwarzes Loch für Internetwerbung.' /var/www/html/pihole/index.php
 sudo rpl 'Did you mean to go to the admin panel?' 'Möchten Sie zum Administrationsbereich?' /var/www/html/pihole/index.php
+sudo rpl 'subject=Site Blocked' 'subject=Webseite gesperrt' /var/www/html/pihole/index.php
+sudo rpl 'Failed to connect to gravity.db' 'Keine Verbindung zur gravity.db' /var/www/html/pihole/index.php
+sudo rpl 'There are no adlists enabled' 'Es sind keine Blocklisten aktiviert!' /var/www/html/pihole/index.php
+sudo rpl 'Designed for Raspberry Pi' 'Entwickelt für den Raspberry Pi' /var/www/html/pihole/index.php
+sudo rpl '"JavaScript disabled"' '"JavaScript ist deaktiviert"' /var/www/html/pihole/index.php
+
 sudo rpl '<span>Login</span>' '<span>Anmelden</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Sign in to start your session' 'Melden Sie sich an, um Ihre Sitzung zu starten.' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
 sudo rpl 'Verify that cookies are allowed for' 'Überprüfen Sie, ob Cookies zugelassen sind für' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
@@ -304,7 +313,7 @@ sudo rpl 'applyLabel:"Apply"' 'applyLabel:"Anwenden"' /var/www/html/admin/script
 sudo rpl 'Queries over the selected time period' 'Anfragen über den ausgewählten Zeitraum' /var/www/html/admin/db_graph.php
 
 # die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden
-sudo rpl 'Queries from " + fromTime + " to " + untilTime + " on " + fromDate' 'Anfragen von " + fromTime + " bis " + untilTime + " am " + fromDate' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
+sudo rpl 'Queries from " + fromTime + " to " + untilTime + " on " + fromDate' 'Anfragen von " + fromTime + "Uhr bis " + untilTime + " Uhr am " + fromDate' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl '"Queries from " +' '"Anfragen von " +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 
 sudo rpl '" to " +' '" bis " +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
@@ -816,6 +825,7 @@ sudo rpl '<strong>Custom 4 (IPv6)</strong>' '<strong>Benutzerdefiniert 4 (IPv6)<
 sudo rpl '<h1 class="box-title">Interface settings</h1>' '<h1 class="box-title">Einstellungen der Schnittstelle</h1>' /var/www/html/admin/settings.php
 sudo rpl '<h4>Recommended setting</h4>' '<h4>Empfohlene Einstellung</h4>' /var/www/html/admin/settings.php
 sudo rpl '<strong>Allow only local requests</strong>' '<strong>Nur lokale Anfragen zulassen</strong>' /var/www/html/admin/settings.php
+sudo rpl 'Allows only queries from devices that are at most one hop away (local devices)</label>' 'Erlaubt nur Anfragen von Geräten, die höchstens einen Sprung entfernt sind (lokale Geräte).</label> ' /var/www/html/admin/settings.php
 sudo rpl '<h4>Potentially dangerous options</h4>' '<h4>Potenziell gefährliche Optionen</h4>' /var/www/html/admin/settings.php
 sudo rpl 'Make sure your Pi-hole is properly firewalled!' 'Stellen Sie sicher, dass Ihr Pi-hole ordnungsgemäß mit einer Firewall ausgestattet ist!' /var/www/html/admin/settings.php
 sudo rpl '<strong>Respond only on interface' '<strong>Reagiere nur an Schnittstelle' /var/www/html/admin/settings.php
@@ -1052,6 +1062,7 @@ sudo rpl 'echo "Processed local CNAME records' 'echo "Verarbeitete lokale CNAME 
 sudo rpl '<label class="control-label">Output:</label>' '<label class="control-label">Ausgabe:</label>' /var/www/html/admin/settings.php
 sudo rpl 'No file transmitted or parameter error.' 'Keine Datei übertragen oder Parameter Fehler.' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl 'cannot open/create ' 'kann nicht geöffnet oder erstellt werden ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
+sudo rpl 'Close</button>' 'Schließen</button>' /var/www/html/admin/settings.php
 sudo rpl 'nPHP user: ' 'nPHP Benutzer: ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 
 
@@ -1196,8 +1207,18 @@ sudo rpl 'Not allowed (login session invalid or expired, please relogin on the P
 
 
 # Fehlerdatei erstellen
-sudo cat /tmp/error-translate.log | grep -B 2 '0 matches' > /tmp/error2-translate.log
+echo > /tmp/error2-translate.log
+echo "Folgende Zeilen wurden nicht übersetzt:" >> /tmp/error2-translate.log
+echo "---------------------------------------" >> /tmp/error2-translate.log
+echo >> /tmp/error2-translate.log
+echo >> /tmp/error2-translate.log
+sudo cat /tmp/error-translate.log | grep -B 2 '0 matches' > /tmp/error3-translate.log
+cat /tmp/error3-translate.log | grep Replacing >> /tmp/error2-translate.log
+rpl '" (case sensitive) (partial words matched)' '"' /tmp/error2-translate.log
+rpl 'Replacing "' '"' /tmp/error2-translate.log
+rpl 'with' '##########' /tmp/error2-translate.log
 sudo chmod 777 /tmp/erro*-translate.log
+sudo rm /tmp/error3-translate.log
 sudo mv /tmp/error2-translate.log /tmp/error-translate.log
 
 echo
