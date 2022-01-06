@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.7 - FTL Version v5.12.1 - Web Interface Version v5.9
+# getestet auf Pi-hole Version v5.8.1 - FTL Version v5.13 - Web Interface Version v5.10.1
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -90,12 +90,14 @@ sudo rpl 'Forgot password' 'Passwort vergessen' /var/www/html/admin/scripts/pi-h
 
 # Statusanzeige oben links
 sudo rpl 'Active</span>' 'Aktiv</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl 'Offline</span>' 'FTL ist aus</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'DNS service not running</span>' 'DNS Dienst läuft nicht</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
-sudo rpl 'FTL offline</span>' 'FTL ist aus</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Unknown</span>' 'Unbekannt</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl 'DNS service on port' 'DNS Dienst läuft auf Port' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl '"Detected ' '"' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl 'cores">' 'Kerne erkannt">' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Temp:&nbsp;' 'Temperatur:&nbsp;' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Load:&nbsp;&nbsp;' 'Auslastung:&nbsp;&nbsp;' /var/www/html/admin/scripts/pi-hole/php/header.php
-sudo rpl 'Detected $nproc cores\' '$nproc Kerne erkannt\' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Memory usage:&nbsp;&nbsp;' 'Speicher:&nbsp;&nbsp;' /var/www/html/admin/scripts/pi-hole/php/header.php
 
 
@@ -119,8 +121,8 @@ sudo rpl '</i> Graphics' '</i> Grafiken' /var/www/html/admin/scripts/pi-hole/php
 sudo rpl '</i> Query Log' '</i> Anfragen Protokoll' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl '</i> Top Lists' '</i> Top Listen' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Local DNS</span>' 'Lokale DNS Einträge</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
-sudo rpl '<span>DNS Records</span>' '<span>DNS Einträge</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
-sudo rpl '<span>CNAME Records</span>' '<span>CNAME Einträge</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl '</i> DNS Records' '</i> DNS Einträge' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl '</i> CNAME Records' '</i> CNAME Einträge' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl '<span>Group Management</span>' '<span>Gruppen Verwaltung</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl '</i> Groups' '</i> Gruppen' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl '</i> Clients' '</i> Geräte' /var/www/html/admin/scripts/pi-hole/php/header.php
@@ -162,7 +164,7 @@ sudo rpl 'Blocking list updated %a days, %H:%I (hh:mm) ago' 'Die Blockliste wurd
 sudo rpl 'data.dns_queries_today = "Lost"' 'data.dns_queries_today = "Keine"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'data.ads_blocked_today = "connection"' 'data.ads_blocked_today = "Verbindung"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'data.ads_percentage_today = "to"' 'data.ads_percentage_today = "zur"' /var/www/html/admin/scripts/pi-hole/js/index.js
-sudo rpl '"to" ? data[apiName]' '"zur" ? data[apiName]' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl '!== "to" ?' '!== "zur" ?' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'data.domains_being_blocked = "API"' 'data.domains_being_blocked = "API"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'Total queries over last ' 'Gesamtzahl der Anfragen der letzten ' /var/www/html/admin/index.php
 sudo rpl 'hours' 'Stunden' /var/www/html/admin/index.php
@@ -688,11 +690,13 @@ sudo rpl 'Force the download of all specified blocklists' 'Erzwingt den Download
 sudo rpl 'Show this help dialog' 'Zeigt die Hilfe an' /opt/pihole/gravity.sh
 sudo rpl 'Deleting existing list cache' 'Löschen des bestehenden List-Caches' /opt/pihole/gravity.sh
 sudo rpl '"Cleaning up stray matter"' '"Aufräumen"' /opt/pihole/gravity.sh
-sudo rpl '"  ${TICK} DNS service is listening"' '"  ${TICK} DNS-Dienst läuft"' /usr/local/bin/pihole
-sudo rpl '"  ${CROSS} DNS service is NOT listening"' '"  ${CROSS} DNS-Dienst läuft NICHT!"' /usr/local/bin/pihole
-sudo rpl '"  ${TICK} Pi-hole blocking is enabled"' '"  ${TICK} Pi-hole ist aktiviert"' /usr/local/bin/pihole
-sudo rpl '"  ${CROSS} Pi-hole blocking is disabled"' '"  ${CROSS} Pi-hole ist deaktiviert!"' /usr/local/bin/pihole
-sudo rpl '"  ${INFO} Pi-hole blocking will be enabled"' '"  ${INFO} Pi-hole wird aktiviert"' /usr/local/bin/pihole
+sudo rpl 'DNS service is NOT running' 'DNS Dienst läuft NICHT!' /usr/local/bin/pihole
+sudo rpl 'DNS service is NOT listening' 'DNS Dienst hört NICHT!' /usr/local/bin/pihole
+sudo rpl 'FTL is listening on port' 'FTL hört am Port' /usr/local/bin/pihole
+sudo rpl 'Pi-hole blocking is enabled' 'Pi-hole ist aktiviert' /usr/local/bin/pihole
+sudo rpl 'Pi-hole blocking is disabled' 'Pi-hole ist deaktiviert!' /usr/local/bin/pihole
+sudo rpl 'Pi-hole blocking will be enabled' 'Pi-hole wird aktiviert' /usr/local/bin/pihole
+sudo rpl 'Warning: Query logging is disabled' 'Warnung: Anfrageprotokollierung ist deaktiviert' /usr/local/bin/pihole
 
 
 
@@ -931,8 +935,7 @@ sudo rpl 'Lease time in hours' 'Leasingzeit in Stunden' /var/www/html/admin/sett
 sudo rpl 'Hint: 0 = infinite, 24 = one day, 168 = one week, 744 = one month, 8760 = one year' 'Hinweis: 0 = unendlich, 24 = ein Tag, 168 = eine Woche, 744 = ein Monat, 8760 = ein Jahr' /var/www/html/admin/settings.php
 sudo rpl 'Enable IPv6 support (SLAAC + RA)' 'Aktiviere IPv6 Unterstützung (SLAAC + RA)' /var/www/html/admin/settings.php
 sudo rpl '<strong>Enable DHCPv4 rapid commit (fast address assignment)</strong>' '<strong>Aktiviere DHCPv4 Schnellübertragung (schnelle Adresszuweisung)</strong>' /var/www/html/admin/settings.php
-sudo rpl '<h3 class="box-title">DHCP leases</h3>' '<h3 class="box-title">DHCP Leases</h3>' /var/www/html/admin/settings.php
-sudo rpl '<label>Currently active DHCP leases</label>' '<label>Derzeit aktive DHCP-Leases</label>' /var/www/html/admin/settings.php
+sudo rpl 'Currently active DHCP leases</h3>' 'Derzeitig aktive DHCP Leases</h3>' /var/www/html/admin/settings.php
 sudo rpl '<th>MAC address</th>' '<th>MAC Addresse</th>' /var/www/html/admin/settings.php
 sudo rpl '<th>IP address</th>' '<th>IP Adresse</th>' /var/www/html/admin/settings.php
 sudo rpl 'Static DHCP leases configuration' 'Einstellungen für statische DHCP Leases' /var/www/html/admin/settings.php
@@ -1001,7 +1004,10 @@ sudo rpl 'Specify if DNS queries should be anonymized, available options are:' '
 sudo rpl 'Show everything and record everything' 'Alles anzeigen und alles aufzeichnen' /var/www/html/admin/settings.php
 sudo rpl 'Gives maximum amount of statistics' 'Gibt die maximale Anzahl von Statistiken aus.' /var/www/html/admin/settings.php
 sudo rpl 'Hide domains: Display and store all domains as "hidden"' 'Domains verbergen: Alle Domains werden als "versteckt" angezeigt und gespeichert' /var/www/html/admin/settings.php
-sudo rpl 'This disables the Top Domains and Top Ads tables on the dashboard' 'Dadurch werden die Tabellen Top Domains und Top Ads auf dem Dashboard deaktiviert' /var/www/html/admin/settings.php
+sudo rpl 'This disables the Top Permitted Domains and Top Blocked Domains tables on the dashboard</p>' "Dies deaktiviert die Tabellen 'Top Erlaubte Domains' und 'Top Geblockte Domains' auf dem Dashboard.</p>" /var/www/html/admin/settings.php
+
+
+
 sudo rpl 'Hide domains and clients: Display and store all domains as "hidden" and all clients as "0.0.0.0"' 'Domains und Clients ausblenden: Alle Domains werden als "versteckt" und alle Clients als "0.0.0.0" angezeigt und gespeichert' /var/www/html/admin/settings.php
 sudo rpl 'This disables all tables on the dashboard' 'Dadurch werden alle Tabellen im Dashboard deaktiviert' /var/www/html/admin/settings.php
 sudo rpl 'Anonymous mode: This disables basically everything except the live anonymous statistics' 'Anonymer Modus: Dies deaktiviert im Grunde alles außer den anonymen Live-Statistiken'  /var/www/html/admin/settings.php
