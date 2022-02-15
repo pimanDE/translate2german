@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.8.1 - FTL Version v5.13 - Web Interface Version v5.10.1
+# getestet auf Pi-hole Version v5.9 - FTL Version v5.14 - Web Interface Version v5.11
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -90,7 +90,9 @@ sudo rpl 'Forgot password' 'Passwort vergessen' /var/www/html/admin/scripts/pi-h
 
 # Statusanzeige oben links
 sudo rpl 'Active</span>' 'Aktiv</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl '</i> Active' '</i> Aktiv' /var/www/html/admin/scripts/pi-hole/js/footer.js
 sudo rpl 'Offline</span>' 'FTL ist aus</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
+sudo rpl '</i> Offline' '</i> FTL ist aus' /var/www/html/admin/scripts/pi-hole/js/footer.js
 sudo rpl 'DNS service not running</span>' 'DNS Dienst läuft nicht</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Unknown</span>' 'Unbekannt</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'DNS service on port' 'DNS Dienst läuft auf Port' /var/www/html/admin/scripts/pi-hole/php/header.php
@@ -99,7 +101,6 @@ sudo rpl 'cores">' 'Kerne erkannt">' /var/www/html/admin/scripts/pi-hole/php/hea
 sudo rpl 'Temp:&nbsp;' 'Temperatur:&nbsp;' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Load:&nbsp;&nbsp;' 'Auslastung:&nbsp;&nbsp;' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl 'Memory usage:&nbsp;&nbsp;' 'Speicher:&nbsp;&nbsp;' /var/www/html/admin/scripts/pi-hole/php/header.php
-sudo rpl 'No temp sensor found' 'Keinen Temperatursensor gefunden' /var/www/html/admin/scripts/pi-hole/php/header.php
 
 
 
@@ -158,11 +159,11 @@ sudo rpl 'clients)</p>' 'Geräte)</p>' /var/www/html/admin/index.php
 sudo rpl 'only A + AAAA queries (" + data.dns_queries_all_types + " in total)' 'nur A + AAAA Anfragen (" + data.dns_queries_all_types + " insgesamt)' /var/www//html/admin/scripts/pi-hole/js/index.js
 sudo rpl '<p>Queries Blocked</p>' '<p>Geblockte Anfragen</p>' /var/www/html/admin/index.php
 sudo rpl '<p>Percentage Blocked</p>' '<p>Geblockt in Prozent</p>' /var/www/html/admin/index.php
-sudo rpl 'Domains on Blocklist' 'Domains in den Blocklisten' /var/www/html/admin/index.php
+sudo rpl 'Domains on Adlists' 'Domains in den Blocklisten' /var/www/html/admin/index.php
 sudo rpl 'Gravity database not available' 'Die Gravity Datenbank ist verfügbar' /var/www/html/admin/scripts/pi-hole/php/gravity.php
-sudo rpl 'Blocking list updated %H:%I (hh:mm) ago' 'Die Blockliste wurde vor %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
-sudo rpl 'Blocking list updated one day, %H:%I (hh:mm) ago' 'Die Blockliste wurde vor 1 Tag, %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
-sudo rpl 'Blocking list updated %a days, %H:%I (hh:mm) ago' 'Die Blockliste wurde vor %a Tagen, %H Stunden und :%I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
+sudo rpl 'Adlists updated %a days, %H:%I (hh:mm) ago' 'Die Blockliste wurde vor %a Tagen, %H Stunden und :%I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
+sudo rpl 'Adlists updated one day, %H:%I (hh:mm) ago' 'Die Blockliste wurde vor 1 Tag, %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
+sudo rpl 'Adlists updated %H:%I (hh:mm) ago' 'Die Blockliste wurde vor %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
 sudo rpl 'data.dns_queries_today = "Lost"' 'data.dns_queries_today = "Keine"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'data.ads_blocked_today = "connection"' 'data.ads_blocked_today = "Verbindung"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl 'data.ads_percentage_today = "to"' 'data.ads_percentage_today = "zur"' /var/www/html/admin/scripts/pi-hole/js/index.js
@@ -356,7 +357,7 @@ sudo rpl 'regex blacklist' 'RegEx der Blacklist' /var/www/html/admin/db_queries.
 sudo rpl 'The server took too long to send the data.' 'Der Server hat zu lange gebraucht, um die Daten zu senden.' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl 'An error occurred while loading the data: Connection refused. Is FTL running?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung verweigert. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl 'An unknown error occurred while loading the data.' 'Beim Laden der Daten ist folgender Fehler aufgetreten:' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-sudo rpl "Check the server's log files (/var/log/lighttpd/error.log when you're using the default Pi-hole web server) for details. You may need to increase the memory available for Pi-hole in case you requested a lot of data." "Überprüfen Sie die Protokolldateien des Servers (/var/log/lighttpd/error.log, wenn Sie den standardmäßigen Pi-hole-Webserver verwenden) auf Einzelheiten. Möglicherweise müssen Sie den für Pi-hole verfügbaren Speicherplatz erhöhen, falls Sie viele Daten angefordert haben." /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl "Check the server's log files (/var/log/lighttpd/error.log) for details.\n\nYou may need to increase PHP memory limit." "Prüfen Sie die Protokolldateien des Servers (/var/log/lighttpd/error.log) auf Einzelheiten.\n\n Möglicherweise müssen Sie das PHP-Speicherlimit erhöhen." /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl 'Error. Selector types specified using an invalid format.' 'Es wurde keine Auswahl einer Status Anfrage getroffen.' /var/www/html/admin/api_db.php
 sudo rpl 'Queries Blocked' 'Geblockte Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl 'Adding <span id="alDomain"></span> to the' 'Hinzufügen <span id="alDomain"></span> zur' /var/www/html/admin/db_queries.php
@@ -431,7 +432,6 @@ sudo rpl 'regular expressions tutorial</a>' 'Online Hilfe</a> zu regulären Ausd
 sudo rpl 'List of <?php echo $adjective; ?> entries' 'Liste der <?php echo $adjective; ?> Einträge' /var/www/html/admin/groups-domains.php
 sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl '<th>Comment</th>' '<th>Kommentar</th>' /var/www/html/admin/groups-domains.php
-sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/groups-domains.php
 sudo rpl '">Exact whitelist</option>' '">Exakte Whitelist</option>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl '>Regex whitelist</option>' '>RegEx Whitelist</option>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl 'utils.showAlert("info", "", "Editing " + domainRegex + "...", name' 'utils.showAlert("info", "", "Bearbeite die Domain ..." , name' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
@@ -467,7 +467,6 @@ sudo rpl 'Warning", "Please specify a group name' 'Achtung!", "Bitte geben Sie e
 sudo rpl 'utils.showAlert("info", "", "Adding group...", name);' 'utils.showAlert("info", "", "Füge Gruppe hinzu ...", name);' /var/www/html/admin/scripts/pi-hole/js/groups.js
 sudo rpl 'utils.showAlert("success", "fas fa-plus", "Successfully added group", name);' 'utils.showAlert("success", "fas fa-plus", "Gruppe erfolgreich hinzugefügt.", name);' /var/www/html/admin/scripts/pi-hole/js/groups.js
 sudo rpl '<th>Description</th>' '<th>Beschreibung</th>' /var/www/html/admin/groups.php
-sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/groups.php
 sudo rpl 'Added: ' 'Hinzugefügt am: ' /var/www/html/admin/scripts/pi-hole/js/groups.js
 sudo rpl 'nLast modified:' 'nZuletzt bearbeitet am:' /var/www/html/admin/scripts/pi-hole/js/groups.js
 sudo rpl 'nDatabase ID: ' 'nDatenbank ID: ' /var/www/html/admin/scripts/pi-hole/js/groups.js
@@ -508,7 +507,6 @@ sudo rpl 'List of configured clients' 'Liste der konfigurierten Geräte' /var/ww
 sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl '<th>Comment</th>' '<th>Kommentar</th>' /var/www/html/admin/groups-clients.php
 sudo rpl '<th>Group assignment</th>' '<th>Gruppenzuordnung</th>' /var/www/html/admin/groups-clients.php
-sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/groups-clients.php
 sudo rpl 'Added:' 'Hinzugefügt am:' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl 'nLast modified:' 'nZuletzt bearbeitet am:' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl 'nDatabase ID:' 'nDatenbank ID:' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
@@ -562,7 +560,6 @@ sudo rpl '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/
 sudo rpl '<th>Address</th>' '<th>Addresse</th>' /var/www/html/admin/groups-adlists.php
 sudo rpl '<th>Comment</th>' '<th>Kommentar</th>' /var/www/html/admin/groups-adlists.php
 sudo rpl '<th>Group assignment</th>' '<th>Gruppenzuordnung</th>' /var/www/html/admin/groups-adlists.php
-sudo rpl '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/groups-adlists.php
 sudo rpl 'Click for details about this list' 'Klicken Sie hier für detailierte Informationen.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl '<td>Health status of this list:</td>' '<td>Status der Liste:</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl 'var statusText = "Unknown";' 'var statusText = "Unbekannt";' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
@@ -797,7 +794,7 @@ sudo rpl '<th scope="row">Memory utilization:</th>' '<th scope="row">Speicher Au
 sudo rpl '<span title="Resident memory is the portion of memory occupied by a process that is held in main memory (RAM). The rest of the occupied memory exists in the swap space or file system.">Used memory:</span>' '<span title="Der residente Speicher ist der Teil des Speichers, der von einem Prozess belegt wird, der im Hauptspeicher (RAM) gespeichert ist. Der Rest des belegten Speichers befindet sich im Auslagerungsspeicher oder im Dateisystem.">Benutzter Speicher:</span>' /var/www/html/admin/settings.php
 sudo rpl '<span title="Size of the DNS domain cache">DNS cache size:</span>' '<span title="Size of the DNS domain cache">DNS Cache Größe:</span>' /var/www/html/admin/settings.php
 sudo rpl '<span title="Number of cache insertions">DNS cache insertions:</span>' '<span title="Anzahl der Einträge im Cache">DNS Cache Einträge:</span>' /var/www/html/admin/settings.php
-sudo rpl '<span title="Number of cache entries that had to be removed although they are not expired (increase cache size to reduce this number)">DNS cache evictions:</span>' '<span title="Anzahl der Cache Einträge, die entfernt werden mussten, obwohl sie nicht abgelaufen sind (erhöhen Sie die Cache Größe, um diese Anzahl zu verringern).">DNS Cache Entfernungen:</span>' /var/www/html/admin/settings.php
+sudo rpl 'Number of cache entries that had to be removed although they are not expired (increase cache size to reduce this number)" lookatme-text="DNS cache evictions:">DNS cache evictions:' 'Anzahl der Cache-Einträge, die entfernt werden mussten, obwohl sie noch nicht abgelaufen sind (erhöhen Sie die Cache-Größe, um diese Anzahl zu verringern)" lookatme-text="DNS-Cache-Löschungen:">DNS-Cache-Löschungen:' /var/www/html/admin/settings.php
 sudo rpl 'See also our <a href="https://docs.pi-hole.net/ftldns/dns-cache/" rel="noopener" target="_blank">DNS cache documentation</a>.' 'Siehe auch unsere <a href="https://docs.pi-hole.net/ftldns/dns-cache/" rel="noopener" target="_blank">DNS Cache Dokumentation</a>.' /var/www/html/admin/settings.php
 sudo rpl 'The FTL service is offline!' 'Der FTL Service ist offline!' /var/www/html/admin/settings.php
 sudo rpl 'Disable query logging</button>' 'Deaktiviere Anfrageprotokollierung</button>' /var/www/html/admin/settings.php
