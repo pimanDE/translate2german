@@ -72,6 +72,7 @@ sudo rpl --encoding UTF-8 'subject=Site Blocked' 'subject=Webseite gesperrt' /va
 sudo rpl --encoding UTF-8 'Failed to connect to gravity.db' 'Keine Verbindung zur gravity.db' /var/www/html/pihole/index.php
 sudo rpl --encoding UTF-8 'There are no adlists enabled' 'Es sind keine Blocklisten aktiviert!' /var/www/html/pihole/index.php
 sudo rpl --encoding UTF-8 'Designed for Raspberry Pi' 'Entwickelt für den Raspberry Pi' /var/www/html/pihole/index.php
+sudo rpl --encoding UTF-8 'i> Donate' 'i> Spenden' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl --encoding UTF-8 '"JavaScript disabled"' '"JavaScript ist deaktiviert"' /var/www/html/pihole/index.php
 sudo rpl --encoding UTF-8 '<span>Login</span>' '<span>Anmelden</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl --encoding UTF-8 'Sign in to start your session' 'Melden Sie sich an, um Ihre Sitzung zu starten.' /var/www/html/admin/scripts/pi-hole/php/loginpage.php
@@ -316,7 +317,7 @@ sudo rpl --encoding UTF-8 'This Year": ' 'Dieses Jahr": ' /var/www/html/admin/sc
 sudo rpl --encoding UTF-8 'All Time": ' 'Gesamter Zeitraum": ' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 'Custom Range' 'Benutzerdefiniert' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
 sudo rpl --encoding UTF-8 'Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.' 'Je nachdem, wie groß der von Ihnen angegebene Bereich ist, tritt möglicherweise eine Zeitüberschreitung auf, während Pi-hole versucht, alle Daten abzurufen.' /var/www/html/admin/db_graph.php
-sudo rpl --encoding UTF-8 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec' 'Jan_Feb_Mar_Apr_Mai_Jun_Jul_Aug_Sep_Okt_Nov_Dez' /var/www/html/admin/scripts/vendor/moment.min.js
+#sudo rpl --encoding UTF-8 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec' 'Jan_Feb_Mar_Apr_Mai_Jun_Jul_Aug_Sep_Okt_Nov_Dez' /var/www/html/admin/scripts/vendor/moment.min.js
 sudo rpl --encoding UTF-8 'Su_Mo_Tu_We_Th_Fr_Sa' 'So_Mo_Di_Mi_Do_Fr_Sa' /var/www/html/admin/scripts/vendor/moment.min.js
 sudo rpl --encoding UTF-8 '"January_February_March_April_May_June_July_August_September_October_November_December"' '"Januar_Februar_Marz_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember"' /var/www/html/admin/scripts/vendor/moment.min.js
 sudo rpl --encoding UTF-8 'cancelLabel:"Cancel"' 'cancelLabel:"Abbrechen"' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
@@ -784,6 +785,8 @@ sudo rpl --encoding UTF-8 '<th>Last Query</th>' '<th>Letzte Anfrage</th>' /var/w
 sudo rpl --encoding UTF-8 '<th>Number of queries</th>' '<th>Anzahl der Anfragen</th>' /var/www/html/admin/network.php
 sudo rpl --encoding UTF-8 '<th>Uses Pi-hole</th>' '<th>Verwendet Pi-hole</th>' /var/www/html/admin/network.php
 sudo rpl --encoding UTF-8 '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/network.php
+sudo rpl --encoding UTF-8 'No host name for' 'Kein Hostname für' /var/www/html/admin/scripts/pi-hole/js/network.js
+sudo rpl --encoding UTF-8 '" known"\)' '" bekannt")' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl --encoding UTF-8 '<em>unknown</em>' '<em>unbekannt</em>' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl --encoding UTF-8 '\("Never"\)' '("bisher keine")' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl --encoding UTF-8 '<label>Background color: Last query from this device seen ...</label>' '<label>Hintergrundfarbe: Letzte Anfrage von diesem Gerät gesehen ...</label>' /var/www/html/admin/network.php
