@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.12 - FTL Version v5.17 - Web Interface Version v5.14.2
+# getestet auf Pi-hole Version v5.12.1 - FTL Version v5.18 - Web Interface Version v5.15
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -56,6 +56,12 @@ echo
 sudo cp -ra /var/www/html/ /var/www/html.sicherung.vom.$date					# Sicherung des Verzeichnisses
 sudo cp -a /opt/pihole/gravity.sh /opt/pihole/gravity.sh.sicherung.vom.$date    # Sicherung der gravity.sh
 sudo cp -a /usr/local/bin/pihole /usr/local/bin/pihole.sicherung.vom.$date		# Sicherung der pihole
+
+
+
+# Startseite
+sudo rpl --encoding UTF-8 'Your black hole for Internet advertisements' 'Ihr schwarzes Loch für Internetwerbung' /var/www/html/pihole/index.php
+sudo rpl --encoding UTF-8 'Did you mean to go to the admin panel\?' 'Wollen Sie zum Admin-Bereich wechseln?' /var/www/html/pihole/index.php
 
 
 
@@ -178,11 +184,11 @@ sudo rpl --encoding UTF-8 '"Forward destinations"' '"Weitergeleitete Ziele"' /va
 sudo rpl --encoding UTF-8 'Top Permitted Domains' 'Am meisten zugelassene Domains' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '<th>Hits</th>' '<th>Treffer</th>' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '<th>Frequency</th>' '<th>Häufigkeit</th>' /var/www/html/admin/index.php
-sudo rpl --encoding UTF-8 '"% of " \+ total' '"% von insgesamt " + total + " Treffern"' /var/www/html/admin/scripts/pi-hole/js/utils.js
+sudo rpl --encoding UTF-8 '"% of " \+ total' '" % von insgesamt " + total + " Treffern"' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 'Access "Tools' 'Weitere Einzelheiten unter "Tools' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 'Pi-hole diganosis' 'Pi-hole Diagnose' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 ' for further details.' '.' /var/www/html/admin/scripts/pi-hole/js/utils.js
-sudo rpl --encoding UTF-8 '% of' '% von insgesamt' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl --encoding UTF-8 '% of' ' % von insgesamt' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Top Blocked Domains' 'Am meisten geblockte Domains' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 'Top Clients \(total\)' 'Top Geräte (insgesamt)' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/index.php
@@ -652,7 +658,7 @@ sudo rpl --encoding UTF-8 'Long-term load \(15min avg\) larger than number of pr
 sudo rpl --encoding UTF-8 'This may slow down DNS resolution and can cause bottlenecks' 'Dies kann die DNS-Auflösung verlangsamen und zu Engpässen führen.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'RAM shortage ' 'Zu wenig Arbeitsspeicher ' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'ahead:' 'es werden annähernd' /var/www/html/admin/scripts/pi-hole/js/messages.js
-sudo rpl --encoding UTF-8 '% used' '% benutzt' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 '% used' ' % benutzt' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Disk shortage' 'Zu wenig Festplattenspeicher' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '"Select All"' '"Alle auswählen"' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '"Deselect All"' '"Alle abwählen"' /var/www/html/admin/scripts/pi-hole/js/messages.js
