@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.12.1 - FTL Version v5.18 - Web Interface Version v5.15
+# getestet auf Pi-hole Version v5.12.2 - FTL Version v5.18.1 - Web Interface Version v5.15.1
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -208,7 +208,12 @@ sudo rpl --encoding UTF-8 "showing = 'showing'" "showing = 'zeige'" /var/www/htm
 sudo rpl --encoding UTF-8 "'showing permitted'" "'zeige zugelassene'" /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 "'showing blocked'" "'zeige geblockte'" /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'all queries within the Pi-hole log' 'alle Abfragen des Pi-hole Protokolls' /var/www/html/admin/queries.php
-sudo rpl --encoding UTF-8 'queries for client' 'Anfragen für Gerät' /var/www/html/admin/queries.php
+sudo rpl --encoding UTF-8 'blocked queries for client' 'geblockte Anfragen für Gerät' /var/www/html/admin/queries.php
+sudo rpl --encoding UTF-8 'all queries for client' 'alle Anfragen für Gerät' /var/www/html/admin/queries.php
+sudo rpl --encoding UTF-8 'show blocked only</a>' 'zeige nur geblockte</a>' /var/www/html/admin/queries.php
+sudo rpl --encoding UTF-8 'queries blocked by Pi-hole' 'Anfragen geblockt von Pi-hole' /var/www/html/admin/queries.php
+sudo rpl --encoding UTF-8 'queries answered from cache' 'Anfragen beantwortet vom Cache' /var/www/html/admin/queries.php
+sudo rpl --encoding UTF-8 'queries for upstream destination' 'Anfragen für Upstream Ziel' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'queries for domain' 'Anfragen für die Domain' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'queries within specified time interval' 'Abfragen innerhalb des angegebenen Zeitintervalls' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'up to 100 queries' 'bis zu 100 Anfragen' /var/www/html/admin/queries.php
@@ -320,7 +325,7 @@ sudo rpl --encoding UTF-8 'cancelLabel:"Cancel"' 'cancelLabel:"Abbrechen"' /var/
 sudo rpl --encoding UTF-8 'applyLabel:"Apply"' 'applyLabel:"Anwenden"' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
 sudo rpl --encoding UTF-8 'Queries over the selected time period' 'Anfragen über den ausgewählten Zeitraum' /var/www/html/admin/db_graph.php
 
-# die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden
+# Die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden!
 sudo rpl --encoding UTF-8 'Queries from " \+ fromTime \+ " to " \+ untilTime \+ " on " \+ fromDate' 'Anfragen von " + fromTime + " Uhr bis " + untilTime + " Uhr am " + fromDate' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 '"Queries from " \+' '"Anfragen von " +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 
@@ -366,7 +371,7 @@ sudo rpl --encoding UTF-8 'An unknown error occurred while loading the data.' 'B
 # Noch zu prüfen
 #sudo rpl --encoding UTF-8 "Check the server's log files \(/var/log/lighttpd/error.log\) for details.\n\nYou may need to increase PHP memory limit." "Prüfen Sie die Protokolldateien des Servers (/var/log/lighttpd/error.log) auf Einzelheiten.\n\n Möglicherweise müssen Sie das PHP-Speicherlimit erhöhen." /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 
-sudo rpl --encoding UTF-8 'Error. Selector types specified using an invalid format.' 'Es wurde keine Auswahl einer Status Anfrage getroffen.' /var/www/html/admin/api_db.php
+sudo rpl --encoding UTF-8 'Error. Selector status specified using an invalid format.' 'Der ausgewählte Status wurde in einem ungültigen Format gewählt.' /var/www/html/admin/api_db.php
 sudo rpl --encoding UTF-8 'Queries Blocked' 'Geblockte Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'Adding <span id="alDomain"></span> to the' 'Hinzufügen <span id="alDomain"></span> zur' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'successfully added to the' 'Erfolgreich hinzugefügt zur' /var/www/html/admin/db_queries.php
@@ -695,7 +700,7 @@ sudo rpl --encoding UTF-8 'Connection Timed Out \(Gateway\)"' 'Zeitüberschreitu
 sudo rpl --encoding UTF-8 'Web Server Is Down \(Cloudflare\)"' 'Webserver ist ausgefallen (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Cloudflare\)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
 
-# Diese zwei Zeilen dürfen nicht vertauscht werden
+# Die folgenden zwei Zeilen dürfen in der Reigenfolge nicht vertauscht werden!
 sudo rpl --encoding UTF-8 '\${INFO} Analyzed \${num_source_lines} domains, \${num_invalid} domains invalid!' '${INFO} Es wurden ${num_source_lines} Domains überprüft, davon sind ${num_invalid} Domains ungültig!' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} Analyzed \${num_source_lines} domains' '${INFO} Es wurden ${num_source_lines} Domains überprüft' /opt/pihole/gravity.sh
 
