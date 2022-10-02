@@ -5,9 +5,9 @@
 Mit diesem Script wird die Weboberfläche Version 5.15.2 des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
-**Achtung! Dieses Script wurde unter Raspberry Pi OS Bullseye vom 04.04.2022 getestet!**
+**Achtung! Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!**
 <br>
-Download unter: [https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz) 
+Download unter: [https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf-lite.img.xz](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf-lite.img.xz) 
 <br>
 <br>
 Bevor die Übersetzung beginnt, werden
@@ -100,5 +100,3 @@ oder
 ```bash
 pihole -r
 ```
-
-Bitte beachten Sie, dass hierbei sämtliche Statistiken **gelöscht** werden!
