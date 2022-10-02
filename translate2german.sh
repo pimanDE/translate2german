@@ -105,7 +105,8 @@ sudo rpl --encoding UTF-8 'here</a>' 'hier</a>' /var/www/html/admin/scripts/pi-h
 sudo rpl --encoding UTF-8 'Close</label' 'Schließen</label' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
 sudo rpl --encoding UTF-8 'Toggle navigation</span>' 'Navigation umschalten</span>' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
 sudo rpl --encoding UTF-8 'hostname:</span>' 'Rechnername:</span>' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
-sudo rpl --encoding UTF-8 'Documentation</a>' 'DoKumentation</a>' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
+sudo rpl --encoding UTF-8 'Documentation</a>' 'Dokumentation</a>' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
+sudo rpl --encoding UTF-8 'Pi-hole Website' 'Pi-hole Webseite' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
 sudo rpl --encoding UTF-8 'Pi-hole Forum</a>' 'Pi-hole Forum</a>' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
 sudo rpl --encoding UTF-8 'GitHub</a>' 'GitHub</a>' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
 sudo rpl --encoding UTF-8 'Pi-hole Releases</a>' 'Pi-hole Veröffentlichungen</a>' /var/www/html/admin/scripts/pi-hole/php/header_authenticated.php
@@ -116,7 +117,6 @@ sudo rpl --encoding UTF-8 'Log out</a>' 'Log out</a>' /var/www/html/admin/script
 # Linke Menüleiste
 sudo rpl --encoding UTF-8 '<span>Dashboard</span>' '<span>Übersicht</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '<span>Query Log</span>' '<span>Anfragen Protokoll</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
-#sudo rpl --encoding UTF-8 '<span>Speedtest</span>' '<span>Geschwindigkeitstest</span>' /var/www/html/admin/scripts/pi-hole/php/header.php
 sudo rpl --encoding UTF-8 '<span>Long-term Data</span>' '<span>Langzeitdaten</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '</i> Graphics' '</i> Grafiken' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '</i> Query Log' '</i> Anfragen Protokoll' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
@@ -172,14 +172,12 @@ sudo rpl --encoding UTF-8 'Permitted DNS Queries' 'Erlaubte DNS Anfragen' /var/w
 sudo rpl --encoding UTF-8 'Blocked DNS Queries' 'Geblockte DNS Anfragen' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Client activity over last' 'Geräteaktivität der letzten ' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 'return "Client activity from " \+ from \+ " to " \+ to' 'return "Geräteaktivität von " + from + " Uhr bis " + to + " Uhr"'  /var/www/html/admin/scripts/pi-hole/js/index.js
-# evtl. für Speedtest sudo rpl --encoding UTF-8 '"Upstreams from "+from+" to "+to' '"Upstream von "+from+" bis "+to' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 '<td>No activity recorded</td>' '<td>Keine Aktivität aufgezeichnet.</td>' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Query Types' 'Anfragetypen' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '"Query types"' '"Anfragetyp"' /var/www/html/admin/scripts/pi-hole/js/index.js
-# evtl. für Speedtest sudo rpl --encoding UTF-8 'Speedtest results over last' 'Geschwindigkeitsergebnisse der letzten' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 'Upstream servers' 'Upstream Server' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 'title="List' 'title="Liste der' /var/www/html/admin/scripts/pi-hole/js/index.js
-sudo rpl ' queries"' ' Anfragen"' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl --encoding UTF-8 ' queries"' ' Anfragen"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 '"Forward destinations"' '"Weitergeleitete Ziele"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Top Permitted Domains' 'Am meisten zugelassene Domains' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '<th>Hits</th>' '<th>Treffer</th>' /var/www/html/admin/index.php
@@ -199,6 +197,7 @@ sudo rpl --encoding UTF-8 'Top Clients \(blocked only\)' 'Top Geräte (nur geblo
 
 # Anfragen Protokoll
 sudo rpl --encoding UTF-8 'The server took too long to send the data.' 'Der Server hat zu lange gebraucht, um die Daten zu senden.' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl --encoding UTF-8 '"Connection refused"' '"Verbindung verweigert"' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 'An error occurred while loading the data: Connection refused. Is FTL running\?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung abgelehnt. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 'An unknown error occurred while loading the data.' 'Beim Laden der Daten ist ein unbekannter Fehler aufgetreten.' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 'Processing\.\.\.' 'wird bearbeitet ...' /var/www/html/admin/scripts/vendor/datatables.min.js
@@ -207,6 +206,7 @@ sudo rpl --encoding UTF-8 'Recent Queries' 'Letzte Anfragen' /var/www/html/admin
 sudo rpl --encoding UTF-8 "showing = 'showing'" "showing = 'zeige'" /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 "'showing permitted'" "'zeige zugelassene'" /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 "'showing blocked'" "'zeige geblockte'" /var/www/html/admin/queries.php
+sudo rpl --encoding UTF-8 'showing no queries \(due to setting\)' 'keine Abfragen anzeigen (aufgrund der Einstellung)' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'all queries within the Pi-hole log' 'alle Abfragen des Pi-hole Protokolls' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'blocked queries for client' 'geblockte Anfragen für Gerät' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'all queries for client' 'alle Anfragen für Gerät' /var/www/html/admin/queries.php
@@ -287,22 +287,6 @@ sudo rpl --encoding UTF-8 'Clear filters' 'Filter löschen' /var/www/html/admin/
 
 
 
-# Geschwindigkeitstest
-# folgt noch
-# sudo rpl --encoding UTF-8 'Adding' 'Hinzufügen' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'to the' 'zum' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'Success!' 'Erfolgreich!' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'Failure! Something went wrong.' 'Fehler! Etwas ist schief gelaufen.' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'Recent Speedtests' 'Aktueller Bandbreitentest' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'Test Time' 'Testzeit' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'End Time' 'Endzeit' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'Your IP' 'Ihre IP-Adresse' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'Distance' 'Entfernung' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 'Results' 'Ergebnisse' /var/www/html/admin/speedtest.php
-# sudo rpl --encoding UTF-8 '> View Result</a' '> Ansehen</a' /var/www/html/admin/scripts/pi-hole/js/speedresults.js
-
-
-
 # Langzeitdaten
 #   Grafiken
 sudo rpl --encoding UTF-8 'Compute graphical statistics from the Pi-hole query database' 'Grafische Statistiken der Pi-hole Anfragedatenbank' /var/www/html/admin/db_graph.php
@@ -337,6 +321,7 @@ echo >&2
 echo -e "${blaufett}   25 % ...${standard}" >&2
 
 
+
 # Langzeitdaten
 #   Anfragenprotokoll
 sudo rpl --encoding UTF-8 'Specify date range to be queried from the Pi-hole query database' 'Geben Sie den Datumsbereich an, der aus der Pi-hole-Anfragedatenbank abgefragt werden soll.' /var/www/html/admin/db_queries.php
@@ -367,10 +352,10 @@ sudo rpl --encoding UTF-8 'regex blacklist' 'RegEx der Blacklist' /var/www/html/
 sudo rpl --encoding UTF-8 'The server took too long to send the data.' 'Der Server hat zu lange gebraucht, um die Daten zu senden.' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'An error occurred while loading the data: Connection refused. Is FTL running\?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung verweigert. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'An unknown error occurred while loading the data.' 'Beim Laden der Daten ist folgender Fehler aufgetreten:' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-
-# Noch zu prüfen
-#sudo rpl --encoding UTF-8 "Check the server's log files \(/var/log/lighttpd/error.log\) for details.\n\nYou may need to increase PHP memory limit." "Prüfen Sie die Protokolldateien des Servers (/var/log/lighttpd/error.log) auf Einzelheiten.\n\n Möglicherweise müssen Sie das PHP-Speicherlimit erhöhen." /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-
+sudo rpl --encoding UTF-8 "Check the server's log files" "Überprüfen Sie die Log-Dateien des Servers" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl --encoding UTF-8 ' for details.' ' für mehr Informationen.' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl --encoding UTF-8 'You may need to increase PHP memory limit.' 'Möglicherweise müssen Sie das PHP-Speicherlimit erhöhen.' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl --encoding UTF-8 "You can find more info in pi-hole's FAQ:" "Mehr Informationen finden Sie in der Pi-hole FAQ:" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'Error. Selector status specified using an invalid format.' 'Der ausgewählte Status wurde in einem ungültigen Format gewählt.' /var/www/html/admin/api_db.php
 sudo rpl --encoding UTF-8 'Queries Blocked' 'Geblockte Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'Adding <span id="alDomain"></span> to the' 'Hinzufügen <span id="alDomain"></span> zur' /var/www/html/admin/db_queries.php
@@ -507,25 +492,47 @@ sudo rpl --encoding UTF-8 'Other groups can optionally be assigned' 'Andere Grup
 sudo rpl --encoding UTF-8 'in the list below \(using ' 'in der folgenden Liste (mit ' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Add to Blacklist</button>' 'Zur Blacklist hinzufügen</button>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Add to Whitelist</button>' 'Zur Whitelist hinzufügen</button>' /var/www/html/admin/groups-domains.php
+sudo rpl --encoding UTF-8 '"Adding " \+ domainRegex' '"Hinzufügen der " + domainRegex' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+
+# Die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden!
+sudo rpl --encoding UTF-8 'is not a valid domain because' 'ist keine gültige Domain, weil' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl --encoding UTF-8 'is not a valid domain' 'ist keine gültige Domain' /var/www/html/admin/scripts/pi-hole/php/auth.php
+
+sudo rpl --encoding UTF-8 '"Success!"' '"Erfolgreich!"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '"Warning", "Please specify a " \+ domainRegex\)\;' '"Achtung", "Bitte geben Sie eine Domain ein!");' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js 
+sudo rpl --encoding UTF-8 'Error, something went wrong!</strong>' 'Fehler, es ist etwas schief gelaufen!</strong>' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 "'Not adding '" "'Nicht hinzugefügt '" /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 ' as it is already on the list' ' weil die Domain bereits in der Liste enthalten ist.' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 ' domains \(skipped duplicates\)' ' Domains (übersprungene Duplikate)' /var/www/html/admin/scripts/pi-hole/php/groups.php
-sudo rpl --encoding UTF-8 'Error, something went wrong!</strong>' 'Fehler, es ist etwas schief gelaufen!</strong>' /var/www/html/admin/scripts/pi-hole/js/utils.js
-sudo rpl --encoding UTF-8 'is not a valid domain' 'ist keine gültige Domain, weil' /var/www/html/admin/scripts/pi-hole/php/groups.php
-sudo rpl --encoding UTF-8 'is not a valid domain' 'ist keine gültige Domain' /var/www/html/admin/scripts/pi-hole/php/auth.php
+sudo rpl --encoding UTF-8 '"Error while adding new ' '"Fehler beim Hinzufügen neuer ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"edited"' '"bearbeitet"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"editing"' '"bearbeite"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"disabling"' '"deaktiviere"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"enabling"' '"aktiviere"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"edited name of"' '"bearbeitet den Namen von der"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"editing name of"' '"bearbeite den Namen von der"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"edited comment of"' '"den Kommentar bearbeitet von der"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"editing comment of"' '"bearbeite den Kommentar von der"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"edited type of"' '"bearbeitet den Typ der"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"editing type of"' '"bearbeite den Typ der"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 ' out of ' ' von ' /var/www/html/admin/scripts/pi-hole/php/groups.php
-sudo rpl --encoding UTF-8 '"Success!"' '"Erfolgreich!"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '<br>Added ' '<br>Hinzugefügt: ' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 "'Added '" "'Hinzugefügt: '" /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 'Successfully deleted items: ' 'Erfolgreich gelöschte Objektnummer: ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'Error while deleting items: ' 'Fehler während des Löschens der Objektnummer: ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'List of domains' 'Übersicht der Domains' /var/www/html/admin/groups-domains.php
+sudo rpl --encoding UTF-8 'Exact whitelist</label>' 'Exakte Whitelist</label>' /var/www/html/admin/groups-domains.php
+sudo rpl --encoding UTF-8 'Regex whitelist</label>' 'RegEx Whitelist</label>' /var/www/html/admin/groups-domains.php
+sudo rpl --encoding UTF-8 'Exact blacklist</label>' 'Exakte Blacklist</label>' /var/www/html/admin/groups-domains.php
+sudo rpl --encoding UTF-8 'Regex blacklist</label>' 'RegEx Blacklist</label>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '"Select All"' '"Alle auswählen"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '"Deselect All"' '"Alle abwählen"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '"Delete Selected"' '"Ausgewählte löschen"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '"Deleting items: "' '"Lösche Objektnummer: "' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '<i>domain</i>' '<i>Domain</i>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '<i>regex</i>' '<i>RegEx</i>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 'Editing " \+ domainRegex' 'Bearbeite " + domainRegex' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '<th>Type</th>' '<th>Typ</th>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 '<th>Comment</th>' '<th>Kommentar</th>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Group assignment' 'Gruppenzuordnung' /var/www/html/admin/groups-domains.php
@@ -536,8 +543,8 @@ sudo rpl --encoding UTF-8 'Regex blacklist</option>' 'RegEx Blacklist</option>' 
 sudo rpl --encoding UTF-8 '"Successfully "' '"Erfolgreich "' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'done = "disabled"' 'done = "deaktiviert die"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'done = "enabled"' 'done = "aktiviert die"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
-sudo rpl --encoding UTF-8 'edited comment of' 'den Kommentar bearbeitet von der' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
-sudo rpl --encoding UTF-8 'edited groups of' 'bearbeitete Gruppe der' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"edited groups of"' '"bearbeitete Gruppe der"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"editing groups of"' '"bearbeite Gruppe der"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'Reset sorting</button' 'Sortierung löschen</button' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Regular Expression:</label>' 'Regulärer Ausdruck:</label>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 '"RegEx to be added"' '"Regulären Ausdruck hinzufügen"' /var/www/html/admin/groups-domains.php
@@ -555,7 +562,6 @@ sudo rpl --encoding UTF-8 'return num \+ " selected"' 'return num + " ausgewähl
 
 
 
-
 # Blocklisten
 sudo rpl --encoding UTF-8 '<h1>Adlist group management</h1>' '<h1>Blocklisten Gruppen Verwaltung</h1>' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 'Add a new adlist' 'Neue Blockliste hinzufügen' /var/www/html/admin/groups-adlists.php
@@ -565,7 +571,7 @@ sudo rpl --encoding UTF-8 'URL or space-separated URLs' 'URL oder durch Leerzeic
 sudo rpl --encoding UTF-8 'Adlist description \(optional\)' 'Beschreibung der Blockliste (optional)' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 'Hints' 'Hinweise' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 '<li>Please run <code>pihole -g</code> or update your gravity list <a href="gravity.php">online</a> after modifying your adlists.</li>' '<li>Bitte führen Sie <code>pihole -g</code> aus oder aktualisieren Sie Ihre Gravity Liste <a href="gravity.php">online</a> nachdem Sie Ihre Blockliste geändert haben.</li>' /var/www/html/admin/groups-adlists.php
-sudo rpl --encoding UTF-8 '<li>Multiple adlists can be added by separating each <i>unique</i> URL with a space</li>' '<li>Mehrere Adlists können hinzugefügt werden, indem jede <i>eindeutige</i> URL durch ein Leerzeichen getrennt wird.</li>' /var/www/html/admin/groups-adlists.php
+sudo rpl --encoding UTF-8 '<li>Multiple adlists can be added by separating each <i>unique</i> URL with a space</li>' '<li>Es können mehrere Blocklisten hinzugefügt werden, indem jede <i>eindeutige</i> URL durch ein Leerzeichen getrennt wird.</li>' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 '<li>Click on the icon in the first column to get additional information about your lists. The icons correspond to the health of the list.</li>' '<li>Klicken Sie auf das Symbol in der ersten Spalte, um zusätzliche Informationen über Ihre Listen zu erhalten. Die Symbole entsprechen dem Zustand der Liste.</li>' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 'Add</button>' 'Hinzufügen</button>' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 'utils.showAlert\("warning", "", "Warning", "Please specify an adlist address"\)' 'utils.showAlert("warning", "", "Achtung!", "Bitte geben Sie eine Adresse der Blockliste an!")' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
@@ -631,8 +637,8 @@ sudo rpl --encoding UTF-8 'Close</button>' 'Schließen</button>' /var/www/html/a
 sudo rpl --encoding UTF-8 'Submit</button>' 'Absenden</button>' /var/www/html/admin/scripts/pi-hole/php/footer.php
 
 
-
 echo -e "${blaufett}   50 % ...${standard}" >&2
+
 
 
 # Werkzeuge
@@ -700,7 +706,7 @@ sudo rpl --encoding UTF-8 'Connection Timed Out \(Gateway\)"' 'Zeitüberschreitu
 sudo rpl --encoding UTF-8 'Web Server Is Down \(Cloudflare\)"' 'Webserver ist ausgefallen (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Cloudflare\)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
 
-# Die folgenden zwei Zeilen dürfen in der Reigenfolge nicht vertauscht werden!
+# Die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden!
 sudo rpl --encoding UTF-8 '\${INFO} Analyzed \${num_source_lines} domains, \${num_invalid} domains invalid!' '${INFO} Es wurden ${num_source_lines} Domains überprüft, davon sind ${num_invalid} Domains ungültig!' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} Analyzed \${num_source_lines} domains' '${INFO} Es wurden ${num_source_lines} Domains überprüft' /opt/pihole/gravity.sh
 
@@ -993,8 +999,8 @@ sudo rpl --encoding UTF-8 'Top Clients entry ' 'Der Top Geräte Eintrag ' /var/w
 sudo rpl --encoding UTF-8 'is invalid \(use only host names and IP addresses\)!' 'ist ungültig (verwenden Sie nur Hostnamen und IP Adressen)!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 
 
-
 echo -e "${blaufett}   75 % ...${standard}" >&2
+
 
 
 # Einstellungen
@@ -1011,6 +1017,10 @@ sudo rpl --encoding UTF-8 'Pi-hole domain name' 'Pi-hole Domänenname' /var/www/
 sudo rpl --encoding UTF-8 'DHCP lease time' 'DHCP Leasingzeit' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Lease time in hours' 'Leasingzeit in Stunden' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Hint: 0 = infinite, 24 = one day, 168 = one week, 744 = one month, 8760 = one year' 'Hinweis: 0 = unendlich, 24 = ein Tag, 168 = eine Woche, 744 = ein Monat, 8760 = ein Jahr' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 '<i>unknown</i>' '<i>unbekannt</i>' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl --encoding UTF-8 'Deleting DHCP lease...' 'Lösche DHCP Lease...' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl --encoding UTF-8 'Successfully deleted DHCP lease for ' 'Erfolgreich DHCP Lease gelöscht für ' /var/www/html/admin/scripts/pi-hole/js/settings.js
+sudo rpl --encoding UTF-8 'Error while deleting DHCP lease for ' 'Fehler während des Löschens des DHCP Lease für ' /var/www/html/admin/scripts/pi-hole/js/settings.js
 sudo rpl --encoding UTF-8 'Enable IPv6 support \(SLAAC \+ RA\)' 'Aktiviere IPv6 Unterstützung (SLAAC + RA)' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<strong>Enable DHCPv4 rapid commit \(fast address assignment\)</strong>' '<strong>Aktiviere DHCPv4 Schnellübertragung (schnelle Adresszuweisung)</strong>' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Currently active DHCP leases</h3>' 'Derzeitig aktive DHCP Leases</h3>' /var/www/html/admin/settings.php
@@ -1131,8 +1141,6 @@ sudo rpl --encoding UTF-8 'Processed blacklist \(exact\)' 'Verarbeitete Blacklis
 sudo rpl --encoding UTF-8 ' entries' ' Einträge' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl --encoding UTF-8 'Processed whitelist \(exact\)' 'Verarbeitete Whitelist (genau)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl --encoding UTF-8 'Processed blacklist \(regex\)' 'Verarbeitete Blacklist (RegEx)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
-
-
 sudo rpl --encoding UTF-8 'Processed blacklist \(regex, wildcard style\)' 'Verarbeitete Blacklist (RegEx, Wildcard Style)' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl --encoding UTF-8 'Processed audit log' 'Verarbeitete Audit Log' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 sudo rpl --encoding UTF-8 'Processed adlists' 'Verarbeitete Sperrlisten' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
@@ -1155,32 +1163,8 @@ sudo rpl --encoding UTF-8 '</i> Reload page' '</i> Seite neu laden' /var/www/htm
 sudo rpl --encoding UTF-8 'nPHP user: ' 'nPHP Benutzer: ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 
 
-
 echo >&2
 echo -e "${blaufett}   Fast fertig ...${standard}" >&2
-
-
-
-# Einstellungen
-#  Geschwindigkeitstest
-#  folgt noch
-#sudo rpl --encoding UTF-8 '>Speedtest<' '>Geschwindigkeitstest<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'Speedtest settings' 'Einstellungen für Geschwindigkeitstest' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'Speedtest Schedule' 'Zeitplan für den Geschwindigkeitstest' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 '>Disabled<' '>Ausgeschaltet<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 '>Every 1 Hour<' '>Jede Stunde<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 '>Every 2 Hours<' '>Alle 2 Stunden<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 '>Every 4 Hours<' '>Alle 4 Stunden<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 '>Every 6 Hours<' '>Alle 6 Stunden<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 '>Every 12 Hours<' '>Alle 12 Stunden<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 '>Every 24 Hours<' '>Alle 24 Stunden<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'Speedtest Display Range' 'Geschwindigkeitstest Anzeigebereich' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'Day<' 'Tag<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'Days<' 'Tage<' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'Custom Speedtest server' 'Benutzerdefinierter Server für den Geschwindigkeitstest' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'Expert only!!!</span>. Get list of supported servers <a href="https://www.speedtest.net/speedtest-servers.php" target="_blank"> here</a></p>' 'Nur für Experten!!!</span>. Eine Liste der unterstützten Server finden Sie <a href="https://www.speedtest.net/speedtest-servers.php" target="_blank"> hier</a>.</p>' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'Flush Speedtest history' 'Löschen der Geschwindigkeitstest-Hitorie.' /var/www/html/admin/settings.php
-#sudo rpl --encoding UTF-8 'The Speedtest settings have been updated' 'Die Speedtest Einstellungen wurden aktualisiert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 
 
 
@@ -1251,11 +1235,6 @@ sudo rpl --encoding UTF-8 '<th>Target</th>' '<th>Ziel</th>' /var/www/html/admin/
 sudo rpl --encoding UTF-8 '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 '>Clear Filters</button>' '>Filter löschen</button>' /var/www/html/admin/cname_records.php
 
-
-
-# Blockseite
-
-#
 
 
 # Fußleiste
