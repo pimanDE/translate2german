@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.12.2 - FTL Version v5.18.1 - Web Interface Version v5.15.1
+# getestet auf Pi-hole Version v5.13 - FTL Version v5.18.2 - Web Interface Version v5.16
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -151,11 +151,14 @@ sudo rpl --encoding UTF-8 '<span>Donate</span>' '<span>Spenden</span>' /var/www/
 
 # Übersicht
 sudo rpl --encoding UTF-8 '<p>Total queries' '<p>Anfragen insgesamt' /var/www/html/admin/index.php
-sudo rpl --encoding UTF-8 'clients\)</p>' 'Geräte)</p>' /var/www/html/admin/index.php
+sudo rpl --encoding UTF-8 'active clients <i' 'aktive Geräte <i' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 'only A \+ AAAA queries \(" \+ data.dns_queries_all_types \+ " in total\)' 'nur A + AAAA Anfragen (" + data.dns_queries_all_types + " insgesamt)' /var/www//html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 '<p>Queries Blocked</p>' '<p>Geblockte Anfragen</p>' /var/www/html/admin/index.php
+sudo rpl --encoding UTF-8 'List blocked queries <i' 'Liste der geblockten Anfragen <i' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '<p>Percentage Blocked</p>' '<p>Geblockt in Prozent</p>' /var/www/html/admin/index.php
+sudo rpl --encoding UTF-8 'List all queries <i' 'Liste aller Anfragen <i' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 'Domains on Adlists' 'Domains in den Blocklisten' /var/www/html/admin/index.php
+sudo rpl --encoding UTF-8 'Manage adlists <i' 'Verwalten der Blocklisten <i' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 'Gravity database not available' 'Die Gravity Datenbank ist verfügbar' /var/www/html/admin/scripts/pi-hole/php/gravity.php
 sudo rpl --encoding UTF-8 'Adlists updated %a days, %H:%I \(hh:mm\) ago' 'Die Blockliste wurde vor %a Tagen, %H Stunden und :%I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
 sudo rpl --encoding UTF-8 'Adlists updated one day, %H:%I \(hh:mm\) ago' 'Die Blockliste wurde vor 1 Tag, %H Stunden und %I Minuten aktualisiert' /var/www/html/admin/scripts/pi-hole/php/gravity.php
@@ -174,17 +177,19 @@ sudo rpl --encoding UTF-8 'Client activity over last' 'Geräteaktivität der let
 sudo rpl --encoding UTF-8 'return "Client activity from " \+ from \+ " to " \+ to' 'return "Geräteaktivität von " + from + " Uhr bis " + to + " Uhr"'  /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 '<td>No activity recorded</td>' '<td>Keine Aktivität aufgezeichnet.</td>' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Query Types' 'Anfragetypen' /var/www/html/admin/index.php
-sudo rpl --encoding UTF-8 '"Query types"' '"Anfragetyp"' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl --encoding UTF-8 '"Query type"' '"Anfragetyp"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Upstream servers' 'Upstream Server' /var/www/html/admin/index.php
-sudo rpl --encoding UTF-8 'title="List' 'title="Liste der' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl --encoding UTF-8 '"Upstream server"' '"Upstream Server"' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl --encoding UTF-8 'title = "List' 'title="Liste der' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 ' queries"' ' Anfragen"' /var/www/html/admin/scripts/pi-hole/js/index.js
-sudo rpl --encoding UTF-8 '"Forward destinations"' '"Weitergeleitete Ziele"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Top Permitted Domains' 'Am meisten zugelassene Domains' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '<th>Hits</th>' '<th>Treffer</th>' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '<th>Frequency</th>' '<th>Häufigkeit</th>' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '"% of " \+ total' '" % von insgesamt " + total + " Treffern"' /var/www/html/admin/scripts/pi-hole/js/utils.js
-sudo rpl --encoding UTF-8 'Access "Tools' 'Weitere Einzelheiten unter "Tools' /var/www/html/admin/scripts/pi-hole/js/utils.js
+sudo rpl --encoding UTF-8 'Access "Tools' 'Weitere Einzelheiten unter "Werkzeuge' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 'Pi-hole diganosis' 'Pi-hole Diagnose' /var/www/html/admin/scripts/pi-hole/js/utils.js
+sudo rpl --encoding UTF-8 'There are " \+ data.message_count \+ " warnings.' 'Es gibt " + data.message_count + " Warnungen.' /var/www/html/admin/scripts/pi-hole/js/utils.js
+sudo rpl --encoding UTF-8 'There is one warning.' 'Es gibt 1 Warnung.' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 ' for further details.' '.' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 '% of' ' % von insgesamt' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Top Blocked Domains' 'Am meisten geblockte Domains' /var/www/html/admin/index.php
@@ -301,18 +306,21 @@ sudo rpl --encoding UTF-8 'Last Month": ' 'Letzter Monat": ' /var/www/html/admin
 sudo rpl --encoding UTF-8 'This Year": ' 'Dieses Jahr": ' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 'All Time": ' 'Gesamter Zeitraum": ' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 'Custom Range' 'Benutzerdefiniert' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
-sudo rpl --encoding UTF-8 'Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.' 'Je nachdem, wie groß der von Ihnen angegebene Bereich ist, tritt möglicherweise eine Zeitüberschreitung auf, während Pi-hole versucht, alle Daten abzurufen.' /var/www/html/admin/db_graph.php
 #sudo rpl --encoding UTF-8 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec' 'Jan_Feb_Mar_Apr_Mai_Jun_Jul_Aug_Sep_Okt_Nov_Dez' /var/www/html/admin/scripts/vendor/moment.min.js
-sudo rpl --encoding UTF-8 'Su_Mo_Tu_We_Th_Fr_Sa' 'So_Mo_Di_Mi_Do_Fr_Sa' /var/www/html/admin/scripts/vendor/moment.min.js
-sudo rpl --encoding UTF-8 '"January_February_March_April_May_June_July_August_September_October_November_December"' '"Januar_Februar_Marz_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember"' /var/www/html/admin/scripts/vendor/moment.min.js
 sudo rpl --encoding UTF-8 'cancelLabel:"Cancel"' 'cancelLabel:"Abbrechen"' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
 sudo rpl --encoding UTF-8 'applyLabel:"Apply"' 'applyLabel:"Anwenden"' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
+sudo rpl --encoding UTF-8 'var dateformat = "MMMM Do YYYY, HH:mm";' 'var dateformat = "D. MMMM YYYY, HH:mm";' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
+sudo rpl --encoding UTF-8 'Su_Mo_Tu_We_Th_Fr_Sa' 'So_Mo_Di_Mi_Do_Fr_Sa' /var/www/html/admin/scripts/vendor/moment.min.js
+sudo rpl --encoding UTF-8 '"January_February_March_April_May_June_July_August_September_October_November_December"' '"Januar_Februar_Marz_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember"' /var/www/html/admin/scripts/vendor/moment.min.js
+sudo rpl --encoding UTF-8 '" to " \+ picker.endDate.format\(dateformat\)\)' '" Uhr bis " + picker.endDate.format(dateformat) + " Uhr")' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
+sudo rpl --encoding UTF-8 'Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.' 'Je nachdem, wie groß der von Ihnen angegebene Bereich ist, tritt möglicherweise eine Zeitüberschreitung auf, während Pi-hole versucht, alle Daten abzurufen.' /var/www/html/admin/db_graph.php
 sudo rpl --encoding UTF-8 'Queries over the selected time period' 'Anfragen über den ausgewählten Zeitraum' /var/www/html/admin/db_graph.php
 
 # Die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden!
-sudo rpl --encoding UTF-8 'Queries from " \+ fromTime \+ " to " \+ untilTime \+ " on " \+ fromDate' 'Anfragen von " + fromTime + " Uhr bis " + untilTime + " Uhr am " + fromDate' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
-sudo rpl --encoding UTF-8 '"Queries from " \+' '"Anfragen von " +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
+sudo rpl --encoding UTF-8 '"Queries from " \+ fromTime \+ " to " \+ untilTime \+ " on " \+ fromDate' '"Anfragen von " + fromTime + " Uhr bis " + untilTime + " Uhr am " + fromDate' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
+sudo rpl --encoding UTF-8 '"Queries from " \+' '"Anfragen vom " +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 
+sudo rpl --encoding UTF-8 '"-" \+' '"." +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 '"Permitted DNS Queries' '"Erlaubte DNS Anfragen' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 '"Blocked DNS Queries' '"Geblockte DNS Anfragen' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 
@@ -337,6 +345,8 @@ sudo rpl --encoding UTF-8 'This Month": ' 'Dieser Monat": ' /var/www/html/admin/
 sudo rpl --encoding UTF-8 'Last Month": ' 'Letzter Monat": ' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'This Year": ' 'Dieses Jahr": ' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'All Time": ' 'Gesamter Zeitraum": ' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl --encoding UTF-8 'var dateformat = "MMMM Do YYYY, HH:mm";' 'var dateformat = "D. MMMM YYYY, HH:mm";' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl --encoding UTF-8 '" to " \+ picker.endDate.format\(dateformat\)\)' '" Uhr bis " + picker.endDate.format(dateformat) + " Uhr")' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.' 'Abhängig davon, wie groß der von Ihnen angegebene Bereich ist, kann die Anforderung ausfallen, während Pi-hole versucht, alle Daten abzurufen.' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'Query status' 'Status Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'Permitted:' 'Zulässig:' /var/www/html/admin/db_queries.php
@@ -386,6 +396,8 @@ sudo rpl --encoding UTF-8 'This Month": ' 'Dieser Monat": ' /var/www/html/admin/
 sudo rpl --encoding UTF-8 'Last Month": ' 'Letzter Monat": ' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
 sudo rpl --encoding UTF-8 'This Year": ' 'Dieses Jahr": ' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
 sudo rpl --encoding UTF-8 'All Time": ' 'Gesamter Zeitraum": ' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
+sudo rpl --encoding UTF-8 'var dateformat = "MMMM Do YYYY, HH:mm";' 'var dateformat = "D. MMMM YYYY, HH:mm";' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
+sudo rpl --encoding UTF-8 '" to " \+ picker.endDate.format\(dateformat\)\)' '" Uhr bis " + picker.endDate.format(dateformat) + " Uhr")' /var/www/html/admin/scripts/pi-hole/js/db_lists.js
 sudo rpl --encoding UTF-8 'Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.' 'Abhängig davon, wie groß der von Ihnen angegebene Bereich ist, kann die Anforderung ausfallen, während Pi-hole versucht, alle Daten abzurufen.' /var/www/html/admin/db_lists.php
 sudo rpl --encoding UTF-8 'Top Blocked Domains' 'Top geblockte Domains' /var/www/html/admin/db_lists.php
 sudo rpl --encoding UTF-8 'Top Clients' 'Top Geräte' /var/www/html/admin/db_lists.php
@@ -670,6 +682,8 @@ sudo rpl --encoding UTF-8 'This may slow down DNS resolution and can cause bottl
 sudo rpl --encoding UTF-8 'RAM shortage ' 'Zu wenig Arbeitsspeicher ' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'ahead:' 'es werden annähernd' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '% used' ' % benutzt' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 'Adlist with ID ' 'Die Blockliste mit der ID ' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 'was inaccessible during last gravity run.' 'war während der letzten Aktualisierung nicht erreichbar.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Disk shortage' 'Zu wenig Festplattenspeicher' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '"Select All"' '"Alle auswählen"' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '"Deselect All"' '"Alle abwählen"' /var/www/html/admin/scripts/pi-hole/js/messages.js
