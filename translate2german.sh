@@ -33,7 +33,7 @@ touch /tmp/error-translate.log
 clear
 
 if dpkg-query -s rpl 2>/dev/null|grep -q installed; then
-    echo "rpl schon ist installiert ..." >> /dev/null
+    echo "rpl ist schon installiert ..." >> /dev/null
 else
     echo
     echo -e "${blaufett}   rpl muss installiert werden ...${standard}"
@@ -242,22 +242,21 @@ sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(exact blacklist\)" "G
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, IP\)" "Geblockt <br class='hidden-lg'>(extern, IP)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, NULL\)" "Geblockt <br class='hidden-lg'>(extern, NULL)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, NXRA\)" "Geblockt <br class='hidden-lg'>(extern, NXRA)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-sudo rpl --encoding UTF-8 'Blocked <br' 'Geblockt <br' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-sudo rpl --encoding UTF-8 "\(regex blacklist, CNAME\)" "(RegEx Blacklist, CNAME)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-sudo rpl --encoding UTF-8 "\(exact blacklist, CNAME\)" "(exakte Blacklist, CNAME)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(regex blacklist, CNAME\)" "Geblockt <br class='hidden-lg'>(RegEx Blacklist, CNAME)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
+sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(exact blacklist, CNAME\)" "Geblockt <br class='hidden-lg'>(exakte Blacklist, CNAME)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'Retried</span>' 'Erneut versucht</span>' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 '\(ignored\)' '(ignoriert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 '\(already forwarded\)' '(bereits weitergeleitet)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 '\(database is busy\)' '(Datenbank ist beschäftigt)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 "\(special domain\)" "(spezielle Domain)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-sudo rpl --encoding UTF-8 '\(database is busy\)' '(Datenbank ist beschäftigt)' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(database is busy\)" "Geblockt <br class='hidden-lg'>(Datnbank ist beschäftigt)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 '>\(cache\)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 '>\(cache\)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(regex blacklist\)" "Geblockt <br class='hidden-lg'>(RegEx Blacklist)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, IP\)" "Geblockt <br class='hidden-lg'>(extern, IP)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, NULL\)" "Geblockt <br class='hidden-lg'>(extern, NULL)" /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, NXRA\)" "Blocked <br class='hidden-lg'>(extern, NXRA)" /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl --encoding UTF-8 "\(gravity, CNAME\)" "(Gravity, CNAME)" /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, NXRA\)" "Geblockt <br class='hidden-lg'>(extern, NXRA)" /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(gravity, CNAME\)" "Geblockt <br class='hidden-lg'>(Gravity, CNAME)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(regex blacklist, CNAME\)</span>" "Geblockt <br class='hidden-lg'>(RegEx Blacklist, CNAME)</span>" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 'exact blacklist, CNAME' 'Exakte Blacklist, CNAME' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 'Retried' 'Wiederholt' /var/www/html/admin/scripts/pi-hole/js/queries.js
@@ -561,8 +560,8 @@ sudo rpl --encoding UTF-8 'Reset sorting</button' 'Sortierung löschen</button' 
 sudo rpl --encoding UTF-8 'Regular Expression:</label>' 'Regulärer Ausdruck:</label>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 '"RegEx to be added"' '"Regulären Ausdruck hinzufügen"' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Hint:</strong>' 'Hinweis:</strong>' /var/www/html/admin/groups-domains.php
-sudo rpl --encoding UTF-8 'Need help to write a proper RegEx rule\? Have a look at our online' 'Benötigen Sie Hilfe beim Schreiben einer geeigneten RegEx-Regel? Werfen Sie einen Blick auf unser Online' /var/www/html/admin/groups-domains.php
-sudo rpl --encoding UTF-8 'regular expressions tutorial' 'Hilfe zu regulären Ausdrücken' /var/www/html/admin/groups-domains.php
+sudo rpl --encoding UTF-8 'Need help to write a proper RegEx rule\? Have a look at our online' 'Benötigen Sie Hilfe beim Schreiben einer geeigneten RegEx-Regel? Werfen Sie einen Blick auf unsere ' /var/www/html/admin/groups-domains.php
+sudo rpl --encoding UTF-8 'regular expressions tutorial' 'Online Hilfe zu regulären Ausdrücken' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Added: ' 'Hinzugefügt am: ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'nLast modified: ' 'nZuletzt bearbeitet am: ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'Database ID:' 'Datenbank ID:' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
@@ -670,15 +669,16 @@ sudo rpl --encoding UTF-8 'FTL chose the most recent entry <pre>' 'FTL wählte d
 sudo rpl --encoding UTF-8 '</pre> to get the group configuration for this client.' '</pre> um die Gruppenkonfiguration für dieses Gerät zu erhalten.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Hostname contains invalid character <code>' 'Hostname enthält ungültiges Zeichen <code>' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '"FTL failed to start due to "' '"FTL konnte nicht starten wegen "' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 '"Client "' '"Für das Gerät "' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '" has been rate-limited \(current config allows up to "' '" wurde eine Geschwindigkeitsbegrenzung eingeführt (die aktuelle Konfiguration erlaubt bis zu "' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '" queries in "' '" Abfragen in "' /var/www/html/admin/scripts/pi-hole/js/messages.js
-sudo rpl --encoding UTF-8 '" seconds\)"' '" Sekunden\)"' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 '" seconds\)"' '" Sekunden\)."' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Warning in <code>dnsmasq</code> core:<pre>' 'Warnung im <code>dnsmasq</code> Kern:<pre>' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Check out ' 'Für mehr Informationen sehen Sie sich unsere ' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'our documentation' 'Dokumentation ' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 ' for further information' 'an' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Long-term load \(15min avg\) larger than number of processors' 'Langfristige Belastung (15min Durchschnitt) ist größer als die Anzahl der Prozessoren' /var/www/html/admin/scripts/pi-hole/js/messages.js
-sudo rpl --encoding UTF-8 'This may slow down DNS resolution and can cause bottlenecks' 'Dies kann die DNS-Auflösung verlangsamen und zu Engpässen führen.' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 'This may slow down DNS resolution and can cause bottlenecks.' 'Dies kann die DNS-Auflösung verlangsamen und zu Engpässen führen.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'RAM shortage ' 'Zu wenig Arbeitsspeicher ' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'ahead:' 'es werden annähernd' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '% used' ' % benutzt' /var/www/html/admin/scripts/pi-hole/js/messages.js
