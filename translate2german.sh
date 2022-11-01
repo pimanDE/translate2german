@@ -191,7 +191,9 @@ sudo rpl --encoding UTF-8 'Pi-hole diganosis' 'Pi-hole Diagnose' /var/www/html/a
 sudo rpl --encoding UTF-8 'There are " \+ data.message_count \+ " warnings.' 'Es gibt " + data.message_count + " Warnungen.' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 'There is one warning.' 'Es gibt 1 Warnung.' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 ' for further details.' '.' /var/www/html/admin/scripts/pi-hole/js/utils.js
-sudo rpl --encoding UTF-8 '% of' ' % von insgesamt' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl --encoding UTF-8 '% of all queries<br>' '% aller Anfragen<br>' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl --encoding UTF-8 '% of shown items' '% aller Anfragetypen' /var/www/html/admin/scripts/pi-hole/js/index.js
+sudo rpl --encoding UTF-8 '"Toggle visibility"' '"Sichtbarkeit umschalten"' /var/www/html/admin/scripts/pi-hole/js/index.js
 sudo rpl --encoding UTF-8 'Top Blocked Domains' 'Am meisten geblockte Domains' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 'Top Clients \(total\)' 'Top Geräte (insgesamt)' /var/www/html/admin/index.php
 sudo rpl --encoding UTF-8 '<th>Client</th>' '<th>Gerät</th>' /var/www/html/admin/index.php
@@ -253,12 +255,13 @@ sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(database is busy\)" "
 sudo rpl --encoding UTF-8 '>\(cache\)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 '>\(cache\)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(regex blacklist\)" "Geblockt <br class='hidden-lg'>(RegEx Blacklist)" /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(exact blacklist\)" "Geblockt <br class='hidden-lg'>(Exakte Blacklist)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, IP\)" "Geblockt <br class='hidden-lg'>(extern, IP)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, NULL\)" "Geblockt <br class='hidden-lg'>(extern, NULL)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(external, NXRA\)" "Geblockt <br class='hidden-lg'>(extern, NXRA)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(gravity, CNAME\)" "Geblockt <br class='hidden-lg'>(Gravity, CNAME)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(regex blacklist, CNAME\)</span>" "Geblockt <br class='hidden-lg'>(RegEx Blacklist, CNAME)</span>" /var/www/html/admin/scripts/pi-hole/js/queries.js
-sudo rpl --encoding UTF-8 'exact blacklist, CNAME' 'Exakte Blacklist, CNAME' /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(exact blacklist, CNAME\)" "Geblockt <br class='hidden-lg'>(Exakte Blacklist, CNAME)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 'Retried' 'Wiederholt' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 'ignored' 'Ignoriert' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 'already forwarded' 'bereits weitergeleitet' /var/www/html/admin/scripts/pi-hole/js/queries.js
@@ -726,7 +729,7 @@ sudo rpl --encoding UTF-8 '\${INFO} Analyzed \${num_source_lines} domains' '${IN
 
 sudo rpl --encoding UTF-8 '\${INFO} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} List has been updated' '${INFO} Die Liste wurde aktualisiert' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_GREEN}using previously cached list' '${CROSS} Herunterladen der List nicht möglich: \${COL_LIGHT_GREEN}benutze zwischengespeicherte Liste' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_GREEN}using previously cached list' '${CROSS} Herunterladen der Liste nicht möglich: \${COL_LIGHT_GREEN}benutze zwischengespeicherte Liste' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_RED}no cached list available' '${CROSS} Herunterladen der Liste nicht möglich: ${COL_LIGHT_RED}keine zwischengespeicherte Liste vorhanden' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Sample of invalid domains:' 'Beispiel für ungültige Domains:' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Creating new gravity databases' 'Erstellen einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
