@@ -663,7 +663,7 @@ sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /va
 sudo rpl --encoding UTF-8 '<th>Time</th>' '<th>Zeit</th>' /var/www/html/admin/messages.php
 sudo rpl --encoding UTF-8 '<th>Type</th>' '<th>Typ</th>' /var/www/html/admin/messages.php
 sudo rpl --encoding UTF-8 '<th>Message</th>' '<th>Nachricht</th>' /var/www/html/admin/messages.php
-sudo rpl --encoding UTF-8 'Encountered an error when processing <a href=' 'Fehler bei der Verarbeitung <a href' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 'Encountered an error when processing <a href=' 'Fehler bei der Verarbeitung der <a href=' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '" regex filter with ID "' '" RegEx Filter mit der ID "' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '</pre>Error message: <pre>' '</pre>Fehlermeldung: <pre>' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Client <code' 'Gerät <code' /var/www/html/admin/scripts/pi-hole/js/messages.js
