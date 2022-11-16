@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.13 - FTL Version v5.18.2 - Web Interface Version v5.16
+# getestet auf Pi-hole Version v5.14.1 - FTL Version v5.19.1 - Web Interface Version v5.17
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -354,6 +354,7 @@ sudo rpl --encoding UTF-8 'Query status' 'Status Anfragen' /var/www/html/admin/d
 sudo rpl --encoding UTF-8 'Permitted:' 'Zulässig:' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'forwarded</label>' 'weitergeleitet</label>' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'cached</label>' 'zwischengespeichert</label>' /var/www/html/admin/db_queries.php
+sudo rpl --encoding UTF-8 'stale cache</label>' 'veralteter Cache</label>' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'retried</label>' 'wiederholt</label>' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'Blocked:' 'Geblockt:' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'gravity</label' 'Anfragedatenbank</label' /var/www/html/admin/db_queries.php
@@ -361,6 +362,7 @@ sudo rpl --encoding UTF-8 'external</label>' 'extern</label>' /var/www/html/admi
 sudo rpl --encoding UTF-8 'database busy</label>' 'Datenbank ist beschäftigt</label>' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'exact blacklist' 'exakt lt. Blacklist' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'regex blacklist' 'RegEx der Blacklist' /var/www/html/admin/db_queries.php
+sudo rpl --encoding UTF-8 'special domain' 'besondere Domain' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'The server took too long to send the data.' 'Der Server hat zu lange gebraucht, um die Daten zu senden.' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'An error occurred while loading the data: Connection refused. Is FTL running\?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung verweigert. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'An unknown error occurred while loading the data.' 'Beim Laden der Daten ist folgender Fehler aufgetreten:' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
@@ -1190,7 +1192,7 @@ echo -e "${blaufett}   Fast fertig ...${standard}" >&2
 sudo rpl --encoding UTF-8 '<h1>Local DNS Records \[A\/AAAA\]</h1>' '<h1>Lokale DNS Einträge [A/AAAA]</h1>' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 'On this page, you can add domain/IP associations' 'Auf dieser Seite können Sie Domänen- bzw. IP-Zuordnungen hinzufügen.' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 'Add a new domain/IP combination' 'Fügen Sie eine neue Domain/IP Kombination hinzu' /var/www/html/admin/dns_records.php
-sudo rpl --encoding UTF-8 'Add a domain \(example.com or sub.example.com\)' 'Domain hinzufügen (beispiel.com oder mobil.example.com)' /var/www/html/admin/dns_records.php
+sudo rpl --encoding UTF-8 'Domain or comma-separated list of domains' 'Domäne oder durch Komma getrennte Liste von Domänen' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 '<label for="ip">IP Address:</label>' '<label for="ip">IP Adresse:</label>' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 'placeholder="Associated IP address"' 'placeholder="Zugehörige IP Adresse"' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 '<strong>Note:</strong>' '<strong>Hinweis:</strong>' /var/www/html/admin/dns_records.php
@@ -1201,7 +1203,6 @@ sudo rpl --encoding UTF-8 'Read from <code>' 'Gelesen aus der <code>' /var/www/h
 sudo rpl --encoding UTF-8 'Read from the "Local \(custom\) DNS" list \(stored in' 'Gelesen aus der lokalen (benutzerdefinierten) DNS-Liste (gespeichert in' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 'Only the first record will trigger an address-to-name association.' 'Nur der erste Datensatz löst eine Adresse-zu-Name-Zuordnung aus.' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 'Add</button>' 'Hinzufügen</button>' /var/www/html/admin/dns_records.php
-sudo rpl --encoding UTF-8 'Domain must be valid' 'Die Domain muss gültig sein.' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl --encoding UTF-8 'List of local DNS domains' 'Übersicht der lokalen DNS-Domains' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 'Clear Filters</button>' 'Filter löschen</button>' /var/www/html/admin/dns_records.php
 sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/customdns.js
@@ -1223,7 +1224,7 @@ sudo rpl --encoding UTF-8 '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admi
 sudo rpl --encoding UTF-8 '<h1>Local CNAME Records</h1>' '<h1>Lokale CNAME Einträge</h1>' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 '<small>On this page, you can add CNAME records.</small>' '<small>Auf dieser Seite können Sie CNAME Einträge hinzufügen.</small>' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 'Add a new CNAME record' 'Neuen CNAME Eintrag hinzufügen' /var/www/html/admin/cname_records.php
-sudo rpl --encoding UTF-8 'Add a domain \(example.com or sub.example.com\)' 'Domain hinzufügen (beispiel.com oder mobil.example.com)' /var/www/html/admin/cname_records.php
+sudo rpl --encoding UTF-8 'Domain or comma-separated list of domains' 'Domäne oder durch Komma getrennte Liste von Domänen' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 'Target Domain:</label>' 'Zieldomain:</label>' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 'Associated Target Domain' 'Zugehörige Zieldomain' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 '>Add</button>' '>Hinzufügen</button>' /var/www/html/admin/cname_records.php
@@ -1242,10 +1243,12 @@ sudo rpl --encoding UTF-8 'IP must be valid' 'IP muss gültig sein!' /var/www/ht
 sudo rpl --encoding UTF-8 'Target must be set' 'Das Ziel muss festeglegt werden' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl --encoding UTF-8 'Domain must be set' 'Domain muss eingetragen sein!' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl --encoding UTF-8 'This domain/ip association does not exist' 'Diese Domäne/IP-Zuordnung existiert nicht!' /var/www/html/admin/scripts/pi-hole/php/func.php
-sudo rpl --encoding UTF-8 'This domain already has a custom DNS entry for an IPv' 'Diese Domäne hat bereits einen benutzerdefinierten DNS-Eintrag für eine IPv' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl --encoding UTF-8 'Target must be valid' 'Ziel muss gültig sein!' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl --encoding UTF-8 'is not valid' 'ist nicht gültig' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl --encoding UTF-8 '"The domain ' '"Die Domain ' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl --encoding UTF-8 ' already has a custom DNS entry for an IPv' 'hat bereits einen eigenen DNS-Eintrag für eine IPv' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl --encoding UTF-8 'There is already a CNAME record for' 'Es gibt bereits einen CNAME-Eintrag für' /var/www/html/admin/scripts/pi-hole/php/func.php
+sudo rpl --encoding UTF-8 'Domain and target cannot be the same' 'Domäne und Ziel können nicht identisch sein,' /var/www/html/admin/scripts/pi-hole/php/func.php
 sudo rpl --encoding UTF-8 'List of local CNAME records' 'Übersicht der lokalen CNAME Einträge' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/customcname.js
 sudo rpl --encoding UTF-8 '<th>Target</th>' '<th>Ziel</th>' /var/www/html/admin/cname_records.php
