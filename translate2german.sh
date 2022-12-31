@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.14.1 - FTL Version v5.19.1 - Web Interface Version v5.17
+# getestet auf Pi-hole Version v5.14.2 - FTL Version v5.20 - Web Interface Version v5.18
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -55,6 +55,7 @@ echo
 
 sudo cp -ra /var/www/html/ /var/www/html.sicherung.vom.$date					# Sicherung des Verzeichnisses
 sudo cp -a /opt/pihole/gravity.sh /opt/pihole/gravity.sh.sicherung.vom.$date    # Sicherung der gravity.sh
+sudo cp -a /opt/pihole/query.sh /opt/pihole/query.sh.sicherung.vom.$date        # Sicherung der query.sh
 sudo cp -a /usr/local/bin/pihole /usr/local/bin/pihole.sicherung.vom.$date		# Sicherung der pihole
 
 
@@ -363,6 +364,7 @@ sudo rpl --encoding UTF-8 'database busy</label>' 'Datenbank ist beschäftigt</l
 sudo rpl --encoding UTF-8 'exact blacklist' 'exakt lt. Blacklist' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'regex blacklist' 'RegEx der Blacklist' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'special domain' 'besondere Domain' /var/www/html/admin/db_queries.php
+sudo rpl --encoding UTF-8 'gravity \(CNAME\)</label>' 'Anfragedatenbank (CNAME)</label>' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'The server took too long to send the data.' 'Der Server hat zu lange gebraucht, um die Daten zu senden.' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'An error occurred while loading the data: Connection refused. Is FTL running\?' 'Beim Laden der Daten ist ein Fehler aufgetreten: Verbindung verweigert. Läuft FTL?' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'An unknown error occurred while loading the data.' 'Beim Laden der Daten ist folgender Fehler aufgetreten:' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
@@ -509,13 +511,11 @@ sudo rpl --encoding UTF-8 'in the list below \(using ' 'in der folgenden Liste (
 sudo rpl --encoding UTF-8 'Add to Blacklist</button>' 'Zur Blacklist hinzufügen</button>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Add to Whitelist</button>' 'Zur Whitelist hinzufügen</button>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 '"Adding " \+ domainRegex' '"Hinzufügen der " + domainRegex' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
-
-# Die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden!
 sudo rpl --encoding UTF-8 'is not a valid domain because' 'ist keine gültige Domain, weil' /var/www/html/admin/scripts/pi-hole/php/groups.php
-sudo rpl --encoding UTF-8 'is not a valid domain' 'ist keine gültige Domain' /var/www/html/admin/scripts/pi-hole/php/auth.php
-
+sudo rpl --encoding UTF-8 " domains'" " Domain'" /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl --encoding UTF-8 'Invalid adlist URL' 'Ungültige URL für die Liste:' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 '"Success!"' '"Erfolgreich!"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
-sudo rpl --encoding UTF-8 '"Warning", "Please specify a " \+ domainRegex\)\;' '"Achtung", "Bitte geben Sie eine Domain ein!");' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js 
+sudo rpl --encoding UTF-8 '"Warning", "Please specify a " \+ domainRegex\)\;' '"Achtung!", "Bitte geben Sie eine Domain ein!");' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js 
 sudo rpl --encoding UTF-8 'Error, something went wrong!</strong>' 'Fehler, es ist etwas schief gelaufen!</strong>' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 "'Not adding '" "'Nicht hinzugefügt '" /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 ' as it is already on the list' ' weil die Domain bereits in der Liste enthalten ist.' /var/www/html/admin/scripts/pi-hole/php/groups.php
@@ -595,6 +595,8 @@ sudo rpl --encoding UTF-8 '"fas fa-plus", "Warning"' '"fas fa-plus", "Achtung!"'
 sudo rpl --encoding UTF-8 'Adding adlist...' 'Füge Blockliste hinzu ...' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 'Successfully added adlist' 'Blockliste erfolgreich hinzugefügt!' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 '<br><b>Total:' '<br><b>Insgesamt:' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl --encoding UTF-8 'Ignored duplicated adlists: ' 'Doppelte Blocklisten wurden ignoriert: ' /var/www/html/admin/scripts/pi-hole/php/groups.php
+sudo rpl --encoding UTF-8 '<b>Added adlists: ' '<b>Hinzugefügte Blocklisten: ' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 'adlist\(s\) processed.</b>' 'Blockliste(n) bearbeitet.</b>' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 'List of adlists' 'Übersicht der Blocklisten' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
@@ -775,6 +777,25 @@ sudo rpl --encoding UTF-8 'Find Blocked Domain In Lists' 'Gesperrte Domain in ei
 sudo rpl --encoding UTF-8 'Domain to look for \(example.com or sub.example.com\)' 'zu suchende Domain (beispiel.com oder mobil.beispiel.com)' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Search partial match</button>' 'Suche teilweise Übereinstimmung</button>' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Search exact match</button>' 'genaue Übereinstimmung</button>' /var/www/html/admin/queryads.php
+sudo rpl --encoding UTF-8 'Not authorized' 'Nicht autorisiert!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
+sudo rpl --encoding UTF-8 'is an invalid domain!' 'ist eine ungültige Domain!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
+sudo rpl --encoding UTF-8 'No domain provided' 'Keine Domain angegeben!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
+sudo rpl --encoding UTF-8 'matchType="match"' 'matchType="Ergebnis"' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'plural="es"' 'plural=""' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'matchType="exact ' 'matchType="Genaues ' /opt/pihole/query.sh
+
+# Die folgenden drei Zeilen dürfen nicht vertauscht werden
+sudo rpl --encoding UTF-8 'found in \$\{COL_BOLD\}exact' 'gefunden in der${COL_BOLD}' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'found in \$\{COL_BOLD\}regex' 'gefunden in der ${COL_BOLD}RegEx' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'found in \$' 'gefunden in $' /opt/pihole/query.sh
+
+sudo rpl --encoding UTF-8 'No \$\{exact' 'Kein ${exact' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'results found for \$' 'Ergebnis für $' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 '\} within the adlists' '} in den Blocklisten gefunden.' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'Over 100 \$' 'Über 100 $' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'This can be overridden using the -all option' 'Dies kann mit der Option -all umgangen werden.' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'for \$\{COL_BOLD\}\${domainQuery\}\$\{COL_NC\} found in' 'für ${COL_BOLD}${domainQuery}${COL_NC} gefunden in' /opt/pihole/query.sh
+sudo rpl --encoding UTF-8 'Over \$\{count\} results found, skipping rest of file' 'Über ${count} Ergebnisse, Rest der Datei wurde übersprungen.' /opt/pihole/query.sh
 
 
 
@@ -1072,8 +1093,8 @@ sudo rpl --encoding UTF-8 'Top Lists' 'Top Listen' /var/www/html/admin/settings.
 sudo rpl --encoding UTF-8 'Exclude the following domains from being shown in' 'Schließen Sie die folgenden Domänen von der Anzeige aus:' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Top Domains / Top Advertisers' 'Top Domains / Top Inserenten' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<label>Top Clients</label>' '<label>Top Geräte</label>' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Enter one domain per line' 'Geben Sie eine Domain pro Zeile ein' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Enter one IP address or host name per line' 'Geben Sie eine IP Adresse oder einen Hostnamen pro Zeile ein' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Enter one domain per line' 'Geben Sie eine Domain pro Zeile ein.' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Enter one IP address or host name per line' 'Geben Sie eine IP Adresse oder einen Hostnamen pro Zeile ein.' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Web interface settings' 'Einstellungen für die Weboberfläche' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Interface appearance' 'Erscheinungsbild der Weboberfläche' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Pi-hole default theme \(light, default\)' 'Pi-hole Standard Thema (hell, Standard)' /var/www/html/admin/scripts/pi-hole/php/theme.php
@@ -1230,7 +1251,7 @@ sudo rpl --encoding UTF-8 'Associated Target Domain' 'Zugehörige Zieldomain' /v
 sudo rpl --encoding UTF-8 '>Add</button>' '>Hinzufügen</button>' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 '<strong>Note:</strong>' '<strong>Hinweis:</strong>' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 '<p>The target of a <code>CNAME</code> must be a domain that the Pi-hole already has in its cache or is authoritative for. This is a universal limitation of <code>CNAME</code> records.</p>' '<p>Das Ziel eines <code>CNAME</code> muss eine Domäne sein, die der Pi-hole bereits in seinem Cache hat oder für die es maßgeblich ist. Dies ist eine universelle Einschränkung von <code>CNAME</code> Datensätzen.</p>' /var/www/html/admin/cname_records.php
-sudo rpl --encoding UTF-8 "<p>The reason for this is that Pi-hole will not send additional queries upstream when serving <code>CNAME</code> replies. As consequence, if you set a target that isn't already known, the reply" '<p>Der Grund dafür ist, dass Pi-hole keine zusätzlichen Anfragen stromaufwärts sendet, wenn <code>CNAME</code> -Antworten zugestellt werden. Wenn Sie ein Ziel festlegen, das noch nicht bekannt ist, ist die' /var/www/html/admin/cname_records.php
+sudo rpl --encoding UTF-8 "<p>The reason for this is that Pi-hole will not send additional queries upstream when serving <code>CNAME</code> replies. As consequence, if you set a target that isn't already known, the reply" '<p>Der Grund dafür ist, dass Pi-hole keine zusätzlichen Anfragen stromaufwärts sendet, wenn <code>CNAME</code>-Antworten zugestellt werden. Wenn Sie ein Ziel festlegen, das noch nicht bekannt ist, ist die' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 'to the client may be incomplete. Pi-hole just returns the information it knows at the time of the query. This results in certain limitations for <code>CNAME</code> targets,' 'Antwort an das Gerät möglicherweise unvollständig. Pi-hole gibt nur die Informationen zurück, die es zum Zeitpunkt der Abfrage kennt. Dies führt zu bestimmten Einschränkungen für <code>CNAME</code> Ziele.' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 "for instance, only <i>active</i> DHCP leases work as targets - mere DHCP <i>leases</i> aren't sufficient as they aren't \(yet\) valid DNS records.</p>" 'Beispielsweise fungieren nur <i>aktive </i> DHCP-Leases als Ziele - bloße DHCP <i>-Leases</i> sind nicht ausreichend, da sie (noch) keine gültigen DNS-Einträge sind.</p>' /var/www/html/admin/cname_records.php
 sudo rpl --encoding UTF-8 "<p>Additionally, you can't <code>CNAME</code> external domains \(<code>bing.com</code> to <code>google.com</code>\) successfully as this could result in invalid SSL certificate errors when the" '<p>Darüber hinaus können externe Domänen (<code>bing.com</code> bis <code>google.com</code>) nicht erfolgreich <code>CNAME</code> verwenden, da dies zu ungültigem SSL führen kann, wenn der Zielserver' /var/www/html/admin/cname_records.php
@@ -1274,6 +1295,10 @@ sudo rpl --encoding UTF-8 'Not allowed \(login session invalid or expired, pleas
 sudo rpl --encoding UTF-8 'Not allowed \(login session invalid or expired, please relogin on the Pi-hole dashboard\)!' 'Nicht erlaubt (Die Anmeldesitzung ist ungültig oder abgelaufen, bitte melden Sie sich im Hauptmenü des Pi-hole neu an)!' /var/www/html/admin/scripts/pi-hole/php/customcname.php
 sudo rpl --encoding UTF-8 'Not allowed \(login session invalid or expired, please relogin on the Pi-hole dashboard\)!' 'Nicht erlaubt (Die Anmeldesitzung ist ungültig oder abgelaufen, bitte melden Sie sich im Hauptmenü des Pi-hole neu an)!' /var/www/html/admin/scripts/pi-hole/php/message.php
 sudo rpl --encoding UTF-8 'Not allowed \(login session invalid or expired, please relogin on the Pi-hole dashboard\)!' 'Nicht erlaubt (Die Anmeldesitzung ist ungültig oder abgelaufen, bitte melden Sie sich im Hauptmenü des Pi-hole neu an)!' /var/www/html/admin/scripts/pi-hole/php/network.php
+sudo rpl --encoding UTF-8 'Session expired! Please re-login on the Pi-hole dashboard.' 'Die Sitzung ist abgelaufen! Bitte loggen Sie sich erneut auf der Weboberfläche ein.' /var/www/html/admin/scripts/pi-hole/php/auth.php
+sudo rpl --encoding UTF-8 'Empty token! Check if cookies are enabled on your system.' 'Leeres Token! Prüfen Sie, ob Cookies auf Ihrem System aktiviert sind.' /var/www/html/admin/scripts/pi-hole/php/auth.php
+sudo rpl --encoding UTF-8 'Wrong token! Please re-login on the Pi-hole dashboard.' 'Falsches Token! Bitte loggen Sie sich erneut auf der Weboberfläche ein.' /var/www/html/admin/scripts/pi-hole/php/auth.php
+sudo rpl --encoding UTF-8 'is not a valid domain' 'ist keine gültige Domain' /var/www/html/admin/scripts/pi-hole/php/auth.php
 
 
 

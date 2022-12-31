@@ -2,7 +2,7 @@
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche Version 5.17 des Pi-hole auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche Version 5.18 des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
 **Achtung! Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!**
@@ -22,6 +22,7 @@ und die Dateien<br>
 ```bash
 /usr/local/bin/pihole
 /opt/pihole/gravity.sh
+/opt/pihole/query.sh
 ```
 
 gesichert.
@@ -57,7 +58,7 @@ sudo ./translate2german.sh
 
 **Hinweise:**
 
-* getestet unter Pi-hole Version v5.14.1 FTL Version 5.19.1 und Web Interface Version v5.17
+* getestet unter Pi-hole Version v5.14.2 FTL Version 5.20 und Web Interface Version v5.18
 * **vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe weiter unten)**
 * ...
 <br>
@@ -83,8 +84,9 @@ Alternativ kann die Übersetzung auch folgendermaßen rückgängig gemacht werde
 
 ```bash
 sudo rm -r /var/www/html/
-sudo rm -r /usr/local/bin/pihole
-sudo rm -r /opt/pihole/gravity.sh
+sudo rm /usr/local/bin/pihole
+sudo rm /opt/pihole/gravity.sh
+sudo rm /opt/pihole/query.sh
 ```
 
 XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'
@@ -93,6 +95,7 @@ XXX = Datum der Sicherung im Format 'YYYYMMDD - HHMMSS'
 sudo mv /var/www/html.sicherung.vom.XXX /var/www/html/
 sudo mv /usr/local/bin/pihole.sicherung.vom.XXX /usr/local/bin/pihole
 sudo mv /opt/pihole/gravity.sh.sicherung.vom.XXX /opt/pihole/gravity.sh
+sudo mv /opt/pihole/query.sh.sicherung.vom.XXX /opt/pihole/query.sh
 ```
 
 oder
