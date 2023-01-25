@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.14.2 - FTL Version v5.20 - Web Interface Version v5.18
+# getestet auf Pi-hole Version v5.15.2 - FTL Version v5.20.1 - Web Interface Version v5.18.2
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -61,8 +61,8 @@ sudo cp -a /usr/local/bin/pihole /usr/local/bin/pihole.sicherung.vom.$date		# Si
 
 
 # Startseite
-sudo rpl --encoding UTF-8 'Your black hole for Internet advertisements' 'Ihr schwarzes Loch für Internetwerbung' /var/www/html/pihole/index.php
-sudo rpl --encoding UTF-8 'Did you mean to go to the admin panel\?' 'Wollen Sie zum Admin-Bereich wechseln?' /var/www/html/pihole/index.php
+# sudo rpl --encoding UTF-8 'Your black hole for Internet advertisements' 'Ihr schwarzes Loch für Internetwerbung' /var/www/html/pihole/index.php
+# sudo rpl --encoding UTF-8 'Did you mean to go to the admin panel\?' 'Wollen Sie zum Admin-Bereich wechseln?' /var/www/html/pihole/index.php
 
 
 
@@ -442,10 +442,10 @@ sudo rpl --encoding UTF-8 'off: "Disabled"' 'off: "Deaktiviert"' /var/www/html/a
 sudo rpl --encoding UTF-8 'Editing group...' 'Gruppe wird bearbeitet ...' /var/www/html/admin/scripts/pi-hole/js/groups.js
 sudo rpl --encoding UTF-8 'Successfully " \+ done \+ " group' 'Gruppe erfolgreich bearbeitet!' /var/www/html/admin/scripts/pi-hole/js/groups.js
 sudo rpl --encoding UTF-8 '"Error while " \+ notDone' '"Fehler während " + notDone' /var/www/html/admin/scripts/pi-hole/js/groups.js
-sudo rpl --encoding UTF-8 'Deleting group...' 'Gruppe wird gelöscht ...' /var/www/html/admin/scripts/pi-hole/js/groups.js
-sudo rpl --encoding UTF-8 'Successfully deleted groups' 'Gruppen erfolgreich gelöscht! Objektnummer:' /var/www/html/admin/scripts/pi-hole/js/groups.js
+sudo rpl --encoding UTF-8 'Deleting group\(s\)...' 'Lösche Gruppe(n) ...' /var/www/html/admin/scripts/pi-hole/js/groups.js
+sudo rpl --encoding UTF-8 'Successfully deleted group\(s\)' 'Gruppe(n) erfolgreich gelöscht! Objektnummer' /var/www/html/admin/scripts/pi-hole/js/groups.js
 sudo rpl --encoding UTF-8 'Reset sorting</button>' 'Sortierung zurücksetzen</button>' /var/www/html/admin/groups.php
-sudo rpl --encoding UTF-8 'Error while deleting groups' 'Fehler beim Löschen von Gruppen.' /var/www/html/admin/scripts/pi-hole/js/groups.js
+sudo rpl --encoding UTF-8 'Error while deleting group\(s\)' 'Fehler beim Löschen von Gruppe(n).' /var/www/html/admin/scripts/pi-hole/js/groups.js
 
 
 
@@ -471,7 +471,7 @@ sudo rpl --encoding UTF-8 'Acceptable values are: IP address, subnet \(CIDR nota
 sudo rpl --encoding UTF-8 '>Add</button>' '>Hinzufügen</button>' /var/www/html/admin/groups-clients.php
 sudo rpl --encoding UTF-8 '"Warning", "Please specify a client IP or MAC address"' '"Achtung!", "Bitte geben Sie eine Geräte IP- oder MAC-Adresse an!"' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl --encoding UTF-8 'Adding client...' 'Füge Gerät hinzu ...' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
-sudo rpl --encoding UTF-8 'Successfully added client' 'Gerät erfolgreich hinzugefügt!' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
+sudo rpl --encoding UTF-8 'Successfully added client' 'Gerät erfolgreich hinzugefügt.' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl --encoding UTF-8 'List of configured clients' 'Übersicht der konfigurierten Geräte' /var/www/html/admin/groups-clients.php
 sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl --encoding UTF-8 'titleAttr: "Select All"' 'titleAttr: "Alle auswählen"' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
@@ -488,8 +488,8 @@ sudo rpl --encoding UTF-8 '"Successfully " \+ done \+ " client"' '"Gerät erfolg
 sudo rpl --encoding UTF-8 '>Apply</button>' '>Anwenden</button>' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl --encoding UTF-8 'bsSelectDefaults.selectAllText = "All"' 'bsSelectDefaults.selectAllText = "Alle"' /var/www/html/admin/scripts/pi-hole/js/utils.js
 sudo rpl --encoding UTF-8 'bsSelectDefaults.deselectAllText = "None"' 'bsSelectDefaults.deselectAllText = "Keine"' /var/www/html/admin/scripts/pi-hole/js/utils.js
-sudo rpl --encoding UTF-8 'Deleting client...' 'Lösche Gerät ...' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
-sudo rpl --encoding UTF-8 'Successfully deleted clients' 'Gerät erfolgreich gelöscht' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
+sudo rpl --encoding UTF-8 'Deleting client\(s\)...' 'Lösche Gerät(e) ...' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
+sudo rpl --encoding UTF-8 'Successfully deleted client\(s\)' 'Gerät(e) erfolgreich gelöscht' /var/www/html/admin/scripts/pi-hole/js/groups-clients.js
 sudo rpl --encoding UTF-8 'Reset sorting</button>' 'Sortierung zurücksetzen</button>' /var/www/html/admin/groups-clients.php
 
 
@@ -534,8 +534,8 @@ sudo rpl --encoding UTF-8 '"editing type of"' '"bearbeite den Typ der"' /var/www
 sudo rpl --encoding UTF-8 ' out of ' ' von ' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 '<br>Added ' '<br>Hinzugefügt: ' /var/www/html/admin/scripts/pi-hole/php/groups.php
 sudo rpl --encoding UTF-8 "'Added '" "'Hinzugefügt: '" /var/www/html/admin/scripts/pi-hole/php/groups.php
-sudo rpl --encoding UTF-8 'Successfully deleted items: ' 'Erfolgreich gelöschte Objektnummer: ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
-sudo rpl --encoding UTF-8 'Error while deleting items: ' 'Fehler während des Löschens der Objektnummer: ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 'Successfully deleted domain\(s\): ' 'Erfolgreich gelöschte Domain(s): ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 'Error while deleting domain\(s\): ' 'Fehler während des Löschens der Domain(s): ' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'List of domains' 'Übersicht der Domains' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Exact whitelist</label>' 'Exakte Whitelist</label>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Regex whitelist</label>' 'RegEx Whitelist</label>' /var/www/html/admin/groups-domains.php
@@ -545,7 +545,7 @@ sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /va
 sudo rpl --encoding UTF-8 '"Select All"' '"Alle auswählen"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '"Deselect All"' '"Alle abwählen"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '"Delete Selected"' '"Ausgewählte löschen"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
-sudo rpl --encoding UTF-8 '"Deleting items: "' '"Lösche Objektnummer: "' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
+sudo rpl --encoding UTF-8 '"Deleting domain\(s\)..."' '"Lösche Domain(s): "' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '<i>domain</i>' '<i>Domain</i>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 '<i>regex</i>' '<i>RegEx</i>' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'Editing " \+ domainRegex' 'Bearbeite " + domainRegex' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
@@ -633,16 +633,16 @@ sudo rpl --encoding UTF-8 'd years' 'd Jahre' /var/www/html/admin/scripts/vendor
 sudo rpl --encoding UTF-8 '<td>Database entry was last modified&nbsp;&nbsp;</td>' '<td>Datenbankeintrag wurde zuletzt geändert:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 '<td>The list contents were last updated&nbsp;&nbsp;</td>' '<td>Letzte Aktualisierung des Listeninhalts:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 '<td>Number of domains on this list:&nbsp;&nbsp;</td>' '<td>Anzahl der Domains in dieser Liste:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl --encoding UTF-8 '<td>Number of invalid domains on this list:&nbsp;&nbsp;</td>' '<td>Anzahl der ungültigen Domains in dieser Liste:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl --encoding UTF-8 '<td>Number of non-domains on this list:&nbsp;&nbsp;</td>' '<td>Anzahl der ungültigen Domains in dieser Liste:&nbsp;&nbsp;</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 '<td>Database ID of this list:</td>' '<td>Datenbank-ID der Liste:</td>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 'on: "Enabled"' 'on: "Aktiviert"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 'off: "Disabled"' 'off: "Deaktiviert"' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 'Editing adlist...' 'Bearbeite die Blockliste ...' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 'Successfully " \+ done \+ " adlist ' 'Blockliste erfolgreich bearbeitet!' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 'Apply</button>' 'Anwenden</button>' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl --encoding UTF-8 '"Deleting Adlists: "' '"Lösche die Blockliste: "' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl --encoding UTF-8 'Successfully deleted adlists' 'Blockliste erfolgreich gelöscht' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
-sudo rpl --encoding UTF-8 'Error while deleting adlists' 'Fehler beim Löschen von Blocklisten.' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl --encoding UTF-8 '"Deleting adlist\(s\) ..."' '"Lösche die Blockliste: "' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl --encoding UTF-8 'Successfully deleted adlist\(s\)' 'Blockliste(n) erfolgreich gelöscht' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
+sudo rpl --encoding UTF-8 'Error while deleting adlist\(s\)' 'Fehler beim Löschen der Blockliste(n).' /var/www/html/admin/scripts/pi-hole/js/groups-adlists.js
 sudo rpl --encoding UTF-8 'Reset sorting</button>' 'Sortierung zurücksetzen</button' /var/www/html/admin/groups-adlists.php
 
 
@@ -696,9 +696,9 @@ sudo rpl --encoding UTF-8 '"Select All"' '"Alle auswählen"' /var/www/html/admin
 sudo rpl --encoding UTF-8 '"Deselect All"' '"Alle abwählen"' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '"Delete Selected"' '"Ausgewählte löschen"' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Unknown message type<pre>' 'Unbekannte Mitteilung type<pre>' /var/www/html/admin/scripts/pi-hole/js/messages.js
-sudo rpl --encoding UTF-8 'Deleting messages:' 'Gelöschte Mitteilung:' /var/www/html/admin/scripts/pi-hole/js/messages.js
-sudo rpl --encoding UTF-8 'Successfully deleted messages:' 'Erfolgreich gelöschte Mitteilungen:' /var/www/html/admin/scripts/pi-hole/js/messages.js
-sudo rpl --encoding UTF-8 'Error while deleting message:' 'Fehler beim Löschen der Mitteilung:' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 'Deleting message\(s\)...' 'Lösche Mitteilung ...' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 'Successfully deleted message\(s\)' 'Erfolgreich gelöschte Mitteilunge(n)' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 'Error while deleting message\(s\):' 'Fehler beim Löschen der Mitteilung(en):' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'No issues found.' 'Keine Probleme gefunden.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '<p>Note: If errors are shown, you can <a href="debug.php">generate a debug log</a>, which will do a thorough Pi-hole evaluation.</p>' '<p>Hinweis: Wenn Fehler angezeigt werden, können Sie ein <a href="debug.php">Debug-Protokoll erstellen</a>, das eine gründliche Pi-hole Auswertung vornimmt.</p>' /var/www/html/admin/messages.php
 
@@ -709,10 +709,21 @@ sudo rpl --encoding UTF-8 'Update Gravity \(list of blocked domains\)' 'Aktualis
 sudo rpl --encoding UTF-8 '>Update<' '>Aktualisieren<' /var/www/html/admin/gravity.php
 sudo rpl --encoding UTF-8 'Updating... this may take a while. <strong>Please do not navigate away from or close this page.</strong>' 'Aktualisiere ... dies kann eine Weile dauern. <strong>Bitte verlassen oder schließen Sie diese Seite nicht.</strong>' /var/www/html/admin/gravity.php
 sudo rpl --encoding UTF-8 'Success!' 'Erfolgreich aktualisiert!' /var/www/html/admin/gravity.php
-sudo rpl --encoding UTF-8 'Neutrino emissions detected\${COL_NC}...' 'Neutrino emissions erkannt${COL_NC} ...' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Unable to build gravity tree in ' 'Die Gravity Liste kann nicht erstellt werden in ' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Migrated from ' 'Migriert von ' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'DNS resolution is now available' 'DNS-Auflösung ist jetzt verfügbar' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'DNS resolution is not available' 'DNS-Auflösung ist nicht verfügbar' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'DNS resolution is currently unavailable' 'Die DNS-Auflösung ist derzeitig nicht verfügbar!' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'DNS service is not running' 'Der DNS-Dienst läuft nicht!' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Time until retry: ' 'Zeit bis zum nächsten Versuch: ' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Neutrino emissions detected\${COL_NC}...' 'Neutrino Emissions erkannt${COL_NC} ...' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Storing gravity database in ' 'Speicherung der Datenbank in ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Pulling blocklist source list into range' 'Heranziehen der Blocklisten Quelle' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'No source list found, or it is empty' 'Keine Quellenliste gefunden, oder sie ist leer' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Preparing new gravity database' 'Aufbereitung einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Unable to create new database ' 'Neue Datenbank kann nicht erstellt werden ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Using libz compression' 'Verwenden der libz-Komprimierung' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Libz compression not available' 'Libz-Komprimierung ist nicht verfügbar!' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Target:' 'Quelle:' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'str="Status:"' 'str="Ergebnis:"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Retrieval successful"' 'Abruf erfolgreich"' /opt/pihole/gravity.sh
@@ -726,20 +737,17 @@ sudo rpl --encoding UTF-8 'Internal Server Error"' 'Interner Server Fehler"' /op
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Gateway\)"' 'Zeitüberschreitung der Verbindung (Gateway)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Web Server Is Down \(Cloudflare\)"' 'Webserver ist ausgefallen (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Cloudflare\)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
-
-# Die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden!
-sudo rpl --encoding UTF-8 '\${INFO} Analyzed \${num_source_lines} domains, \${num_invalid} domains invalid!' '${INFO} Es wurden ${num_source_lines} Domains überprüft, davon sind ${num_invalid} Domains ungültig!' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${INFO} Analyzed \${num_source_lines} domains' '${INFO} Es wurden ${num_source_lines} Domains überprüft' /opt/pihole/gravity.sh
-
+sudo rpl --encoding UTF-8 'Imported \${num_domains} domains, ignoring \${num_non_domains} non-domain entries' 'Importiert wurden ${num_domains} Domains, ignoriert wurden ${num_non_domains} fehlerhafte Domains.' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Sample of non-domain entries:' 'Beispiele von fehlerhaften Domains:' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 '\${INFO} Imported \${num_domains} domains' '${INFO} Importiert wurden ${num_domains} Domains' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} List has been updated' '${INFO} Die Liste wurde aktualisiert' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_GREEN}using previously cached list' '${CROSS} Herunterladen der Liste nicht möglich: \${COL_LIGHT_GREEN}benutze zwischengespeicherte Liste' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_RED}no cached list available' '${CROSS} Herunterladen der Liste nicht möglich: ${COL_LIGHT_RED}keine zwischengespeicherte Liste vorhanden' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Sample of invalid domains:' 'Beispiel für ungültige Domains:' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Creating new gravity databases' 'Erstellen einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 ' Invalid Target' ' Ungültiges Ziel' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Storing downloaded domains in new gravity database' 'Speichern der heruntergeladenen Domains in einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Building tree' 'Datenbaum wurde aufgebaut' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${CROSS} Unable to build gravity tree in' '${CROSS} Unable to build gravity tree in' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'The old database remains available.' 'Die alte Datenbank ist weiterhin verfügbar' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to copy data from' 'Daten konnten nicht kopiert werden von' /opt/pihole/gravity.sh
@@ -850,8 +858,8 @@ sudo rpl --encoding UTF-8 '<th>Last Query</th>' '<th>Letzte Anfrage</th>' /var/w
 sudo rpl --encoding UTF-8 '<th>Number of queries</th>' '<th>Anzahl der Anfragen</th>' /var/www/html/admin/network.php
 sudo rpl --encoding UTF-8 '<th>Uses Pi-hole</th>' '<th>Verwendet Pi-hole</th>' /var/www/html/admin/network.php
 sudo rpl --encoding UTF-8 '<th>Action</th>' '<th>Aktion</th>' /var/www/html/admin/network.php
-sudo rpl --encoding UTF-8 '"Deleting network table entry with ID "' '"Lösche den Eintrag der Netzwerktabelle mit der ID "' /var/www/html/admin/scripts/pi-hole/js/network.js
-sudo rpl --encoding UTF-8 'Successfully deleted network table entry ' 'Eintrag der Netzwerktablle erfolgreich gelöscht. ' /var/www/html/admin/scripts/pi-hole/js/network.js
+sudo rpl --encoding UTF-8 '"Deleting network table entry..."' '"Lösche den Eintrag der Netzwerktabelle mit der ID ..."' /var/www/html/admin/scripts/pi-hole/js/network.js
+sudo rpl --encoding UTF-8 'Successfully deleted network table entry' 'Eintrag der Netzwerktablle erfolgreich gelöscht.' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl --encoding UTF-8 'Error while network table entry with ID ' 'Fehler beim Netzwerktabelleneintrag mit der ID ' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl --encoding UTF-8 'Error while deleting network table entry with ID ' 'Fehler beim Löschen des Netzwerktabelleneintrags mit der ID ' /var/www/html/admin/scripts/pi-hole/js/network.js
 sudo rpl --encoding UTF-8 'No host name for' 'Kein Hostname für' /var/www/html/admin/scripts/pi-hole/js/network.js
