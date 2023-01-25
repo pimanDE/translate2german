@@ -1127,7 +1127,7 @@ sudo rpl --encoding UTF-8 'Checkbox and radio buttons' 'Kontrollkästchen und Op
 sudo rpl --encoding UTF-8 '<option>default</option>' '<option>standard</option>' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'CPU Temperature Unit' 'Einheit für die CPU Temperaturanzeige' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Use new Bar charts on dashboard' 'Verwenden Sie die neuen Balkendiagramme im Dashboard' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 '<strong>Colorful Query Log</strong>' '<strong>Buntes Anfage Protokoll</strong>' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 '<strong>Colorful Query Log</strong>' '<strong>Buntes Anfrage Protokoll</strong>' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Hide non-fatal ' 'Unproblematische ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'warnings \(warnings listed' 'Warnungen ausblenden (Warnungen siehe ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '>here' '>hier' /var/www/html/admin/settings.php
