@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.15.2 - FTL Version v5.20.1 - Web Interface Version v5.18.2
+# getestet auf Pi-hole Version v5.15.5 - FTL Version v5.21 - Web Interface Version v5.18.4
 #
 # Benutzung auf eigene Gefahr!!!
 #
@@ -374,10 +374,11 @@ sudo rpl --encoding UTF-8 'You may need to increase PHP memory limit.' 'Möglich
 sudo rpl --encoding UTF-8 "You can find more info in pi-hole's FAQ:" "Mehr Informationen finden Sie in der Pi-hole FAQ:" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 'Error. Selector status specified using an invalid format.' 'Der ausgewählte Status wurde in einem ungültigen Format gewählt.' /var/www/html/admin/api_db.php
 sudo rpl --encoding UTF-8 'Queries Blocked' 'Geblockte Anfragen' /var/www/html/admin/db_queries.php
+sudo rpl --encoding UTF-8 '<p>Percentage Blocked</p>' '<p>Geblockte Anfragen</p>' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'Adding <span id="alDomain"></span> to the' 'Hinzufügen <span id="alDomain"></span> zur' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'successfully added to the' 'Erfolgreich hinzugefügt zur' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'Timeout or Network Connection Error!' 'Zeitüberschreitung oder Netzwerkverbindungsfehler!' /var/www/html/admin/db_queries.php
-sudo rpl --encoding UTF-8 'Queries Total' 'Alle Anfragen' /var/www/html/admin/db_queries.php
+sudo rpl --encoding UTF-8 'Total Queries' 'Alle Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 'Recent Queries' 'Letzte Anfragen' /var/www/html/admin/db_queries.php
 sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 '<th>Time</th>' '<th>Zeitpunkt</th>' /var/www/html/admin/db_queries.php
@@ -1094,27 +1095,17 @@ sudo rpl --encoding UTF-8 'The DHCP server has been deactivated' 'Der DHCP-Serve
 
 
 # Einstellungen
-#  API / Web Interface
-sudo rpl --encoding UTF-8 'API / Web interface' 'API / Weboberfläche' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'API settings' 'API Einstellungen' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Top Lists' 'Top Listen' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Exclude the following domains from being shown in' 'Schließen Sie die folgenden Domänen von der Anzeige aus:' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Top Domains / Top Advertisers' 'Top Domains / Top Inserenten' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 '<label>Top Clients</label>' '<label>Top Geräte</label>' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Enter one domain per line' 'Geben Sie eine Domain pro Zeile ein.' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Enter one IP address or host name per line' 'Geben Sie eine IP Adresse oder einen Hostnamen pro Zeile ein.' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Web interface settings' 'Einstellungen für die Weboberfläche' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Interface appearance' 'Erscheinungsbild der Weboberfläche' /var/www/html/admin/settings.php
+#  Web Interface
+sudo rpl --encoding UTF-8 'Web interface' 'Weboberfläche' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Theme and Layout' 'Theme und Layout' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Interface settings \(auto saved\)' 'Einstellungen der Schnittstelle (speichert automatisch)' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Global Settings' 'Globale Einstellungen' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Pi-hole default theme \(light, default\)' 'Pi-hole Standard Thema (hell, Standard)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Pi-hole midnight theme \(dark\)' 'Pi-hole Nacht Thema (dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Pi-hole deep-midnight theme \(dark\)' 'Pi-hole Mitternacht Thema (sehr dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Pi-hole auto theme \(light/dark\)' 'Pi-hole Auto Thema (hell)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Star Trek LCARS theme \(dark\)' 'Star Trek LCARS Thema (dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Use boxed layout \(for large screens\)' 'Boxed Layout verwenden (für große Bildschirme)' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 '<h4>Query Log</h4' '<h4>Anfrageprotokoll</h4' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Show permitted domain entries' 'Zulässige Domain-Einträge anzeigen' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Show blocked domain entries' 'Geblockte Domain-Einträge anzeigen' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Show API token' 'API-Token anzeigen' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Make sure that nobody else can scan this code around you. They will have full access to the API without having to know the password. Note that the generation of the QR code will take some time.' 'Stellen Sie sicher, dass niemand diesen Code um Sie herum scannen kann. Sie haben vollen Zugriff auf die API, ohne das Kennwort kennen zu müssen. Beachten Sie, dass die Generierung des QR-Codes einige Zeit dauern wird.' /var/www/html/admin/scripts/pi-hole/js/settings.js
 sudo rpl --encoding UTF-8 'Yes, show API token' 'Ja, zeige API-Token' /var/www/html/admin/scripts/pi-hole/js/settings.js
 sudo rpl --encoding UTF-8 'The API settings have been updated' 'Die API-Einstellungen wurden aktualisiert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
@@ -1122,7 +1113,7 @@ sudo rpl --encoding UTF-8 'All entries will be shown in Query Log' 'Alle Einträ
 sudo rpl --encoding UTF-8 'Only blocked entries will be shown in Query Log' 'Im Anfrageprotokoll werden nur gesperrte Einträge angezeigt.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl --encoding UTF-8 'Only permitted will be shown in Query Log' 'Nur erlaubte werden im Abfrageprotokoll angezeigt.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl --encoding UTF-8 'No entries will be shown in Query Log' 'Es werden keine Einträge im Anfrageprotokoll angezeigt.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl --encoding UTF-8 'Per-browser settings \(auto saved\)' 'Browser Aussehen wird automatisch gespeichert' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Per Browser Settings' 'Aussehen des Browsers' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Checkbox and radio buttons' 'Kontrollkästchen und Optionsfelder' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<option>default</option>' '<option>standard</option>' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'CPU Temperature Unit' 'Einheit für die CPU Temperaturanzeige' /var/www/html/admin/settings.php
@@ -1132,6 +1123,22 @@ sudo rpl --encoding UTF-8 'Hide non-fatal ' 'Unproblematische ' /var/www/html/ad
 sudo rpl --encoding UTF-8 'warnings \(warnings listed' 'Warnungen ausblenden (Warnungen siehe ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '>here' '>hier' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'The webUI settings have been updated' 'Die Einstellungen der Weboberfläche wurden aktualisiert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+
+
+
+# Einstellungen
+#  API
+sudo rpl --encoding UTF-8 'API settings' 'API Einstellungen' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Top Lists' 'Top Listen' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Exclude the following domains from being shown in' 'Schließen Sie die folgenden Domänen von der Anzeige aus:' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Top Domains / Top Advertisers' 'Top Domains / Top Inserenten' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 '<label>Top Clients</label>' '<label>Top Geräte</label>' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Enter one domain per line' 'Geben Sie eine Domain pro Zeile ein.' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Enter one IP address or host name per line' 'Geben Sie eine IP Adresse oder einen Hostnamen pro Zeile ein.' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 '<h4>Query Log</h4' '<h4>Anfrageprotokoll</h4' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Show permitted domain entries' 'Zulässige Domain-Einträge anzeigen' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Show blocked domain entries' 'Geblockte Domain-Einträge anzeigen' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Show API token' 'API-Token anzeigen' /var/www/html/admin/settings.php
 
 
 
