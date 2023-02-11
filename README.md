@@ -51,7 +51,7 @@ Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
 ```bash
 wget https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh
 chmod 775 translate2german.sh
-sudo ./translate2german.sh
+./translate2german.sh
 ```
 <br>
 <br>
