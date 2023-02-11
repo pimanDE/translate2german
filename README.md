@@ -2,7 +2,7 @@
 **Übersetzung der pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche Version 5.18.2 des Pi-hole auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche Version 5.18.4 des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
 **Achtung! Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!**
@@ -58,7 +58,7 @@ sudo ./translate2german.sh
 
 **Hinweise:**
 
-* getestet unter Pi-hole Version v5.15.2 FTL Version 5.20.1 und Web Interface Version v5.18.2
+* getestet unter Pi-hole Version v5.15.5 FTL Version 5.21 und Web Interface Version v5.18.4
 * **vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe weiter unten)**
 * ...
 <br>
