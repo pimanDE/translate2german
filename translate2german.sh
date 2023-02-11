@@ -3,7 +3,7 @@
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Pi-hole Version v5.15.5 - FTL Version v5.21 - Web Interface Version v5.18.4
 #
-# Benutzung auf eigene Gefahr!!!
+# Benutzung auf eigene Gefahr!
 #
 ####################################################################################################################
 # Setzen der Variablen
