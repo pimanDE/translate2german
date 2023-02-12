@@ -15,7 +15,7 @@ Dies ist nicht weiter problematisch, jedoch werden dabei einige Begrifflichkeite
 1. folgende Seite aufrufen: [https://github.com/pimanDE/translate2german/blob/master/translate2german.sh](https://github.com/pimanDE/translate2german/blob/master/translate2german.sh)
 2. Script kopieren (auf der rechten Seite gibt's dafür einen Button)
 3. auf dem Rechner, wo das Script ausgeführt werden soll unter ```translate2german.sh``` abspeichern und ausführbar machen
-4. Script starten mit ```./ translate2german.sh```
+4. Script starten mit ```./translate2german.sh```
 <br>
 <br>
 Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!
