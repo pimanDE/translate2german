@@ -1,10 +1,12 @@
 # translate2german
 <center>
-#### Übersetzung der Pi-hole Weboberfläche auf deutsch
+**Übersetzung der Pi-hole Weboberfläche auf deutsch**
 </center>
+
 Mit diesem Script wird die Weboberfläche Version 5.18.4 des Pi-hole auf deutsch übersetzt.
 <br>
 **Screenshot:**
+
 ![img](https://raw.githubusercontent.com/pimanDE/translate2german/master/pihole-weboberfl%C3%A4che-auf-deutsch.png)
 <br>
 Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!
