@@ -5,19 +5,6 @@
 Mit diesem Script wird die Weboberfläche Version 5.18.4 des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
-**Aktueller Hinweis:**
-<br>
-**Zur Zeit werden die Rohdaten des Scripts auf https://raw.githubusercontent.com nicht aktualisiert.**
-
-Dies ist nicht weiter problematisch, jedoch werden dabei einige Begrifflichkeiten nicht übersetzt.
-
-**Ich empfehle daher zur Zeit folgende Vorgehensweise:**
-1. folgende Seite aufrufen: [https://github.com/pimanDE/translate2german/blob/master/translate2german.sh](https://github.com/pimanDE/translate2german/blob/master/translate2german.sh)
-2. Script kopieren
-3. auf dem Rechner, wo das Script ausgeführt werden soll unter ```translate2german.sh``` abspeichern und ausführbar machen
-4. Script starten mit ```./translate2german.sh```
-<br>
-<br>
 Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!
 <br>
 <br>
