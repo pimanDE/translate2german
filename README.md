@@ -5,7 +5,7 @@
 Mit diesem Script wird die Weboberfläche Version 5.18.4 des Pi-hole auf deutsch übersetzt.
 <br>
 **Aktueller Hinweis:**
-
+<br>
 **Zur Zeit werden die Rohdaten des Scripts auf https://raw.githubusercontent.com nicht aktualisiert.**
 
 Dies ist nicht weiter problematisch, jedoch werden dabei einige Begrifflichkeiten nicht übersetzt.
