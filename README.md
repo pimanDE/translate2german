@@ -13,7 +13,7 @@ Dies ist nicht weiter problematisch, jedoch werden dabei einige Begrifflichkeite
 
 **Ich empfehle daher zur Zeit folgende Vorgehensweise:**
 1. folgende Seite aufrufen: [https://github.com/pimanDE/translate2german/blob/master/translate2german.sh](https://github.com/pimanDE/translate2german/blob/master/translate2german.sh)
-2. Script kopieren (auf der rechten Seite gibt's dafür einen Button)
+2. Script kopieren
 3. auf dem Rechner, wo das Script ausgeführt werden soll unter ```translate2german.sh``` abspeichern und ausführbar machen
 4. Script starten mit ```./translate2german.sh```
 <br>
