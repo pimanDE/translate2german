@@ -252,7 +252,7 @@ sudo rpl --encoding UTF-8 '\(ignored\)' '(ignoriert)' /var/www/html/admin/script
 sudo rpl --encoding UTF-8 '\(already forwarded\)' '(bereits weitergeleitet)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 '\(database is busy\)' '(Datenbank ist beschäftigt)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 "\(special domain\)" "(spezielle Domain)" /var/www/html/admin/scripts/pi-hole/js/db_queries.js
-sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(database is busy\)" "Geblockt <br class='hidden-lg'>(Datnbank ist beschäftigt)" /var/www/html/admin/scripts/pi-hole/js/queries.js
+sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(database is busy\)" "Geblockt <br class='hidden-lg'>(Datenbank ist beschäftigt)" /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 '>\(cache\)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/db_queries.js
 sudo rpl --encoding UTF-8 '>\(cache\)' '>(zwischengespeichert)' /var/www/html/admin/scripts/pi-hole/js/queries.js
 sudo rpl --encoding UTF-8 "Blocked <br class='hidden-lg'>\(regex blacklist\)" "Geblockt <br class='hidden-lg'>(RegEx Blacklist)" /var/www/html/admin/scripts/pi-hole/js/queries.js
