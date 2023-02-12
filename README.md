@@ -1,8 +1,8 @@
-# translate2german
 <center>
+# translate2german
 **Übersetzung der Pi-hole Weboberfläche auf deutsch**
 </center>
-
+<br>
 Mit diesem Script wird die Weboberfläche Version 5.18.4 des Pi-hole auf deutsch übersetzt.
 <br>
 **Screenshot:**
