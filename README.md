@@ -18,7 +18,6 @@ Dies ist nicht weiter problematisch, jedoch werden dabei einige Begrifflichkeite
 <br>
 <br>
 Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!
-Download unter: [https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf-lite.img.xz](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf-lite.img.xz) 
 <br>
 <br>
 Bevor die Übersetzung beginnt, werden
