@@ -28,6 +28,7 @@ und die Dateien<br>
 ```
 gesichert.
 <br>
+<br>
 **Bevor Sie mit der Übersetzung beginnen:**
 
 - haben Sie ein Backup von Ihrem System gemacht,
@@ -44,12 +45,14 @@ sudo curl -sSL https://raw.githubusercontent.com/pimanDE/translate2german/master
 ```
 <br>
 Alternativ kann die Übersetzung auch folgendermaßen durchgeführt werden:
+
 ```bash
 wget https://raw.githubusercontent.com/pimanDE/translate2german/master/translate2german.sh
 chmod 775 translate2german.sh
 ./translate2german.sh
 ```
 <br>
+
 **Hinweise:**
 
 - getestet unter Pi-hole Version v5.15.5 FTL Version 5.21 und Web Interface Version v5.18.4
