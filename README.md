@@ -9,7 +9,9 @@ Mit diesem Script wird die Weboberfläche Version 5.18.4 des Pi-hole auf deutsch
 
 ![img](https://raw.githubusercontent.com/pimanDE/translate2german/master/pihole-weboberfl%C3%A4che-auf-deutsch.png)
 <br>
+<br>
 Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!
+<br>
 <br>
 Bevor die Übersetzung beginnt, werden
 das Verzeichnis
