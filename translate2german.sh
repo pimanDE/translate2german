@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.15.5 - FTL Version v5.21 - Web Interface Version v5.18.4
+# getestet auf Pi-hole Version v5.16.1 - FTL Version v5.22 - Web Interface Version v5.19
 #
 # Benutzung auf eigene Gefahr!
 #
