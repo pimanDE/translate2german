@@ -58,7 +58,7 @@ chmod 775 translate2german.sh
 
 **Hinweise:**
 
-- getestet unter Pi-hole Version v5.16.1 FTL Version 5.22 und Web Interface Version v5.19
+- getestet unter Pi-hole Version v5.16.2 FTL Version 5.22 und Web Interface Version v5.19
 - vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe weiter unten)<br>
 <br>
 

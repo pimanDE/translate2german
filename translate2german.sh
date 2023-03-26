@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.16.1 - FTL Version v5.22 - Web Interface Version v5.19
+# getestet auf Pi-hole Version v5.16.2 - FTL Version v5.22 - Web Interface Version v5.19
 #
 # Benutzung auf eigene Gefahr!
 #
@@ -738,7 +738,7 @@ sudo rpl --encoding UTF-8 'Internal Server Error"' 'Interner Server Fehler"' /op
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Gateway\)"' 'Zeitüberschreitung der Verbindung (Gateway)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Web Server Is Down \(Cloudflare\)"' 'Webserver ist ausgefallen (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Cloudflare\)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Imported \${num_domains} domains, ignoring \${num_non_domains} non-domain entries' 'Importiert wurden ${num_domains} Domains, ignoriert wurden ${num_non_domains} fehlerhafte Domains.' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Imported \${num_domains} \${type}, ignoring \${num_non_domains} non-domain entries' 'Importiert wurden ${num_domains} Domains, ignoriert wurden ${num_non_domains} fehlerhafte Domains.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Sample of non-domain entries:' 'Beispiele von fehlerhaften Domains:' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} Imported \${num_domains} domains' '${INFO} Importiert wurden ${num_domains} Domains' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert' /opt/pihole/gravity.sh
