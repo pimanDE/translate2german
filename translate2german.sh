@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.16.2 - FTL Version v5.22 - Web Interface Version v5.19
+# getestet auf Pi-hole Version v5.17 - FTL Version v5.23 - Web Interface Version v5.20.1
 #
 # Benutzung auf eigene Gefahr!
 #
@@ -319,7 +319,7 @@ sudo rpl --encoding UTF-8 '" to " \+ picker.endDate.format\(dateformat\)\)' '" U
 sudo rpl --encoding UTF-8 'Depending on how large of a range you specified, the request may time out while Pi-hole tries to retrieve all the data.' 'Je nachdem, wie groß der von Ihnen angegebene Bereich ist, tritt möglicherweise eine Zeitüberschreitung auf, während Pi-hole versucht, alle Daten abzurufen.' /var/www/html/admin/db_graph.php
 sudo rpl --encoding UTF-8 'Queries over the selected time period' 'Anfragen über den ausgewählten Zeitraum' /var/www/html/admin/db_graph.php
 
-# Die folgenden zwei Zeilen dürfen in der Reihenfolge nicht vertauscht werden!
+# Die folgenden zwei Zeilen dürfen in der Reihenfolge NICHT vertauscht werden!
 sudo rpl --encoding UTF-8 '"Queries from " \+ fromTime \+ " to " \+ untilTime \+ " on " \+ fromDate' '"Anfragen von " + fromTime + " Uhr bis " + untilTime + " Uhr am " + fromDate' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 '"Queries from " \+' '"Anfragen vom " +' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 
@@ -461,7 +461,7 @@ sudo rpl --encoding UTF-8 'Comment:' 'Kommentar:' /var/www/html/admin/groups-cli
 sudo rpl --encoding UTF-8 'Client description \(optional\)' 'Geräte Beschreibung (optional)' /var/www/html/admin/groups-clients.php
 sudo rpl --encoding UTF-8 '<p>You can select an existing client or add a custom one by typing into the field above and confirming your entry with <kbd>&#x23CE;</kbd>.</p>' '<p>Sie können ein vorhandenes Gerät auswählen oder fügen Sie ein benutzerdefiniertes Gerät hinzu. Tragen Sie dies in das obere Feld ein und bestätigen Sie Ihre Eingabe mit <kbd>&#x23CE;</kbd>.</p>' /var/www/html/admin/groups-clients.php
 sudo rpl --encoding UTF-8 '<p>Clients may be described either by their IP addresses \(IPv4 and IPv6 are supported\),' '<p>Geräte können entweder durch ihre IP-Adressen (IPv4 und IPv6 werden unterstützt), IP-Subnetze ' /var/www/html/admin/groups-clients.php
-sudo rpl --encoding UTF-8 'IP subnets \(CIDR notation, like <code>192.168.2.0/24</code>\),' '(CIDR-Notation, like <code>192.168.2.0/24</code>), ihre MAC-Adressen (wie <code>12:34:56:78:9A:BC</code>), ' /var/www/html/admin/groups-clients.php
+sudo rpl --encoding UTF-8 'IP subnets \(CIDR notation, like <code>192.168.2.0/24</code>\),' '(CIDR-Notation, z.B. <code>192.168.2.0/24</code>), ihre MAC-Adressen (wie <code>12:34:56:78:9A:BC</code>), ' /var/www/html/admin/groups-clients.php
 sudo rpl --encoding UTF-8 'their MAC addresses \(like <code>12:34:56:78:9A:BC</code>\),' 'durch ihre Hostnamen (wie <code>localhost</code>) oder durch die Schnittstelle, mit der sie verbunden ' /var/www/html/admin/groups-clients.php
 sudo rpl --encoding UTF-8 'by their hostnames \(like <code>localhost</code>\), or by the interface they are connected to \(prefaced with a colon, like <code>:eth0</code>\).' 'sind (mit einem Doppelpunkt vorangestellt, (z. B. <code>:eth0</code>) beschrieben werden.' /var/www/html/admin/groups-clients.php
 sudo rpl --encoding UTF-8 '<p>Note that client recognition by IP addresses \(incl. subnet ranges\) are preferred over MAC address, host name or interface recognition as' '<p>Beachten Sie, dass die Geräte-Erkennung anhand von IP-Adressen (inkl. Subnetzbereiche), der MAC-Adresse, dem Hostnamen oder ' /var/www/html/admin/groups-clients.php
@@ -705,6 +705,7 @@ sudo rpl --encoding UTF-8 '<p>Note: If errors are shown, you can <a href="debug.
 
 
 
+# Werkzeuge
 #  Aktualisierung Gravity Liste
 sudo rpl --encoding UTF-8 'Update Gravity \(list of blocked domains\)' 'Aktualisieren der Gravity Liste (Liste der geblockten Domains)' /var/www/html/admin/gravity.php
 sudo rpl --encoding UTF-8 '>Update<' '>Aktualisieren<' /var/www/html/admin/gravity.php
@@ -723,6 +724,7 @@ sudo rpl --encoding UTF-8 'Pulling blocklist source list into range' 'Heranziehe
 sudo rpl --encoding UTF-8 'No source list found, or it is empty' 'Keine Quellenliste gefunden, oder sie ist leer' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Preparing new gravity database' 'Aufbereitung einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to create new database ' 'Neue Datenbank kann nicht erstellt werden ' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Creating new gravity databases' 'Erstellen einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Using libz compression' 'Verwenden der libz-Komprimierung' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Libz compression not available' 'Libz-Komprimierung ist nicht verfügbar!' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Target:' 'Quelle:' /opt/pihole/gravity.sh
@@ -738,19 +740,15 @@ sudo rpl --encoding UTF-8 'Internal Server Error"' 'Interner Server Fehler"' /op
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Gateway\)"' 'Zeitüberschreitung der Verbindung (Gateway)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Web Server Is Down \(Cloudflare\)"' 'Webserver ist ausgefallen (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Cloudflare\)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Imported \${num_domains} \${type}, ignoring \${num_non_domains} non-domain entries' 'Importiert wurden ${num_domains} Domains, ignoriert wurden ${num_non_domains} fehlerhafte Domains.' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Sample of non-domain entries:' 'Beispiele von fehlerhaften Domains:' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${INFO} Imported \${num_domains} domains' '${INFO} Importiert wurden ${num_domains} Domains' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} List has been updated' '${INFO} Die Liste wurde aktualisiert' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_GREEN}using previously cached list' '${CROSS} Herunterladen der Liste nicht möglich: \${COL_LIGHT_GREEN}benutze zwischengespeicherte Liste' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_RED}no cached list available' '${CROSS} Herunterladen der Liste nicht möglich: ${COL_LIGHT_RED}keine zwischengespeicherte Liste vorhanden' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Creating new gravity databases' 'Erstellen einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Creating new gravity database' 'Erstellen einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 ' Invalid Target' ' Ungültiges Ziel' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Storing downloaded domains in new gravity database' 'Speichern der heruntergeladenen Domains in einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Building tree' 'Datenbaum wurde aufgebaut' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'The old database remains available.' 'Die alte Datenbank ist weiterhin verfügbar' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'The old database remains available' 'Die alte Datenbank ist weiterhin verfügbar' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to copy data from' 'Daten konnten nicht kopiert werden von' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'gravityDBfile} to' 'gravityDBfile} bis' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${CROSS} Unable to update gravity timestamp in database' '${CROSS} Zeitstempel der Gravity kann nicht in der Datenbank aktualisiert werden' /opt/pihole/gravity.sh
@@ -770,7 +768,7 @@ sudo rpl --encoding UTF-8 'Force the download of all specified blocklists' 'Erzw
 sudo rpl --encoding UTF-8 'Show this help dialog' 'Zeigt die Hilfe an' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Deleting existing list cache' 'Löschen des bestehenden List-Caches' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '"Cleaning up stray matter"' '"Aufräumen"' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'DNS service is NOT running' 'DNS Dienst läuft NICHT!' /usr/local/bin/pihole
+sudo rpl --encoding UTF-8 'DNS service is NOT running' 'DNS Dienst läuft nicht!' /usr/local/bin/pihole
 sudo rpl --encoding UTF-8 'DNS service is NOT listening' 'DNS Dienst hört NICHT!' /usr/local/bin/pihole
 sudo rpl --encoding UTF-8 'FTL is listening on port' 'FTL hört am Port' /usr/local/bin/pihole
 sudo rpl --encoding UTF-8 'Pi-hole blocking is enabled' 'Pi-hole ist aktiviert' /usr/local/bin/pihole
@@ -786,6 +784,9 @@ sudo rpl --encoding UTF-8 'Find Blocked Domain In Lists' 'Gesperrte Domain in ei
 sudo rpl --encoding UTF-8 'Domain to look for \(example.com or sub.example.com\)' 'zu suchende Domain (beispiel.com oder mobil.beispiel.com)' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Search partial match</button>' 'Suche teilweise Übereinstimmung</button>' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Search exact match</button>' 'genaue Übereinstimmung</button>' /var/www/html/admin/queryads.php
+sudo rpl --encoding UTF-8 'Show unlimited results.' 'Zeige alle Ergebnisse an.' /var/www/html/admin/queryads.php
+sudo rpl --encoding UTF-8 'This can be very slow if too many domains are returned.' 'Dies kann sehr lange dauern, wenn zu viele Domänen zurückgegeben werden.' /var/www/html/admin/queryads.php
+sudo rpl --encoding UTF-8 'Use with caution' 'Mit Vorsicht zu verwenden' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Not authorized' 'Nicht autorisiert!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
 sudo rpl --encoding UTF-8 'is an invalid domain!' 'ist eine ungültige Domain!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
 sudo rpl --encoding UTF-8 'No domain provided' 'Keine Domain angegeben!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
@@ -1103,6 +1104,8 @@ sudo rpl --encoding UTF-8 'Global Settings' 'Globale Einstellungen' /var/www/htm
 sudo rpl --encoding UTF-8 'Pi-hole default theme \(light, default\)' 'Pi-hole Standard Thema (hell, Standard)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Pi-hole midnight theme \(dark\)' 'Pi-hole Nacht Thema (dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Pi-hole deep-midnight theme \(dark\)' 'Pi-hole Mitternacht Thema (sehr dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
+sudo rpl --encoding UTF-8 'High contrast light' 'Hoher Kontrast hell' /var/www/html/admin/scripts/pi-hole/php/theme.php
+sudo rpl --encoding UTF-8 'High contrast dark' 'Hoher Kontrast dunkel' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Pi-hole auto theme \(light/dark\)' 'Pi-hole Auto Thema (hell)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Star Trek LCARS theme \(dark\)' 'Star Trek LCARS Thema (dunkel)' /var/www/html/admin/scripts/pi-hole/php/theme.php
 sudo rpl --encoding UTF-8 'Use boxed layout \(for large screens\)' 'Boxed Layout verwenden (für große Bildschirme)' /var/www/html/admin/settings.php
