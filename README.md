@@ -5,7 +5,7 @@
 **Übersetzung der Pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche Version 5.19 des Pi-hole auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche Version 5.20.1 des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
 **Screenshot:**
@@ -58,7 +58,7 @@ chmod 775 translate2german.sh
 
 **Hinweise:**
 
-- getestet unter Pi-hole Version v5.16.2 FTL Version 5.22 und Web Interface Version v5.19
+- getestet unter Pi-hole Version v5.17 FTL Version 5.23 und Web Interface Version v5.20.1
 - vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe weiter unten)<br>
 <br>
 
