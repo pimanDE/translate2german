@@ -127,13 +127,14 @@ sudo rpl --encoding UTF-8 '<span>Groups</span>' '<span>Gruppen</span>' /var/www/
 sudo rpl --encoding UTF-8 '<span>Clients</span>' '<span>Geräte</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '<span>Domains</span>' '<span>Domains</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '<span>Adlists</span>' '<span>Blocklisten</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
-sudo rpl --encoding UTF-8 '<span>Disable Blocking&nbsp' '<span>Blocking ausschalten&nbsp' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
+sudo rpl --encoding UTF-8 '<span>Disable Blocking&nbsp' '<span>Blocken ausschalten&nbsp' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '</i> Indefinitely' '</i> Permanent' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '</i> For 10 seconds' '</i> Für 10 Sekunden' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
+sudo rpl --encoding UTF-8 'Enable Blocking' 'Blocken einschalten' /var/www/html/admin/scripts/pi-hole/js/footer.js
 sudo rpl --encoding UTF-8 '</i> For 30 seconds' '</i> Für 30 Sekunden' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '</i> For 5 minutes' '</i> Für 5 Minuten' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '/i> Custom time' '/i> Benutzerdefinierte Zeit' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
-sudo rpl --encoding UTF-8 'Enable Blocking&nbsp;&nbsp;&nbsp;' 'Blocking einschalten&nbsp;&nbsp;&nbsp;' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
+sudo rpl --encoding UTF-8 'Enable Blocking&nbsp;&nbsp;&nbsp;' 'Blocken einschalten&nbsp;&nbsp;&nbsp;' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 'Local DNS</span>' 'Lokale DNS Einträge</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '</i> DNS Records' '</i> DNS Einträge' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '</i> CNAME Records' '</i> CNAME Einträge' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
@@ -955,13 +956,13 @@ sudo rpl --encoding UTF-8 'in your router!\) they are safe to use.</p>' 'weiterg
 sudo rpl --encoding UTF-8 '<p>See <a href="https://docs.pi-hole.net/ftldns/interfaces/" target="_blank">our documentation</a> for further technical details.</p>' '<p>Siehe auch <a href="https://docs.pi-hole.net/ftldns/interfaces/" target="_blank">unsere Dokumentation</a> für weitere technische Details.</p>' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<p>ECS \(Extended Client Subnet\) defines a mechanism for recursive resolvers to send partial client IP address information to authoritative DNS name servers. Content Delivery Networks \(CDNs\) and latency-sensitive services use this to give geo-located responses when responding to name lookups coming through public DNS resolvers. <em>Note that ECS may result in reduced privacy.</em></p>' '<p>ECS (Extended Client Subnet) definiert einen Mechanismus für rekursive Resolver, um teilweise IP-Adressinformationen des Clients an autorisierende DNS-Nameserver zu senden. Content Delivery Networks (CDNs) und latenzempfindliche Dienste verwenden diese Option, um geografische Antworten auf Namenssuchen zu geben, die über öffentliche DNS-Resolver eingehen. <em>Beachten Sie, dass ECS die Privatsphäre beeinträchtigen kann.</em></p>' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<h3 class="box-title">Advanced DNS settings</h3>' '<h3 class="box-title">Erweiterte DNS-Einstellungen</h3>' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 '<strong>Never forward non-FQDN <code>' '<strong>Niemals Nicht-FQDN weiterleiten<code>' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Never forward non-FQDN <code>A</code> and <code>AAAA</code> queries' 'Niemals Nicht-FQDN weiterleiten <code>A</code> und <code>AAAA</code> Anfragen' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<p>When there is a Pi-hole domain set and this box is' '<p>Wenn es eine Pi-hole-Domain gibt und dieses Kästchen angekreuzt ist, ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'ticked, this asks FTL that this domain is purely' 'wird die FTL gefragt, ob diese Domain rein lokal ist. Die FTL kann Anfragen ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'local and FTL may answer queries from <code>/etc/hosts</code> or DHCP leases' 'von <code>/etc/hosts</code> oder DHCP-Leases beantworten, sollte aber ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'but should never forward queries on that domain to any upstream servers.' 'niemals Anfragen zu dieser Domain an irgendwelche Upstream-Server weiterleiten.' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<strong>Never forward reverse lookups for private IP ranges</strong>' '<strong>Niemals Reverse-Lookups für private IP-Bereiche weiterleiten</strong>' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'If Conditional Forwarding is enabled, unticking this box may cause a partial' 'Wenn Conditional Forwarding aktiviert ist, kann das Deaktivieren dieses Kästchens unter bestimmten ' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'If Conditional Forwarding is enabled, unticking this box may cause a partial' 'Wenn die bedingte Weiterleitung aktiviert ist, kann das Deaktivieren dieses Kästchens unter bestimmten ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'DNS loop under certain circumstances \(e.g. if a client would send TLD DNSSEC queries\).' 'Umständen zu einer teilweisen DNS-Schleife führen (z. B. wenn ein Client TLD-DNSSEC-Anfragen senden würde).' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<p>All reverse lookups for private IP ranges \(i.e., <code>192.168.0.x/24</code>, etc.\)' '<p>Alle Reverse-Lookups für private IP-Bereiche (d.h. 192.168.0.x/24 usw.), ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'which are not found in <code>/etc/hosts</code> or the DHCP leases are answered' 'die nicht in <code>/etc/hosts</code> oder den DHCP-Leases gefunden werden, werden mit ' /var/www/html/admin/settings.php
@@ -1016,8 +1017,8 @@ sudo rpl --encoding UTF-8 'You can also specify a local domain name \(like <code
 sudo rpl --encoding UTF-8 'devices ending in your local domain name will not leave your network, however, this is optional.' 'dass Abfragen an Geräte, die mit Ihrem lokalen Domänennamen enden, Ihr Netzwerk nicht verlassen. ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'The local domain name must match the domain name specified' 'Dies ist jedoch optional. Der lokale Domänenname muss mit dem auf Ihrem DHCP-Server angegebenen ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'in your DHCP server for this to work. You can likely find it within the DHCP settings.' 'Domänennamen übereinstimmen, damit dies funktioniert. Sie finden es wahrscheinlich in den DHCP-Einstellungen.' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'Enabling Conditional Forwarding will also forward all hostnames \(i.e., non-FQDNs\) to the router' 'Wenn Sie Conditional Forwarding aktivieren, werden auch alle Hostnamen (d. h. Nicht-FQDNs) an den Router weitergeleitet,' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'when "Never forward non-FQDNs" is <em>not</em> enabled.' 'wenn "Never forward non-FQDNs" <em>nicht</em> aktiviert ist.' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'Enabling Conditional Forwarding will also forward all hostnames \(i.e., non-FQDNs\) to the router' 'Wenn Sie die bedingte Weiterleitung aktivieren, werden auch alle Hostnamen (d. h. Nicht-FQDNs) an den Router weitergeleitet,' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'when "Never forward non-FQDNs" is <em>not</em> enabled.' 'wenn "Niemals weitergeleitete Nicht-FQDN" <em>nicht</em> aktiviert ist.' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 '<strong>Use Conditional Forwarding</strong' '<strong>Verwende Bedingte Weiterleitung</strong' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Local network in ' 'Lokales Netzwerk in ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'CIDR notation' 'CIDR Notation'  /var/www/html/admin/settings.php
