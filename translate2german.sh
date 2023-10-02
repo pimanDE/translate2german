@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.17 - FTL Version v5.23 - Web Interface Version v5.20.1
+# getestet auf Pi-hole Version v5.17.1 - FTL Version v5.23 - Web Interface Version v5.20.1
 #
 # Benutzung auf eigene Gefahr!
 #
@@ -88,7 +88,8 @@ sudo rpl --encoding UTF-8 'Donate</a></strong> if you found this useful.' 'Spend
 sudo rpl --encoding UTF-8 'Active</span>' 'Aktiv</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 'Blocking disabled</span>' 'Blockierung ist aus!</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '</i> Active' '</i> Aktiv' /var/www/html/admin/scripts/pi-hole/js/footer.js
-sudo rpl --encoding UTF-8 'DNS service not running</span>' 'DNS Dienst läuft nicht</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
+sudo rpl --encoding UTF-8 'Blocking disabled' 'Blockierung ist aus!' /var/www/html/admin/scripts/pi-hole/js/footer.js
+sudo rpl --encoding UTF-8 'DNS service not running</span>' 'DNS Dienst läuft nicht!</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 'Unknown</span>' 'Unbekannt</span>' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 'DNS service on port' 'DNS Dienst läuft auf Port' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
 sudo rpl --encoding UTF-8 '"Detected ' '"' /var/www/html/admin/scripts/pi-hole/php/sidebar.php
