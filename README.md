@@ -13,7 +13,7 @@ Mit diesem Script wird die Weboberfläche Version 5.20.1 des Pi-hole auf deutsch
 ![img](https://raw.githubusercontent.com/pimanDE/translate2german/master/pihole-weboberfl%C3%A4che-auf-deutsch.png)
 <br>
 <br>
-Dieses Script wurde unter Raspberry Pi OS Bullseye vom 22.09.2022 getestet!
+Dieses Script wurde unter Raspberry Pi OS Bullseye vom 03.05.2023 getestet!
 <br>
 <br>
 Bevor die Übersetzung beginnt, werden
@@ -58,7 +58,7 @@ chmod 775 translate2german.sh
 
 **Hinweise:**
 
-- getestet unter Pi-hole Version v5.17 FTL Version 5.23 und Web Interface Version v5.20.1
+- getestet unter Pi-hole Version v5.17.1 FTL Version 5.23 und Web Interface Version v5.20.1
 - vor einer Aktualisierung der Web Interface Version (pihole -up) muss erst das Backup zurückgespielt werden (siehe weiter unten)<br>
 <br>
 
