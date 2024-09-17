@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 #
-# getestet auf Raspberry Pi OS Lite Debian Version: 12 (bookworm) vom 04.07.2024
+# getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 04.07.2024
 # getestet auf Pi-hole Version v5.18.3 - FTL Version v5.25.2 - Web Interface Version v5.21
 #
 # Benutzung auf eigene Gefahr!
@@ -1089,11 +1089,11 @@ sudo rpl --encoding UTF-8 'Router IP \(' 'Die IP des Routers (' /var/www/html/ad
 sudo rpl --encoding UTF-8 "'Domain name '" "'Der Domain Name '" /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl --encoding UTF-8 "'Lease time '" "'Die Lease Zeit '" /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl --encoding UTF-8 'There was a problem applying your settings.<br>Debugging information:<br>PHP error' 'Es gab ein Problem bei der Anwendung Ihrer Einstellungen.<br>Informationen zur Fehlersuche:<br>PHP Fehler' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 '<p>Specifying the MAC address is mandatory and only one entry per MAC' '<p>Die Angabe der MAC-Adresse ist obligatorisch und nur ein Eintrag' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'address is allowed. If the IP address is omitted and a host name is' 'pro MAC-Adresse ist erlaubt. Wenn die IP-Adresse weggelassen wird' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 '<p>Specifying the MAC address is mandatory and only one entry per MAC' '<p>Die Angabe der MAC-Adresse ist obligatorisch und es ist nur ein Eintrag' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'address is allowed. If the IP address is omitted and a host name is' 'pro MAC-Adresse erlaubt. Wenn die IP-Adresse weggelassen wird' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'given, the IP address will still be generated dynamically and the' 'und ein Hostname angegeben wird, wird die IP-Adresse weiterhin dynamisch' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'specified host name will be used. If the host name is omitted, only' 'generiert und der angegebene Hostname verwendet. Wenn der Hostname' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'a static lease will be added.</p>' 'weggelassen wird, wird nur eine statisches Lease hinzugefügt.</p>' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'a static lease will be added.</p>' 'weggelassen wird, wird nur ein statisches Lease hinzugefügt.</p>' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'The DHCP server has been activated' 'Der DHCP-Server wurde aktiviert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl --encoding UTF-8 'The DHCP server has been deactivated' 'Der DHCP-Server wurde deaktiviert.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 
