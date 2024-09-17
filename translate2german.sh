@@ -1,7 +1,9 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Pi-hole Version v5.17.1 - FTL Version v5.23 - Web Interface Version v5.20.1
+#
+# getestet auf Raspberry Pi OS Lite Debian Version: 12 (bookworm) vom 04.07.2024
+# getestet auf Pi-hole Version v5.18.3 - FTL Version v5.25.2 - Web Interface Version v5.21
 #
 # Benutzung auf eigene Gefahr!
 #
@@ -36,7 +38,7 @@ if dpkg-query -s rpl 2>/dev/null|grep -q installed; then
     echo "rpl ist schon installiert ..." >> /dev/null
 else
     echo
-    echo -e "${blaufett}   rpl muss installiert werden ...${standard}"
+    echo -e "${blaufett}   Das Programm rpl muss installiert werden ...${standard}"
     echo
     echo
     sudo apt install -y rpl
@@ -49,7 +51,7 @@ echo -e "${blaufett}   Übersetze die Pi-hole Weboberfläche auf deutsch ...${st
 echo
 echo -e "${blaufett}   Dies kann einige Minuten dauern ...${standard}"
 
-exec > /tmp/error-translate.log
+exec 2> /tmp/error-translate.log
 
 echo
 
@@ -331,7 +333,7 @@ sudo rpl --encoding UTF-8 '"Blocked DNS Queries' '"Geblockte DNS Anfragen' /var/
 
 
 echo >&2
-echo -e "${blaufett}   25 % ...${standard}" >&2
+echo -e "${blaufett}   25 % ...${standard}"
 
 
 
@@ -582,7 +584,7 @@ sudo rpl --encoding UTF-8 'return num \+ " selected"' 'return num + " ausgewähl
 
 
 # Blocklisten
-sudo rpl --encoding UTF-8 '<h1>Adlist group management</h1>' '<h1>Blocklisten Gruppen Verwaltung</h1>' /var/www/html/admin/groups-adlists.php
+sudo rpl --encoding UTF-8 '<h1>Adlist group management</h1>' '<h1>Blocklisten Gruppenverwaltung</h1>' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 'Add a new adlist' 'Neue Blockliste hinzufügen' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 'Address:</label>' 'Adresse:</label>' /var/www/html/admin/groups-adlists.php
 sudo rpl --encoding UTF-8 'Comment:</label>' 'Kommentar:</label>' /var/www/html/admin/groups-adlists.php
@@ -658,7 +660,7 @@ sudo rpl --encoding UTF-8 'Close</button>' 'Schließen</button>' /var/www/html/a
 sudo rpl --encoding UTF-8 'Submit</button>' 'Absenden</button>' /var/www/html/admin/scripts/pi-hole/php/footer.php
 
 
-echo -e "${blaufett}   50 % ...${standard}" >&2
+echo -e "${blaufett}   50 % ...${standard}"
 
 
 
@@ -700,7 +702,7 @@ sudo rpl --encoding UTF-8 '"Deselect All"' '"Alle abwählen"' /var/www/html/admi
 sudo rpl --encoding UTF-8 '"Delete Selected"' '"Ausgewählte löschen"' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Unknown message type<pre>' 'Unbekannte Mitteilung type<pre>' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Deleting message\(s\)...' 'Lösche Mitteilung ...' /var/www/html/admin/scripts/pi-hole/js/messages.js
-sudo rpl --encoding UTF-8 'Successfully deleted message\(s\)' 'Erfolgreich gelöschte Mitteilunge(n)' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 'Successfully deleted message\(s\)' 'Erfolgreich gelöschte Mitteilung(en)' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Error while deleting message\(s\):' 'Fehler beim Löschen der Mitteilung(en):' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'No issues found.' 'Keine Probleme gefunden.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 '<p>Note: If errors are shown, you can <a href="debug.php">generate a debug log</a>, which will do a thorough Pi-hole evaluation.</p>' '<p>Hinweis: Wenn Fehler angezeigt werden, können Sie ein <a href="debug.php">Debug-Protokoll erstellen</a>, das eine gründliche Pi-hole Auswertung vornimmt.</p>' /var/www/html/admin/messages.php
@@ -748,7 +750,7 @@ sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_GREEN}us
 sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_RED}no cached list available' '${CROSS} Herunterladen der Liste nicht möglich: ${COL_LIGHT_RED}keine zwischengespeicherte Liste vorhanden' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Creating new gravity database' 'Erstellen einer neuen Gravity Datenbank' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 ' Invalid Target' ' Ungültiges Ziel' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Building tree' 'Datenbaum wurde aufgebaut' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Building tree' 'Der Datenbaum wurde aufgebaut' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'The old database remains available' 'Die alte Datenbank ist weiterhin verfügbar' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to copy data from' 'Daten konnten nicht kopiert werden von' /opt/pihole/gravity.sh
@@ -1028,7 +1030,7 @@ sudo rpl --encoding UTF-8 'https://en.wikipedia.org/wiki/Classless_Inter-Domain_
 sudo rpl --encoding UTF-8 'Local domain name \(optional\)' 'Lokaler Domänenname (optional)' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Save</button>' 'Speichern</button>' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'The DNS settings have been updated \(using ' 'Die DNS Einstellungen wurden aktualisiert (es wird/werden ' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
-sudo rpl --encoding UTF-8 'DNS servers\)' 'DNS Server benutzt.' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
+sudo rpl --encoding UTF-8 'DNS servers\)' 'DNS Server benutzt).' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl --encoding UTF-8 "'MAC address \(" "'Die MAC Adresse (" /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl --encoding UTF-8 'is invalid!<br>' 'ist ungültig!<br>' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 sudo rpl --encoding UTF-8 "'IP address \(" "'Die IP Adresse (" /var/www/html/admin/scripts/pi-hole/php/savesettings.php
@@ -1051,7 +1053,7 @@ sudo rpl --encoding UTF-8 'Top Clients entry ' 'Der Top Geräte Eintrag ' /var/w
 sudo rpl --encoding UTF-8 'is invalid \(use only host names and IP addresses\)!' 'ist ungültig (verwenden Sie nur Hostnamen und IP Adressen)!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 
 
-echo -e "${blaufett}   75 % ...${standard}" >&2
+echo -e "${blaufett}   75 % ...${standard}"
 
 
 
@@ -1223,8 +1225,8 @@ sudo rpl --encoding UTF-8 '</i> Reload page' '</i> Seite neu laden' /var/www/htm
 sudo rpl --encoding UTF-8 'nPHP user: ' 'nPHP Benutzer: ' /var/www/html/admin/scripts/pi-hole/php/teleporter.php
 
 
-echo >&2
-echo -e "${blaufett}   Fast fertig ...${standard}" >&2
+echo
+echo -e "${blaufett}   Fast fertig ...${standard}"
 
 
 
@@ -1339,7 +1341,7 @@ sudo chmod 777 /tmp/erro*-translate.log
 sudo rm /tmp/error3-translate.log
 sudo mv /tmp/error2-translate.log /tmp/error-translate.log
 
-exec >&2
+exec
 
 echo
 echo

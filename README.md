@@ -5,7 +5,7 @@
 **Übersetzung der Pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche Version 5.20.1 des Pi-hole auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche Version 5.21 des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
 **Screenshot:**
@@ -13,7 +13,7 @@ Mit diesem Script wird die Weboberfläche Version 5.20.1 des Pi-hole auf deutsch
 ![img](https://raw.githubusercontent.com/pimanDE/translate2german/master/pihole-weboberfl%C3%A4che-auf-deutsch.png)
 <br>
 <br>
-Dieses Script wurde unter Raspberry Pi OS Bullseye vom 03.05.2023 getestet!
+Dieses Script wurde unter Raspberry Pi OS Lite Debian Version: 12 (bookworm) vom 04.07.2024 getestet!
 <br>
 <br>
 Bevor die Übersetzung beginnt, werden
