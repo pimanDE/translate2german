@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 #
-# getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 04.07.2024
+# getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 22.10.2024
 # getestet auf Pi-hole Version v5.18.3 - FTL Version v5.25.2 - Web Interface Version v5.21
 #
 # Benutzung auf eigene Gefahr!
@@ -291,7 +291,7 @@ sudo rpl --encoding UTF-8 '<li>On a mobile: Long press to highlight the text and
 sudo rpl --encoding UTF-8 'Showing 0 to 0 of 0 entries' 'Zeige 0 bis 0 von 0 Einträgen' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl --encoding UTF-8 'Showing _START_ to _END_ of _TOTAL_ entries' 'Zeige _START_ bis _END_ von _TOTAL_ Einträgen' /var/www/html/admin/scripts/vendor/datatables.min.js
 sudo rpl --encoding UTF-8 '<div class="alProcessing">Adding <span id="alDomain"></span> to the <span id="alList"></span>...</div>' '<div class="alProcessing">Hinzufügen von <span id="alDomain"></span> zur <span id="alList"></span> ...</div>' /var/www/html/admin/queries.php
-sudo rpl --encoding UTF-8 'successfully added to the <span id="alList"></span></div>' 'Erfolgreich zur <span id="alList"></span> hinzugefügt.</div>' /var/www/html/admin/queries.php
+sudo rpl --encoding UTF-8 'successfully added to the <span id="alList"></span></div>' 'erfolgreich zur <span id="alList"></span> hinzugefügt.</div>' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'Close</button>' 'Schließen</button>' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'Timeout or Network Connection Error!' 'Zeitüberschreitung der Netzwerkfehler!' /var/www/html/admin/queries.php
 sudo rpl --encoding UTF-8 'filtered from _MAX_ total entries' 'gefiltert aus insgesamt _MAX_ Einträgen.' /var/www/html/admin/scripts/vendor/datatables.min.js
@@ -693,7 +693,7 @@ sudo rpl --encoding UTF-8 'Long-term load \(15min avg\) larger than number of pr
 sudo rpl --encoding UTF-8 'This may slow down DNS resolution and can cause bottlenecks.' 'Dies kann die DNS-Auflösung verlangsamen und zu Engpässen führen.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'RAM shortage ' 'Zu wenig Arbeitsspeicher ' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'ahead:' 'es werden annähernd' /var/www/html/admin/scripts/pi-hole/js/messages.js
-sudo rpl --encoding UTF-8 '% used' ' % benutzt' /var/www/html/admin/scripts/pi-hole/js/messages.js
+sudo rpl --encoding UTF-8 '% used' ' % benutzt!' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Adlist with ID ' 'Die Blockliste mit der ID ' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'was inaccessible during last gravity run.' 'war während der letzten Aktualisierung nicht erreichbar.' /var/www/html/admin/scripts/pi-hole/js/messages.js
 sudo rpl --encoding UTF-8 'Disk shortage' 'Zu wenig Festplattenspeicher' /var/www/html/admin/scripts/pi-hole/js/messages.js
@@ -790,7 +790,7 @@ sudo rpl --encoding UTF-8 'Search partial match</button>' 'Suche teilweise Über
 sudo rpl --encoding UTF-8 'Search exact match</button>' 'genaue Übereinstimmung</button>' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Show unlimited results.' 'Zeige alle Ergebnisse an.' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'This can be very slow if too many domains are returned.' 'Dies kann sehr lange dauern, wenn zu viele Domänen zurückgegeben werden.' /var/www/html/admin/queryads.php
-sudo rpl --encoding UTF-8 'Use with caution' 'Mit Vorsicht zu verwenden' /var/www/html/admin/queryads.php
+sudo rpl --encoding UTF-8 'Use with caution.' 'Mit Vorsicht zu verwenden!' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Not authorized' 'Nicht autorisiert!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
 sudo rpl --encoding UTF-8 'is an invalid domain!' 'ist eine ungültige Domain!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
 sudo rpl --encoding UTF-8 'No domain provided' 'Keine Domain angegeben!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
@@ -1015,7 +1015,7 @@ sudo rpl --encoding UTF-8 'whereas an even wider network of 10.0.0.1 - 10.255.25
 sudo rpl --encoding UTF-8 'Setting up IPv6 ranges is exactly similar to setting up IPv4 here and fully supported.' ' <code>10.0.0.0/8</code> ergibt. Das Einrichten von IPv6-Bereichen ähnelt genau dem Einrichten ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Feel free to reach out to us on our' 'von IPv4 hier und wird vollständig unterstützt. Sie können sich gerne in unserem ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'Discourse forum' '<a href="https://discourse.pi-hole.net" target="_blank">Diskussionsforum</a> an uns wenden, ' /var/www/html/admin/settings.php
-sudo rpl --encoding UTF-8 'in case you need any assistance setting up local host name resolution for your particular system.' 'falls Sie Hilfe beim Einrichten der lokalen Hostnamenauflösung für Ihr bestimmtes System benötigen.' /var/www/html/admin/settings.php
+sudo rpl --encoding UTF-8 'in case you need any assistance setting up local host name resolution for your particular system.' 'falls Sie Hilfe beim Einrichten der lokalen Hostnamenauflösung für Ihr spezielles System benötigen.' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'You can also specify a local domain name \(like <code>fritz.box</code>\) to ensure queries to' 'Sie können auch einen lokalen Domänennamen (wie z.B. <code>fritz.box</code>) angeben, um sicherzustellen, ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'devices ending in your local domain name will not leave your network, however, this is optional.' 'dass Abfragen an Geräte, die mit Ihrem lokalen Domänennamen enden, Ihr Netzwerk nicht verlassen. ' /var/www/html/admin/settings.php
 sudo rpl --encoding UTF-8 'The local domain name must match the domain name specified' 'Dies ist jedoch optional. Der lokale Domänenname muss mit dem auf Ihrem DHCP-Server angegebenen ' /var/www/html/admin/settings.php
