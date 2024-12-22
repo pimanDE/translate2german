@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 #
-# getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 22.10.2024
+# getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 19.11.2024
 # getestet auf Pi-hole Version v5.18.3 - FTL Version v5.25.2 - Web Interface Version v5.21
 #
 # Benutzung auf eigene Gefahr!
@@ -507,6 +507,7 @@ sudo rpl --encoding UTF-8 'RegEx filter</a' 'RegEx Filter</a' /var/www/html/admi
 sudo rpl --encoding UTF-8 'Comment:</label>' 'Kommentar:</label>' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Domain to be added' 'Hinzuzufügende Domain' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Description \(optional\)' 'Beschreibung (optional)' /var/www/html/admin/groups-domains.php
+sudo rpl --encoding UTF-8 '"Did you mean" : "or"' '"Meinten Sie" : "oder"' /var/www/html/admin/scripts/pi-hole/js/groups-domains.js
 sudo rpl --encoding UTF-8 'Add domain as wildcard' 'Domain als Platzhalter hinzufügen' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Check this box if you want to involve all subdomains. The entered domain will be converted to a RegEx filter while adding.' 'Markieren Sie dieses Feld, wenn Sie alle Unterdomänen einbeziehen möchten. Die eingegebene Domäne wird beim Hinzufügen in einen RegEx-Filter umgewandelt.' /var/www/html/admin/groups-domains.php
 sudo rpl --encoding UTF-8 'Note:' 'Hinweis:' /var/www/html/admin/groups-domains.php
