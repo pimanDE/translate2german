@@ -313,7 +313,7 @@ sudo rpl --encoding UTF-8 'Last Month": ' 'Letzter Monat": ' /var/www/html/admin
 sudo rpl --encoding UTF-8 'This Year": ' 'Dieses Jahr": ' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 'All Time": ' 'Gesamter Zeitraum": ' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
 sudo rpl --encoding UTF-8 'Custom Range' 'Benutzerdefiniert' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
-#sudo rpl --encoding UTF-8 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec' 'Jan_Feb_Mar_Apr_Mai_Jun_Jul_Aug_Sep_Okt_Nov_Dez' /var/www/html/admin/scripts/vendor/moment.min.js
+sudo rpl --encoding UTF-8 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec' 'Jan._Feb._Mar._Apr._Mai_Jun._Jul._Aug._Sep._Okt._Nov._Dez.' /var/www/html/admin/scripts/vendor/moment.min.js
 sudo rpl --encoding UTF-8 'cancelLabel:"Cancel"' 'cancelLabel:"Abbrechen"' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
 sudo rpl --encoding UTF-8 'applyLabel:"Apply"' 'applyLabel:"Anwenden"' /var/www/html/admin/scripts/vendor/daterangepicker.min.js
 sudo rpl --encoding UTF-8 'var dateformat = "MMMM Do YYYY, HH:mm";' 'var dateformat = "D. MMMM YYYY, HH:mm";' /var/www/html/admin/scripts/pi-hole/js/db_graph.js
@@ -333,7 +333,7 @@ sudo rpl --encoding UTF-8 '"Blocked DNS Queries' '"Geblockte DNS Anfragen' /var/
 
 
 echo >&2
-echo -e "${blaufett}   25 % ...${standard}"
+echo -e "${blaufett}   25% ...${standard}"
 
 
 
@@ -661,7 +661,7 @@ sudo rpl --encoding UTF-8 'Close</button>' 'Schließen</button>' /var/www/html/a
 sudo rpl --encoding UTF-8 'Submit</button>' 'Absenden</button>' /var/www/html/admin/scripts/pi-hole/php/footer.php
 
 
-echo -e "${blaufett}   50 % ...${standard}"
+echo -e "${blaufett}   50% ...${standard}"
 
 
 
@@ -1054,7 +1054,7 @@ sudo rpl --encoding UTF-8 'Top Clients entry ' 'Der Top Geräte Eintrag ' /var/w
 sudo rpl --encoding UTF-8 'is invalid \(use only host names and IP addresses\)!' 'ist ungültig (verwenden Sie nur Hostnamen und IP Adressen)!' /var/www/html/admin/scripts/pi-hole/php/savesettings.php
 
 
-echo -e "${blaufett}   75 % ...${standard}"
+echo -e "${blaufett}   75% ...${standard}"
 
 
 
