@@ -791,7 +791,7 @@ sudo rpl --encoding UTF-8 'Search partial match</button>' 'Suche teilweise Über
 sudo rpl --encoding UTF-8 'Search exact match</button>' 'genaue Übereinstimmung</button>' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Show unlimited results.' 'Zeige alle Ergebnisse an.' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'This can be very slow if too many domains are returned.' 'Dies kann sehr lange dauern, wenn zu viele Domänen zurückgegeben werden.' /var/www/html/admin/queryads.php
-sudo rpl --encoding UTF-8 'Use with caution.' 'Mit Vorsicht zu verwenden!' /var/www/html/admin/queryads.php
+sudo rpl --encoding UTF-8 'Use with caution</span>.' 'Mit Vorsicht zu verwenden!</span>' /var/www/html/admin/queryads.php
 sudo rpl --encoding UTF-8 'Not authorized' 'Nicht autorisiert!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
 sudo rpl --encoding UTF-8 'is an invalid domain!' 'ist eine ungültige Domain!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
 sudo rpl --encoding UTF-8 'No domain provided' 'Keine Domain angegeben!' /var/www/html/admin/scripts/pi-hole/php/queryads.php
