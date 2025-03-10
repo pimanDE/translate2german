@@ -217,6 +217,7 @@ sudo rpl --encoding UTF-8 'Percentage Blocked</p>' 'Geblockt in Prozent</p>' /va
 sudo rpl --encoding UTF-8 'List all queries' 'Liste aller Anfragen' /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 'Domains on Lists</p>' 'Domains in den Blocklisten</p>' /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 'Manage lists <i' 'Verwalten der Blocklisten <i' /var/www/html/admin/index.lp
+sudo rpl --encoding UTF-8 'Total queries</h3>' 'Anfragen insgesamt</h3>' /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 'Reset zoom</button>' 'Auflösung zurücksetzen</button>' /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 'You can zoom this graph by either holding down the \[Ctrl\] key and using your mouse wheel or by using the &quot;pinch&quot; multi-touch gesture. You can furthermore click and drag to pan the graph.' 'Sie können das Diagramm zoomen, indem Sie entweder die [Strg]-Taste gedrückt halten und das Mausrad verwenden oder die Multi-Touch-Geste Aufziehen benutzen. Sie können auch klicken und ziehen, um das Diagramm zu verschieben.' /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 'Query Types</h3>' 'Anfragetypen</h3>' /var/www/html/admin/index.lp
