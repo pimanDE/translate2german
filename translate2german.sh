@@ -609,6 +609,7 @@ sudo rpl --encoding UTF-8 'Hostname:</th>' 'Rechnername:</th>' /var/www/html/adm
 sudo rpl --encoding UTF-8 'RAM:</th>' 'Arbeitsspeicher:</th>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Uptime:</th>' 'Laufzeit:</th>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'PID <span id="sysinfo-pid-ftl">\?</span>, last restart was on <span id="sysinfo-uptime-ftl">' 'PID <span id="sysinfo-pid-ftl">\?</span>, letzter Neustart war am <span id="sysinfo-uptime-ftl">' /var/www/html/admin/settings-system.lp
+sudo rpl --encoding UTF-8 'Primary IP addresses</h4>' 'Primäre IP-Adresse</h4>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'DHCP server metrics</h3>' 'DHCP-Server-Kennzahlen</h3>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Client broadcast to locate available servers' 'Geräte-Aufruf zum Auffinden verfügbarer Server' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Server to client in response to DHCPDISCOVER with offer of configuration parameters' 'Server an Gerät als Antwort auf DHCPDISCOVER mit Angebot von Konfigurationsparametern' /var/www/html/admin/settings-system.lp
@@ -823,7 +824,7 @@ sudo rpl --encoding UTF-8 'are in ABP-style' 'im ABP-Style sind' /var/www/html/a
 sudo rpl --encoding UTF-8 '<td>Type:' '<td>Typ:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'list</td>' 'Liste</td>' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Health status:' 'Verfügbarkeitsstatus:' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'Added to Pi-hole:' 'In Pi-hole hinzugefügt:' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'Added to Pi-hole:' 'In Pi-hole hinzugefügt am:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Database entry last modified:' 'Datenbankeintrag wurde zuletzt geändert am:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Content last updated on:' 'Inhalt zuletzt geändert am:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Number of entries:' 'Anzahl der Einträge:' /var/www/html/admin/scripts/js/groups-lists.js
