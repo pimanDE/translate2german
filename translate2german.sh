@@ -95,10 +95,10 @@ sudo rpl --encoding UTF-8 "your Pi-hole\'s dashboard</a> instead\?" "Hauptmenü 
 
 
 # /var/www/html/admin/error404.lp
-sudo rpl --encoding UTF-8 'Oops! Page not found.' 'Ups. Seite nicht gefunden.' /var/www/html/admin/error404.lp
+sudo rpl --encoding UTF-8 'Oops! Page not found.' 'Ups! Seite nicht gefunden.' /var/www/html/admin/error404.lp
 sudo rpl --encoding UTF-8 'We could not find the page you were looking for.' 'Wir konnten die gesuchte Seite nicht finden.' /var/www/html/admin/error404.lp
 sudo rpl --encoding UTF-8 'Meanwhile, you may want to return to ' 'In der Zwischenzeit können Sie zum ' /var/www/html/admin/error404.lp
-sudo rpl --encoding UTF-8 'the dashboard' 'Hauptmenü' /var/www/html/admin/error404.lp
+sudo rpl --encoding UTF-8 'the dashboard</a>' 'Hauptmenü</a> wechseln' /var/www/html/admin/error404.lp
 
 
 
@@ -131,7 +131,7 @@ sudo rpl --encoding UTF-8 'Reset sorting' 'Sortierung zurücksetzen' /var/www/ht
 # /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 '<h1>Client group management</h1>' '<h1>Verwaltung der Gerätegruppen</h1>' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'Add a new client' 'Neues Gerät hinzufügen' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'Known clients:' 'Bekannte Geräte' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'Known clients:' 'Bekannte Geräte:' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'Loading...' 'Lade ...' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'Comment:' 'Kommentar:' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'Client description \(optional\)' 'Gerätebeschreibung (optional)' /var/www/html/admin/groups-clients.lp
@@ -195,14 +195,15 @@ sudo rpl --encoding UTF-8 'Comment:</label>' 'Kommentar:</label>' /var/www/html/
 sudo rpl --encoding UTF-8 'List description \(optional\)' 'Listenbeschreibung (optional)' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Group assignment:' 'Gruppenzuordnung:' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Hints:</strong>' 'Tipps:</strong>' /var/www/html/admin/groups-lists.lp
-sudo rpl --encoding UTF-8 'Please run <code>pihole -g</code> or update your gravity list <a href="<\?=webhome\?>gravity">online</a> after modifying your lists.' 'Bitte führen Sie <code>pihole -g</code> aus oder aktualisieren Sie die Gravity-Liste <a href="<?=webhome?>gravity">online</a> nach dem Ändern der Liste.' /var/www/html/admin/groups-lists.lp
-sudo rpl --encoding UTF-8 'Multiple lists can be added by separating each <i>unique</i> URL with a space or comma' 'Mehrere Listen können hinzugefügt werden, indem jede <i>eindeutige</i> URL mit einem Leerzeichen getrennt wird.' /var/www/html/admin/groups-lists.lp
+sudo rpl --encoding UTF-8 'Please run <code>pihole -g</code> or update your gravity list <a href="<\?=webhome\?>gravity">online</a> after modifying your lists.' 'Bitte führen Sie <code>pihole -g</code> aus oder aktualisieren Sie die Gravity-Liste <a href="<?=webhome?>gravity">direkt hier</a> nach dem Ändern der Liste.' /var/www/html/admin/groups-lists.lp
+sudo rpl --encoding UTF-8 'Multiple lists can be added by separating each <i>unique</i> URL with a space or comma' 'Es können mehrere Listen gleichzeitig hinzugefügt werden, indem jede <i>eindeutige</i> URL mit einem Leerzeichen getrennt eingegeben wird.' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Click on the icon in the first column to get additional information about your lists. The icons correspond to the health of the list.' 'Klicken Sie auf das Symbol in der ersten Spalte, um zusätzliche Informationen über Ihre Listen zu erhalten. Die Icons entsprechen dem Zustand der Liste.' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Add blocklist</button>' 'Zur Blacklist hinzufügen</button>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Add allowlist</button>' 'Zur Whitelist hinzufügen</button>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Subscribed lists' 'Abonnierte Listen' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Address</th>' 'Adresse</th>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Comment</th>' 'Kommentar</th>' /var/www/html/admin/groups-lists.lp
+sudo rpl --encoding UTF-8 'Group assignment</th>' 'Gruppenzuordnung</th>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Reset sorting</button>' 'Sorting zurücksetzen</button>' /var/www/html/admin/groups-lists.lp
 
 
@@ -341,7 +342,7 @@ sudo rpl --encoding UTF-8 'Web Interface - API Settings' 'Weboberfläche - API E
 sudo rpl --encoding UTF-8 'Theme settings</h3>' 'Themen Einstellung</h3>' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Theme:</label>' 'Thema:</label>' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Loading...</option>' 'Lade ...</option>' /var/www/html/admin/settings-api.lp
-sudo rpl --encoding UTF-8 'Use the boxed layout</strong>' 'Verwende das Boxed Layout</strong>' /var/www/html/admin/settings-api.lp
+sudo rpl --encoding UTF-8 'Use the boxed layout</strong>' 'Verwende das Boxed-Layout</strong>' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'The boxed layout is helpful when working on large screens because it prevents the site from stretching very wide.' 'Das Box-Layout ist bei der Arbeit auf großen Bildschirmen hilfreich, da es verhindert, dass sich die Website sehr weit ausdehnt.' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Advanced Settings</h3>' 'Erweiterte Einstellungen</h3>' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Prettify API output for human-readability' 'API-Ausgabe für bessere Lesbarkeit' /var/www/html/admin/settings-api.lp
@@ -506,7 +507,7 @@ sudo rpl --encoding UTF-8 'in your router!\) they are safe to use.' 'weitergelei
 sudo rpl --encoding UTF-8 'See <a href="https://docs.pi-hole.net/ftldns/interfaces/" target="_blank">our documentation</a> for further technical details.' 'Siehe auch <a href="https://docs.pi-hole.net/ftldns/interfaces/" target="_blank">unsere Dokumenation</a> für weitere technische Details.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'DNS domain settings</h3>' 'DNS Domain Einstellungen</h3>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Pi-hole domain name</label>' 'Pi-hole Domain Name</label>' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 "The DNS domains for your Pi-hole. This DNS domain is purely local. FTL may answer queries from its local cache and configuration but \*never\* forwards any requests upstream \*unless\* you have configured a dns.revServer exactly for this domain. If no domain is specified and you are using Pi-hole's DHCP server, then any hostnames with a domain part \(i.e., with a period\) will be disallowed. If a domain is specified, then hostnames with a domain parts matching the domain here are allowed. In addition, when a suffix is set then hostnames without a domain part have the suffix added as an optional domain part." "Die DNS-Domänen für Ihr Pi-Loch. Diese DNS-Domäne ist rein lokal. FTL kann Anfragen aus seinem lokalen Cache und seiner Konfiguration beantworten, leitet aber *nie* irgendwelche Anfragen weiter, *es sei denn* Sie haben einen dns.revServer genau für diese Domäne konfiguriert. Wenn keine Domäne angegeben ist und Sie den DHCP-Server von Pi-hole verwenden, werden alle Hostnamen mit einem Domänenteil (d. h. mit einem Punkt) nicht zugelassen. Wenn eine Domäne angegeben ist, werden Hostnamen mit einem Domänenteil, der mit der Domäne übereinstimmt, zugelassen. Wenn ein Suffix angegeben wird, wird bei Hostnamen ohne Domänenteil zusätzlich das Suffix als optionaler Domänenteil hinzugefügt." /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 "The DNS domains for your Pi-hole. This DNS domain is purely local. FTL may answer queries from its local cache and configuration but \*never\* forwards any requests upstream \*unless\* you have configured a dns.revServer exactly for this domain. If no domain is specified and you are using Pi-hole's DHCP server, then any hostnames with a domain part \(i.e., with a period\) will be disallowed. If a domain is specified, then hostnames with a domain parts matching the domain here are allowed. In addition, when a suffix is set then hostnames without a domain part have the suffix added as an optional domain part." "Die DNS-Domänen für Ihr Pi-Loch. Diese DNS-Domäne ist rein lokal. FTL kann Anfragen aus seinem lokalen Cache und seiner Konfiguration beantworten, leitet aber *nie* irgendwelche Anfragen weiter, es sei denn Sie haben einen dns.rev-Server genau für diese Domäne konfiguriert. Wenn keine Domäne angegeben ist und Sie den DHCP-Server von Pi-hole verwenden, werden alle Hostnamen mit einem Domänenteil (d. h. mit einem Punkt) nicht zugelassen. Wenn eine Domäne angegeben ist, werden Hostnamen mit einem Domänenteil, der mit der Domäne übereinstimmt, zugelassen. Wenn ein Suffix angegeben wird, wird bei Hostnamen ohne Domänenteil zusätzlich das Suffix als optionaler Domänenteil hinzugefügt." /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Expand hostnames' 'Rechnernamen erweitern' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'If set, the domain is added to simple names \(without a period\) in /etc/hosts in the same way as for DHCP-derived names.' 'Wenn diese Option gesetzt ist, wird die Domain mit einem einfachen Namen (ohne Punkt) in die /etc/hosts auf die gleiche Weise hinzugefügt wie bei DHCP-abgeleiteten Namen.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Advanced DNS settings</h3>' 'Erweiterte DNS Einstellungen</h3>' /var/www/html/admin/settings-dns.lp
@@ -850,7 +851,7 @@ sudo rpl --encoding UTF-8 '"Select All"' '"Alle auswählen"' /var/www/html/admin
 sudo rpl --encoding UTF-8 '"Deselect All"' '"Alle abwählen"' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 '"Delete Selected"' '"Ausgewählte löschen"' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 '"Adding subscribed " \+ type \+ "list\(s\)..."' '"Hinzufügen der abonnierten " + type + "Liste(n) ..."' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 '"warning", "", "Warning", "Please specify " \+ type \+ "list address"' '"warning", "", "Warnung", "Bitte geben Sie die " + type + "Listenadresse an"' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 '"warning", "", "Warning", "Please specify " \+ type \+ "list address"' '"warning", "", "Warnung", "Bitte geben Sie die " + type + " Listenadresse an"' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 '"Error while adding new " \+ type \+ "list"' '"Fehler beim Hinzufügen der " + type + "Liste"' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Editing address...' 'Bearbeite die Adresse ...' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Error while " \+ notDone \+ type \+ "list ' 'Fehler beim " + notDone + type + "Liste ' /var/www/html/admin/scripts/js/groups-lists.js
@@ -1290,7 +1291,7 @@ sudo rpl --encoding UTF-8 'sNext:"Next",sPrevious:"Previous"' 'sNext:"Nächste",
 sudo rpl --encoding UTF-8 'sEmptyTable:"No data available in table' 'sEmptyTable:"Keine Daten in der Tabelle vorhanden.' /var/www/html/admin/vendor/datatables/datatables.min.js
 sudo rpl --encoding UTF-8 'Showing _START_ to _END_ of _TOTAL_ entries' 'Zeige _START_ bis _END_ von _TOTAL_ Einträgen' /var/www/html/admin/vendor/datatables/datatables.min.js
 sudo rpl --encoding UTF-8 'Showing 0 to 0 of 0 entries' 'Zeige 0 bis 0 von 0 Einträgen' /var/www/html/admin/vendor/datatables/datatables.min.js
-sudo rpl --encoding UTF-8 'filtered from _MAX_ total entries' 'gefiltert aus insgesamt _MAX_ Einträgen.' /var/www/html/admin/vendor/datatables/datatables.min.js
+sudo rpl --encoding UTF-8 'filtered from _MAX_ total entries' 'gefiltert aus insgesamt _MAX_ Einträgen' /var/www/html/admin/vendor/datatables/datatables.min.js
 sudo rpl --encoding UTF-8 '"Show _MENU_ entries"' '"Zeige _MENU_ Einträge"' /var/www/html/admin/vendor/datatables/datatables.min.js
 sudo rpl --encoding UTF-8 'sLoadingRecords:"Loading..."' 'sLoadingRecords:"Lade ..."' /var/www/html/admin/vendor/datatables/datatables.min.js
 sudo rpl --encoding UTF-8 'sProcessing:"Processing...' 'sProcessing:"Wird bearbeitet ...' /var/www/html/admin/vendor/datatables/datatables.min.js
@@ -1334,6 +1335,7 @@ sudo rpl --encoding UTF-8 'Su_Mo_Tu_We_Th_Fr_Sa' 'So_Mo_Di_Mi_Do_Fr_Sa' /var/www
 
 # /var/www/html/admin/vendor/select2/select2.min.js
 sudo rpl --encoding UTF-8 'No results found' 'Keine Ergebnisse gefunden' /var/www/html/admin/vendor/select2/select2.min.js
+sudo rpl --encoding UTF-8 'Remove all items' 'Entferne die Einträge' /var/www/html/admin/vendor/select2/select2.min.js
 
 
 
