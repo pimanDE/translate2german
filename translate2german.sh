@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 19.11.2024
-# getestet auf Pi-hole Version Core v6.0.5 - FTL Version v6.0.4 - Web Interface Version v6.0.2
+# getestet auf Pi-hole Version Core v6.0.6 - FTL Version v6.1 - Web Interface Version v6.1
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -119,7 +119,7 @@ sudo rpl --encoding UTF-8 'placeholder="Group name"' 'placeholder="Gruppenname"'
 sudo rpl --encoding UTF-8 'Comment:' 'Kommentar:' /var/www/html/admin/groups.lp
 sudo rpl --encoding UTF-8 'Group comment \(optional\)' 'Gruppenkommentar (optional)' /var/www/html/admin/groups.lp
 sudo rpl --encoding UTF-8 'Hints:' 'Hinweise:' /var/www/html/admin/groups.lp
-sudo rpl --encoding UTF-8 'Multiple groups can be added by separating each group name with a space or comma' 'Mehrere Gruppen können hinzugefügt werden, indem jeder Gruppenname durch ein Leerzeichen oder ein Komma getrennt wird.' /var/www/html/admin/groups.lp
+sudo rpl --encoding UTF-8 'Multiple groups can be added by separating each group name with a space or comma' 'Sie können mehrere Gruppen gleichzeitig hinzufügen, indem Sie jeden Gruppenname getrennt durch ein Leerzeichen oder ein Komma eingeben.' /var/www/html/admin/groups.lp
 sudo rpl --encoding UTF-8 'Group names can have spaces if entered in quotes. e.g "My New Group"' 'Gruppennamen können Leerzeichen enthalten, wenn sie in Anführungszeichen eingegeben werden, z. B. "Meine neue Gruppe".' /var/www/html/admin/groups.lp
 sudo rpl --encoding UTF-8 'Add</button>' 'Hinzufügen</button>' /var/www/html/admin/groups.lp
 sudo rpl --encoding UTF-8 'List of groups' 'Liste der Gruppen' /var/www/html/admin/groups.lp
@@ -138,12 +138,12 @@ sudo rpl --encoding UTF-8 'Client description \(optional\)' 'Gerätebeschreibung
 sudo rpl --encoding UTF-8 'Group assignment:' 'Gruppenzuordnung:' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'You can select an existing client or add a custom one by typing into the field above and confirming your entry with' 'Sie können ein vorhandenes Gerät auswählen oder ein benutzerdefiniertes Gerät hinzufügen, indem Sie in das obige Feld tippen und Ihre Eingabe mit' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 '</kbd>.' '</kbd> bestätigen.' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'Multiple clients can be added by separating each client with a space or comma.' 'Es können mehrere Geräte gleichzeitig hinzugefügt werden, indem jedes Gerät durch ein Leerzeichen oder ein Komma getrennt wird.' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'Multiple clients can be added by separating each client with a space or comma.' 'Sie können mehrere Geräte gleichzeitig hinzufügen, indem Sie jedes Gerät getrennt durch ein Leerzeichen oder ein Komma eingeben.' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'Clients may be described either by their IP addresses \(IPv4 and IPv6 are supported\),' 'Geräte können entweder durch ihre IP-Adressen (IPv4 und IPv6 werden unterstützt),' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'IP subnets \(CIDR notation, like <code>192.168.2.0/24</code>\),' 'durch ihre IP-Subnetze (CIDR-Notation, wie <code>192.168.2.0/24</code>),' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'their MAC addresses \(like <code>12:34:56:78:9A:BC</code>\),' 'nach ihren MAC-Adressen (wie <code>12:34:56:78:9A:BC</code>),' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'by their hostnames \(like <code>localhost</code>\), or by the interface they are connected to \(prefaced with a colon, like <code>:eth0</code>\).' 'nach ihren Hostnamen (wie <code>localhost</code>) oder nach der Schnittstelle, mit der sie verbunden sind (mit vorangestelltem Doppelpunkt wie <code>:eth0</code>), beschrieben werden.' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'Note that client recognition by IP addresses \(incl. subnet ranges\) are preferred over MAC address, host name or interface recognition as' 'Beachten Sie, dass die Geräte-Erkennung anhand von IP-Adressen (einschließlich Subnetzbereichen) der Erkennung von MAC-Adressen, Hostnamen oder Schnittstellen vorzuziehen ist, da' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'IP subnets \(CIDR notation, like <code>192.168.2.0/24</code>\),' 'durch ihre IP-Subnetze (CIDR-Notation, wie z.B. <code>192.168.2.0/24</code>),' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'their MAC addresses \(like <code>12:34:56:78:9A:BC</code>\),' 'nach ihren MAC-Adressen (wie z.B. <code>12:34:56:78:9A:BC</code>),' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'by their hostnames \(like <code>localhost</code>\), or by the interface they are connected to \(prefaced with a colon, like <code>:eth0</code>\).' 'nach ihren Hostnamen (wie z.B. <code>localhost</code>) oder nach der Schnittstelle, mit der sie verbunden sind (mit vorangestelltem Doppelpunkt wie z.B. <code>:eth0</code>), beschrieben werden.' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'Note that client recognition by IP addresses \(incl. subnet ranges\) are preferred over MAC address, host name or interface recognition as' 'Beachten Sie, dass die Geräte-Erkennung anhand von IP-Adressen (einschließlich den Subnetzbereichen) der Erkennung von MAC-Adressen, Hostnamen oder Schnittstellen vorzuziehen ist, da' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'the two latter will only be available after some time.' 'die beiden letzteren erst nach einiger Zeit zur Verfügung stehen werden.' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'Furthermore, MAC address recognition only works for devices at most one networking hop away from your Pi-hole.' 'Außerdem funktioniert die MAC-Adresserkennung nur für Geräte, die höchstens einen Netzwerksprung von Ihrem Pi-hole entfernt sind.' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'Add</button>' 'Hinzufügen</button>' /var/www/html/admin/groups-clients.lp
@@ -170,9 +170,9 @@ sudo rpl --encoding UTF-8 'RegEx to be added' 'Regulären Ausdruck hinzufügen' 
 sudo rpl --encoding UTF-8 'Hint:</strong> Need help to write a proper RegEx rule\? Have a look at our online' 'Tipp:</strong> Benötigen Sie Hilfe beim Schreiben einer geeigneten RegEx-Regel? Werfen Sie einen Blick auf unser online' /var/www/html/admin/groups-domains.lp
 sudo rpl --encoding UTF-8 'regular expressions tutorial' 'Tutorial zu RegEx-Ausdrücken' /var/www/html/admin/groups-domains.lp
 sudo rpl --encoding UTF-8 'Note:</strong>' 'Hinweis:</strong>' /var/www/html/admin/groups-domains.lp
-sudo rpl --encoding UTF-8 'The domain or regex filter will be automatically assigned to the Default Group.' 'Die Domain oder der Regex-Filter wird automatisch der Standardgruppe zugewiesen.' /var/www/html/admin/groups-domains.lp
+sudo rpl --encoding UTF-8 'The domain or regex filter will be automatically assigned to the Default Group.' 'Die Domain oder der RegEx-Filter wird automatisch der Standardgruppe zugewiesen.' /var/www/html/admin/groups-domains.lp
 sudo rpl --encoding UTF-8 'Other groups can optionally be assigned in the list below \(using <strong>Group assignment</strong>\).' 'Andere Gruppen können optional in der Liste unten zugewiesen werden (mit <strong>Gruppenzuweisung</strong>).' /var/www/html/admin/groups-domains.lp
-sudo rpl --encoding UTF-8 'You can add multiple entries at once by separating them with spaces \(e.g. <code>example.com example.org</code>\)' 'Sie können mehrere Einträge auf einmal hinzufügen, indem Sie sie mit Leerzeichen trennen (z.B. <code>beispiel.com beispiel.org</code>)' /var/www/html/admin/groups-domains.lp
+sudo rpl --encoding UTF-8 'You can add multiple entries at once by separating them with spaces \(e.g. <code>example.com example.org</code>\)' 'Sie können mehrere Einträge gleichzeitg hinzufügen, indem Sie jeden Eintrag getrennt mit Leerzeichen eingeben (z.B. <code>beispiel.com beispiel.org</code>)' /var/www/html/admin/groups-domains.lp
 sudo rpl --encoding UTF-8 'Add to denied domains</button>' 'Zur Blacklist hinzufügen</button>' /var/www/html/admin/groups-domains.lp
 sudo rpl --encoding UTF-8 'Add to allowed domains</button>' 'Zur Whitelist hinzufügen</button>' /var/www/html/admin/groups-domains.lp
 sudo rpl --encoding UTF-8 'List of domains' 'Liste der Domains' /var/www/html/admin/groups-domains.lp
@@ -407,11 +407,11 @@ sudo rpl --encoding UTF-8 '"DHCP Settings"' '"DHCP-Einstellungen"' /var/www/html
 sudo rpl --encoding UTF-8 '>DHCP Settings</h3>' '>DHCP-Einstellungen</h3>' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'DHCP server enabled</strong>' 'DHCP-Server aktivieren</strong>' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 "Make sure your router's DHCP server is disabled when using the Pi-hole DHCP server!" "Stellen Sie sicher, dass der DHCP-Server Ihres Routers deaktiviert ist, wenn Sie den Pi-hole als DHCP-Server verwenden!" /var/www/html/admin/settings-dhcp.lp
-sudo rpl --encoding UTF-8 'Range of IP addresses to hand out' 'Bereich der zu vergebenden IP-Adressen' /var/www/html/admin/settings-dhcp.lp
+sudo rpl --encoding UTF-8 'Range of IP addresses to hand out' 'Bereich der zu vergebenden IP-Adressen:' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Start</div>' 'von</div>' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'End</div>' 'bis</div>' /var/www/html/admin/settings-dhcp.lp
-sudo rpl --encoding UTF-8 'Router \(gateway\) IP address' 'IP-Adresse des Routers (Gateway)' /var/www/html/admin/settings-dhcp.lp
-sudo rpl --encoding UTF-8 'Netmask</label>' 'Netzmaske</label>' /var/www/html/admin/settings-dhcp.lp
+sudo rpl --encoding UTF-8 'Router \(gateway\) IP address' 'IP-Adresse des Routers (Gateway):' /var/www/html/admin/settings-dhcp.lp
+sudo rpl --encoding UTF-8 'Netmask</label>' 'Netzmaske:</label>' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Netmask</div>' 'Netzmaske</div>' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'placeholder="automatic"' 'placeholder="automatisch"' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Leave the netmask field empty to have Pi-hole infer it from the configured IP address of your device. If you want to specify a netmask, you can use the format' 'Lassen Sie das Feld für die Netzmaske leer, damit Pi-hole sie von der konfigurierten IP-Adresse Ihres Geräts ableitet. Wenn Sie eine Netzmaske angeben möchten, können Sie das folgende Format verwenden' /var/www/html/admin/settings-dhcp.lp
@@ -468,7 +468,7 @@ sudo rpl --encoding UTF-8 '"DNS Settings"' '"DNS Einstellungen"' /var/www/html/a
 sudo rpl --encoding UTF-8 'Upstream DNS Servers</h1>' 'Upstream DNS Server</h1>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'ECS \(Extended Client Subnet\) defines a mechanism for recursive resolvers to send partial client IP address information to authoritative DNS name servers. Content Delivery Networks \(CDNs\) and latency-sensitive services use this to give geo-located responses when responding to name lookups coming through public DNS resolvers. <em>Note that ECS may result in reduced privacy.' 'ECS (Extended Client Subnet) definiert einen Mechanismus für rekursive Resolver, um Teilinformationen der Geräte-IP-Adresse an autorisierende DNS-Nameserver zu senden. Content Delivery Networks (CDNs) und latenzempfindliche Dienste nutzen dies, um geolokalisierte Antworten zu geben, wenn sie auf Namenssuchen reagieren, die über öffentliche DNS-Resolver erfolgen. <em>Beachten Sie, dass ECS zu einer eingeschränkten Privatsphäre führen kann.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 '>Custom DNS servers ' '>Benutzerdefinierter DNS Server ' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'The following list contains all DNS servers selected above. Furthermore, you can add your own custom DNS servers here. The expected format is one server per line in form of <code>IP#port</code>, where the <code>port</code> is optional. If given, it has to be separated by a hash <code>#</code> from the address \(e.g. <code>127.0.0.1#5335</code> for a local <code>unbound</code> instance running on port <code>5335</code>\). The port defaults to 53 if omitted.' 'Die folgende Liste enthält alle oben ausgewählten DNS-Server. Darüber hinaus können Sie hier Ihre eigenen benutzerdefinierten DNS-Server hinzufügen. Das erwartete Format ist ein Server pro Zeile in Form von <code>IP#port</code>, wobei der <code>port</code> optional ist. Falls angegeben, muss er durch einen Hash <code>#</code> von der Adresse getrennt werden (z. B. <code>127.0.0.1#5335</code> für eine lokale <code>unbound</code>-Instanz, die auf Port <code>5335</code> ausgeführt wird). Der Port ist standardmäßig 53, wenn er weggelassen wird.' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'The following list contains all DNS servers selected above. Furthermore, you can add your own custom DNS servers here. The expected format is one server per line in form of <code>IP#port</code>, where the <code>port</code> is optional. If given, it has to be separated by a hash <code>#</code> from the address \(e.g. <code>127.0.0.1#5335</code> for a local <code>unbound</code> instance running on port <code>5335</code>\). The port defaults to 53 if omitted.' 'Die folgende Liste enthält alle oben ausgewählten DNS-Server. Darüber hinaus können Sie hier Ihre eigenen benutzerdefinierten DNS-Server hinzufügen. Das erwartete Format ist ein Server pro Zeile in Form von <code>IP#port</code>, wobei der <code>port</code> optional ist. Falls angegeben, muss er durch einen Hash <code>#</code> von der Adresse getrennt werden (z. B. <code>127.0.0.1#5335</code> für eine lokale <code>unbound</code>-Instanz, die auf Port <code>5335</code> ausgeführt wird). Wird die Portnummer weggelassen, wird der Standardport 53 verwendet.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Enter upstream DNS servers, one per line' 'Geben Sie einen DNS-Server pro Zeile ein' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Conditional forwarding</h3>' 'Bedingte Weiterleitung</h3>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 "If not configured as your DHCP server, Pi-hole typically won't be able to" "Wenn Pi-hole nicht als DHCP-Server konfiguriert ist, ist es normalerweise" /var/www/html/admin/settings-dns.lp
@@ -658,7 +658,7 @@ sudo rpl --encoding UTF-8 'Flush logs \(last 24 hours\)</button>' 'Protokolle l�
 
 # /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 "Export your Pi-hole\'s configuration</h3>" "Exportieren Sie Ihre Pi-hole Einstellungen</h3>" /var/www/html/admin/settings-teleporter.lp
-sudo rpl --encoding UTF-8 'Warning:</strong><br>This archive contains sensitive information about your Pi-hole installation, e.g. your 2FA-TOTP secret \(if enabled\). Please be careful with this file and do not share it with anyone even if they claim to help you.' 'Warnung:</strong><br>Dieses Archiv enthält sensible Informationen über Ihre Pi-hole-Installation, z.B. Ihre 2FA-TOTP-Verschlüsselung (falls aktiviert). Bitte seien Sie vorsichtig mit dieser Datei und geben Sie sie nicht an andere weiter, auch wenn diese vorgeben, Ihnen zu helfen zu wollen.' /var/www/html/admin/settings-teleporter.lp
+sudo rpl --encoding UTF-8 'Warning:</strong><br>This archive contains sensitive information about your Pi-hole installation, e.g. your 2FA-TOTP secret \(if enabled\). Please be careful with this file and do not share it with anyone even if they claim to help you.' 'Warnung:</strong><br>Dieses Archiv enthält sensible Informationen über Ihre Pi-hole-Installation, wie z.B. Ihre 2FA-TOTP-Verschlüsselung (falls aktiviert). Bitte seien Sie vorsichtig mit dieser Datei und geben Sie sie nicht an andere weiter, auch wenn diese vorgeben, Ihnen zu helfen zu wollen.' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 'Warning:</strong><br>You are currently not using an end-to-end encryption. This means that secrets like your 2FA-TOTP secret will be transmitted in plain text. We recommend to use HTTPS when' 'Warnung:</strong><br>Sie verwenden derzeit keine Ende-zu-Ende-Verschlüsselung. Das bedeutet, dass Geheimnisse wie Ihr 2FA-TOTP-Geheimnis im Klartext übertragen werden. Wir empfehlen, HTTPS zu verwenden, ' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 'exporting your configuration.' 'wenn Sie Ihre Konfiguration exportieren.' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 '<br>Export' '<br>Exportieren' /var/www/html/admin/settings-teleporter.lp
@@ -704,7 +704,7 @@ sudo rpl --encoding UTF-8 'DNS server failure</span>' 'Ausfall des DNS-Servers</
 sudo rpl --encoding UTF-8 'nbsp;Status unknown' 'nbsp;Status unbekannt' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 '"Enable Blocking' '"Blocken ausgeschaltet' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 '"q/min"' '"Anfragen pro Minute"' /var/www/html/admin/scripts/js/footer.js
-sudo rpl --encoding UTF-8 '"Queries per minute"' '"Anfragen pro Minute"' /var/www/html/admin/scripts/js/footer.js
+sudo rpl --encoding UTF-8 '"Queries per minute"' '"DNS-Anfragen pro Minute"' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 '"q/s"' '"Anfragen pro Sekunde"' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 '"Queries per second"' '"Anfragen pro Sekunden"' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 '"Allowed: "' '"Erlaubt: "' /var/www/html/admin/scripts/js/footer.js
@@ -717,16 +717,16 @@ sudo rpl --encoding UTF-8 'Destructive actions are disabled by a config setting'
 sudo rpl --encoding UTF-8 'Memory usage:' 'Speichernutzung:' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'Total memory:' 'Gesamtspeicher:' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 ' Swap usage: ' ' Swap-Nutzung: ' /var/www/html/admin/scripts/js/footer.js
-sudo rpl --encoding UTF-8 '" is used"' '" wird benutzt"' /var/www/html/admin/scripts/js/footer.js
+sudo rpl --encoding UTF-8 '" is used"' '" werden benutzt"' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 '"\% of "' '"% von "' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'No swap space available' 'Kein Swap-Speicher verfügbar!' /var/www/html/admin/scripts/js/footer.js
-sudo rpl --encoding UTF-8 'Load:&nbsp' 'Prozessorlast:&nbsp' /var/www/html/admin/scripts/js/footer.js
-sudo rpl --encoding UTF-8 'Load averages for the past 1, 5, and 15 minutes\\non a system with ' 'Lastdurchschnitte für die letzten 1, 5 und 15 Minuten bei einem System mit ' /var/www/html/admin/scripts/js/footer.js
+sudo rpl --encoding UTF-8 'Load:&nbsp' 'CPU-Last:&nbsp' /var/www/html/admin/scripts/js/footer.js
+sudo rpl --encoding UTF-8 'Load averages for the past 1, 5, and 15 minutes\\non a system with ' 'Lastdurchschnitt für die letzten 1, 5 und 15 Minuten bei einem System mit ' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'load is higher than the number of cores' 'die Last ist höher als die Anzahl der Kerne' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 ' on "' ' auf "' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 '" core" \+' '" Kern" +' /var/www/html/admin/scripts/js/footer.js
-sudo rpl --encoding UTF-8 '"s" : ""' '"en" : ""' /var/www/html/admin/scripts/js/footer.js
-sudo rpl --encoding UTF-8 '" running " ' '" laufen " ' /var/www/html/admin/scripts/js/footer.js
+sudo rpl --encoding UTF-8 '"s" : ""' '"en," : ""' /var/www/html/admin/scripts/js/footer.js
+sudo rpl --encoding UTF-8 '" running " ' '" es laufen " ' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 ' processes' ' Prozesse' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'System uptime: ' 'Betriebszeit des Systems: ' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'running since' 'läuft seit' /var/www/html/admin/scripts/js/footer.js
