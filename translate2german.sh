@@ -1120,8 +1120,8 @@ sudo rpl --encoding UTF-8 'Error while deleting lease: ' 'Fehler beim Löschen d
 
 
 # /var/www/html/admin/scripts/js/settings-dns.js
-sudo rpl --encoding UTF-8 ' " custom server" ' ' " benutzerdef." ' /var/www/html/admin/scripts/js/settings-dns.js
-sudo rpl --encoding UTF-8 '"s"\) \+ " enabled\)' '"") + " Server aktiviert)' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 ' " custom server" ' ' " benutzerdefinierte" ' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 '"" : "s"\) \+ " enabled\)"' '"r" : "") + " Server aktiviert)"' /var/www/html/admin/scripts/js/settings-dns.js
 
 
 
@@ -1253,7 +1253,7 @@ sudo rpl --encoding UTF-8 'Main</li>' 'Hauptmenü</li>' /var/www/html/admin/scri
 sudo rpl --encoding UTF-8 'Dashboard</span>' 'Übersicht</span>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Query Log</span>' 'Anfragenprotokoll</span>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Group Management</li>' 'Gruppenverwaltung</li>' /var/www/html/admin/scripts/lua/sidebar.lp
-sudo rpl --encoding UTF-8 '<span>Groups' '<span>Guppen' /var/www/html/admin/scripts/lua/sidebar.lp
+sudo rpl --encoding UTF-8 '<span>Groups' '<span>Gruppen' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Number of enabled groups' 'Anzahl der definierten Gruppen' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 '<span>Clients' '<span>Geräte' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Number of defined clients' 'Anzahl der definierten Geräte' /var/www/html/admin/scripts/lua/sidebar.lp
