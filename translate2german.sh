@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 19.11.2024
-# getestet auf Pi-hole Version Core v6.0.6 - FTL Version v6.1 - Web Interface Version v6.1
+# getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 13.05.2025
+# getestet auf Pi-hole Version Core v6.1 - FTL Version v6.2 - Web Interface Version v6.2.1
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -196,7 +196,7 @@ sudo rpl --encoding UTF-8 'List description \(optional\)' 'Listenbeschreibung (o
 sudo rpl --encoding UTF-8 'Group assignment:' 'Gruppenzuordnung:' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Hints:</strong>' 'Tipps:</strong>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Please run <code>pihole -g</code> or update your gravity list <a href="<\?=webhome\?>gravity">online</a> after modifying your lists.' 'Nach dem Ändern der Listen führen Sie bitte im Terminal <code>pihole -g</code> aus oder aktualisieren Sie die Gravity-Liste <a href="<?=webhome?>gravity">direkt hier</a>.' /var/www/html/admin/groups-lists.lp
-sudo rpl --encoding UTF-8 'Multiple lists can be added by separating each <em>unique</em> URL with a space or comma' 'Sie können mehrere Listen gleichzeitig hinzufügen, indem Sie jede <i>eindeutige</i> URL getrennt mit einem Leerzeichen eingeben.' /var/www/html/admin/groups-lists.lp
+sudo rpl --encoding UTF-8 'Multiple lists can be added by separating each <em>unique</em> URL with a space or comma' 'Sie können mehrere Listen gleichzeitig hinzufügen, indem Sie jede <em>eindeutige</em> URL getrennt mit einem Leerzeichen eingeben.' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Click on the icon in the first column to get additional information about your lists. The icons correspond to the health of the list.' 'Klicken Sie auf das Symbol in der zweiten Spalte, um zusätzliche Informationen über Ihre Listen zu erhalten. Die Symbole entsprechen dem Zustand der Liste.' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Add blocklist</button>' 'Zur Blacklist hinzufügen</button>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Add allowlist</button>' 'Zur Whitelist hinzufügen</button>' /var/www/html/admin/groups-lists.lp
@@ -210,7 +210,7 @@ sudo rpl --encoding UTF-8 'Reset sorting</button>' 'Sorting zurücksetzen</butto
 
 # /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 '"Total number of queries"' '"Gesamtzahl der Anfragen"' /var/www/html/admin/index.lp
-sudo rpl --encoding UTF-8 'Total queries</p>' 'Anfragen insgesamt</p>' /var/www/html/admin/index.lp
+sudo rpl --encoding UTF-8 'Total Queries</p>' 'Anfragen insgesamt</p>' /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 'active clients <i' 'aktive Geräte <i' /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 'Queries Blocked</p>' 'Geblockte Anfragen</p>' /var/www/html/admin/index.lp
 sudo rpl --encoding UTF-8 'List blocked queries ' 'Liste der geblockten Anfragen ' /var/www/html/admin/index.lp
@@ -245,7 +245,7 @@ sudo rpl --encoding UTF-8 'Show password as plain text. Warning: this will displ
 sudo rpl --encoding UTF-8 'Log in \(uses cookie\)</button>' 'Einloggen (benutzt Cookies)</button>' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Wrong 2FA token</h3>' 'Falscher 2FA Token</h3></h3>' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Your Pi-hole has two-factor authentication enabled. You have to' 'Ihr Pi-hole hat die Zwei-Faktor-Authentifizierung aktiviert. Sie müssen ' /var/www/html/admin/login.lp
-sudo rpl --encoding UTF-8 'enter a valid <a href="https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm" rel="noopener" target="_blank">TOTP</a>' 'zusätzlich zu Ihrem Passwort ein gültiges Token <a href="https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm" rel="noopener" target="_blank">TOTP</a> eingeben.' /var/www/html/admin/login.lp
+sudo rpl --encoding UTF-8 'enter a valid <a href="https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm" rel="noopener noreferrer" target="_blank">TOTP</a>' 'zusätzlich zu Ihrem Passwort ein gültiges Token <a href="https://de.wikipedia.org/wiki/Time-based_One-time_Password_algorithm" rel="noopener noreferrer" target="_blank">TOTP</a> eingeben.' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'token in addition to your password. You see this message because your' 'Sie sehen diese Meldung, weil Ihr Token falsch war oder bereits abgelaufen ist' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'token was incorrect or has already expired.</p>' '.</p>' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Forgot password\?</h3>' 'Passwort vergessen?</h3>' /var/www/html/admin/login.lp
@@ -255,7 +255,7 @@ sudo rpl --encoding UTF-8 'a new password \(or explicitly disable the password b
 sudo rpl --encoding UTF-8 'using the command' 'indem man den Befehl' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Documentation</a>' 'Dokumentation</a>' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Pi-hole Discourse</a>' 'Pi-hole Forum</a>' /var/www/html/admin/login.lp
-sudo rpl --encoding UTF-8 '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href="http://www.github.com/pimanDE/translate2german" rel="noopener" target="_blank"</a> <i class="fa fa-edit"></a></i> Übersetzt von <a href="https://github.com/pimanDE" rel="noopener" target="_blank"><strong>pimanDE</strong></a>.' /var/www/html/admin/login.lp
+sudo rpl --encoding UTF-8 '<strong><a href="https://pi-hole.net/donate/" rel="noopener noreferrer" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener noreferrer" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href="http://www.github.com/pimanDE/translate2german" rel="noopener noreferrer" target="_blank"</a> <i class="fa fa-edit"></a></i> Übersetzt von <a href="https://github.com/pimanDE" rel="noopener noreferrer" target="_blank"><strong>pimanDE</strong></a>.' /var/www/html/admin/login.lp
 
 
 
@@ -298,12 +298,14 @@ sudo rpl --encoding UTF-8 'Advanced filtering</h3>' 'Erweiterte Filterfunktion</
 sudo rpl --encoding UTF-8 'Click to select date and time range' 'Klicken Sie, um Datum und Zeitbereich auszuwählen' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Query on-disk data. This is <em>a lot</em> slower but necessary if you want to obtain queries older than 24 hours. This option disables live update.' 'Die Daten werden von der Festplatte abgerufen. Dies ist <em>viel</em> langsamer aber notwendig, wenn Sie Anfragen erhalten möchten, die älter als 24 Stunden sind. Mit dieser Option wird die Live-Aktualisierung deaktiviert.' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Loading...</option>' 'Lädt ...</option>' /var/www/html/admin/queries.lp
-sudo rpl --encoding UTF-8 'Domain</label>' 'Domain</label>' /var/www/html/admin/queries.lp
-sudo rpl --encoding UTF-8 'Client \(by IP\)</label>' 'Gerät (per IP)</label>' /var/www/html/admin/queries.lp
-sudo rpl --encoding UTF-8 'Client \(by name\)</label>' 'Gerät (per Name)</label>' /var/www/html/admin/queries.lp
+sudo rpl --encoding UTF-8 'Domain\*</label>' 'Domain*</label>' /var/www/html/admin/queries.lp
+sudo rpl --encoding UTF-8 'Client \(by IP\)\*</label>' 'Gerät (per IP)*</label>' /var/www/html/admin/queries.lp
+sudo rpl --encoding UTF-8 'Client \(by name\)\*</label>' 'Gerät (per Name)*</label>' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Type</label>' 'Typ</label>' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Reply</label>' 'Wiederholung</label>' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'DNSSEC status</label>' 'DNSSEC-Status</label>' /var/www/html/admin/queries.lp
+sudo rpl --encoding UTF-8 'These input fields allow manual input as well. Use ' 'Diese Eingabefelder ermöglichen auch manuelle Eingaben. Verwenden Sie ' /var/www/html/admin/queries.lp
+sudo rpl --encoding UTF-8 'for wildcard search.</span>' 'für die Platzhaltersuche.</span>' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Click "Refresh" below to apply.' 'Klicken Sie auf "Aktualisieren", damit die Änderungen wirksam werden.' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Recent Queries</h3>' 'Aktuelle Anfragen</h3>' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Live update</label>' 'Laufende Aktualisierung</label>' /var/www/html/admin/queries.lp
@@ -360,7 +362,7 @@ sudo rpl --encoding UTF-8 'example\\.com' 'beispiel\.de' /var/www/html/admin/set
 sudo rpl --encoding UTF-8 'Clients to be excluded from Top Client Lists and Query Log' 'Geräte die von der Liste der Top-Geräte und den Ad-Listen ausgeschlossen werden sollen:' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Enter regex clients, one per line' 'Geben Sie ein Gerät per RegEx pro Zeile ein.' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Clients may be described either by their IP addresses \(IPv4 and IPv6 are supported\), or hostnames \(like ' 'Geräte können entweder durch ihre IP-Adressen (IPv4 und IPv6 werden unterstützt) oder durch Hostnamen beschrieben werden (wie z.B. ' /var/www/html/admin/settings-api.lp
-sudo rpl --encoding UTF-8 'Important</strong>:<br>Those input fields accept regex entries only.<br>Please refer to  <a href="https://docs.pi-hole.net/regex/tutorial/" rel="noopener" target="_blank">our guide</a> how to construct valid regex entries.' 'Wichtig</strong>:<br>Diese Eingabefelder akzeptieren nur RegEx-Einträge. Weitere Hilfe zum Erstellen gültiger RegEx-Einträge finden Sie in unserem <a href="https://docs.pi-hole.net/regex/tutorial/" rel="noopener" target="_blank">Leitfaden</a>.' /var/www/html/admin/settings-api.lp
+sudo rpl --encoding UTF-8 'Important</strong>:<br>Those input fields accept regex entries only.<br>Please refer to  <a href="https://docs.pi-hole.net/regex/tutorial/" rel="noopener noreferrer" target="_blank">our guide</a> how to construct valid regex entries.' 'Wichtig</strong>:<br>Diese Eingabefelder akzeptieren nur RegEx-Einträge. Weitere Hilfe zum Erstellen gültiger RegEx-Einträge finden Sie in unserem <a href="https://docs.pi-hole.net/regex/tutorial/" rel="noopener noreferrer" target="_blank">Leitfaden</a>.' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Query Log</h3>' 'Anfragen Protokoll/h3>' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Show permitted domain entries.' 'Erlaubte Domain-Einträge anzeigen.' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'This will show all permitted domain entries in the query log.' 'Dadurch werden alle zulässigen Domain-Einträge im Anfrageprotokoll angezeigt.' /var/www/html/admin/settings-api.lp
@@ -486,7 +488,7 @@ sudo rpl --encoding UTF-8 'different, for instance a range of 10.8.0.1 - 10.8.25
 sudo rpl --encoding UTF-8 'whereas an even wider network of 10.0.0.1 - 10.255.255.255 results in <code>10.0.0.0/8</code>.' '<code>10.8.0.0/16</code>. Hingegen führt ein noch größeres Netzwerk von 10.0.0.1 – 10.255.255.255 zu <code>10.0.0.0/8</code> führt.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Setting up IPv6 ranges is exactly similar to setting up IPv4 here and fully supported.' 'Das Einrichten von IPv6-Bereichen ähnelt hier genau dem Einrichten von IPv4 und wird vollständig unterstützt.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Feel free to reach out to us on our' 'Kontaktieren Sie uns gerne in unserem' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 '<a href="https://discourse.pi-hole.net" rel="noopener" target="_blank">Discourse forum</a>' '<a href="https://discourse.pi-hole.net" rel="noopener" target="_blank">Diskussionsforum</a>,' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 '<a href="https://discourse.pi-hole.net" rel="noopener noreferrer" target="_blank">Discourse forum</a>' '<a href="https://discourse.pi-hole.net" rel="noopener noreferrer" target="_blank">Diskussionsforum</a>,' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'in case you need any assistance setting up local host name resolution for your particular system.' 'falls Sie Hilfe beim Einrichten der lokalen Hostnamenauflösung für Ihr spezielles System benötigen.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'You can also specify a local domain name \(like <code>fritz.box</code>\) to ensure queries to' 'Sie können auch einen lokalen Domainnamen angeben (z. B. <code>fritz.box</code>), um sicherzustellen,' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'devices ending in your local domain name will not leave your network, however, this is optional.' 'dass Anfragen an Geräte, die auf Ihren lokalen Domainnamen enden, Ihr Netzwerk nicht verlassen. Dies' /var/www/html/admin/settings-dns.lp
@@ -508,7 +510,7 @@ sudo rpl --encoding UTF-8 'directly connected to the Internet such as cloud inst
 sudo rpl --encoding UTF-8 'Pi-hole is properly firewalled. In a typical at-home setup where your Pi-hole is' 'ordnungsgemäße Firewall verfügt. In einem typischen Heim-Setup, bei der sich Ihr' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'located within your local network \(and you have <strong>not</strong> forwarded port 53' 'Pi-hole in Ihrem lokalen Netzwerk befindet (und Sie Port 53 in Ihrem Router <strong>nicht</strong>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'in your router!\) they are safe to use.' 'weitergeleitet haben!), können sie sicher verwendet werden.' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'See <a href="https://docs.pi-hole.net/ftldns/interfaces/" rel="noopener" target="_blank">our documentation</a> for further technical details.' 'Für weitere technische Details schauen Sie sich bitte <a href="https://docs.pi-hole.net/ftldns/interfaces/" rel="noopener" target="_blank">unsere Dokumenation</a> an.' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'See <a href="https://docs.pi-hole.net/ftldns/interfaces/" rel="noopener noreferrer" target="_blank">our documentation</a> for further technical details.' 'Für weitere technische Details schauen Sie sich bitte <a href="https://docs.pi-hole.net/ftldns/interfaces/" rel="noopener noreferrer" target="_blank">unsere Dokumenation</a> an.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'DNS domain settings</h3>' 'DNS Domain Einstellungen</h3>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Pi-hole domain name</label>' 'Pi-hole Domain Name</label>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 "The DNS domains for your Pi-hole. This DNS domain is purely local. FTL may answer queries from its local cache and configuration but \*never\* forwards any requests upstream \*unless\* you have configured a dns.revServer exactly for this domain. If no domain is specified and you are using Pi-hole's DHCP server, then any hostnames with a domain part \(i.e., with a period\) will be disallowed. If a domain is specified, then hostnames with a domain parts matching the domain here are allowed. In addition, when a suffix is set then hostnames without a domain part have the suffix added as an optional domain part." "Die DNS-Domänen für Ihr Pi-hole. Diese DNS-Domäne ist rein lokal. FTL kann Anfragen aus seinem lokalen Cache und seiner Konfiguration beantworten, leitet aber *nie* irgendwelche Anfragen weiter, es sei denn, Sie haben einen dns.rev-Server genau für diese Domäne konfiguriert. Wenn keine Domäne angegeben ist und Sie den DHCP-Server von Pi-hole verwenden, werden alle Hostnamen mit einem Domänenteil (d. h. mit einem Punkt) nicht zugelassen. Wenn eine Domäne angegeben ist, werden Hostnamen mit einem Domänenteil, der mit der Domäne übereinstimmt, zugelassen. Wenn ein Suffix angegeben wird, wird bei Hostnamen ohne Domänenteil zusätzlich das Suffix als optionaler Domänenteil hinzugefügt." /var/www/html/admin/settings-dns.lp
@@ -525,8 +527,8 @@ sudo rpl --encoding UTF-8 'DNS loop under certain circumstances \(e.g. if a clie
 sudo rpl --encoding UTF-8 'Never forward reverse lookups for private IP ranges' 'Niemals Reverse-Lookups für private IP-Bereiche weiterleiten' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'All reverse lookups for private IP ranges \(i.e., <code>192.168.0.x/24</code>, etc.\)' 'Alle Reverse-Lookups für private IP-Bereiche (z. B. <code>192.168.0.x/24</code> usw.),' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'which are not found in <code>/etc/hosts</code> or the DHCP leases are answered' 'die nicht in <code>/etc/hosts</code> oder den DHCP-Vergaben gefunden werden, werden mit' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'with "no such domain" rather than being forwarded upstream. The set' '„keine solche Domain“ beantwortet, anstatt weitergeleitet zu werden. Der betroffene Satz' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'of prefixes affected is the list given in <a href="https://tools.ietf.org/html/rfc6303">RFC6303</a>' 'von Präfixen ist die in <a href="https://tools.ietf.org/html/rfc6303">RFC6303</a> angegebenen Liste' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'with "no such domain" rather than being forwarded upstream. The set' '„keine solche Domain“ beantwortet, anstatt weitergeleitet zu werden. Die betroffenen ' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'of prefixes affected is the list given in <a href="https://tools.ietf.org/html/rfc6303" rel="noopener noreferrer" target="_blank">RFC6303</a>.' 'Präfixe sind in der Liste <a href="https://tools.ietf.org/html/rfc6303" rel="noopener noreferrer" target="_blank">RFC6303</a> aufgeführt.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Important:</strong><br>Enabling these two options may increase your privacy,' 'Wichtig:</strong> Die Aktivierung dieser beiden Optionen erhöht möglicherweise Ihre Privatsphäre,' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'but may also prevent you from being able to access local hostnames if the Pi-hole is not used as DHCP server.' 'aber auch verhindern, dass Sie auf lokale Hostnamen zugreifen können, wenn Pi-hole nicht als DHCP-Server verwendet wird.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Make sure you have set up conditional forwarding in this case.' 'Stellen Sie sicher, dass Sie in diesem Fall die bedingte Weiterleitung eingerichtet haben.' /var/www/html/admin/settings-dns.lp
@@ -538,7 +540,7 @@ sudo rpl --encoding UTF-8 'support DNSSEC, this setting can cause issues resolvi
 sudo rpl --encoding UTF-8 'Use an upstream DNS server which supports DNSSEC when activating DNSSEC. Note that' 'beim Auflösen von Domains verursachen. Verwenden Sie bei der Aktivierung von DNSSEC' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'the size of your log might increase significantly' 'einen vorgelagerten DNS-Server, der DNSSEC unterstützt. Beachten Sie, dass sich die' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'when enabling DNSSEC. A DNSSEC resolver test can be found' 'Größe Ihres Protokolls erheblich erhöhen kann, wenn Sie DNSSEC aktivieren.' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 '<a href="https://dnssec.vs.uni-due.de/" rel="noopener" target="_blank">here</a>' 'Einen DNSSEC-Resolver-Test gibt es <a href="https://dnssec.vs.uni-due.de/" rel="noopener" target="_blank">hier</a>' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 '<a href="https://dnssec.vs.uni-due.de/" rel="noopener noreferrer" target="_blank">here</a>' 'Einen DNSSEC-Resolver-Test gibt es <a href="https://dnssec.vs.uni-due.de/" rel="noopener noreferrer" target="_blank">hier</a>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Rate-limiting</h3>' 'Anfragebeschränkung</h3>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Block clients making more than ' 'Blockieren Sie Geräte, die mehr als ' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 '> queries within' '> Anfragen in' /var/www/html/admin/settings-dns.lp
@@ -552,7 +554,7 @@ sudo rpl --encoding UTF-8 'per-client basis. Other clients can continue to use F
 sudo rpl --encoding UTF-8 'rate-limited clients are short-circuited at the same time.' 'während anfragebegrenzte Geräte gleichzeitig ausgeschlossen werden.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Rate-limiting may be disabled altogether by setting both' 'Die Anfragebeschränkung kann vollständig deaktiviert werden,' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'values to zero. See' 'indem beide Werte auf Null gesetzt werden. Für weitere Details schauen Sie sich bitte ' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 '<a href="https://docs.pi-hole.net/ftldns/configfile/#rate_limit" rel="noopener" target="_blank">our documentation</a>' '<a href="https://docs.pi-hole.net/ftldns/configfile/#rate_limit" rel="noopener" target="_blank">unsere Dokumentation</a>' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 '<a href="https://docs.pi-hole.net/ftldns/configfile/#rate_limit" rel="noopener noreferrer" target="_blank">our documentation</a>' '<a href="https://docs.pi-hole.net/ftldns/configfile/#rate_limit" rel="noopener noreferrer" target="_blank">unsere Dokumentation</a>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'for further details.' ' an.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'The following list contains all reverse servers you want to add. The expected format is one server per line in form of ' 'Die folgende Liste enthält alle Reverse-Server, die Sie hinzufügen möchten. Das erwartete Format ist ein Server pro Zeile in Form von ' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'A valid config line could look like ' 'Eine gültige Konfigurationszeile könnte wie folgt aussehen ' /var/www/html/admin/settings-dns.lp
@@ -566,16 +568,15 @@ sudo rpl --encoding UTF-8 'Local DNS Settings' 'Lokale DNS Einstellungen' /var/w
 sudo rpl --encoding UTF-8 '>Local DNS records' '>Lokale DNS-Einträge' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'List of local DNS records</h3>' 'Übersicht der lokalen DNS-Einträge</h3>' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'placeholder="Associated IP' 'placeholder="Zugehörige IP' /var/www/html/admin/settings-dnsrecords.lp
-sudo rpl --encoding UTF-8 'Clear Filters</button>' 'Filter löschen</button>' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'Note:</strong>' 'Hinweis:</strong>' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'Adding/removing local DNS records will flush the cache but does not require a restart of the DNS server.' 'Das Hinzufügen/Entfernen von lokalen DNS-Einträgen leert den Zwischenspeicher, erfordert aber keinen Neustart des DNS-Servers.' /var/www/html/admin/settings-dnsrecords.lp
-sudo rpl --encoding UTF-8 '>Local CNAME records records' '>Lokale CNAME-Einträge' /var/www/html/admin/settings-dnsrecords.lp
+sudo rpl --encoding UTF-8 '>Local CNAME records' '>Lokale CNAME-Einträge' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'List of local CNAME records</h3>' 'Übersicht der lokalen CNAME-Einträge</h3>' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'Target</th>' 'Ziel</th>' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'placeholder="Target Domain"' 'placeholder="Zieldomain"' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'The target of a <code>CNAME</code> must be a domain that the Pi-hole already has in its cache or is authoritative for. This is a universal limitation of <code>CNAME</code> records.' 'Das Ziel eines <code>CNAME</code> muss eine Domain sein, die Pi-hole bereits in seinem Zwischenspeicher hat oder dafür maßgebend ist. Dies ist eine universelle Einschränkung von <code>CNAME</code>-Datensätzen.' /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 "The reason for this is that Pi-hole will not send additional queries upstream when serving <code>CNAME</code> replies. As consequence, if you set a target that isn\'t already known, the reply to the client may be incomplete. Pi-hole just returns the information it knows at the time of the query. This results in certain limitations for <code>CNAME</code> targets," "Der Grund dafür ist, dass Pi-hole bei der Bereitstellung von <code>CNAME</code>-Antworten keine zusätzlichen Anfragen im Upstream sendet. Wenn Sie ein Ziel festlegen, das noch nicht bekannt ist, ist die Antwort an das Gerät möglicherweise unvollständig. Pi-hole gibt lediglich die Informationen zurück, die es zum Zeitpunkt der Anfrage kennt. Dies führt zu bestimmten Einschränkungen für" /var/www/html/admin/settings-dnsrecords.lp
-sudo rpl --encoding UTF-8 "for instance, only <em>active</em> DHCP leases work as targets - mere DHCP <i>leases</i> aren\'t sufficient as they aren\'t \(yet\) valid DNS records." "<code>CNAME</code>-Ziele. Beispielsweise funktionieren nur <em>aktive</em> DHCP-Vergaben als Ziele – bloße DHCP-<i>Vergaben</i> reichen nicht aus, da es sich (noch) nicht um gültige DNS-Einträge handelt." /var/www/html/admin/settings-dnsrecords.lp
+sudo rpl --encoding UTF-8 "for instance, only <em>active</em> DHCP leases work as targets - mere DHCP <em>leases</em> aren\'t sufficient as they aren\'t \(yet\) valid DNS records." "<code>CNAME</code>-Ziele. Beispielsweise funktionieren nur <em>aktive</em> DHCP-Vergaben als Ziele – bloße DHCP-<i>Vergaben</i> reichen nicht aus, da es sich (noch) nicht um gültige DNS-Einträge handelt." /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 "Additionally, you can\'t <code>CNAME</code> external domains \(<code>bing.com</code> to <code>google.com</code>\) successfully as this could result in invalid SSL certificate errors when the target server does not serve content for the requested domain." "Ausserdem können Sie externe Domains (<code>bing.com</code> bis <code>google.com</code>) nicht erfolgreich mit <code>CNAME</code> versehen, da dies zu Fehlern aufgrund ungültiger SSL-Zertifikate führen kann. Der Zielserver stellt keinen Inhalt für die angeforderte Domain bereit." /var/www/html/admin/settings-dnsrecords.lp
 sudo rpl --encoding UTF-8 'Adding/removing local CNAME records will restart the DNS server.' 'Das Hinzufügen/Entfernen von lokalen CNAME-Einträgen führt zu einem Neustart des DNS-Servers.' /var/www/html/admin/settings-dnsrecords.lp
 
@@ -636,20 +637,20 @@ sudo rpl --encoding UTF-8 'Share of the allocated cache that is currently in use
 sudo rpl --encoding UTF-8 'Active cache records:' 'Aktive Zwischenspeicher Aufnahmen' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Number of cache insertions, this number will grow continuously as expiring records naturally make space for new records' 'Anzahl der Einfügungen in den Zwischenspeicher; diese Zahl wächst kontinuierlich, da auslaufende Datensätze auf natürliche Weise Platz für neue Datensätze schaffen.' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Total cache insertions:' 'Zwischenspeicher-Einfügungen insgesamt:' /var/www/html/admin/settings-system.lp
-sudo rpl --encoding UTF-8 'Number of cache entries that had to be removed although they are not expired. When this number if larger than zero, you should consider increasing your total cache size" lookatme-text="DNS cache evictions:"' 'Anzahl der Zwischenspeicher-Einträge, die entfernt werden mussten, obwohl sie noch nicht abgelaufen sind. Wenn diese Zahl größer als Null ist, sollten Sie in Erwägung ziehen, die Gesamtgröße Ihres Zwischenspeichers zu erhöhen." lookatme-text="DNS cache evictions:"' /var/www/html/admin/settings-system.lp
-sudo rpl --encoding UTF-8 'DNS cache evictions:</span>' 'DNS-Zwischenspeicher-Leerungen:</span>' /var/www/html/admin/settings-system.lp
+sudo rpl --encoding UTF-8 'Number of cache entries that had to be removed although they are not expired. When this number if larger than zero, you should consider increasing your total cache size' 'Anzahl der Cache-Einträge, die entfernt werden mussten, obwohl sie noch nicht abgelaufen sind. Wenn diese Zahl größer als Null ist, sollten Sie in Erwägung ziehen, die Gesamtgröße Ihres Caches zu erhöhen.' /var/www/html/admin/settings-system.lp
+sudo rpl --encoding UTF-8 'DNS cache evictions:</th>' 'DNS-Zwischenspeicher-Leerungen:</th>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Number of expired cache entries \(they can still be used by the cache optimizer\). These entries will only be freed when space is really needed \(for efficiency reasons\)' 'Anzahl der abgelaufenen Zwischenspeicher-Einträge (sie können weiterhin vom Zwischenspeicher-Optimierer verwendet werden). Diese Einträge werden nur dann freigegeben, wenn tatsächlich Platz benötigt wird (aus Effizienzgründen).' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Expired DNS cache entries:' 'Abgelaufene DNS-Cache-Einträge:' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Number of immortal cache entries that will never expire \(e.g. from /etc/hosts or local configuration\)' 'Anzahl der dauerhaften Zwischenspeicher-Einträge, die nie ablaufen (z. B. aus /etc/hosts oder lokaler Konfiguration)' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Immortal DNS cache entries:' 'Dauerhafte DNS-Cache-Einträge:' /var/www/html/admin/settings-system.lp
-sudo rpl --encoding UTF-8 'See also our <a href="https://docs.pi-hole.net/ftldns/dns-cache/" rel="noopener" target="_blank">DNS cache documentation</a>.' 'Siehe auch unsere <a href="https://docs.pi-hole.net/ftldns/dns-cache/" rel="noopener" target="_blank">DNS Zwischenspeicher Dokumentation</a>.' /var/www/html/admin/settings-system.lp
+sudo rpl --encoding UTF-8 'See also our <a href="https://docs.pi-hole.net/ftldns/dns-cache/" rel="noopener noreferrer" target="_blank">DNS cache documentation</a>.' 'Siehe auch unsere <a href="https://docs.pi-hole.net/ftldns/dns-cache/" rel="noopener noreferrer" target="_blank">DNS Zwischenspeicher Dokumentation</a>.' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'DNS reply metrics</h3>' 'DNS-Antwort-Kennzahlen</h3>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Local/cache replies:' 'Lokale/Zwischenspeicher-Antworten:' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Forwarded queries:' 'Weitergeleitete Anfragen:' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Cache optimizer replies:' 'Optimierte Zwischenspeicher-Antworten:' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Unanswered queries:' 'Unbeantwortete Anfragen:' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Authoritative replies:' 'Authorisierte Antworten:' /var/www/html/admin/settings-system.lp
-sudo rpl --encoding UTF-8 'Actions<span' 'Aktionen<span' /var/www/html/admin/settings-system.lp
+sudo rpl --encoding UTF-8 'Actions</h3>' 'Aktionen</h3>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Restart DNS resolver</button>' 'DNS-Resolver neu starten</button>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Flush network table</button>' 'Lösche die Netzwerk Tabelle</button>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Flush logs \(last 24 hours\)</button>' 'Protokolle löschen (letzten 24 Std.)</button>' /var/www/html/admin/settings-system.lp
@@ -961,7 +962,7 @@ sudo rpl --encoding UTF-8 'An error occurred while loading the data: Connection 
 sudo rpl --encoding UTF-8 'Deleting network table entry...' 'lösche den Netzwerk Tabellen Eintrag ...' /var/www/html/admin/scripts/js/network.js
 sudo rpl --encoding UTF-8 'Successfully deleted network table entry' 'Erfolgreich den Netzwerk Tabellen Eintrag gelöscht' /var/www/html/admin/scripts/js/network.js
 sudo rpl --encoding UTF-8 'Error while deleting network table entry with ID' 'Fehler beim Löschen des Netzwerk Tabellen Eintrags mit der ID' /var/www/html/admin/scripts/js/network.js
-sudo rpl --encoding UTF-8 'html\("Never"\)' 'html("Noch nie")' /var/www/html/admin/scripts/js/network.js
+sudo rpl --encoding UTF-8 'text\("Never"\)' 'text("Noch nie")' /var/www/html/admin/scripts/js/network.js
 sudo rpl --encoding UTF-8 'Mock MAC address' 'Mock MAC Adresse' /var/www/html/admin/scripts/js/network.js
 sudo rpl --encoding UTF-8 '10, 25, 50, 100, "All"' '10, 25, 50, 100, "Alle"' /var/www/html/admin/scripts/js/network.js
 sudo rpl --encoding UTF-8 '' '' /var/www/html/admin/scripts/js/network.js
@@ -969,7 +970,6 @@ sudo rpl --encoding UTF-8 '' '' /var/www/html/admin/scripts/js/network.js
 
 
 # /var/www/html/admin/scripts/js/queries.js
-sudo rpl --encoding UTF-8 'var dateformat = "MMM Do YYYY, HH:mm";' 'var dateformat = "D. MMMM YYYY, HH:mm";' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 '"Last 10 Minutes":' '"Letzten 10 Minuten":' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 '"Last Hour":' '"Letzte Stunde":' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 'Today: ' 'Heute: ' /var/www/html/admin/scripts/js/queries.js
@@ -994,7 +994,6 @@ sudo rpl --encoding UTF-8 '"Blocked \(external, IP\)"' '"Geblockt (extern, IP)"'
 sudo rpl --encoding UTF-8 '"Blocked \(external, NULL\)"' '"Geblockt (extern, NULL)"' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 '"Blocked \(external, NXRA\)"' '"Geblockt (extern, NXRA)"' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 'Blocked \(external, EDE15\)' 'Gebockt (extern, EDE15)' /var/www/html/admin/scripts/js/queries.js
-
 sudo rpl --encoding UTF-8 '"Blocked \(gravity, CNAME\)"' '"Geblockt (Gravity, CNAME)"' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 '"Blocked \(regex denied, CNAME\)"' '"Geblockt (RegEx verweigert, CNAME)"' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 '"Blocked \(exact denied, CNAME\)"' '"Geblockt (Exakt verweigert, CNAME)"' /var/www/html/admin/scripts/js/queries.js
@@ -1003,7 +1002,7 @@ sudo rpl --encoding UTF-8 '"Retried \(ignored\)"' '"Erneut versucht (ignored)"' 
 sudo rpl --encoding UTF-8 '"Already forwarded, awaiting reply"' '"Bereits weitergeleitet, erwarte Antwort"' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 '"Served by cache optimizer"' '"Bereitgestellt vom Zwischenspeicher-Optimierer"' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 '"Query Status:' '"Status der Abfrage:' /var/www/html/admin/scripts/js/queries.js
-sudo rpl --encoding UTF-8 '"Query was "' '"Anfrage war "' /var/www/html/admin/scripts/js/queries.js
+sudo rpl --encoding UTF-8 'Query was \$' 'Anfrage war $' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 'Query was blocked during CNAME inspection of' 'Die Anfrage wurde bei der CNAME-Prüfung von' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 'Time-to-live \(TTL\):' 'Lebensdauer (TTL):' /var/www/html/admin/scripts/js/queries.js
 sudo rpl --encoding UTF-8 '"Client:' '"Gerät:' /var/www/html/admin/scripts/js/queries.js
@@ -1131,15 +1130,15 @@ sudo rpl --encoding UTF-8 'No local DNS records defined.' 'Es sind keine lokalen
 sudo rpl --encoding UTF-8 'No local CNAME records defined.' 'Es sind keine lokalen CNAME-Einträge definiert.' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'Deleting DNS record...' 'Lösche den DNS-Eintrag ...' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'Successfully deleted DNS record' 'Erfolgreich den DNS-Eintrag gelöscht.' /var/www/html/admin/scripts/js/settings-dns-records.js
-sudo rpl --encoding UTF-8 'Error while deleting DNS record: ' 'Fehler beim Löschen des DNS-EIntrags: ' /var/www/html/admin/scripts/js/settings-dns-records.js
+sudo rpl --encoding UTF-8 'Error while deleting DNS record: ' 'Fehler beim Löschen des DNS-Eintrags: ' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'Deleting local CNAME record...' 'Lösche lokalen CNAME-Eintrag ...' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'Successfully deleted local CNAME record' 'Erfolgreich den lokalen CNAME-Eintrag gelöscht.' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'Error while deleting CNAME record: ' 'Fehler beim Löschen des CNAME-Eintrags: ' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'Adding DNS record...' 'Hinzufügen eines DNS-Eintrags ...' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'Successfully added DNS record' 'Erfolgreich einen DNS-Eintrag hinzugefügt.' /var/www/html/admin/scripts/js/settings-dns-records.js
-sudo rpl --encoding UTF-8 'Error while deleting DNS record' 'Fehler beim Löschen des DNS-EIntrags' /var/www/html/admin/scripts/js/settings-dns-records.js
+sudo rpl --encoding UTF-8 'Error while adding DNS record' 'Fehler beim Hinzufügen des DNS-Eintrags' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'Successfully added CNAME record' 'Erfolgreich den CNAME-Eintrag hinzugefügt.' /var/www/html/admin/scripts/js/settings-dns-records.js
-sudo rpl --encoding UTF-8 'Error while deleting CNAME record' 'Fehler beim Löschen des CNAME-Eintrags.' /var/www/html/admin/scripts/js/settings-dns-records.js
+sudo rpl --encoding UTF-8 'Error while adding CNAME record' 'Fehler beim Hinzufügen des CNAME-Eintrags.' /var/www/html/admin/scripts/js/settings-dns-records.js
 sudo rpl --encoding UTF-8 'in seconds <em>' 'in Sekunden <em>' /var/www/html/admin/scripts/js/settings-dns-records.js
 
 
@@ -1168,7 +1167,7 @@ sudo rpl --encoding UTF-8 'This will clear all entries and cannot be undone.' 'D
 sudo rpl --encoding UTF-8 'Yes, flush my network table' 'Ja, lösche meine Netzwerk-Tabelle' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'Are you sure you want to switch query logging mode\?' 'Sind Sie sicher, dass Sie in den Protokollierungsmodus wechseln möchten?' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'This will restart the DNS server.' 'Dies startet den DNS-Server neu.' /var/www/html/admin/scripts/js/settings-system.js
-sudo rpl --encoding UTF-8 'As consequence of this action, your DNS cache will be cleared and you may temporarily loose your internet connection.' 'Infolge dieser Aktion wird Ihr DNS-Cache geleert und Sie können vorübergehend Ihre Internetverbindung verlieren.' /var/www/html/admin/scripts/js/settings-system.js
+sudo rpl --encoding UTF-8 'As consequence of this action, your DNS cache will be cleared and you may temporarily lose your internet connection.' 'Infolge dieser Aktion wird Ihr DNS-Cache geleert und Sie können vorübergehend Ihre Internetverbindung verlieren.' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'Furthermore, you will be logged out of the web interface.' 'Außerdem werden Sie von der Weboberfläche abgemeldet.' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'Yes, change query logging' 'Ja, zur Anfrageprotokollierng wechseln' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'return "Cache content"' 'return "Zwischenspeicher"' /var/www/html/admin/scripts/js/settings-system.js
@@ -1184,7 +1183,8 @@ sudo rpl --encoding UTF-8 'An unexpected error occurred.' 'Ein unerwarteter Fehl
 
 
 # /var/www/html/admin/scripts/js/taillog.js
-sudo rpl --encoding UTF-8 'Log file is empty' 'Die Protokolldatei ist leer.' /var/www/html/admin/scripts/js/taillog.js
+sudo rpl --encoding UTF-8 '\*\*\* FTL restarted \*\*\*' '*** FTL wurde neu gestartet ***' /var/www/html/admin/scripts/js/taillog.js
+sudo rpl --encoding UTF-8 '\*\*\* Log file is empty \*\*\*' '*** Die Protokolldatei ist leer. ***' /var/www/html/admin/scripts/js/taillog.js
 sudo rpl --encoding UTF-8 'YYYY-MM-DD HH:mm:ss.SSS' 'DD.MM.YYYY - HH:mm:ss' /var/www/html/admin/scripts/js/taillog.js
 sudo rpl --encoding UTF-8 '"</span> " \+' '" Uhr  </span> " +' /var/www/html/admin/scripts/js/taillog.js
 sudo rpl --encoding UTF-8 '"Paused"' '"Pause"' /var/www/html/admin/scripts/js/taillog.js
@@ -1218,7 +1218,7 @@ sudo rpl --encoding UTF-8 '> Secs' '> Sek.' /var/www/html/admin/scripts/lua/foot
 sudo rpl --encoding UTF-8 '> Mins' '> Min.' /var/www/html/admin/scripts/lua/footer.lp
 sudo rpl --encoding UTF-8 'Close</button>' 'Schließen</button>' /var/www/html/admin/scripts/lua/footer.lp
 sudo rpl --encoding UTF-8 'Submit</button>' 'Absenden</button>' /var/www/html/admin/scripts/lua/footer.lp
-sudo rpl --encoding UTF-8 '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href="http://www.github.com/pimanDE/translate2german" rel="noopener" target="_blank"</a> <i class="fa fa-edit"></a></i> Übersetzt von <a href="https://github.com/pimanDE" rel="noopener" target="_blank"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/lua/footer.lp
+sudo rpl --encoding UTF-8 '<strong><a href="https://pi-hole.net/donate/" rel="noopener noreferrer" target="_blank"><i class="fa fa-heart text-red"></i> Donate</a></strong> if you found this useful.' '<strong><a href="https://pi-hole.net/donate/" rel="noopener noreferrer" target="_blank"><i class="fa fa-heart text-red"></i> Spenden</a></strong> Sie bitte, wenn Sie Pi-hole nützlich finden.<br><a href="http://www.github.com/pimanDE/translate2german" rel="noopener" target="_blank"</a> <i class="fa fa-edit"></a></i> Übersetzt von <a href="https://github.com/pimanDE" rel="noopener" target="_blank"><strong>pimanDE</strong></a>.' /var/www/html/admin/scripts/lua/footer.lp
 
 
 
@@ -1383,7 +1383,7 @@ sudo rpl --encoding UTF-8 'Migrating content of \$\{whitelistFile\} into new dat
 sudo rpl --encoding UTF-8 'Migrating content of \$\{regexFile\} into new database' 'Migrieren des Inhalts von ${regexFile} in die neue Datenbank.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\$\{TICK\} DNS resolution is available' '${TICK} DNS-Auflösung ist verfügbar' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'DNS resolution is currently unavailable' 'Die DNS-Auflösung ist derzeitig nicht verfügbar!' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Waiting until DNS resolution is available...' 'Warten, bis die DNS-Auflösung verfügbar ist ...' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Waiting up to 120 seconds for DNS resolution...' 'Bis zu 2 Minuten auf die DNS-Auflösung warten...' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Attempting to restore previous database from backup no.' 'Versuch der Wiederherstellung der vorherigen Datenbank von der Sicherungsnummer.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Neutrino emissions detected\${COL_NC}...' 'Neutrino Emissions erkannt${COL_NC}' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Storing gravity database in ' 'Speicherung der Gravity-Datenbank in ' /opt/pihole/gravity.sh
@@ -1399,6 +1399,8 @@ sudo rpl --encoding UTF-8 'Backup no. \$\{num\} not available' 'Sicherung Nr. ${
 sudo rpl --encoding UTF-8 'gravityDBfile} to' 'gravityDBfile} bis' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Using libz compression' 'Verwenden der libz-Komprimierung' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Libz compression not available' 'Libz-Komprimierung ist nicht verfügbar!' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Unable to write to ' 'Es kann nicht geschrieben werden in ' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Please run pihole -g as root' 'Bitte starten Sie pihole -g als root' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Target: ' 'Quelle: ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 ' Invalid Target' ' Ungültiges Ziel' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\${INFO} List has been updated' '${INFO} Die Liste wurde aktualisiert.' /opt/pihole/gravity.sh
@@ -1469,10 +1471,10 @@ sudo rpl --encoding UTF-8 'This will remove your existing gravity database' 'Dad
 sudo rpl --encoding UTF-8 'and create a new file from scratch. If you still' 'entfernt und eine neue Datei wird erstellt. Wenn Sie' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'have the migration backup created when migrating' 'bei der Migration auf Pi-hole v5.0 das Migrations-Backup' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'to Pi-hole v5.0, Pi-hole will import these files.' 'erstellen lassen, importiert Pi-hole diese Dateien.' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'No DNS resolution available. Please contact support.' 'Es ist keine DNS-Auflösung verfügbar. Bitte kontaktieren Sie den Support.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Recreating gravity database from migration backup' 'Wiederherstellung der Gravity-Datenbank aus der Migrationssicherung' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to migrate to database. Please contact support.' 'Die Migration der Datenbank ist nicht möglich. Bitte kontaktieren Sie den Support.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Deleting existing list cache' 'Löschen des bestehenden List-Caches' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Can not complete gravity update, no DNS is available. Please contact support.' 'Die Aktualisierung der Gravity-Datenbank kann nicht abgeschlossen werden, es ist kein DNS verfügbar. Bitte kontaktieren Sie den Support.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to create gravity database. Please try again later. If the problem persists, please contact support.' 'Die Gravity-Datenbank kann nicht erstellt werden. Bitte versuchen Sie es später erneut. Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to create database. Please contact support.' 'Die Gravity-Datenbank kann nicht erstellt werden. Bitte kontaktieren Sie den Support.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 ' Done.' ' Fertig.' /opt/pihole/gravity.sh
