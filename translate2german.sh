@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 13.05.2025
-# getestet auf Pi-hole Version Core v6.1 - FTL Version v6.2 - Web Interface Version v6.2.1
+# getestet auf Pi-hole Version Core v6.1.4 - FTL Version v6.2.3 - Web Interface Version v6.2.1
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -1366,7 +1366,7 @@ sudo rpl --encoding UTF-8 'If you have a large amount of domains, make sure your
 sudo rpl --encoding UTF-8 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to clean current database for backup' 'Die aktuelle Datenbank kann für die Sicherung nicht bereinigt werden' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'The old database remains available' 'Die alte Datenbank ist weiterhin verfügbar' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${CROSS} Unable to update gravity timestamp in database' '${CROSS} Zeitstempel der Gravity-Datenbank kann nicht aktualisiert werden' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 '\${CROSS\} Unable to update gravity timestamp in database' '${CROSS} Zeitstempel der Gravity-Datenbank kann nicht aktualisiert werden' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Migrated from ' 'Migriert von ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to fill table ' 'Tabelle kann nicht gefüllt werden ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'in database \$\{gravityDBfile\}' 'in der Datenbank ${gravityDBfile}' /opt/pihole/gravity.sh
@@ -1385,7 +1385,7 @@ sudo rpl --encoding UTF-8 '\$\{TICK\} DNS resolution is available' '${TICK} DNS-
 sudo rpl --encoding UTF-8 'DNS resolution is currently unavailable' 'Die DNS-Auflösung ist derzeitig nicht verfügbar!' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Waiting up to 120 seconds for DNS resolution...' 'Bis zu 2 Minuten auf die DNS-Auflösung warten...' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Attempting to restore previous database from backup no.' 'Versuch der Wiederherstellung der vorherigen Datenbank von der Sicherungsnummer.' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Neutrino emissions detected\${COL_NC}...' 'Neutrino Emissions erkannt${COL_NC}' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Neutrino emissions detected\$\{COL_NC\}...' 'Neutrino Emissions erkannt${COL_NC}' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Storing gravity database in ' 'Speicherung der Gravity-Datenbank in ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Pulling blocklist source list into range' 'Heranziehen der Blocklisten Quelle' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'No source list found, or it is empty' 'Keine Quellenliste gefunden, oder sie ist leer' /opt/pihole/gravity.sh
@@ -1403,8 +1403,8 @@ sudo rpl --encoding UTF-8 'Unable to write to ' 'Es kann nicht geschrieben werde
 sudo rpl --encoding UTF-8 'Please run pihole -g as root' 'Bitte starten Sie pihole -g als root' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Target: ' 'Quelle: ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 ' Invalid Target' ' Ungültiges Ziel' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${INFO} List has been updated' '${INFO} Die Liste wurde aktualisiert.' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${INFO} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert.' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 '\${INFO\} List has been updated' '${INFO} Die Liste wurde aktualisiert.' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 '\${INFO\} List stayed unchanged' '${INFO} Die Liste hat sich nicht geändert.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'str="Status:"' 'str="Ergebnis:"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Pending...' 'Ausstehend ...' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'is blocked by one of your lists. Using DNS server \$\{upstream\} instead' 'wird durch eine Ihrer Listen geblockt. Verwenden Sie stattdessen den DNS-Server ${upstream}.' /opt/pihole/gravity.sh
@@ -1426,16 +1426,16 @@ sudo rpl --encoding UTF-8 'Connection Timed Out \(Gateway\)"' 'Zeitüberschreitu
 sudo rpl --encoding UTF-8 'Web Server Is Down \(Cloudflare\)"' 'Webserver ist ausgefallen (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Cloudflare\)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Received empty file' 'Leere Datei empfangen' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_GREEN}using previously cached list' '${CROSS} Herunterladen der Liste nicht möglich: \${COL_LIGHT_GREEN}benutze zwischengespeicherte Liste' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\${CROSS} List download failed: \${COL_LIGHT_RED}no cached list available' '${CROSS} Herunterladen der Liste nicht möglich: ${COL_LIGHT_RED}keine zwischengespeicherte Liste vorhanden' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Number of \${str}:' 'Anzahl der ${str}:' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 '\$\{CROSS\} List download failed: \$\{COL_GREEN\}using previously cached list\$\{COL_NC\}' '${CROSS} Herunterladen der Liste nicht möglich: ${COL_GREEN}benutze zwischengespeicherte Liste${COL_NC}' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 '\$\{CROSS\} List download failed: \$\{COL_RED\}no cached list available\$\{COL_NC\}' '$\{CROSS\} Herunterladen der Liste nicht möglich: ${COL_RED}keine zwischengespeicherte Liste vorhanden${COL_NC}' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Number of \${str\}:' 'Anzahl der ${str}:' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'unique domains' 'einzelne Domains' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '"gravity domains"' '"Domains in der Gravity-Datenbank"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '"exact denied domains"' '"exakt verweigerten Domains"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '"regex denied filters"' '"durch RegEx Filter verweigerten Domains"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '"exact allowed domains"' '"exakt erlaubten Domains"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '"regex allowed filters"' '"durch RegEx erlaubten Domains"' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 '\$\{INFO} \$\{COL_LIGHT_RED\}User-abort detected\${COL_NC}"; gravity_Cleanup "error"' '${INFO} ${COL_LIGHT_RED}Abbruch durch Benutzer festgestellt${COL_NC}"; gravity_Cleanup "Fehler"' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 '\${INFO\} \${COL_RED\}User-abort detected\$\{COL_NC\}"; gravity_Cleanup "error"' '${INFO} ${COL_RED}Abbruch durch Benutzer festgestellt${COL_NC}"; gravity_Cleanup "Fehler"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '"Cleaning up stray matter"' '"Aufräumen"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\$\{CROSS\} Failed to remove' '${CROSS} Nicht entfernt' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '"Usage: pihole -g' '"Verwende: pihole -g' /opt/pihole/gravity.sh

@@ -58,7 +58,7 @@ chmod 775 translate2german.sh
 
 **Hinweise:**
 
-- getestet unter Pi-hole Version v6.1, FTL Version v6.2 und Web Interface Version **v6.2.1**
+- getestet unter Pi-hole Version v6.1.4, FTL Version v6.2.3 und Web Interface Version **v6.2.1**
 <br>
 
 **Rückgängig machen:**
