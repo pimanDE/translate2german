@@ -1067,7 +1067,11 @@ sudo rpl --encoding UTF-8 'Setting requires FTL restart on change' 'Die Einstell
 sudo rpl --encoding UTF-8 'Settings overwritten by an environmental variable are read-only' 'Einstellungen, die durch eine Umgebungsvariable überschrieben werden, sind schreibgeschützt.' /var/www/html/admin/scripts/js/settings-advanced.js
 sudo rpl --encoding UTF-8 'Default Value:' 'Standardwert:' /var/www/html/admin/scripts/js/settings-advanced.js
 sudo rpl --encoding UTF-8 '>Value ' '>Wert ' /var/www/html/admin/scripts/js/settings-advanced.js
+sudo rpl --encoding UTF-8 '<small>\(string\)' '<small>(Zeichenkette)' /var/www/html/admin/scripts/js/settings-advanced.js
 sudo rpl --encoding UTF-8 '>Value</label>' '>Wert</label>' /var/www/html/admin/scripts/js/settings-advanced.js
+sudo rpl --encoding UTF-8 '<small>\(integer\)' '<small>(Ganzzahl)' /var/www/html/admin/scripts/js/settings-advanced.js
+sudo rpl --encoding UTF-8 '<small>\(unsigned integer\)' '<small>(unsignierte Ganzzahl)' /var/www/html/admin/scripts/js/settings-advanced.js
+sudo rpl --encoding UTF-8 '<small>\(unsigned 16bit integer\)' '<small>(unsignierte 16-Bit-Ganzzahl)' /var/www/html/admin/scripts/js/settings-advanced.js
 sudo rpl --encoding UTF-8 '>Values <small>\(one item per line\)' '>Werte <small>(ein Wert pro Zeile)' /var/www/html/admin/scripts/js/settings-advanced.js
 sudo rpl --encoding UTF-8 '"Modified settings"' '"Geänderte Einstellungen"' /var/www/html/admin/scripts/js/settings-advanced.js
 sudo rpl --encoding UTF-8 '"All settings"' '"Alle Einstellungen"' /var/www/html/admin/scripts/js/settings-advanced.js
