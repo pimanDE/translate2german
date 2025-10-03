@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Raspberry Pi OS Lite Debian Version 12 (bookworm) vom 13.05.2025
+# getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 01.10.2025
 # getestet auf Pi-hole Version Core v6.1.4 - FTL Version v6.2.3 - Web Interface Version v6.2.1
 # https://pi-hole.net/
 #

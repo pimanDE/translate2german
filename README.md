@@ -13,7 +13,7 @@ Mit diesem Script wird die Weboberfläche Version **v6.2.1** des Pi-hole auf deu
 ![img](https://raw.githubusercontent.com/pimanDE/translate2german/master/pihole-weboberfl%C3%A4che-auf-deutsch.png)
 <br>
 <br>
-Dieses Script wurde unter Raspberry Pi OS Lite Debian Version: 12 (bookworm) vom 13.05.2025 getestet!
+Dieses Script wurde unter Raspberry Pi OS Lite Debian Version: 13 (trixie) vom 01.10.2025 getestet!
 <br>
 <br>
 Bevor die Übersetzung beginnt, werden
