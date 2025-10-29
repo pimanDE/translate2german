@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 01.10.2025
-# getestet auf Pi-hole Version Core v6.1.4 - FTL Version v6.2.3 - Web Interface Version v6.2.1
+# getestet auf Pi-hole Version Core v6.2.2 - FTL Version v6.3.2 - Web Interface Version v6.3
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -87,8 +87,7 @@ sudo rpl --encoding UTF-8 'Debian Bug Tracking System.' 'Debian-Fehler-Tracking-
 
 # /var/www/html/admin/error403.lp
 sudo rpl --encoding UTF-8 'Oops! Access denied.' 'Ups! Zugriff verweigert.' /var/www/html/admin/error403.lp
-sudo rpl --encoding UTF-8 "You don\'t have permission to access " "Sie haben keine Zugriffsberechtigung für " /var/www/html/admin/error403.lp
-sudo rpl --encoding UTF-8 'on this server.' 'auf diesem Server.' /var/www/html/admin/error403.lp
+sudo rpl --encoding UTF-8 "You don\'t have permission to access this URL.<br>" "Sie haben keine Berechtigung, auf diese URL zuzugreifen.<br>" /var/www/html/admin/error403.lp
 sudo rpl --encoding UTF-8 'Did you mean to go to ' 'Wollen Sie zum ' /var/www/html/admin/error403.lp
 sudo rpl --encoding UTF-8 "your Pi-hole\'s dashboard</a> instead\?" "Hauptmenü Ihres Pi-hole's</a> wechseln?" /var/www/html/admin/error403.lp
 
@@ -138,14 +137,18 @@ sudo rpl --encoding UTF-8 'Client description \(optional\)' 'Gerätebeschreibung
 sudo rpl --encoding UTF-8 'Group assignment:' 'Gruppenzuordnung:' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'You can select an existing client or add a custom one by typing into the field above and confirming your entry with' 'Sie können ein vorhandenes Gerät auswählen oder ein benutzerdefiniertes Gerät hinzufügen, indem Sie in das obige Feld tippen und Ihre Eingabe mit' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 '</kbd>.' '</kbd> bestätigen.' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'Multiple clients can be added by separating each client with a space or comma.' 'Sie können mehrere Geräte gleichzeitig hinzufügen, indem Sie jedes Gerät getrennt durch ein Leerzeichen oder ein Komma eingeben.' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'Clients may be described either by their IP addresses \(IPv4 and IPv6 are supported\),' 'Geräte können entweder durch ihre IP-Adressen (IPv4 und IPv6 werden unterstützt),' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'IP subnets \(CIDR notation, like <code>192.168.2.0/24</code>\),' 'durch ihre IP-Subnetze (CIDR-Notation, wie z.B. <code>192.168.2.0/24</code>),' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'their MAC addresses \(like <code>12:34:56:78:9A:BC</code>\),' 'nach ihren MAC-Adressen (wie z.B. <code>12:34:56:78:9A:BC</code>),' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'by their hostnames \(like <code>localhost</code>\), or by the interface they are connected to \(prefaced with a colon, like <code>:eth0</code>\).' 'nach ihren Hostnamen (wie z.B. <code>localhost</code>) oder nach der Schnittstelle, mit der sie verbunden sind (mit vorangestelltem Doppelpunkt wie z.B. <code>:eth0</code>), beschrieben werden.' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'Note that client recognition by IP addresses \(incl. subnet ranges\) are preferred over MAC address, host name or interface recognition as' 'Beachten Sie, dass die Geräte-Erkennung anhand von IP-Adressen (einschließlich den Subnetzbereichen) der Erkennung von MAC-Adressen, Hostnamen oder Schnittstellen vorzuziehen ist, da' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'the two latter will only be available after some time.' 'die beiden letzteren erst nach einiger Zeit zur Verfügung stehen werden.' /var/www/html/admin/groups-clients.lp
-sudo rpl --encoding UTF-8 'Furthermore, MAC address recognition only works for devices at most one networking hop away from your Pi-hole.' 'Außerdem funktioniert die MAC-Adresserkennung nur für Geräte, die höchstens einen Netzwerksprung von Ihrem Pi-hole entfernt sind.' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'Multiple clients can be added by separating each client with a space or comma.' 'Es können mehrere Geräte hinzugefügt werden, indem jedes Gerät durch ein Leerzeichen oder Komma getrennt wird.' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'Clients may be described either by their' 'Geräte können entweder anhand ihrer' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'IP addresses \(IPv4 and IPv6 are supported\),' 'IP Adresse (IPv4 und IPv6 werden unterstützt),' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'IP subnets \(CIDR notation, like <code>192.168.2.0/24</code>\), their' 'ihrer IP Subnetze (CIDR Notation, z.B. <code>192.168.2.0/24</code>), ihrer' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'MAC addresses \(like <code>12:34:56:78:9A:BC</code>\), by their' 'MAC Adresse (z.B. <code>12:34:56:78:9A:BC</code>), durch ihre' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'hostnames \(like <code>localhost</code>\), or by the' 'Gerätenamen (z.B. <code>localhost</code>), oder durch ihre' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'interface they are connected to \(prefaced with a colon, like' 'Schnittstelle, mit der sie verbunden sind (mit einem Doppelpunkt davor, wie' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'The first match \(from top to down\) wins. Note that client recognition by host name or interface recognition as' 'Der erste Treffer (von oben nach unten) gewinnt. Beachten Sie, dass die Geräte-Erkennung anhand des Hostnamens oder der Schnittstellenerkennung möglicherweise erst' /var/www/html/admin/groups-clients.lp
+sudo rpl --encoding UTF-8 'the two latter may only be available after some time. Furthermore, MAC address recognition only works for devices at most one networking hop away from your Pi-hole.' 'nach einiger Zeit verfügbar ist. Darüber hinaus funktioniert die MAC-Adresserkennung nur für Geräte, die höchstens einen Netzwerk-Sprung von Ihrem Pi-hole entfernt sind.' /var/www/html/admin/groups-clients.lp
+
+
+
 sudo rpl --encoding UTF-8 'Add</button>' 'Hinzufügen</button>' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'List of configured clients' 'Liste der konfigurierten Geräte' /var/www/html/admin/groups-clients.lp
 sudo rpl --encoding UTF-8 'Acceptable values are: IP address, subnet \(CIDR notation\), MAC address \(AA:BB:CC:DD:EE:FF format\) or host names.' 'Zulässige Werte sind: IP-Adresse, Subnetz (CIDR-Notation), MAC-Adresse (Format AA:BB:CC:DD:EE:FF) oder Hostnamen.' /var/www/html/admin/groups-clients.lp
@@ -242,6 +245,7 @@ sudo rpl --encoding UTF-8 'Consider upgrading to ' 'Erwägen Sie ein Update auf 
 sudo rpl --encoding UTF-8 '\(end-to-end encryption\)' '(Ende-zu-Ende Verschlüsselung)' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'placeholder="Password"' 'placeholder="Passwort"' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Show password as plain text. Warning: this will display your password on the screen.' 'Passwort als Klartext anzeigen. Achtung: Dadurch wird Ihr Passwort auf dem Bildschirm auch für andere sichtbar angezeigt.' /var/www/html/admin/login.lp
+sudo rpl --encoding UTF-8 'title="TOTP verification code"' 'title="TOTP Verifizierungscode"' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Log in \(uses cookie\)</button>' 'Einloggen (benutzt Cookies)</button>' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Wrong 2FA token</h3>' 'Falscher 2FA Token</h3></h3>' /var/www/html/admin/login.lp
 sudo rpl --encoding UTF-8 'Your Pi-hole has two-factor authentication enabled. You have to' 'Ihr Pi-hole hat die Zwei-Faktor-Authentifizierung aktiviert. Sie müssen ' /var/www/html/admin/login.lp
@@ -304,8 +308,7 @@ sudo rpl --encoding UTF-8 'Client \(by name\)\*</label>' 'Gerät (per Name)*</la
 sudo rpl --encoding UTF-8 'Type</label>' 'Typ</label>' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Reply</label>' 'Wiederholung</label>' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'DNSSEC status</label>' 'DNSSEC-Status</label>' /var/www/html/admin/queries.lp
-sudo rpl --encoding UTF-8 'These input fields allow manual input as well. Use ' 'Diese Eingabefelder ermöglichen auch manuelle Eingaben. Verwenden Sie ' /var/www/html/admin/queries.lp
-sudo rpl --encoding UTF-8 'for wildcard search.</span>' 'für die Platzhaltersuche.</span>' /var/www/html/admin/queries.lp
+sudo rpl --encoding UTF-8 'These input fields allow manual input as well. Use <code>\*<\/code> for wildcard search. An <code>_<\/code> can be used as a single-character wildcard. If you want to search for <code>_<\/code> explicitly, then you must escape it like ' 'Diese Eingabefelder ermöglichen auch die manuelle Eingabe. Verwenden Sie <code>*</code> für die Platzhaltersuche. Ein <code>_</code> kann als Einzelzeichen-Platzhalter verwendet werden. Wenn Sie explizit nach <code>_</code> suchen möchten, müssen Sie es escapen, wie z.B. ' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Click "Refresh" below to apply.' 'Klicken Sie auf "Aktualisieren", damit die Änderungen wirksam werden.' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Recent Queries</h3>' 'Aktuelle Anfragen</h3>' /var/www/html/admin/queries.lp
 sudo rpl --encoding UTF-8 'Live update</label>' 'Laufende Aktualisierung</label>' /var/www/html/admin/queries.lp
@@ -380,9 +383,10 @@ sudo rpl --encoding UTF-8 'The client that created this session \(the current co
 sudo rpl --encoding UTF-8 'User agent of the client to ease client identifiability \(if available\)">User Agent</th>' 'Benutzer-Agent des Gerätes, um die Identifizierbarkeit des Gerätes zu erleichtern (falls vorhanden)">Benutzer-Agent</th>' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Save & Apply</button>' 'Speichern & Anwenden</button>' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Enable two-factor authentication' 'Aktiviere die Zwei-Faktor Authentifizierung (2FA)' /var/www/html/admin/settings-api.lp
-sudo rpl --encoding UTF-8 'Use a phone app like Google Authenticator, 2FA Authenticator, FreeOTP or BitWarden, etc. to get 2FA codes when prompted during login.' 'Verwenden Sie eine Telefon-App wie Google Authenticator, 2FA Authenticator, FreeOTP oder BitWarden usw., um 2FA-Codes zu erhalten, wenn Sie bei der Anmeldung dazu aufgefordert werden.' /var/www/html/admin/settings-api.lp
+sudo rpl --encoding UTF-8 'Use a phone app like Google Authenticator, 2FA Authenticator, FreeOTP or Bitwarden, etc. to get 2FA codes when prompted during login.' 'Verwenden Sie eine Telefon-App wie Google Authenticator, 2FA Authenticator, FreeOTP oder Bitwarden usw., um 2FA-Codes zu erhalten, wenn Sie bei der Anmeldung dazu aufgefordert werden.' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Scan the QR code below with your app or enter the secret manually.' 'Scannen Sie den QR-Code mit Ihrer App oder geben Sie das Passwort manuell ein.' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Enter the 2FA code from your app below to confirm that you have set up 2FA correctly.' 'Geben Sie den 2FA-Code aus Ihrer App ein, um zu bestätigen, dass Sie 2FA korrekt eingerichtet haben.' /var/www/html/admin/settings-api.lp
+sudo rpl --encoding UTF-8 'TOTP verification code' 'TOTP Verifizierungscode' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'IMPORTANT: If you lose your 2FA token, you will not be able to login. You will need to disable 2FA on the command line and re-enable 2FA to generate a new secret.' 'WICHTIG: Wenn Sie Ihren 2FA-Token verlieren, können Sie sich nicht mehr anmelden. Sie müssen die 2FA in der Befehlszeile deaktivieren und die 2FA erneut aktivieren, um ein neues Passwort zu erzeugen.' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Close</button>' 'Schließen</button>' /var/www/html/admin/settings-api.lp
 sudo rpl --encoding UTF-8 'Configure application password' 'Passwort für die Anwendung konfigurieren' /var/www/html/admin/settings-api.lp
@@ -456,7 +460,7 @@ sudo rpl --encoding UTF-8 'If a name appears in <code>/etc/hosts</code>, the ass
 sudo rpl --encoding UTF-8 'More than one line can be associated \(by name, hardware address or UID\) with a host. Which one is used \(and therefore which address is allocated by DHCP and appears in the DNS\) depends on the subnet on which the host last obtained a DHCP lease: the line with an address within the subnet is used. If more than one address is within the subnet, the result is undefined. <strong>A corollary to this is that the name associated with a host defined here does not appear in the DNS until the host obtains a DHCP lease.' 'Einem Host kann mehr als eine Leitung zugeordnet werden (nach Name, Hardwareadresse oder UID). Welche verwendet wird (und damit welche Adresse vom DHCP zugewiesen wird und im DNS erscheint), hängt von dem Subnetz ab, für das der Host zuletzt eine DHCP-Vergabe erhalten hat: Es wird die Zeile mit einer Adresse innerhalb des Subnetzes verwendet. Befinden sich mehr als eine Adresse im Subnetz, ist das Ergebnis undefiniert. <strong>Eine Folge davon ist, dass der mit einem hier definierten Host verknüpfte Name erst dann im DNS erscheint, wenn der Host eine DHCP-Vergabe erhält.' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'The special keyword <code>ignore</code> tells Pi-hole to never offer a DHCP lease to a machine. The machine can be specified by hardware address, client ID or hostname, for instance <code>00:20:e0:3b:13:af,ignore</code>. This is useful when there is another DHCP server on the network which should be used by some machines.' 'Das spezielle Schlüsselwort <code>ignore</code> weist Pi-hole an, niemals eine DHCP-Vergabe für eine Maschine anzubieten. Die Geräte können durch Hardwareadresse, Geräte-ID oder Hostnamen angegeben werden, zum Beispiel <code>00:20:e0:3b:13:af,ignore</code>. Dies ist nützlich, wenn es im Netzwerk einen anderen DHCP-Server gibt, der von einigen Geräten verwendet werden soll.' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'The <code>set:&lt;tag&gt;</code> construct sets the tag whenever this line is in use. This can be used to selectively send DHCP options just for this host. More than one tag can be set per line directive \(but not in other places where "set:&lt;tag&gt;" is allowed\). When a host matches any directive \(or one implied by <code>/etc/ethers</code>\) then the special tag "<code>known</code>"" is set. This allows Pi-hole to be configured to ignore requests from unknown machines using a custom config option <code>dhcp-ignore=tag:!known</code> in your own config file. If the host matches only a directive which cannot be used because it specifies an address on different subnet, the tag "<code>known-othernet</code>" is set.' 'Das Konstrukt <code>set:&lt;tag&gt;</code> legt den Tag immer dann fest, wenn diese Zeile verwendet wird. Dies kann verwendet werden, um selektiv DHCP-Optionen nur für diesen Host zu senden. Pro Zeilenanweisung kann mehr als ein Tag gesetzt werden (jedoch nicht an anderen Stellen, an denen „set:&lt;tag&gt;“ zulässig ist). Wenn ein Host mit einer Direktive (oder einer durch <code>/etc/ethers</code> implizierten) übereinstimmt, wird der spezielle Tag „<code>known</code>“ gesetzt. Dies ermöglicht die Konfiguration von Pi-hole. Ignorieren Sie Anfragen von unbekannten Geräten mit Hilfe einer benutzerdefinierten Konfigurationsoption <code>dhcp-ignore=tag:!known</code> in Ihrer eigenen Konfigurationsdatei. Wenn der Host nur mit einer Direktive übereinstimmt, die nicht verwendet werden kann, da sie eine Adresse in einem anderen Subnetz angibt, wird das Tag „<code>known-othernet</code>“ gesetzt.' /var/www/html/admin/settings-dhcp.lp
-sudo rpl --encoding UTF-8 'The <code>tag:&lt;tag&gt;</code> construct filters which directives are used; more than one can be provided, in this case the request must match all of them. Tagged directives are used in preference to untagged ones. Note that one of <code>&lt;hwaddr&gt</code>;, <code>&lt;client_id&gt</code>; or <code>&lt;hostname&gt</code>; still needs to be specified \(can be a wildcard\).' 'Das <code>tag:&lt;tag&gt;</code>-Konstrukt filtert, welche Direktiven verwendet werden; es können mehrere angegeben werden. In diesem Fall muss die Anfrage mit allen übereinstimmen. Mit Tags versehene Anweisungen werden gegenüber nicht mit Tags versehenen Anweisungen bevorzugt verwendet. Beachten Sie, dass einer von <code>&lt;hwaddr&gt</code>, <code>&lt;client_id&gt</code> oder <code>&lt;hostname&gt</code> noch angegeben werden muss (kann ein Platzhalter sein).' /var/www/html/admin/settings-dhcp.lp
+sudo rpl --encoding UTF-8 'The <code>tag:&lt;tag&gt;</code> construct filters which directives are used; more than one can be provided, in this case the request must match all of them. Tagged directives are used in preference to untagged ones. Note that one of <code>&lt;hwaddr&gt;</code>, <code>&lt;client_id&gt;</code> or <code>&lt;hostname&gt;</code> still needs to be specified \(can be a wildcard\).' 'Das <code>tag:&lt;tag&gt;</code>-Konstrukt filtert, welche Direktiven verwendet werden; es können mehrere angegeben werden. In diesem Fall muss die Anfrage mit allen übereinstimmen. Mit Tags versehene Anweisungen werden gegenüber nicht mit Tags versehenen Anweisungen bevorzugt verwendet. Beachten Sie, dass einer von <code>&lt;hwaddr&gt</code>, <code>&lt;client_id&gt</code> oder <code>&lt;hostname&gt</code> noch angegeben werden muss (kann ein Platzhalter sein).' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Ethernet addresses \(but not client-ids\) may have wildcard bytes, so for example <code>00:20:e0:3b:13:' 'Ethernet-Adressen (aber nicht Geräte-IDs) können Wildcard-Bytes enthalten, so dass zum Beispiel <code>00:20:e0:3b:13:' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 ',ignore</code> will cause Pi-hole to ignore a range of hardware addresses.' ',ignore</code> Pi-hole veranlasst, einen Bereich von Hardware-Adressen zu ignorieren.' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Hardware addresses normally match any network \(ARP\) type, but it is possible to restrict them to a single ARP type by preceding them with the ARP-type \(in HEX\) and "<code>-</code>". so the line <code>06-00:20:e0:3b:13:af,1.2.3.4</code> will only match a Token-Ring hardware address, since the ARP-address type for token ring is <code>6</code>.' 'Hardwareadressen stimmen normalerweise mit jedem Netzwerktyp (ARP) überein, es ist jedoch möglich, sie auf einen einzelnen ARP-Typ zu beschränken, indem ihnen der ARP-Typ (in HEX) und „<code>-</code>“ vorangestellt wird. Daher stimmt die Zeile <code>06-00:20:e0:3b:13:af,1.2.3.4</code> nur mit einer Token-Ring-Hardwareadresse überein, da der ARP-Adresstyp für Token Ring ist <code>6</code>.' /var/www/html/admin/settings-dhcp.lp
@@ -517,8 +521,8 @@ sudo rpl --encoding UTF-8 "The DNS domains for your Pi-hole. This DNS domain is 
 sudo rpl --encoding UTF-8 'Expand hostnames' 'Rechnernamen erweitern' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'If set, the domain is added to simple names \(without a period\) in /etc/hosts in the same way as for DHCP-derived names.' 'Wenn diese Option gesetzt ist, wird die Domain mit einem einfachen Namen (ohne Punkt) in die /etc/hosts auf die gleiche Weise hinzugefügt wie bei DHCP-abgeleiteten Namen.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Advanced DNS settings</h3>' 'Erweiterte DNS Einstellungen</h3>' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'Never forward non-FQDN <code>A</code> and <code>AAAA</code> queries' 'Niemals Nicht-FQDN wie <code>A</code> und <code>AAAA</code> Anfragen weiterleiten' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'Tells Pi-hole to never forward A or AAAA queries for plain' 'Weist Pi-hole an, niemals A- oder AAAA-Anfragen für einfache Namen ohne Punkte oder' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'Never forward non-FQDN queries' 'Niemals Nicht-FQDN Anfragen weiterleiten' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'Tells Pi-hole to never forward queries for plain' 'Weist Pi-hole an, niemals Anfragen für einfache Namen ohne Punkte oder' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'names, without dots or domain parts, to upstream nameservers. If' 'Teile einer Domain an vorgelagerte Nameserver weiterzuleiten. Wenn der Name nicht aus <code>/etc/hosts</code>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'the name is not known from <code>/etc/hosts</code> or DHCP then a "not found"' 'oder DHCP bekannt ist, wird die Antwort „nicht gefunden“ zurückgegeben.<br> Wenn die' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'answer is returned.<br>' 'bedingte Weiterleitung aktiviert ist, kann das Deaktivieren dieses Kontrollkästchens' /var/www/html/admin/settings-dns.lp
@@ -552,10 +556,8 @@ sudo rpl --encoding UTF-8 'and prevent Pi-holes getting overwhelmed by rogue cli
 sudo rpl --encoding UTF-8 'It is important to note that rate-limiting is happening on a' 'überlastet wird. Es ist wichtig zu beachten, dass die Anfragebegrenzung' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'per-client basis. Other clients can continue to use FTL while' 'pro Gerät erfolgt. Andere Geräte können FTL jedoch weiterhin verwenden,' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'rate-limited clients are short-circuited at the same time.' 'während anfragebegrenzte Geräte gleichzeitig ausgeschlossen werden.' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'Rate-limiting may be disabled altogether by setting both' 'Die Anfragebeschränkung kann vollständig deaktiviert werden,' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'values to zero. See' 'indem beide Werte auf Null gesetzt werden. Für weitere Details schauen Sie sich bitte ' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 '<a href="https://docs.pi-hole.net/ftldns/configfile/#rate_limit" rel="noopener noreferrer" target="_blank">our documentation</a>' '<a href="https://docs.pi-hole.net/ftldns/configfile/#rate_limit" rel="noopener noreferrer" target="_blank">unsere Dokumentation</a>' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'for further details.' ' an.' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'Rate-limiting may be disabled altogether by setting both' 'Die Ratenbegrenzung kann vollständig deaktiviert werden,' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'values to zero.' 'indem beide Werte auf Null gesetzt werden.' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'The following list contains all reverse servers you want to add. The expected format is one server per line in form of ' 'Die folgende Liste enthält alle Reverse-Server, die Sie hinzufügen möchten. Das erwartete Format ist ein Server pro Zeile in Form von ' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'A valid config line could look like ' 'Eine gültige Konfigurationszeile könnte wie folgt aussehen ' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Enter reverse DNS servers, one per line' 'Geben Sie einen Reverse-DNS-Server pro Zeile ein' /var/www/html/admin/settings-dns.lp
@@ -613,6 +615,7 @@ sudo rpl --encoding UTF-8 'System Settings' 'System Einstellungen' /var/www/html
 sudo rpl --encoding UTF-8 'System Information</h3>' 'System Informationen</h3>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Hostname:</th>' 'Rechnername:</th>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'RAM:</th>' 'Arbeitsspeicher:</th>' /var/www/html/admin/settings-system.lp
+sudo rpl --encoding UTF-8 'The machine uptime. For containers, this will match the host uptime' 'Die Maschinenverfügbarkeit. Bei Containern entspricht diese der Verfügbarkeit des Hosts.' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Uptime:</th>' 'Laufzeit:</th>' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'PID <span id="sysinfo-pid-ftl">\?</span>, last restart was on <span id="sysinfo-uptime-ftl">' 'PID <span id="sysinfo-pid-ftl">?</span>, letzter Neustart war am <span id="sysinfo-uptime-ftl">' /var/www/html/admin/settings-system.lp
 sudo rpl --encoding UTF-8 'Primary IP addresses</h4>' 'Primäre IP-Adresse</h4>' /var/www/html/admin/settings-system.lp
@@ -691,7 +694,7 @@ sudo rpl --encoding UTF-8 'Autoscroll:' 'Automatisch scrollen:' /var/www/html/ad
 
 # /var/www/html/admin/js/charts.js
 sudo rpl --encoding UTF-8 '"Toggle visibility"' '"Sichtbarkeit ein- und ausschalten"' /var/www/html/admin/scripts/js/charts.js
-sudo rpl --encoding UTF-8 '"List " \+ item.text \+ " queries"' '"Anzeigen der " + item.text + "-Anfragen"' /var/www/html/admin/scripts/js/charts.js
+sudo rpl --encoding UTF-8 'List \$\{item.text\} queries' 'Anzeigen der ${item.text} Anfragen' /var/www/html/admin/scripts/js/charts.js
 sudo rpl --encoding UTF-8 'No activity recorded</td>' 'Keine Aktivität aufgezeichnet.</td>' /var/www/html/admin/scripts/js/charts.js
 sudo rpl --encoding UTF-8 '% of all data' '% aller Daten' /var/www/html/admin/scripts/js/charts.js
 sudo rpl --encoding UTF-8 '% of shown items' '% der gezeigten Einträge' /var/www/html/admin/scripts/js/charts.js
@@ -886,41 +889,41 @@ sudo rpl --encoding UTF-8 'return "Upstream server"' 'return "Upstream Server"' 
 
 # /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 'Master interface: <code>' 'Haupt-Interface: <code>' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Speed: "' '"Geschwindigkeit: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Type: "' '"Typ: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Hardware address: <code>' '"Hardware Adresse: <code>' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Speed: \$' 'Geschwindigkeit: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Type: \$' 'Typ: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Hardware address: <code>' 'Hardware Adresse: <code>' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 ' connected to interface' '  verbunden mit der Schnittstelle' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 'address" \: " addresses' 'Adresse" : " Adressen' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 'Address: <code>' 'Adresse: <code>' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 'Local: <code>' 'Lokal: <code>' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Scope: "' '"Umfang: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Preferred lifetime: "' '"Bevorzugte Lebensdauer: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Valid lifetime: "' '"Gültige Lebensdauer: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Created: "' '"Erstellt am: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Last updated: "' '"Zuletzt aktualisiert: "' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Scope: \$' 'Umfang: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Preferred lifetime: \$' 'Bevorzugte Lebensdauer: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Valid lifetime: \$' 'Gültige Lebensdauer: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Created: \$' 'Erstellt am: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Last updated: \$' 'Zuletzt aktualisiert: $' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 '"Statistics"' '"Statistik"' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"RX bytes: "' '"RX Bytes: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"TX bytes: "' '"TX Bytes: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"RX packets: "' '"RX Pakete: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"RX errors: "' '"RX Fehler: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"RX dropped: "' '"RX verworfen: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"TX packets: "' '"TX Pakete: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"TX errors: "' '"TX Fehler: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"TX dropped: "' '"TX verworfen: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Collisions: "' '"Kollisionen: "' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'RX bytes: \$' 'RX Bytes: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'TX bytes: \$' 'TX Bytes: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'RX packets: \$' 'RX Pakete: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'RX errors: \$' 'RX Fehler: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'RX dropped: \$' 'RX verworfen: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'TX packets: \$' 'TX Pakete: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'TX errors: \$' 'TX Fehler: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'TX dropped: \$' 'TX verworfen: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Collisions: \$' 'Kollisionen: $' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 '"Further details"' '"Weitere Details"' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 'Carrier: ' 'Betreiber: ' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 'Connected</span>' 'Verbunden</span>' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 'Disconnected</span>' 'Nicht verbunden</span>' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"State: "' '"Status: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Parent device: <code>"' '"Übergeordnetes Gerät: <code>"' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Carrier changes: "' '"Betreiberwechsel: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Broadcast: <code>"' '"Übertragung: <code>"' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '" bytes"' '" Bytes"' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"TX queue length: "' '"TX Länge der Warteschlange: "' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Promiscuity mode: "' '"Promiskuität-Modus: "' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'State: \$' 'Status: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Parent device: <code>' 'Übergeordnetes Gerät: <code>' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Carrier changes: \$' 'Betreiberwechsel: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Broadcast: <code>' 'Übertragung: <code>' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 ' bytes, ' ' Bytes, ' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'TX queue length: \$' 'TX Länge der Warteschlange: $' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Promiscuity mode: \$' 'Promiskuität-Modus: $' /var/www/html/admin/scripts/js/interfaces.js
 sudo rpl --encoding UTF-8 '"Yes" : "No"' '"Ja" : "Nein"' /var/www/html/admin/scripts/js/interfaces.js
-sudo rpl --encoding UTF-8 '"Scheduler: "' '"Planer: "' /var/www/html/admin/scripts/js/interfaces.js
+sudo rpl --encoding UTF-8 'Scheduler: \$' 'Planer: $' /var/www/html/admin/scripts/js/interfaces.js
 
 
 
@@ -1187,10 +1190,12 @@ sudo rpl --encoding UTF-8 'An unexpected error occurred.' 'Ein unerwarteter Fehl
 
 
 # /var/www/html/admin/scripts/js/taillog.js
+sudo rpl --encoding UTF-8 'Invalid file parameter: \$' 'Ungültiger Dateiparameter: $' /var/www/html/admin/scripts/js/taillog.js
+sudo rpl --encoding UTF-8 'Allowed values are: ' 'Zulässige Werte sind: ' /var/www/html/admin/scripts/js/taillog.js
+sudo rpl --encoding UTF-8 ' Error: ' ' Fehler: ' /var/www/html/admin/scripts/js/taillog.js
 sudo rpl --encoding UTF-8 '\*\*\* FTL restarted \*\*\*' '*** FTL wurde neu gestartet ***' /var/www/html/admin/scripts/js/taillog.js
 sudo rpl --encoding UTF-8 '\*\*\* Log file is empty \*\*\*' '*** Die Protokolldatei ist leer. ***' /var/www/html/admin/scripts/js/taillog.js
 sudo rpl --encoding UTF-8 'YYYY-MM-DD HH:mm:ss.SSS' 'DD.MM.YYYY - HH:mm:ss' /var/www/html/admin/scripts/js/taillog.js
-sudo rpl --encoding UTF-8 '"</span> " \+' '" Uhr  </span> " +' /var/www/html/admin/scripts/js/taillog.js
 sudo rpl --encoding UTF-8 '"Paused"' '"Pause"' /var/www/html/admin/scripts/js/taillog.js
 
 
