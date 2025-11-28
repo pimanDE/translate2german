@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 01.10.2025
-# getestet auf Pi-hole Version Core v6.2.2 - FTL Version v6.3.2 - Web Interface Version v6.3
+# getestet auf Pi-hole Version Core v6.3 - FTL Version v6.4.1 - Web Interface Version v6.4
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -331,7 +331,7 @@ echo -e "${blaufett}   25 % ...${standard}"
 sudo rpl --encoding UTF-8 'Find Domains In Lists</h1>' 'Gesperrte Domain in einer Liste finden' /var/www/html/admin/search.lp
 sudo rpl --encoding UTF-8 'Domain to look for \(example.com or sub.example.com\)' 'zu suchende Domain (beispiel.com oder mobil.beispiel.com)' /var/www/html/admin/search.lp
 sudo rpl --encoding UTF-8 'Search</button>' 'Suche</button>' /var/www/html/admin/search.lp
-sudo rpl --encoding UTF-8 'Use partial matching</strong>' 'teilweise Übereinstimmung verwenden</strong>' /var/www/html/admin/search.lp
+sudo rpl --encoding UTF-8 'Use partial matching</strong> \(may not find complex regex entries\)' 'teilweise Übereinstimmung verwenden</strong> (findet möglicherweise keine komplexen regulären Ausdrücke)' /var/www/html/admin/search.lp
 sudo rpl --encoding UTF-8 'Maximum number of results to be returned:' 'Maximale Anzahl von Ergebnissen:' /var/www/html/admin/search.lp
 
 
