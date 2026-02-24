@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 01.10.2025
-# getestet auf Pi-hole Version Core v6.3 - FTL Version v6.4.1 - Web Interface Version v6.4
+# getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 24.11.2025
+# getestet auf Pi-hole Version Core v6.4 - FTL Version v6.5 - Web Interface Version v6.4.1
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -842,7 +842,7 @@ sudo rpl --encoding UTF-8 'Database entry last modified:' 'Datenbankeintrag wurd
 sudo rpl --encoding UTF-8 'Content last updated on:' 'Inhalt zuletzt geändert am:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Number of entries:' 'Anzahl der Einträge:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Number of non-domains:' 'Anzahl von Nicht-Domains:' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'Database ID:' 'Datenbank ID' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'Database ID:' 'Datenbank ID:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Click for details about this list' 'Klicken Sie für Details zu dieser Liste' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'List is disabled and not checked' 'Liste ist deaktiviert und nicht geprüft' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'List was not downloaded so far' 'Liste wurde noch nicht heruntergeladen' /var/www/html/admin/scripts/js/groups-lists.js
@@ -1457,7 +1457,7 @@ sudo rpl --encoding UTF-8 '\- success' '\- erfolgreich' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'has been recovered' 'wurde wiederhergestellt' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'has been moved to' 'wurde verschoben nach' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'the following errors happened:' 'die folgenden Fehler sind aufgetreten:' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Recovery failed. Try \\"pihole -r recreate\\" instead.' 'Die Wiederherstellung ist fehlgeschlagen. Versuchen Sie stattdessen \"pihole -r recreate\".' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Recovery failed. Try \\"pihole -g -r recreate\\" instead.' 'Die Wiederherstellung ist fehlgeschlagen. Versuchen Sie stattdessen \"pihole -r recreate\".' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Optimizing database' 'Optimierung der Datenbank' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to optimize database ' 'Die Datenbank kann nicht optimiert werden' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\{recover,recreate\}' '{wiederherstellen, neu erstellen}' /opt/pihole/gravity.sh

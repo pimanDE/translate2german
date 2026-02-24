@@ -5,7 +5,7 @@
 **Übersetzung der Pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche Version **v6.4** des Pi-hole auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche Version **v6.4.1** des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
 **Screenshot:**
@@ -13,7 +13,7 @@ Mit diesem Script wird die Weboberfläche Version **v6.4** des Pi-hole auf deuts
 ![img](https://raw.githubusercontent.com/pimanDE/translate2german/master/pihole-weboberfl%C3%A4che-auf-deutsch.png)
 <br>
 <br>
-Dieses Script wurde unter Raspberry Pi OS Lite Debian Version: 13 (trixie) vom 01.10.2025 getestet!
+Dieses Script wurde unter Raspberry Pi OS Lite Debian Version: 13 (trixie) vom 24.11.2025 getestet!
 <br>
 <br>
 Bevor die Übersetzung beginnt, werden
@@ -58,7 +58,7 @@ chmod 775 translate2german.sh
 
 **Hinweise:**
 
-- getestet unter Pi-hole Version v6.3, FTL Version v6.4.1 und Web Interface Version **v6.4**
+- getestet unter Pi-hole Version v6.4, FTL Version v6.5 und Web Interface Version **v6.4.1**
 <br>
 
 **Rückgängig machen:**
