@@ -5,7 +5,7 @@
 **Übersetzung der Pi-hole Weboberfläche auf deutsch**
 <br>
 <br>
-Mit diesem Script wird die Weboberfläche Version **v6.4.1** des Pi-hole auf deutsch übersetzt.
+Mit diesem Script wird die Weboberfläche Version **v6.5** des Pi-hole auf deutsch übersetzt.
 <br>
 <br>
 **Screenshot:**
@@ -58,7 +58,7 @@ chmod 775 translate2german.sh
 
 **Hinweise:**
 
-- getestet unter Pi-hole Version v6.4, FTL Version v6.5 und Web Interface Version **v6.4.1**
+- getestet unter Pi-hole Version v6.4.1, FTL Version v6.6 und Web Interface Version **v6.5**
 <br>
 
 **Rückgängig machen:**

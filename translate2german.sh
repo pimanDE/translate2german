@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 24.11.2025
-# getestet auf Pi-hole Version Core v6.4 - FTL Version v6.5 - Web Interface Version v6.4.1
+# getestet auf Pi-hole Version Core v6.4.1 - FTL Version v6.6 - Web Interface Version v6.5
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -662,7 +662,7 @@ sudo rpl --encoding UTF-8 'Flush logs \(last 24 hours\)</button>' 'Protokolle l�
 
 # /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 "Export your Pi-hole\'s configuration</h3>" "Exportieren Sie Ihre Pi-hole Einstellungen</h3>" /var/www/html/admin/settings-teleporter.lp
-sudo rpl --encoding UTF-8 'Warning:</strong><br>This archive contains sensitive information about your Pi-hole installation, e.g. your 2FA-TOTP secret \(if enabled\). Please be careful with this file and do not share it with anyone even if they claim to help you.' 'Warnung:</strong><br>Dieses Archiv enthält sensible Informationen über Ihre Pi-hole-Installation, wie z.B. Ihre 2FA-TOTP-Verschlüsselung (falls aktiviert). Bitte seien Sie vorsichtig mit dieser Datei und geben Sie sie nicht an andere weiter, auch wenn diese vorgeben, Ihnen zu helfen zu wollen.' /var/www/html/admin/settings-teleporter.lp
+sudo rpl --encoding UTF-8 'Warning:</strong><br>This archive contains sensitive information about your Pi-hole installation, e.g. your 2FA-TOTP secret \(if enabled\). Please be careful with this file and do not share it with anyone even if they claim to help you.<br> Your long-term history database <code>pihole-FTL.db<\/code> must be backed-up separately.' 'Warnung:</strong><br>Dieses Archiv enthält sensible Informationen über Ihre Pi-hole-Installation, wie z.B. Ihre 2FA-TOTP-Verschlüsselung (falls aktiviert). Bitte seien Sie vorsichtig mit dieser Datei und geben Sie sie nicht an andere weiter, auch wenn diese vorgeben, Ihnen zu helfen zu wollen. <br> Ihre Datenbank mit den Langzeit-Verlaufsdaten <code>pihole-FTL.db</code> muss separat gesichert werden.' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 'Warning:</strong><br>You are currently not using an end-to-end encryption. This means that secrets like your 2FA-TOTP secret will be transmitted in plain text. We recommend to use HTTPS when' 'Warnung:</strong><br>Sie verwenden derzeit keine Ende-zu-Ende-Verschlüsselung. Das bedeutet, dass Geheimnisse wie Ihr 2FA-TOTP-Geheimnis im Klartext übertragen werden. Wir empfehlen, HTTPS zu verwenden, ' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 'exporting your configuration.' 'wenn Sie Ihre Konfiguration exportieren.' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 '<br>Export' '<br>Exportieren' /var/www/html/admin/settings-teleporter.lp
@@ -735,6 +735,7 @@ sudo rpl --encoding UTF-8 ' processes' ' Prozesse' /var/www/html/admin/scripts/j
 sudo rpl --encoding UTF-8 'System uptime: ' 'Betriebszeit des Systems: ' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'running since' 'läuft seit' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'Update available!' 'Update verfügbar!' /var/www/html/admin/scripts/js/footer.js
+sudo rpl --encoding UTF-8 'The <code>versions<\/code> file is incomplete. Please execute <code>sudo pihole updatechecker<\/code> on the command line.' 'Die <code>versions</code> Datei ist unvollständig. Bitte führen Sie <code>sudo pihole updatechecker</code> als Befehl aus.' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'To install updates, run ' 'Zum Installieren der Updates starte ' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'replace this old container with a fresh upgraded image' 'diesen alten Container durch ein frisches, aktualisiertes Image ersetzen' /var/www/html/admin/scripts/js/footer.js
 sudo rpl --encoding UTF-8 'on: "Expert"' 'on: "Experte"' /var/www/html/admin/scripts/js/footer.js
@@ -843,18 +844,18 @@ sudo rpl --encoding UTF-8 'Content last updated on:' 'Inhalt zuletzt geändert a
 sudo rpl --encoding UTF-8 'Number of entries:' 'Anzahl der Einträge:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Number of non-domains:' 'Anzahl von Nicht-Domains:' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Database ID:' 'Datenbank ID:' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'Click for details about this list' 'Klicken Sie für Details zu dieser Liste' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'Click for details about this list' 'Klicken Sie für Details zu dieser Liste.' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'List is disabled and not checked' 'Liste ist deaktiviert und nicht geprüft' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'List was not downloaded so far' 'Liste wurde noch nicht heruntergeladen' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'List download was successful' 'Liste wurde erfolgreich heruntergeladen' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'List unchanged upstream, Pi-hole used a local copy' 'Liste ist unverändert, Pi-hole verwendet eine lokale Kopie' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'List unavailable, Pi-hole used a local copy' 'Liste ist nicht verfügbar, Pi-hole verwendet eine lokale Kopie' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'List unavailable, there is no local copy of this list available on your Pi-hole' 'Liste ist nicht verfügbar, es ist keine lokale Kopie dieser Liste auf dem Pi-hole verfügbar.' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'List was not downloaded so far' 'Die Liste wurde noch nicht heruntergeladen.' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'List download was successful' 'Die Liste wurde erfolgreich heruntergeladen.' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'List unchanged upstream, Pi-hole used a local copy' 'Die Liste ist unverändert, Pi-hole verwendet eine lokale Kopie.' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'List unavailable, Pi-hole used a local copy' 'Die Liste ist nicht verfügbar, Pi-hole verwendet eine lokale Kopie.' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'List unavailable, there is no local copy of this list available on your Pi-hole' 'Die Liste ist nicht verfügbar, es ist keine lokale Kopie dieser Liste auf dem Pi-hole verfügbar.' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'replace list</span>' 'Liste ersetzen</span>' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 '= "Unknown";' '= "Unbekannt";' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'This list is of unknown type' 'Unbekannter Listentyp' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'This is a blocklist' 'Dies ist eine Blacklist' /var/www/html/admin/scripts/js/groups-lists.js
-sudo rpl --encoding UTF-8 'This is an allowlist' 'Dies ist eine Whitelist' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'This is a blocklist' 'Dies ist eine Blacklist.' /var/www/html/admin/scripts/js/groups-lists.js
+sudo rpl --encoding UTF-8 'This is an allowlist' 'Dies ist eine Whitelist.' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'on: "Enabled"' 'on: "Aktiviert"' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'off: "Disabled"' 'off: "Deaktiviert"' /var/www/html/admin/scripts/js/groups-lists.js
 sudo rpl --encoding UTF-8 'Apply</button>' 'Anwenden</button>' /var/www/html/admin/scripts/js/groups-lists.js
@@ -935,6 +936,7 @@ sudo rpl --encoding UTF-8 'Scheduler: \$' 'Planer: $' /var/www/html/admin/script
 
 # /var/www/html/admin/scripts/js/login.js
 sudo rpl --encoding UTF-8 'Invalid 2FA token' 'Fehlerhafter 2FA token' /var/www/html/admin/scripts/js/login.js
+sudo rpl --encoding UTF-8 'Server unreachable!' 'Server nicht erreichbar!' /var/www/html/admin/scripts/js/login.js
 sudo rpl --encoding UTF-8 'Wrong password!' 'Falsches Passwort!' /var/www/html/admin/scripts/js/login.js
 sudo rpl --encoding UTF-8 'Show password as plain text. Warning: this will display your password on the screen' 'Passwort als Klartext anzeigen. Achtung: Ihr Kennwort wird auf dem Bildschirm angezeigt.' /var/www/html/admin/scripts/js/login.js
 
@@ -1096,6 +1098,7 @@ sudo rpl --encoding UTF-8 'This is the session you are currently using for the w
 sudo rpl --encoding UTF-8 'Session is PARTIALLY end-to-end encrypted' 'Die Sitzung ist TEILWEISE Ende-zu-Ende-verschlüsselt.' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 'Session is end-to-end encrypted \(TLS/SSL\)' 'Die Sitzung ist Ende-zu-Ende verschlüsselt (TLS/SSL).' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 'Session is NOT end-to-end encrypted \(TLS/SSL\)' 'Sitzung ist NICHT Ende-zu-Ende-verschlüsselt (TLS/SSL).' /var/www/html/admin/scripts/js/settings-api.js
+sudo rpl --encoding UTF-8 'Original remote address: ' 'Original Remote-Adresse: ' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 '"Select All"' '"Alle auswählen"' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 '"Deselect All"' '"Alle abwählen"' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 '"Delete Selected"' '"Ausgewählte löschen"' /var/www/html/admin/scripts/js/settings-api.js
@@ -1107,6 +1110,7 @@ sudo rpl --encoding UTF-8 '" need to re-login to continue using the web interfac
 sudo rpl --encoding UTF-8 'Two-factor authentication has been ' 'Die Zwei-Faktor-Authentifizierung wurde ' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 ', you will need to re-login to continue using the web interface.' 'müssen Sie sich erneut anmelden, um die Weboberfläche weiter nutzen zu können.' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 'Are you sure you want to disable 2FA authentication on your Pi-hole\?' 'Sind Sie sicher, dass Sie die 2FA-Authentifizierung auf Ihrem Pi-hole deaktivieren möchten?' /var/www/html/admin/scripts/js/settings-api.js
+sudo rpl --encoding UTF-8 'Are you sure you want to replace your previous app password\? You will need to re-login to continue using the web interface.' 'Möchten Sie Ihr bisheriges App-Passwort wirklich ersetzen? Sie müssen sich erneut anmelden, um die Weboberfläche weiter nutzen zu können.' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 'Confirmation required' 'Bestätigung erforderlich' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 'Yes, disable 2FA' 'Ja, deaktiviere die 2FA' /var/www/html/admin/scripts/js/settings-api.js
 sudo rpl --encoding UTF-8 'No, keep 2FA enabled' 'Nein, 2FA aktiviert lassen' /var/www/html/admin/scripts/js/settings-api.js
@@ -1158,8 +1162,6 @@ sudo rpl --encoding UTF-8 'in seconds <em>' 'in Sekunden <em>' /var/www/html/adm
 
 # /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'records in cache:' 'Einträge im Zwischenspeicher:' /var/www/html/admin/scripts/js/settings-system.js
-sudo rpl --encoding UTF-8 '"Disable query logging"' '"Deaktiviere Anfrageprotokollierung"' /var/www/html/admin/scripts/js/settings-system.js
-sudo rpl --encoding UTF-8 '"Enable query logging"' '"Aktiviere Anfrageprotokollierung"' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'Are you sure you want to send a restart command to your DNS server\?' 'Sind Sie sicher, dass Sie den DNS-Server neu starten wollen?' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'This will clear the DNS cache and may temporarily interrupt your internet connection.' 'Dadurch wird der DNS-Cache gelöscht und Ihre Internetverbindung kann vorübergehend unterbrochen werden.' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'Furthermore, you will be logged out of the web interface as consequence of this action.' 'Außerdem werden Sie infolge dieser Aktion von der Weboberfläche abgemeldet.' /var/www/html/admin/scripts/js/settings-system.js
@@ -1172,11 +1174,6 @@ sudo rpl --encoding UTF-8 'Yes, flush logs' 'Ja, lösche die Protokolle' /var/ww
 sudo rpl --encoding UTF-8 'Are you sure you want to flush your network table\?' 'Sind Sie sicher, dass Sie Ihre Netzwerk-Tabelle leeren möchten?' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'This will clear all entries and cannot be undone.' 'Dadurch werden alle Einträge gelöscht und können nicht rückgängig gemacht werden.' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'Yes, flush my network table' 'Ja, lösche meine Netzwerk-Tabelle' /var/www/html/admin/scripts/js/settings-system.js
-sudo rpl --encoding UTF-8 'Are you sure you want to switch query logging mode\?' 'Sind Sie sicher, dass Sie in den Protokollierungsmodus wechseln möchten?' /var/www/html/admin/scripts/js/settings-system.js
-sudo rpl --encoding UTF-8 'This will restart the DNS server.' 'Dies startet den DNS-Server neu.' /var/www/html/admin/scripts/js/settings-system.js
-sudo rpl --encoding UTF-8 'As consequence of this action, your DNS cache will be cleared and you may temporarily lose your internet connection.' 'Infolge dieser Aktion wird Ihr DNS-Cache geleert und Sie können vorübergehend Ihre Internetverbindung verlieren.' /var/www/html/admin/scripts/js/settings-system.js
-sudo rpl --encoding UTF-8 'Furthermore, you will be logged out of the web interface.' 'Außerdem werden Sie von der Weboberfläche abgemeldet.' /var/www/html/admin/scripts/js/settings-system.js
-sudo rpl --encoding UTF-8 'Yes, change query logging' 'Ja, zur Anfrageprotokollierng wechseln' /var/www/html/admin/scripts/js/settings-system.js
 sudo rpl --encoding UTF-8 'return "Cache content"' 'return "Zwischenspeicher"' /var/www/html/admin/scripts/js/settings-system.js
 
 
@@ -1290,6 +1287,7 @@ sudo rpl --encoding UTF-8 'Pi-hole diagnosis</span>' 'Pi-hole Diagnose</span>' /
 sudo rpl --encoding UTF-8 'Tail log files</span>' 'Tail Protokolldateien</span>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Update Gravity</span>' 'Aktualisierung der Blocklisten</span>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Search Lists</span>' 'Blocklisten durchsuchen</span>' /var/www/html/admin/scripts/lua/sidebar.lp
+sudo rpl --encoding UTF-8 'Interfaces</span>' 'Schnittstellen</span>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Network</span>' 'Netzwerk</span>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Donate</li>' 'Spenden</li>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Donate</span>' 'Spenden</span>' /var/www/html/admin/scripts/lua/sidebar.lp
@@ -1331,6 +1329,11 @@ sudo rpl --encoding UTF-8 '"Custom Range"' '"Benutzerdefinierter Bereich"' /var/
 
 
 
+# /var/www/html/admin/vendor/jquery-confirm/jquery.confirm.min.js
+sudo rpl --encoding UTF-8 'Are you sure\?' 'Sind Sie sich sicher?' /var/www/html/admin/vendor/jquery-confirm/jquery.confirm.min.js
+
+
+
 # /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"%s ago"' '"%s zuvor"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"a few seconds"' '"ein paar Sekunden"' /var/www/html/admin/vendor/moment/moment.min.js
@@ -1369,8 +1372,8 @@ echo -e "${blaufett}   Fast fertig ...${standard}"
 # /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Gravity temporary directory does not exist or is not a writeable directory, falling back to /tmp.' 'Das temporäre Verzeichnis Gravity existiert nicht oder ist kein beschreibbares Verzeichnis, so dass auf /tmp zurückgegriffen wird.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to create \$\{gravityDBfile\}' '${gravityDBfile} kann nicht erstellt werden' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Building tree' 'Datenbaum wurde aufgebaut' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Unable to build gravity tree in ' 'Die Gravity Liste kann nicht erstellt werden in ' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Building \$\{table\} tree' 'Aufbau ${table} des Datenbaums' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Unable to build \$\{table\} tree in ' 'Die Gravityliste kann nicht erstellt werden ${table} in ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'If you have a large amount of domains, make sure your Pi-hole has enough RAM available' 'Wenn Sie eine große Anzahl von Domains haben, stellen Sie sicher, dass Ihr Pi-hole genügend RAM zur Verfügung hat' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to clean current database for backup' 'Die aktuelle Datenbank kann für die Sicherung nicht bereinigt werden' /opt/pihole/gravity.sh
