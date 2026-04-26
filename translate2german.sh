@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 24.11.2025
-# getestet auf Pi-hole Version Core v6.4.1 - FTL Version v6.6 - Web Interface Version v6.5
+# getestet auf Pi-hole Version Core v6.4.2 - FTL Version v6.6.1 - Web Interface Version v6.5
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -1422,13 +1422,14 @@ sudo rpl --encoding UTF-8 'Pending...' 'Ausstehend ...' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'is blocked by one of your lists. Using DNS server \$\{upstream\} instead' 'wird durch eine Ihrer Listen geblockt. Verwenden Sie stattdessen den DNS-Server ${upstream}.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'does not exist"' 'existiert nicht"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Using local file ' 'Benutze eine lokale Datei ' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Cannot read file \(file needs to have a\+r permission\)' 'Datei kann icht gelesen werden (Datei benötigt a+r Berechtigungenen)' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Cannot read file \(user ' 'Die Datei kann nicht gelesen werden (dem Benutzer ' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'lacks read permission\)' 'fehlt die Leseberechtigung)' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Cannot read file \(current user ' 'Die Datei kann nicht gelesen werden (dem aktuellen Benutzer ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Invalid protocol specified. Ignoring list.' 'Ungültiges Protokoll angegeben. Liste wird ignoriert.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Ensure your URL starts with a valid protocol like http:\/\/ , https:\/\/ or file:\/\/ .' 'Stellen Sie sicher, dass Ihre URL mit einem gültigen Protokoll beginnt, wie z.B. http:// , https:// or file:// .' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Retrieval successful"' 'Abruf erfolgreich"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Retrieval failed \/ empty list' 'Abruf fehlgeschlagen / leere Liste' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'No changes detected"' 'Keine Änderungen erkannt"' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Connection Refused"' 'Verbindung abgelehnt"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Forbidden"' 'Verboten"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Not found"' 'Die Liste wurde nicht gefunden."' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Time-out"' 'Zeitüberschreitung"' /opt/pihole/gravity.sh
@@ -1437,6 +1438,8 @@ sudo rpl --encoding UTF-8 'Internal Server Error"' 'Interner Server Fehler"' /op
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Gateway\)"' 'Zeitüberschreitung der Verbindung (Gateway)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Web Server Is Down \(Cloudflare\)"' 'Webserver ist ausgefallen (Cloudflare)"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Connection Timed Out \(Cloudflare\)"' 'Zeitüberschreitung der Verbindung (Cloudflare)"' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Retrieval failed ' 'Abruf fehlgeschlagen ' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 ' Msg: ' ' Hinweis: ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Received empty file' 'Leere Datei empfangen' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\$\{CROSS\} List download failed: \$\{COL_GREEN\}using previously cached list\$\{COL_NC\}' '${CROSS} Herunterladen der Liste nicht möglich: ${COL_GREEN}benutze zwischengespeicherte Liste${COL_NC}' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 '\$\{CROSS\} List download failed: \$\{COL_RED\}no cached list available\$\{COL_NC\}' '$\{CROSS\} Herunterladen der Liste nicht möglich: ${COL_RED}keine zwischengespeicherte Liste vorhanden${COL_NC}' /opt/pihole/gravity.sh
