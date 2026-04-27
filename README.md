@@ -13,7 +13,7 @@ Mit diesem Script wird die Weboberfläche Version **v6.5** des Pi-hole auf deuts
 ![img](https://raw.githubusercontent.com/pimanDE/translate2german/master/pihole-weboberfl%C3%A4che-auf-deutsch.png)
 <br>
 <br>
-Dieses Script wurde unter Raspberry Pi OS Lite Debian Version: 13 (trixie) vom 24.11.2025 getestet!
+Dieses Script wurde unter Raspberry Pi OS Lite Debian Version: 13 (trixie) vom 21.04.2026 getestet!
 <br>
 <br>
 Bevor die Übersetzung beginnt, werden
@@ -64,6 +64,7 @@ chmod 775 translate2german.sh
 **Pi-hole im Docker-Container:**
 
 Diejenigen, die Pi-hole im Docker-Container betreiben, können sich [hieran](https://github.com/pimanDE/translate2german/issues/29#issuecomment-4322373553) orientieren. Vielen Dank an [geimst](https://github.com/geimist).
+<br>
 
 **Rückgängig machen:**
 

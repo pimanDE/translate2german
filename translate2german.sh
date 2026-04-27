@@ -1372,7 +1372,7 @@ echo -e "${blaufett}   Fast fertig ...${standard}"
 # /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Gravity temporary directory does not exist or is not a writeable directory, falling back to /tmp.' 'Das temporäre Verzeichnis Gravity existiert nicht oder ist kein beschreibbares Verzeichnis, so dass auf /tmp zurückgegriffen wird.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to create \$\{gravityDBfile\}' '${gravityDBfile} kann nicht erstellt werden' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Building \$\{table\} tree' 'Aufbau ${table} des Datenbaums' /opt/pihole/gravity.sh
+sudo rpl --encoding UTF-8 'Building \$\{table\} tree' 'Aufbau des ${table} Datenbaums' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Unable to build \$\{table\} tree in ' 'Die Gravityliste kann nicht erstellt werden ${table} in ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'If you have a large amount of domains, make sure your Pi-hole has enough RAM available' 'Wenn Sie eine große Anzahl von Domains haben, stellen Sie sicher, dass Ihr Pi-hole genügend RAM zur Verfügung hat' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Swapping databases' 'Austausch der Datenbanken' /opt/pihole/gravity.sh
