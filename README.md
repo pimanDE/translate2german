@@ -61,6 +61,10 @@ chmod 775 translate2german.sh
 - getestet unter Pi-hole Version v6.4.2, FTL Version v6.6.1 und Web Interface Version **v6.5**
 <br>
 
+**Pi-hole im Docker-Container:**
+
+Diejenigen, die Pi-hole im Docker-Container betreiben, können sich [hieran](https://github.com/pimanDE/translate2german/issues/29#issuecomment-4322373553) orientieren. Vielen Dank an [geimst](https://github.com/geimist).
+
 **Rückgängig machen:**
 
 Wenn Sie die Übersetzung wieder rückgängig machen wollen:
