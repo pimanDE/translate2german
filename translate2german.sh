@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 21.04.2026
-# getestet auf Pi-hole Version Core v6.4.2 - FTL Version v6.6.1 - Web Interface Version v6.5
+# getestet auf Pi-hole Version Core v6.4.2 - FTL Version v6.6.2 - Web Interface Version v6.5
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -695,7 +695,7 @@ sudo rpl --encoding UTF-8 'Autoscroll:' 'Automatisch scrollen:' /var/www/html/ad
 # /var/www/html/admin/js/charts.js
 sudo rpl --encoding UTF-8 '"Toggle visibility"' '"Sichtbarkeit ein- und ausschalten"' /var/www/html/admin/scripts/js/charts.js
 sudo rpl --encoding UTF-8 'List \$\{item.text\} queries' 'Anzeigen der ${item.text} Anfragen' /var/www/html/admin/scripts/js/charts.js
-sudo rpl --encoding UTF-8 'No activity recorded</td>' 'Keine Aktivität aufgezeichnet.</td>' /var/www/html/admin/scripts/js/charts.js
+sudo rpl --encoding UTF-8 'No activity recorded</td>' 'keine Aktivität aufgezeichnet</td>' /var/www/html/admin/scripts/js/charts.js
 sudo rpl --encoding UTF-8 '% of all data' '% aller Daten' /var/www/html/admin/scripts/js/charts.js
 sudo rpl --encoding UTF-8 '% of shown items' '% der gezeigten Einträge' /var/www/html/admin/scripts/js/charts.js
 
@@ -879,7 +879,8 @@ sudo rpl --encoding UTF-8 '"Forwarded DNS Queries"' '"Weitergeleitete DNS Anfrag
 sudo rpl --encoding UTF-8 '\- No data \-' '\- Keine Daten \-' /var/www/html/admin/scripts/js/index.js
 sudo rpl --encoding UTF-8 '" total clients"' '" Geräte insgesamt"' /var/www/html/admin/scripts/js/index.js
 sudo rpl --encoding UTF-8 'Lists were never updated' 'Listen wurden nie aktualisiert' /var/www/html/admin/scripts/js/index.js
-sudo rpl --encoding UTF-8 'Lists updated ' 'Aktualisierte Listen ' /var/www/html/admin/scripts/js/index.js
+sudo rpl --encoding UTF-8 'Lists updated ' 'Aktualisierte Listen - ' /var/www/html/admin/scripts/js/index.js
+sudo rpl --encoding UTF-8 ' "\)";' ' " Uhr)";' /var/www/html/admin/scripts/js/index.js
 sudo rpl --encoding UTF-8 'Error! Update gravity to reset this value.' 'Fehler! Aktualisieren Sie die Gravity-Datenbank, um diesen Wert zurückzusetzen!' /var/www/html/admin/scripts/js/index.js
 sudo rpl --encoding UTF-8 'return "Queries from " \+ from \+ " to " \+ to' 'return "Anfragen von " + from + " Uhr bis " + to + " Uhr"' /var/www/html/admin/scripts/js/index.js
 sudo rpl --encoding UTF-8 'return "Client activity from " \+ from \+ " to " \+ to' 'return "Geräteaktivität von " + from + " Uhr bis " + to + " Uhr"' /var/www/html/admin/scripts/js/index.js
@@ -1335,7 +1336,7 @@ sudo rpl --encoding UTF-8 'Are you sure\?' 'Sind Sie sich sicher?' /var/www/html
 
 
 # /var/www/html/admin/vendor/moment/moment.min.js
-sudo rpl --encoding UTF-8 '"%s ago"' '"%s zuvor"' /var/www/html/admin/vendor/moment/moment.min.js
+sudo rpl --encoding UTF-8 '"%s ago"' '"vor %s"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"a few seconds"' '"ein paar Sekunden"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"%d seconds"' '"%d Sekunden"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"a minute"' '"eine Minuten"' /var/www/html/admin/vendor/moment/moment.min.js
@@ -1343,7 +1344,7 @@ sudo rpl --encoding UTF-8 '"%d minutes"' '"%d Minuten"' /var/www/html/admin/vend
 sudo rpl --encoding UTF-8 '"an hour"' '"eine Stunde"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"%d hours"' '"%d Stunden"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"a day"' '"einen Tag"' /var/www/html/admin/vendor/moment/moment.min.js
-sudo rpl --encoding UTF-8 '"%d days"' '"%d Tage"' /var/www/html/admin/vendor/moment/moment.min.js
+sudo rpl --encoding UTF-8 '"%d days"' '"%d Tagen"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"a week"' '"eine Woche"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"%d weeks"' '"%d Wochen"' /var/www/html/admin/vendor/moment/moment.min.js
 sudo rpl --encoding UTF-8 '"a month"' '"einem Monat"' /var/www/html/admin/vendor/moment/moment.min.js
