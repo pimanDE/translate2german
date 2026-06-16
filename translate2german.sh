@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 21.04.2026
-# getestet auf Pi-hole Version Core v6.4.2 - FTL Version v6.6.2 - Web Interface Version v6.5
+# getestet auf Pi-hole Version Core v6.4.2 - FTL Version v6.6.2 - Web Interface Version v6.5.1
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -662,7 +662,7 @@ sudo rpl --encoding UTF-8 'Flush logs \(last 24 hours\)</button>' 'Protokolle l�
 
 # /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 "Export your Pi-hole\'s configuration</h3>" "Exportieren Sie Ihre Pi-hole Einstellungen</h3>" /var/www/html/admin/settings-teleporter.lp
-sudo rpl --encoding UTF-8 'Warning:</strong><br>This archive contains sensitive information about your Pi-hole installation, e.g. your 2FA-TOTP secret \(if enabled\). Please be careful with this file and do not share it with anyone even if they claim to help you.<br> Your long-term history database <code>pihole-FTL.db<\/code> must be backed-up separately.' 'Warnung:</strong><br>Dieses Archiv enthält sensible Informationen über Ihre Pi-hole-Installation, wie z.B. Ihre 2FA-TOTP-Verschlüsselung (falls aktiviert). Bitte seien Sie vorsichtig mit dieser Datei und geben Sie sie nicht an andere weiter, auch wenn diese vorgeben, Ihnen zu helfen zu wollen. <br> Ihre Datenbank mit den Langzeit-Verlaufsdaten <code>pihole-FTL.db</code> muss separat gesichert werden.' /var/www/html/admin/settings-teleporter.lp
+sudo rpl --encoding UTF-8 'Warning:</strong><br>This archive contains sensitive information about your Pi-hole installation, e.g. your 2FA-TOTP secret \(if enabled\). Please be careful with this file and do not share it with anyone even if they claim to help you.<br> Your long-term history database <code>pihole-FTL.db<\/code> must be backed up separately.' 'Warnung:</strong><br>Dieses Archiv enthält sensible Informationen über Ihre Pi-hole-Installation, wie z.B. Ihre 2FA-TOTP-Verschlüsselung (falls aktiviert). Bitte seien Sie vorsichtig mit dieser Datei und geben Sie sie nicht an andere weiter, auch wenn diese vorgeben, Ihnen zu helfen zu wollen. <br> Ihre Datenbank mit den Langzeit-Verlaufsdaten <code>pihole-FTL.db</code> muss separat gesichert werden.' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 'Warning:</strong><br>You are currently not using an end-to-end encryption. This means that secrets like your 2FA-TOTP secret will be transmitted in plain text. We recommend to use HTTPS when' 'Warnung:</strong><br>Sie verwenden derzeit keine Ende-zu-Ende-Verschlüsselung. Das bedeutet, dass Geheimnisse wie Ihr 2FA-TOTP-Geheimnis im Klartext übertragen werden. Wir empfehlen, HTTPS zu verwenden, ' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 'exporting your configuration.' 'wenn Sie Ihre Konfiguration exportieren.' /var/www/html/admin/settings-teleporter.lp
 sudo rpl --encoding UTF-8 '<br>Export' '<br>Exportieren' /var/www/html/admin/settings-teleporter.lp
