@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
-# getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 21.04.2026
-# getestet auf Pi-hole Version Core v6.4.3 - FTL Version v6.7 - Web Interface Version v6.6
+# getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 06.10.2026
+# getestet auf Pi-hole Version Core v6.5 - FTL Version v6.8 - Web Interface Version v6.6.1
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -211,11 +211,11 @@ sudo rpl --encoding UTF-8 'Hint:</strong> Click on the icons \(first and second 
 sudo rpl --encoding UTF-8 'List Status:</strong>' 'Listenstatus:</strong>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'List download was successful<br>' 'Herunterladen der Liste war erfolgreich<br>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'List unchanged upstream, Pi-hole used a local copy<br>' 'Die Liste blieb im Upstream unverändert, Pi-hole verwendete eine lokale Kopie<br><br>' /var/www/html/admin/groups-lists.lp
-sudo rpl --encoding UTF-8 'List unavailable, Pi-hole used a local copy<br>' 'Liste nich verfügbar, Pi-hole verwendet eine lokale Kopie<br>' /var/www/html/admin/groups-lists.lp
+sudo rpl --encoding UTF-8 'List unavailable, Pi-hole used a local copy<br>' 'Liste nicht verfügbar, Pi-hole verwendet eine lokale Kopie<br>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'List unavailable and no local copy of this list is available<br>' 'Liste nicht verfügbar und es ist keine lokale Kopie dieser Liste verfügbar<br>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Unknown<br>' 'Unbekannt<br>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'The status icon turns gray when the list is disabled.' 'Das Statussymbol wird grau, wenn die Liste deaktiviert ist.' /var/www/html/admin/groups-lists.lp
-sudo rpl --encoding UTF-8 'Type:</strong>' 'Typ:</strong>' /var/www/html/admin/groups-lists.lp
+sudo rpl --encoding UTF-8 'List Type:</strong>' 'Listen Typ:</strong>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 'Allow list<br>' 'Erlaubte Liste<br>' /var/www/html/admin/groups-lists.lp
 sudo rpl --encoding UTF-8 '</span> - Block list' '</span> - Blockierte Liste' /var/www/html/admin/groups-lists.lp
 
@@ -436,7 +436,7 @@ sudo rpl --encoding UTF-8 'Enable this option to enable IPv6 support for the Pi-
 sudo rpl --encoding UTF-8 'Advanced DHCP Settings</h3>' 'Erweiterte DHCP-Einstellungen</h3>' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'DHCP lease time</label>' 'DHCP-Vergabezeit</label>' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Lease time</div>' 'Vergabezeit</div>' /var/www/html/admin/settings-dhcp.lp
-sudo rpl --encoding UTF-8 "The lease time can be in seconds, minutes \(e.g., \"45m\"\), hours \(e.g., \"1h\"\), days \(like \"2d\"\), or even weeks \(\"1w\"\). If no lease time is specified \(empty\), <code>dnsmasq</code>\'s default lease time is one hour for IPv4 and one day for IPv6. You may also use \"infinite\" as string but be aware of the drawbacks: assigned addresses are will only be made available again after the lease time has passed or when leases are manually deleted below." "Die Vergabezeit kann in Sekunden, Minuten (z. B. „45 m“), Stunden (z. B. „1 h“), Tagen (z. B. „2 d“) oder sogar Wochen („1 w“) angegeben werden. Wenn keine Lease-Zeit angegeben ist (keine Vergabezeit), beträgt die Standard-Vergabe-Zeit von <code>dnsmasq</code> für IPv4 eine Stunde und für IPv6 einen Tag. Sie können auch „infinite“ (unbegrenzt) als Zeichenfolge verwenden, beachten Sie jedoch die Nachteile: Zugewiesene Adressen werden erst wieder verfügbar, wenn die Vergabezeit abgelaufen ist oder wenn Vergaben unten manuell gelöscht werden." /var/www/html/admin/settings-dhcp.lp
+sudo rpl --encoding UTF-8 "The lease time can be in seconds, minutes \(e.g., \"45m\"\), hours \(e.g., \"1h\"\), days \(like \"2d\"\), or even weeks \(\"1w\"\). If no lease time is specified \(empty\), <code>dnsmasq</code>\'s default lease time is one hour for IPv4 and one day for IPv6. You may also use \"infinite\" as string but be aware of the drawbacks: assigned addresses are will only be made available again after the lease time has passed or when leases are manually deleted below." "Die Vergabezeit kann in Sekunden, Minuten (z. B. „45 m“), Stunden (z. B. „1 h“), Tagen (z. B. „2 d“) oder sogar Wochen („1 w“) angegeben werden. Wenn keine Lease-Zeit angegeben ist (keine Vergabezeit), beträgt die Standard-Vergabe-Zeit von <code>dnsmasq</code> für IPv4 eine Stunde und für IPv6 einen Tag. Sie können auch „infinite“ (unbegrenzt) als Zeichenfolge verwenden. Beachten Sie jedoch die Nachteile: Zugewiesene Adressen werden erst wieder verfügbar, wenn die Vergabezeit abgelaufen ist oder wenn Vergaben unten manuell gelöscht werden." /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Enable DHCPv4 rapid commit \(fast address assignment\)' 'DHCPv4 Schnellübertragung aktivieren (schnelle Adresszuweisung)' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'The DHCPv4 rapid commit option allows the Pi-hole DHCP server to assign an IP address to a client right away. This can notably speed up the address assignment process and you will notice, e.g., faster WiFi joins in your network. This option should only be enabled if the Pi-hole DHCP server is the only DHCP server in your network.' 'Die Option DHCPv4 Schnellübertragung ermöglicht es dem Pi-hole-DHCP-Server, einem Gerät sofort eine IP-Adresse zuzuweisen. Dies kann den Prozess der Adresszuweisung erheblich beschleunigen und Sie werden z. B. schnellere WiFi-Verbindungen in Ihrem Netzwerk feststellen. Diese Option sollte nur aktiviert werden, wenn der Pi-hole der einzige DHCP-Server in Ihrem Netzwerk ist.' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Advertise DNS server multiple times</strong>' 'DNS-Server mehrmals ankündigen</strong>' /var/www/html/admin/settings-dhcp.lp
@@ -459,7 +459,7 @@ sudo rpl --encoding UTF-8 'Each entry should be on a separate line, and should b
 sudo rpl --encoding UTF-8 'Advanced Settings:' 'Erweiterte Einstellungen:' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Only one entry per MAC address is allowed.' 'Pro MAC-Adresse ist nur ein Eintrag zulässig.' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'IPv6 addresses must be enclosed in square brackets like ' 'IPv6-Adressen müssen in eckige Klammern gesetzt werden, wie zum Beispiel ' /var/www/html/admin/settings-dhcp.lp
-sudo rpl --encoding UTF-8 'Only letters, digits, hyphens and dots are allowed in hostnames.' 'In Hostnamen sind nur Buchstaben, Ziffern, Bindestriche und Punkte zulässig.' /var/www/html/admin/settings-dhcp.lp
+sudo rpl --encoding UTF-8 'Static DHCP hostnames may contain letters, digits, hyphens, dots, and underscores, but must start with a letter or digit.' 'Statische DHCP-Hostnamen dürfen Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten, müssen jedoch mit einem Buchstaben oder einer Ziffer beginnen.' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'Examples:' 'Beispiele:' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'tells Pi-hole to give the machine with hardware address <code>00:20:e0:3b:13:af</code> the address <code>192.168.0.123</code></div>' 'Weist Pi-hole an, dem Gerät mit der Hardware-Adresse <code>00:20:e0:3b:13:af</code> die Adresse <code>192.168.0.123</code> zu geben.</div>' /var/www/html/admin/settings-dhcp.lp
 sudo rpl --encoding UTF-8 'tells Pi-hole to give the machine with hardware address <code>00:20:e0:3b:13:af</code> the name <code>laptop</code>' 'Weist Pi-hole an, dem Gerät mit der Hardware-Adresse  <code>00:20:e0:3b:13:af</code> den Namen <code>Laptop</code> zu geben' /var/www/html/admin/settings-dhcp.lp
@@ -513,7 +513,7 @@ sudo rpl --encoding UTF-8 'values to zero.' 'indem beide Werte auf Null gesetzt 
 sudo rpl --encoding UTF-8 'Interface settings</h1>' 'Einstellungen der Schnittstelle</h1>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Recommended setting</h4>' 'Empfohlene Einstellung</h4>' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Allow only local requests' 'Nur lokale Anfragen zulassen' /var/www/html/admin/settings-dns.lp
-sudo rpl --encoding UTF-8 'Allows only queries from devices that are at most one hop away \(local devices\)' 'Erlaubt nur Anfragen von Geräten, die höchstens einen Sprung entfernt sind (lokale Geräte).' /var/www/html/admin/settings-dns.lp
+sudo rpl --encoding UTF-8 'Allows only queries from devices that are on a subnet directly connected to this Pi-hole \(local devices\).' 'Lässt nur Anfragen von Geräten zu, die sich in einem Subnetz befinden, das direkt mit diesem Pi-hole verbunden ist (lokale Geräte).' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Potentially dangerous options' 'Potenziell gefährliche Optionen' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Make sure your Pi-hole is properly firewalled!' 'Stellen Sie sicher, dass Ihr Pi-hole ordnungsgemäß durch eine Firewall geschützt ist!' /var/www/html/admin/settings-dns.lp
 sudo rpl --encoding UTF-8 'Respond only on interface ' 'Reagiere nur an Schnittstelle ' /var/www/html/admin/settings-dns.lp
@@ -1147,12 +1147,32 @@ sudo rpl --encoding UTF-8 'No DHCP leases found.' 'Keine DHCP-Vergaben gefunden.
 sudo rpl --encoding UTF-8 'Deleting lease...' 'Lösche DHCP-Vergaben ...' /var/www/html/admin/scripts/js/settings-dhcp.js
 sudo rpl --encoding UTF-8 'Successfully deleted lease' 'DHCP-Vergabe erfolgreich gelöscht' /var/www/html/admin/scripts/js/settings-dhcp.js
 sudo rpl --encoding UTF-8 'Error while deleting lease: ' 'Fehler beim Löschen der DHCP-Vergabe: ' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 '("title", "Delete lease")' '("title", "Delete lease")' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 '("title", "Copy to static leases")' '("title", "Copy to static leases")' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 '("title", "Confirm changes to this line")' '("title", "Änderungen an dieser Zeile bestätigen")' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 '("title", "Cancel changes and restore original values")' '("title", "Änderungen rückgängig machen und ursprüngliche Werte wiederherstellen")' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 '("title", "Delete this line")' '("title", "Diese Zeile löschen")' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 '("title", "Add new line after this")' '("title", "Füge Sie nach diesem Text eine neue Zeile ein")' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 '("title", "Invalid MAC address format")' '("title", "Ungültiges MAC-Adressformat")' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 '("title", "Invalid IP address format")' '("title", "Ungültiges IP-Adressformat")' /var/www/html/admin/scripts/js/settings-dhcp.js
+sudo rpl --encoding UTF-8 'Invalid hostname: letters, digits, hyphens, dots, and underscores allowed' 'Ungültiger Hostname: Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche sind zulässig' /var/www/html/admin/scripts/js/settings-dhcp.js
 
 
 
 # /var/www/html/admin/scripts/js/settings-dns.js
 sudo rpl --encoding UTF-8 ' " custom server" ' ' " benutzerdefinierte" ' /var/www/html/admin/scripts/js/settings-dns.js
 sudo rpl --encoding UTF-8 '"" : "s"\) \+ " enabled\)"' '"r" : "") + " Server aktiviert)"' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 '\("title", "Delete"\)' '("title", "Löschen")' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 '\("title", "Confirm changes"\)' '("title", "Änderungen bestätigen")' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 '\("title", "Undo changes"\)' '("title", "Änderungen rückgängig machen")' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 'No reverse DNS servers defined.' 'Es sind keine Reverse-DNS-Server definiert.' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 'Network Range and Server IP are required' 'Netzwerkbereich und Server-IP sind erforderlich' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 'Canceled", "Original values restored' '„Abgebrochen“, „Ursprüngliche Werte wiederhergestellt“' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 '\("title", "Disabled: Set by environment variable"\)' '("title", "Deaktiviert: Wird über eine Umgebungsvariable festgelegt")' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 'Conditional Forwarding settings successfully saved' 'Einstellungen für die bedingte Weiterleitung wurden erfolgreich gespeichert' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 'Error while applying settings' 'Fehler beim Übernehmen der Einstellungen' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 '\("title", "Invalid server IP"\)' '("title", "Ungültige Server-IP-Adresse")' /var/www/html/admin/scripts/js/settings-dns.js
+sudo rpl --encoding UTF-8 '\("title", "Invalid domain"\)' '("title", "Ungültige Domain")' /var/www/html/admin/scripts/js/settings-dns.js
 
 
 
@@ -1312,6 +1332,19 @@ sudo rpl --encoding UTF-8 'Interfaces</span>' 'Schnittstellen</span>' /var/www/h
 sudo rpl --encoding UTF-8 'Network</span>' 'Netzwerk</span>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Donate</li>' 'Spenden</li>' /var/www/html/admin/scripts/lua/sidebar.lp
 sudo rpl --encoding UTF-8 'Donate</span>' 'Spenden</span>' /var/www/html/admin/scripts/lua/sidebar.lp
+
+
+
+# /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'content: "Type:";' 'content: "Typ:";' /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'content: "Comment:";' 'content: "Kommentar";' /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'Loading..."' 'Lädt ..."' /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'content: "No modified settings to display";' 'content: "Es sind keine geänderten Einstellungen anzuzeigen";' /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'content: "Enter a network range \(CIDR notation\)";' 'content: „Geben Sie einen Netzwerkbereich (CIDR-Notation) ein“;' /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'content: "Enter the server IP";' 'content: "Geben Sie die IP-Adresse des Servers ein";' /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'content: "Domain name \(optional\)";' 'content: "Domain Name (optional)";' /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'Please confirm changes using the green button, then click "Save & Apply" before leaving the page.' 'Bitte bestätigen Sie die Änderungen über die grüne Schaltfläche und klicken Sie anschließend auf „Speichern & Anwenden“, bevor Sie die Seite verlassen.' /var/www/html/admin/style/pi-hole.css
+sudo rpl --encoding UTF-8 'content: "Please confirm all changes above before editing this field.";' 'content: "Bitte bestätigen Sie alle oben genannten Änderungen, bevor Sie dieses Feld bearbeiten.";' /var/www/html/admin/style/pi-hole.css
 
 
 
