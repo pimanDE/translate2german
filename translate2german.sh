@@ -2,7 +2,7 @@
 #
 # Weboberfläche des Pi-hole auf deutsch übersetzen
 # getestet auf Raspberry Pi OS Lite Debian Version 13 (trixie) vom 06.10.2026
-# getestet auf Pi-hole Version Core v6.5 - FTL Version v6.8 - Web Interface Version v6.6.1
+# getestet auf Pi-hole Version Core v6.6 - FTL Version v6.9 - Web Interface Version v6.6.1
 # https://pi-hole.net/
 #
 # Benutzung auf eigene Gefahr!
@@ -1457,7 +1457,6 @@ sudo rpl --encoding UTF-8 'Pending...' 'Ausstehend ...' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'is blocked by one of your lists. Using DNS server \$\{upstream\} instead' 'wird durch eine Ihrer Listen geblockt. Verwenden Sie stattdessen den DNS-Server ${upstream}.' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'does not exist"' 'existiert nicht"' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Using local file ' 'Benutze eine lokale Datei ' /opt/pihole/gravity.sh
-sudo rpl --encoding UTF-8 'Cannot read file \(user ' 'Die Datei kann nicht gelesen werden (dem Benutzer ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'lacks read permission\)' 'fehlt die Leseberechtigung)' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Cannot read file \(current user ' 'Die Datei kann nicht gelesen werden (dem aktuellen Benutzer ' /opt/pihole/gravity.sh
 sudo rpl --encoding UTF-8 'Invalid protocol specified. Ignoring list.' 'Ungültiges Protokoll angegeben. Liste wird ignoriert.' /opt/pihole/gravity.sh
